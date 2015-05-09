@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<kml xmlns="http://earth.google.com/kml/2.2">
+<Document>
+  <name>06 Richmond End Link</name>
+  <description><![CDATA[]]></description>
+  <Style id="style1">
+    <LineStyle>
+      <color>D90000FF</color>
+      <width>2</width>
+    </LineStyle>
+  </Style>
+  <Placemark>
+    <name>06 Richmond End Link</name>
+    <description><![CDATA[<div dir="ltr"></div>]]></description>
+    <styleUrl>#style1</styleUrl>
+    <LineString>
+      <tessellate>1</tessellate>
+      <coordinates>
+        -0.309190,51.459129,0.000000
+        -0.308940,51.459351,0.000000
+        -0.308970,51.459431,0.000000
+        -0.309210,51.459579,0.000000
+        -0.309180,51.459721,0.000000
+        -0.308110,51.460522,0.000000
+        -0.307410,51.460690,0.000000
+        -0.306610,51.460640,0.000000
+        -0.306230,51.460678,0.000000
+        -0.304520,51.461948,0.000000
+        -0.303930,51.462559,0.000000
+        -0.303710,51.462688,0.000000
+        -0.303340,51.463181,0.000000
+        -0.302199,51.463112,0.000000
+        -0.301824,51.463284,0.000000
+      </coordinates>
+    </LineString>
+  </Placemark>
+</Document>
+</kml>

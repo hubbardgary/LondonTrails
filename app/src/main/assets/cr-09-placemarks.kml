@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<kml xmlns="http://earth.google.com/kml/2.2">
+<Document>
+  <Placemark>
+    <name>Paradise Fields Wetlands</name>
+	<description><![CDATA[<div dir="ltr">Formerly Greenford Golf Course, this patch of land is now a nature reserve providing a haven for several rare bird species and pond life.</div>]]></description>
+    <styleUrl>#style1</styleUrl>
+    <Point>
+      <coordinates>-0.3397179,51.5445336,0.0</coordinates>
+    </Point>
+  </Placemark>
+  <Placemark>
+    <name>Horsenden Hill Visitor Centre</name>
+    <description><![CDATA[<div dir="ltr">A slight detour from the main Capital Ring route will take you to this visitor centre. Just follow the trail of sculpted wooden benches.</div>]]></description>
+    <styleUrl>#style4</styleUrl>
+    <Point>
+      <coordinates>-0.3246117,51.5423124,0.0</coordinates>
+    </Point>
+  </Placemark>
+  <Placemark>
+    <name>Horsenden Hill Summit</name>
+    <description><![CDATA[<div dir="ltr">You will be rewarded for the steep climb to the summit with excellent views of Greater London.</div>]]></description>
+    <styleUrl>#style6</styleUrl>
+    <Point>
+      <coordinates>-0.3248906,51.545894700000005,0.0</coordinates>
+    </Point>
+  </Placemark>
+  <Placemark>
+    <name>Harrow School</name>
+    <description><![CDATA[<div dir="ltr">This boys boarding school was founded in 1572. Many old traditions remain in force today, including the boater hat as part of the school uniform. Winston Churchill is among the several notable figures educated here.</div>]]></description>
+    <styleUrl>#style5</styleUrl>
+    <Point>
+      <coordinates>-0.3339672,51.5729888,0.0</coordinates>
+    </Point>
+  </Placemark>
+</Document>
+</kml>

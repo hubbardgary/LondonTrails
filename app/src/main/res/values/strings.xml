@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="app_name">Google Maps API v2</string>
+    <string name="action_settings">Settings</string>
+    <string name="hello_world">Hello world!</string>
+    <string name="title_activity_main">MainActivity</string>
+    <string name="title_activity_capital_ring">CapitalRing</string>
+    <string name="title_activity_capital_ring_options1">CapitalRingOptions1</string>
+    <string name="title_activity_capital_ring_options2">CapitalRingOptions2</string>
+    <string name="title_activity_london_loop_options">LondonLoopOptions</string>
+
+    <string-array name="capital_ring_sections">
+        <item>1: Woolwich</item>
+        <item>2: Falconwood</item>
+        <item>3: Grove Park</item>
+        <item>4: Crystal Palace</item>
+        <item>5: Streatham</item>
+        <item>6: Wimbledon Park</item>
+        <item>7: Richmond</item>
+        <item>8: Osterley Lock</item>
+        <item>9: Greenford</item>
+        <item>10: South Kenton</item>
+        <item>11: Hendon Park</item>
+        <item>12: Highgate</item>
+        <item>13: Stoke Newington</item>
+        <item>14: Hackney Wick</item>
+        <item>15: Beckton District Park</item>
+    </string-array>
+
+    <string-array name="london_loop_sections">
+        <item>1: Erith Riverside</item>
+        <item>2: Old Bexley</item>
+        <item>3: Jubilee Park</item>
+        <item>4: West Wickham Common</item>
+        <item>5: Hamsey Green</item>
+        <item>6: Banstead Downs</item>
+        <item>7: Kingston Bridge</item>
+        <item>8: Donkey Wood</item>
+        <item>9: Uxbridge Lock</item>
+        <item>10: Moor Park</item>
+        <item>11: Elstree and Borehamwood</item>
+        <item>12: Cockfosters</item>
+        <item>13: Enfield Lock</item>
+        <item>14: Chigwell</item>
+        <item>15: Harold Wood</item>
+        <item>16: Purfleet</item>
+    </string-array>
+    
+    <string-array name="directions">
+        <item>Clockwise</item>
+        <item>Anti-clockwise</item>
+    </string-array>
+    
+    <string name="streetmap_view">Street Map View</string>
+    <string name="satellite_view">Satellite View</string>
+    <string name="terrain_view">Terrain View</string>
+    <string name="hide_markers">Hide Markers</string>
+    <string name="show_markers">Show Markers</string>
+    <string name="reset_focus">Reset Focus</string>
+</resources>

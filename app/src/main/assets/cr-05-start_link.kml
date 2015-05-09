@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<kml xmlns="http://earth.google.com/kml/2.2">
+<Document>
+  <name>Streatham Common Link</name>
+  <description><![CDATA[]]></description>
+  <Style id="style1">
+    <LineStyle>
+      <color>73FF0000</color>
+      <width>5</width>
+    </LineStyle>
+  </Style>
+  <Placemark>
+    <name>Streatham Common Link</name>
+    <description><![CDATA[]]></description>
+    <styleUrl>#style1</styleUrl>
+    <LineString>
+      <tessellate>1</tessellate>
+      <coordinates>
+        -0.135785,51.418846,0.000000
+        -0.136082,51.419224,0.000000
+        -0.136031,51.419315,0.000000
+        -0.136935,51.420238,0.000000
+        -0.136857,51.420582,0.000000
+      </coordinates>
+    </LineString>
+  </Placemark>
+</Document>
+</kml>

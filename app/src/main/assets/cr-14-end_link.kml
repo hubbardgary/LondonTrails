@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<kml xmlns="http://earth.google.com/kml/2.2">
+<Document>
+  <name>Royal Albert Station Link</name>
+  <Placemark>
+    <name>Royal Albert Station Link</name>
+    <description><![CDATA[]]></description>
+    <styleUrl>#style1</styleUrl>
+    <LineString>
+      <tessellate>1</tessellate>
+      <coordinates>
+        0.047440,51.510971,0.000000
+        0.047308,51.510918,0.000000
+        0.047469,51.510399,0.000000
+        0.047478,51.509602,0.000000
+        0.047282,51.509411,0.000000
+        0.047094,51.509251,0.000000
+        0.046826,51.509167,0.000000
+        0.046777,51.508835,0.000000
+        0.047206,51.508682,0.000000
+        0.047271,51.508575,0.000000
+        0.047244,51.508278,0.000000
+        0.046976,51.508121,0.000000
+        0.046136,51.508156,0.000000
+        0.045973,51.508320,0.000000
+      </coordinates>
+    </LineString>
+  </Placemark>
+</Document>
+</kml>

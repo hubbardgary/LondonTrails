@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<kml xmlns="http://earth.google.com/kml/2.2">
+<Document>
+  <name>Hackney Wick Link</name>
+  <Placemark>
+    <name>Hackney Wick Link</name>
+    <description><![CDATA[]]></description>
+    <styleUrl>#style1</styleUrl>
+    <LineString>
+      <tessellate>1</tessellate>
+      <coordinates>
+        -0.024740,51.543289,0.000000
+        -0.025410,51.543240,0.000000
+        -0.025360,51.543018,0.000000
+        -0.024741,51.542316,0.000000
+        -0.023980,51.542500,0.000000
+        -0.023530,51.542450,0.000000
+        -0.021490,51.542801,0.000000
+        -0.021400,51.542610,0.000000
+      </coordinates>
+    </LineString>
+  </Placemark>
+</Document>
+</kml>

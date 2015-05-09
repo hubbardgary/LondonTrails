@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<kml xmlns="http://earth.google.com/kml/2.2">
+<Document>
+  <name>Stoke Newington Link</name>
+  <Placemark>
+    <name>Stoke Newington Link</name>
+    <description><![CDATA[]]></description>
+    <styleUrl>#style1</styleUrl>
+    <LineString>
+      <tessellate>1</tessellate>
+      <coordinates>
+        -0.072897,51.565281,0.000000
+        -0.072999,51.565243,0.000000
+        -0.072990,51.564041,0.000000
+      </coordinates>
+    </LineString>
+  </Placemark>
+</Document>
+</kml>

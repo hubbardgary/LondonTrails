@@ -1,0 +1,27 @@
+<menu xmlns:android="http://schemas.android.com/apk/res/android" >
+
+    <item
+        android:id="@+id/action_settings"
+        android:orderInCategory="100"
+        android:showAsAction="never"
+        android:title="@string/action_settings"/>
+    
+    <item
+        android:id="@+id/view_option_streetmap"
+        android:title="@string/streetmap_view"/>
+    <item
+        android:id="@+id/view_option_satellite"
+        android:title="@string/satellite_view"/>
+    <item
+        android:id="@+id/view_option_terrain"
+        android:title="@string/terrain_view"/>
+    <item
+        android:id="@+id/view_option_hide_markers"
+        android:title="@string/hide_markers"/>
+    <item
+        android:id="@+id/view_option_show_markers"
+        android:title="@string/show_markers"/>
+    <item
+        android:id="@+id/view_option_reset_focus"
+        android:title="@string/reset_focus"/>
+</menu>

@@ -1,0 +1,27 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<kml xmlns='http://www.opengis.net/kml/2.2'>
+	<Document>
+		<name>07 Start Link</name>
+		<description><![CDATA[]]></description>
+		<Folder>
+			<name>Untitled layer</name>
+			<Placemark>
+				<styleUrl>#line-FF0000-3</styleUrl>
+				<name>07 Start Link</name>
+				<ExtendedData>
+				</ExtendedData>
+				<description></description>
+				<LineString>
+					<tessellate>1</tessellate>
+					<coordinates>-0.3011423,51.4126477,0.0 -0.3013491,51.4120652,0.0 -0.3037973,51.4115529,0.0 -0.303897,51.41091900000001,0.0 -0.308022,51.411082,0.0 </coordinates>
+				</LineString>
+			</Placemark>
+		</Folder>
+		<Style id='line-FF0000-3'>
+			<LineStyle>
+				<color>ff0000FF</color>
+				<width>3</width>
+			</LineStyle>
+		</Style>
+	</Document>
+</kml>

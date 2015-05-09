@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<kml xmlns="http://earth.google.com/kml/2.2">
+<Document>
+  <name>Osterley Lock link</name>
+  <description><![CDATA[]]></description>
+  <Style id="style1">
+    <LineStyle>
+      <color>D9FF0000</color>
+      <width>2</width>
+    </LineStyle>
+  </Style>
+  <Placemark>
+    <name>Boston Manor Link</name>
+    <styleUrl>#style1</styleUrl>
+    <LineString>
+      <tessellate>1</tessellate>
+      <coordinates>
+        -0.331050,51.495468,0.000000
+        -0.329714,51.495930,0.000000
+        -0.329537,51.496674,0.000000
+        -0.329778,51.497398,0.000000
+        -0.328866,51.497635,0.000000
+        -0.328834,51.497894,0.000000
+        -0.327308,51.498421,0.000000
+        -0.325778,51.496452,0.000000
+        -0.325237,51.496052,0.000000
+        -0.324754,51.495827,0.000000
+      </coordinates>
+    </LineString>
+  </Placemark>
+</Document>
+</kml>

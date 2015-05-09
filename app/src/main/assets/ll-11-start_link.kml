@@ -1,0 +1,27 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<kml xmlns='http://www.opengis.net/kml/2.2'>
+	<Document>
+		<name>10 End Link</name>
+		<description><![CDATA[]]></description>
+		<Folder>
+			<name>Untitled layer</name>
+			<Placemark>
+				<styleUrl>#line-3333FF-1</styleUrl>
+				<name>10 End Link</name>
+				<ExtendedData>
+				</ExtendedData>
+				<description><![CDATA[11.5 miles (18.5km).Completed 12th April 2010.]]></description>
+				<LineString>
+					<tessellate>1</tessellate>
+					<coordinates>-0.279828,51.653258,0.0 -0.279697,51.653459,0.0 -0.279785,51.65351,0.0 -0.281679,51.652963,0.0 -0.281923,51.652789,0.0 </coordinates>
+				</LineString>
+			</Placemark>
+		</Folder>
+		<Style id='line-3333FF-1'>
+			<LineStyle>
+				<color>ffFF3333</color>
+				<width>1</width>
+			</LineStyle>
+		</Style>
+	</Document>
+</kml>

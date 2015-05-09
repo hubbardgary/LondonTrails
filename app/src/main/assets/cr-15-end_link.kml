@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<kml xmlns="http://earth.google.com/kml/2.2">
+<Document>
+  <name>01 Start Link</name>
+  <description><![CDATA[]]></description>
+  <Style id="style2">
+    <LineStyle>
+      <color>99FF0000</color>
+      <width>5</width>
+    </LineStyle>
+  </Style>
+  <Style id="style1">
+    <IconStyle>
+      <Icon>
+        <href>http://maps.gstatic.com/mapfiles/ms2/micons/green-dot.png</href>
+      </Icon>
+    </IconStyle>
+  </Style>
+  <Placemark>
+    <name>01 Woolwich Arsenal Link</name>
+    <styleUrl>#style2</styleUrl>
+    <LineString>
+      <tessellate>1</tessellate>
+      <coordinates>
+		0.062810,51.494411,0.000000
+        0.063880,51.494621,0.000000
+        0.064110,51.494331,0.000000
+        0.064150,51.494652,0.000000
+        0.069630,51.494991,0.000000
+        0.070530,51.494850,0.000000
+        0.069400,51.492771,0.000000
+        0.069570,51.491951,0.000000
+        0.069430,51.491482,0.000000
+        0.069900,51.491390,0.000000
+        0.069550,51.490681,0.000000
+        0.069290,51.490540,0.000000
+        0.069440,51.490452,0.000000
+        0.068830,51.490082,0.000000
+        0.068930,51.490021,0.000000
+      </coordinates>
+    </LineString>
+  </Placemark>
+</Document>
+</kml>

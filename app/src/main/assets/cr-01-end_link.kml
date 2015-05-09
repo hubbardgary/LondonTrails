@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<kml xmlns="http://earth.google.com/kml/2.2">
+<Document>
+  <name>01 End Link</name>
+  <description><![CDATA[]]></description>
+  <Style id="style2">
+    <LineStyle>
+      <color>99FF0000</color>
+      <width>5</width>
+    </LineStyle>
+  </Style>
+  <Placemark>
+    <name>Falconwood End Link</name>
+    <styleUrl>#style2</styleUrl>
+    <LineString>
+      <tessellate>1</tessellate>
+      <coordinates>
+	    0.072774,51.458591,0.000000
+        0.078260,51.459332,0.000000
+        0.078850,51.458870,0.000000
+        0.079520,51.458988,0.000000
+      </coordinates>
+    </LineString>
+  </Placemark>
+</Document>
+</kml>

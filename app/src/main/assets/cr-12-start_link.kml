@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<kml xmlns="http://earth.google.com/kml/2.2">
+<Document>
+  <name>Highgate Link</name>
+  <Placemark>
+    <name>Highgate Link</name>
+    <description><![CDATA[]]></description>
+    <styleUrl>#style1</styleUrl>
+    <LineString>
+      <tessellate>1</tessellate>
+      <coordinates>
+        -0.145658,51.577686,0.000000
+        -0.145379,51.577877,0.000000
+        -0.145188,51.577965,0.000000
+        -0.144040,51.578060,0.000000
+      </coordinates>
+    </LineString>
+  </Placemark>
+</Document>
+</kml>

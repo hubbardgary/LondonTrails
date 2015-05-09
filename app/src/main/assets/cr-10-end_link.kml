@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<kml xmlns="http://earth.google.com/kml/2.2">
+<Document>
+  <name>Hendon Central Station link</name>
+  <Placemark>
+    <name>Hendon Central Station link</name>
+    <description><![CDATA[]]></description>
+    <styleUrl>#style1</styleUrl>
+    <LineString>
+      <tessellate>1</tessellate>
+      <coordinates>
+        -0.220300,51.579632,0.000000
+        -0.223780,51.581799,0.000000
+        -0.224310,51.582630,0.000000
+        -0.223760,51.582748,0.000000
+        -0.223880,51.582958,0.000000
+        -0.226640,51.582668,0.000000
+        -0.226870,51.583012,0.000000
+      </coordinates>
+    </LineString>
+  </Placemark>
+</Document>
+</kml>

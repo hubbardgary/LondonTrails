@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<kml xmlns="http://earth.google.com/kml/2.2">
+<Document>
+  <Placemark>
+    <name>Hanwell Locks</name>
+    <description><![CDATA[<div dir="ltr">A series of six locks that raises the canal 16 metres in height. The Capital Ring veers away from the canal just before the second lock in the series.</div>]]></description>
+    <styleUrl>#style1</styleUrl>
+    <Point>
+      <coordinates>-0.3445887565612793,51.50380078442383,0.0</coordinates>
+    </Point>
+  </Placemark>
+  <Placemark>
+    <name>Wharncliffe Viaduct</name>
+    <description><![CDATA[<div dir="ltr">This viaduct was constructed for the opening of the Great Western Railway (GWR) in 1838 by Isambard Kingdom Brunel. It is named after Lord Wharncliffe who steered the bill for the construction of the GWR through parliament, and it is his coat of arms that can be seen in the centre of the structure.</div>]]></description>
+    <styleUrl>#style4</styleUrl>
+    <Point>
+      <coordinates>-0.3445136547088623,51.51094934429628,0.0</coordinates>
+    </Point>
+  </Placemark>
+  <Placemark>
+    <name>Millennium Maze</name>
+    <description><![CDATA[<div dir="ltr">This maze consists of yew bushes planted in 2000 to commemorate the turn of the millennium.</div>]]></description>
+    <styleUrl>#style6</styleUrl>
+    <Point>
+      <coordinates>-0.34934163093566895,51.51194758264939,0.0</coordinates>
+    </Point>
+  </Placemark>
+  <Placemark>
+    <name>Brent Lodge Park</name>
+    <description><![CDATA[<div dir="ltr">Known locally as the 'Bunny Park', this green space was acquired by Ealing Borough Council in 1931 from Sir Montagu Sharpe, who had lived in Brent Lodge since 1884. Now it is home to an animal centre, maze and cafe.</div>]]></description>
+    <styleUrl>#style5</styleUrl>
+    <Point>
+      <coordinates>-0.3473782539367676,51.51160704894698,0.0</coordinates>
+    </Point>
+  </Placemark>
+</Document>
+</kml>

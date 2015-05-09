@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<kml xmlns="http://earth.google.com/kml/2.2">
+<Document>
+  <name>Greenford Link</name>
+  <description><![CDATA[]]></description>
+  <Style id="style1">
+  </Style>
+  <Placemark>
+    <name>Osterley to Greenford</name>
+    <Snippet>9.5 miles (15.3 km). Completed 12th May 2012.</Snippet>
+    <description><![CDATA[<div dir="ltr">9.5 miles (15.3 km). Completed 12th May 2012.</div>]]></description>
+    <styleUrl>#style1</styleUrl>
+    <LineString>
+      <tessellate>1</tessellate>
+      <coordinates>
+        -0.343000,51.542210,0.000000
+        -0.343220,51.542259,0.000000
+        -0.343300,51.542358,0.000000
+        -0.345576,51.542900,0.000000
+        -0.345920,51.542358,0.000000
+        -0.346270,51.542439,0.000000
+      </coordinates>
+    </LineString>
+  </Placemark>
+</Document>
+</kml>

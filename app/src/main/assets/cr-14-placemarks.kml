@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<kml xmlns="http://earth.google.com/kml/2.2">
+<Document>
+  <Placemark>
+    <name>Queen Elizabeth II Olympic Park</name>
+    <description><![CDATA[<div dir="ltr">The main site of the 2012 Olympics, this park is now open for the public to enjoy the meadows and venues that were created for the Olympics.</div>]]></description>
+    <styleUrl>#style1</styleUrl>
+    <Point>
+      <coordinates>-0.017488,51.5438797,0.0</coordinates>
+    </Point>
+  </Placemark>
+  <Placemark>
+    <name>Old Ford Lock</name>
+    <description><![CDATA[<div dir="ltr">As the name suggest, this used to be a natural ford before it was converted to a canal to enable navigation. The TV show The Big Breakfast was filmed at the Lock Keepers Cottages alongside this lock from 1992 until 2002.</div>]]></description>
+    <styleUrl>#style4</styleUrl>
+    <Point>
+      <coordinates>-0.0209534,51.538091,0.0</coordinates>
+    </Point>
+  </Placemark>
+  <Placemark>
+    <name>The Greenway (west)</name>
+    <description><![CDATA[<div dir="ltr">The Greenway is a route for walkers and cyclists built on top of a set of sewage pipes: the amusingly named NOSE (Northern Outfall Sewage Embankment). It is part of London's 1860s sewage network, most of which is still in use today.</div>]]></description>
+    <styleUrl>#style6</styleUrl>
+    <Point>
+      <coordinates>-0.0196873,51.5365393,0.0</coordinates>
+    </Point>
+  </Placemark>
+  <Placemark>
+    <name>Abbey Mills Pumping Station</name>
+    <description><![CDATA[<div dir="ltr">Much of London's Victorian sewage system relies on gravity to transport it. This magnificent structure, sometimes called 'The Temple of Sewage', was used until 1996 to pump the waste back up to ground level. The pumping station is now only used when necessary during severe storms.</div>]]></description>
+    <styleUrl>#style5</styleUrl>
+    <Point>
+      <coordinates>-0.0015771,51.5308732,0.0</coordinates>
+    </Point>
+  </Placemark>
+  <Placemark>
+    <name>Beckton District Park North Lake</name>
+    <description><![CDATA[<div dir="ltr">A short diversion from the main route will take you to this pleasant lake that attracts many waterfowl.</div>]]></description>
+    <styleUrl>#style5</styleUrl>
+    <Point>
+      <coordinates>0.0431621,51.5183839,0.0</coordinates>
+    </Point>
+  </Placemark>
+  <Placemark>
+    <name>Tree Trail</name>
+    <description><![CDATA[<div dir="ltr">The route through Beckton District Park incorporates this tree trail, with rare species from across the world.</div>]]></description>
+    <styleUrl>#style5</styleUrl>
+    <Point>
+      <coordinates>0.043838,51.5152259,0.0</coordinates>
+    </Point>
+  </Placemark>
+  <Placemark>
+    <name>East London Cemetery</name>
+    <description><![CDATA[<div dir="ltr">This is the resting place of World War I spy Carl Hans Lody, one of the last people to be executed at the Tower of London in 1914.</div>]]></description>
+    <styleUrl>#style5</styleUrl>
+    <Point>
+      <coordinates>0.014205,51.527596,0.0</coordinates>
+    </Point>
+  </Placemark>
+  <Placemark>
+    <name>The Greenway (east)</name>
+    <description><![CDATA[<div dir="ltr">The Greenway is a route for walkers and cyclists built on top of a set of sewage pipes: the amusingly named NOSE (Northern Outfall Sewage Embankment). It is part of London's 1860s sewage network, most of which is still in use today.</div>]]></description>
+    <styleUrl>#style5</styleUrl>
+    <Point>
+      <coordinates>0.0462842,51.5223627,0.0</coordinates>
+    </Point>
+  </Placemark>
+</Document>
+</kml>

@@ -99,15 +99,16 @@ public class ShowMapActivity extends Activity implements LocationListener,
 		SetPOIWindowAdapter();
 		
 		new BackgroundStuff().execute();
-		
-		
 
-
-		// Move the camera instantly to London with a zoom of 15.
-		//map.moveCamera(CameraUpdateFactory.newLatLngZoom(LONDON, 15));
-
-		// Zoom in, animating the camera.
-		//map.animateCamera(CameraUpdateFactory.zoomTo(10), 2000, null);
+		// Attempts to move camera before map has loaded will fail.
+		// http://stackoverflow.com/questions/13692579/movecamera-with-cameraupdatefactory-newlatlngbounds-crashes
+		map.setOnMapLoadedCallback(new GoogleMap.OnMapLoadedCallback() {
+			@Override
+			public void onMapLoaded() {
+				CameraUpdate cu = CameraUpdateFactory.newLatLngBounds(defaultBounds.build(), 100);
+				map.animateCamera(cu, 800, null);
+			}
+		});
 
 		locationManager=(LocationManager)getSystemService(LOCATION_SERVICE);
 		crit.setAccuracy(Criteria.ACCURACY_COARSE); // How do you just make it use the best available?
@@ -370,10 +371,6 @@ public class ShowMapActivity extends Activity implements LocationListener,
 
 		@Override
 		protected void onPostExecute(Integer i) {
-			
-			CameraUpdate cu = CameraUpdateFactory.newLatLngBounds(defaultBounds.build(), 100);
-			map.animateCamera(cu);
-			
 			PushPin(start, "Start", "Your walk starts here", R.drawable.start);
 			PushPin(end, "Finish", "Your walk ends here", R.drawable.stop);
 			map.addPolyline(line);

@@ -4,11 +4,14 @@
   <name>04 Crystal Palace to Streatham</name>
   <description><![CDATA[]]></description>
   <Style id="style1">
+    <LineStyle>
+      <color>99FF0000</color>
+      <width>5</width>
+    </LineStyle>
   </Style>
   <Placemark>
-    <name>02 Crystal Palace to Streatham</name>
-    <Snippet>13 miles (21 km). Completed 15th October 2011.</Snippet>
-    <description><![CDATA[<div dir="ltr"></div>]]></description>
+    <name>Crystal Palace to Streatham</name>
+    <description><![CDATA[]]></description>
     <styleUrl>#style1</styleUrl>
     <LineString>
       <tessellate>1</tessellate>

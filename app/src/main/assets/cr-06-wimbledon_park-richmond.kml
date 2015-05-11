@@ -5,14 +5,13 @@
   <description><![CDATA[]]></description>
   <Style id="style1">
     <LineStyle>
-      <color>D90000FF</color>
-      <width>2</width>
+      <color>99FF0000</color>
+      <width>5</width>
     </LineStyle>
   </Style>
   <Placemark>
-    <name>04 Wimbledon Park to Richmond</name>
-    <Snippet>7 miles (11.3km). Completed 10th April 2012.</Snippet>
-    <description><![CDATA[<div dir="ltr">7 miles (11.3km). Completed 10th April 2012.</div>]]></description>
+    <name>Wimbledon Park to Richmond</name>
+    <description><![CDATA[]]></description>
     <styleUrl>#style1</styleUrl>
     <LineString>
       <tessellate>1</tessellate>

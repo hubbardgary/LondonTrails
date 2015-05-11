@@ -58,7 +58,7 @@ public class LondonLoop extends Route {
                 //s.poiResource = "ll-05-placemarks.kml";
                 break;
             case 5:
-                s.startLinkResource = "ll-start_link.kml";
+                s.startLinkResource = "ll-06-start_link.kml";
                 s.sectionResource = "ll-06-banstead_downs-kingston_bridge.kml";
                 s.endLinkResource = "ll-06-end_link.kml";
                 s.poiResource = "";

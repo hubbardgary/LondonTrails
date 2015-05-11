@@ -1,26 +1,25 @@
-<?xml version='1.0' encoding='UTF-8'?>
-<kml xmlns='http://www.opengis.net/kml/2.2'>
-	<Document>
-		<name>11 End Link</name>
-		<description><![CDATA[]]></description>
-		<Folder>
-			<name>Untitled layer</name>
-			<Placemark>
-				<styleUrl>#line-3333FF-1</styleUrl>
-				<name>11 End Link</name>
-				<ExtendedData>
-				</ExtendedData>
-				<LineString>
-					<tessellate>1</tessellate>
-					<coordinates>-0.150013,51.651875,0.0 -0.149837,51.65168,0.0 </coordinates>
-				</LineString>
-			</Placemark>
-		</Folder>
-		<Style id='line-3333FF-1'>
-			<LineStyle>
-				<color>ffFF3333</color>
-				<width>1</width>
-			</LineStyle>
-		</Style>
-	</Document>
+<?xml version="1.0" encoding="UTF-8"?>
+<kml xmlns="http://earth.google.com/kml/2.2">
+<Document>
+  <name>11 End Link</name>
+  <description><![CDATA[]]></description>
+  <Style id="style1">
+    <LineStyle>
+      <color>99FF0000</color>
+      <width>5</width>
+    </LineStyle>
+  </Style>
+  <Placemark>
+    <name>Cockfosters End Link</name>
+    <description><![CDATA[]]></description>
+    <styleUrl>#style1</styleUrl>
+    <LineString>
+      <tessellate>1</tessellate>
+      <coordinates>
+        -0.150013,51.651875,0.000000
+        -0.149837,51.651680,0.000000
+      </coordinates>
+    </LineString>
+  </Placemark>
+</Document>
 </kml>

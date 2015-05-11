@@ -3,7 +3,7 @@
 <Document>
   <name>01 End Link</name>
   <description><![CDATA[]]></description>
-  <Style id="style2">
+  <Style id="style1">
     <LineStyle>
       <color>99FF0000</color>
       <width>5</width>
@@ -11,7 +11,8 @@
   </Style>
   <Placemark>
     <name>Falconwood End Link</name>
-    <styleUrl>#style2</styleUrl>
+    <description><![CDATA[]]></description>
+    <styleUrl>#style1</styleUrl>
     <LineString>
       <tessellate>1</tessellate>
       <coordinates>

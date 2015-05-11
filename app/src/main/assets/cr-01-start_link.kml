@@ -3,22 +3,16 @@
 <Document>
   <name>01 Start Link</name>
   <description><![CDATA[]]></description>
-  <Style id="style2">
+  <Style id="style1">
     <LineStyle>
       <color>99FF0000</color>
       <width>5</width>
     </LineStyle>
   </Style>
-  <Style id="style1">
-    <IconStyle>
-      <Icon>
-        <href>http://maps.gstatic.com/mapfiles/ms2/micons/green-dot.png</href>
-      </Icon>
-    </IconStyle>
-  </Style>
   <Placemark>
-    <name>01 Woolwich Arsenal Link</name>
-    <styleUrl>#style2</styleUrl>
+    <name>Woolwich Start Link</name>
+    <description><![CDATA[]]></description>
+    <styleUrl>#style1</styleUrl>
     <LineString>
       <tessellate>1</tessellate>
       <coordinates>

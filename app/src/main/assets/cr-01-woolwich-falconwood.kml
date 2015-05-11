@@ -11,7 +11,7 @@
   </Style>
   <Placemark>
     <name>Woolwich Dockyard to Falconwood</name>
-    <description><![CDATA[<div dir="ltr"></div>]]></description>
+    <description><![CDATA[]]></description>
     <styleUrl>#style1</styleUrl>
     <LineString>
       <tessellate>1</tessellate>

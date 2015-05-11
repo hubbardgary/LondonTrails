@@ -1,14 +1,17 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <kml xmlns="http://earth.google.com/kml/2.2">
 <Document>
-  <name>Grove Park to Crystal Palace</name>
+  <name>03 Grove Park to Crystal Palace</name>
   <description><![CDATA[]]></description>
   <Style id="style1">
+    <LineStyle>
+      <color>99FF0000</color>
+      <width>5</width>
+    </LineStyle>
   </Style>
   <Placemark>
-    <name>02 Grove Park to Tooting</name>
-    <Snippet>13 miles (21 km). Completed 15th October 2011.</Snippet>
-    <description><![CDATA[<div dir="ltr"></div>]]></description>
+    <name>Grove Park to Crystal Palace</name>
+    <description><![CDATA[]]></description>
     <styleUrl>#style1</styleUrl>
     <LineString>
       <tessellate>1</tessellate>

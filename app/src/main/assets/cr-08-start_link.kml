@@ -1,16 +1,17 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <kml xmlns="http://earth.google.com/kml/2.2">
 <Document>
-  <name>Osterley Lock link</name>
+  <name>08 Start link</name>
   <description><![CDATA[]]></description>
   <Style id="style1">
     <LineStyle>
-      <color>D9FF0000</color>
-      <width>2</width>
+      <color>99FF0000</color>
+      <width>5</width>
     </LineStyle>
   </Style>
   <Placemark>
-    <name>Boston Manor Link</name>
+    <name>Osterley Lock Start Link</name>
+    <description><![CDATA[]]></description>
     <styleUrl>#style1</styleUrl>
     <LineString>
       <tessellate>1</tessellate>

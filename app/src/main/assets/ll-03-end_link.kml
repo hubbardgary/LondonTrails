@@ -1,27 +1,33 @@
-<?xml version='1.0' encoding='UTF-8'?>
-<kml xmlns='http://www.opengis.net/kml/2.2'>
-	<Document>
-		<name>03 end link</name>
-		<description><![CDATA[]]></description>
-		<Folder>
-			<name>Untitled layer</name>
-			<Placemark>
-				<styleUrl>#line-FF0000-3</styleUrl>
-				<name>03 Jubilee Park to West Wickham Common</name>
-				<ExtendedData>
-				</ExtendedData>
-				<description><![CDATA[9 miles (14 km).Completed 7th March 2009.]]></description>
-				<LineString>
-					<tessellate>1</tessellate>
-					<coordinates>0.004552,51.370361,0.0 0.0051361,51.3705543,0.0 0.005118,51.370987,0.0 0.0078001,51.3721028,0.0 0.0091654,51.37281,0.0 0.011383,51.374176,0.0 0.012059,51.374268,0.0 0.01148,51.375443,0.0 0.010699,51.375805,0.0 0.0106753,51.3761724,0.0 </coordinates>
-				</LineString>
-			</Placemark>
-		</Folder>
-		<Style id='line-FF0000-3'>
-			<LineStyle>
-				<color>ff0000FF</color>
-				<width>3</width>
-			</LineStyle>
-		</Style>
-	</Document>
+<?xml version="1.0" encoding="UTF-8"?>
+<kml xmlns="http://earth.google.com/kml/2.2">
+<Document>
+  <name>03 End Link</name>
+  <description><![CDATA[]]></description>
+  <Style id="style1">
+    <LineStyle>
+      <color>99FF0000</color>
+      <width>5</width>
+    </LineStyle>
+  </Style>
+  <Placemark>
+    <name>West Wickham Common End Link</name>
+    <description><![CDATA[]]></description>
+    <styleUrl>#style1</styleUrl>
+    <LineString>
+      <tessellate>1</tessellate>
+      <coordinates>
+        0.004552,51.370361,0.000000
+        0.005136,51.370554,0.000000
+        0.005118,51.370987,0.000000
+        0.007800,51.372103,0.000000
+        0.009165,51.372810,0.000000
+        0.011383,51.374176,0.000000
+        0.012059,51.374268,0.000000
+        0.011480,51.375443,0.000000
+        0.010699,51.375805,0.000000
+        0.010675,51.376172,0.000000
+      </coordinates>
+    </LineString>
+  </Placemark>
+</Document>
 </kml>

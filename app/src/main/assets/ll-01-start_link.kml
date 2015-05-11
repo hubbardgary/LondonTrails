@@ -1,27 +1,30 @@
-<?xml version='1.0' encoding='UTF-8'?>
-<kml xmlns='http://www.opengis.net/kml/2.2'>
-	<Document>
-		<name>01 start link</name>
-		<description><![CDATA[]]></description>
-		<Folder>
-			<name>Untitled layer</name>
-			<Placemark>
-				<styleUrl>#line-FF0000-2</styleUrl>
-				<name>01 Erith Riverside to Old Bexley</name>
-				<ExtendedData>
-				</ExtendedData>
-				<description><![CDATA[8.5 miles (13.5 km).Completed 3rd January 2009.]]></description>
-				<LineString>
-					<tessellate>1</tessellate>
-					<coordinates>0.17530000000000004,51.481682,0.0 0.1760671,51.4812123,0.0 0.1765,51.481449000000005,0.0 0.17651,51.48196,0.0 0.1776,51.482349,0.0 0.1779,51.48233,0.0 0.17832,51.48266100000001,0.0 </coordinates>
-				</LineString>
-			</Placemark>
-		</Folder>
-		<Style id='line-FF0000-2'>
-			<LineStyle>
-				<color>ff0000FF</color>
-				<width>2</width>
-			</LineStyle>
-		</Style>
-	</Document>
+<?xml version="1.0" encoding="UTF-8"?>
+<kml xmlns="http://earth.google.com/kml/2.2">
+<Document>
+  <name>01 Start Link</name>
+  <description><![CDATA[]]></description>
+  <Style id="style1">
+    <LineStyle>
+      <color>99FF0000</color>
+      <width>5</width>
+    </LineStyle>
+  </Style>
+  <Placemark>
+    <name>Erith Start Link</name>
+    <description><![CDATA[]]></description>
+    <styleUrl>#style1</styleUrl>
+    <LineString>
+      <tessellate>1</tessellate>
+      <coordinates>
+        0.175300,51.481682,0.000000
+        0.176067,51.481212,0.000000
+        0.176500,51.481449,0.000000
+        0.176510,51.481960,0.000000
+        0.177600,51.482349,0.000000
+        0.177900,51.482330,0.000000
+        0.178320,51.482661,0.000000
+      </coordinates>
+    </LineString>
+  </Placemark>
+</Document>
 </kml>

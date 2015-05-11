@@ -1,7 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <kml xmlns="http://earth.google.com/kml/2.2">
 <Document>
-  <name>Hendon Park to Highgate</name>
+  <name>11 Hendon Park to Highgate</name>
+  <description><![CDATA[]]></description>
+  <Style id="style1">
+    <LineStyle>
+      <color>99FF0000</color>
+      <width>5</width>
+    </LineStyle>
+  </Style>
   <Placemark>
     <name>Hendon Park to Highgate</name>
     <description><![CDATA[]]></description>

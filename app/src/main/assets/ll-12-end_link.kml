@@ -1,27 +1,27 @@
-<?xml version='1.0' encoding='UTF-8'?>
-<kml xmlns='http://www.opengis.net/kml/2.2'>
-	<Document>
-		<name>12 End Link</name>
-		<description><![CDATA[]]></description>
-		<Folder>
-			<name>Untitled layer</name>
-			<Placemark>
-				<styleUrl>#line-3333FF-2</styleUrl>
-				<name>12 End Link</name>
-				<ExtendedData>
-				</ExtendedData>
-				<description><![CDATA[8.5 miles (13.7km). Completed 21st August 2010.]]></description>
-				<LineString>
-					<tessellate>1</tessellate>
-					<coordinates>-0.028517000000000004,51.667929,0.0 -0.02807,51.671089,0.0 -0.028390000000000002,51.671101,0.0 -0.028399000000000004,51.671014,0.0 </coordinates>
-				</LineString>
-			</Placemark>
-		</Folder>
-		<Style id='line-3333FF-2'>
-			<LineStyle>
-				<color>ffFF3333</color>
-				<width>2</width>
-			</LineStyle>
-		</Style>
-	</Document>
+<?xml version="1.0" encoding="UTF-8"?>
+<kml xmlns="http://earth.google.com/kml/2.2">
+<Document>
+  <name>12 End Link</name>
+  <description><![CDATA[]]></description>
+  <Style id="style1">
+    <LineStyle>
+      <color>99FF0000</color>
+      <width>5</width>
+    </LineStyle>
+  </Style>
+  <Placemark>
+    <name>Enfield Lock End Link</name>
+    <description><![CDATA[]]></description>
+    <styleUrl>#style1</styleUrl>
+    <LineString>
+      <tessellate>1</tessellate>
+      <coordinates>
+        -0.028517,51.667929,0.000000
+        -0.028070,51.671089,0.000000
+        -0.028390,51.671101,0.000000
+        -0.028399,51.671014,0.000000
+      </coordinates>
+    </LineString>
+  </Placemark>
+</Document>
 </kml>

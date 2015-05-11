@@ -1,26 +1,34 @@
-<?xml version='1.0' encoding='UTF-8'?>
-<kml xmlns='http://www.opengis.net/kml/2.2'>
-	<Document>
-		<name>09 Start Link</name>
-		<description><![CDATA[]]></description>
-		<Folder>
-			<name>Untitled layer</name>
-			<Placemark>
-				<styleUrl>#line-FF0000-3</styleUrl>
-				<name>09 Start Link</name>
-				<ExtendedData>
-				</ExtendedData>
-				<LineString>
-					<tessellate>1</tessellate>
-					<coordinates>-0.478219,51.54652000000001,0.0 -0.478522,51.546577,0.0 -0.47963500000000003,51.546236,0.0 -0.48090900000000003,51.547775,0.0 -0.481501,51.548725,0.0 -0.4832620000000001,51.549721,0.0 -0.483333,51.549938,0.0 -0.483731,51.550179,0.0 -0.48455999999999994,51.550369,0.0 -0.4849300000000001,51.550514,0.0 -0.4846190000000001,51.550484,0.0 </coordinates>
-				</LineString>
-			</Placemark>
-		</Folder>
-		<Style id='line-FF0000-3'>
-			<LineStyle>
-				<color>ff0000FF</color>
-				<width>3</width>
-			</LineStyle>
-		</Style>
-	</Document>
+<?xml version="1.0" encoding="UTF-8"?>
+<kml xmlns="http://earth.google.com/kml/2.2">
+<Document>
+  <name>09 Start Link</name>
+  <description><![CDATA[]]></description>
+  <Style id="style1">
+    <LineStyle>
+      <color>99FF0000</color>
+      <width>5</width>
+    </LineStyle>
+  </Style>
+  <Placemark>
+    <name>Uxbridge Lock Start Link</name>
+    <description><![CDATA[]]></description>
+    <styleUrl>#style1</styleUrl>
+    <LineString>
+      <tessellate>1</tessellate>
+      <coordinates>
+        -0.478219,51.546520,0.000000
+        -0.478522,51.546577,0.000000
+        -0.479635,51.546236,0.000000
+        -0.480909,51.547775,0.000000
+        -0.481501,51.548725,0.000000
+        -0.483262,51.549721,0.000000
+        -0.483333,51.549938,0.000000
+        -0.483731,51.550179,0.000000
+        -0.484560,51.550369,0.000000
+        -0.484930,51.550514,0.000000
+        -0.484619,51.550484,0.000000
+      </coordinates>
+    </LineString>
+  </Placemark>
+</Document>
 </kml>

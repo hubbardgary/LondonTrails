@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <kml xmlns="http://earth.google.com/kml/2.2">
 <Document>
-  <name>Grove Park Link</name>
+  <name>03 Start Link</name>
   <description><![CDATA[]]></description>
   <Style id="style1">
     <LineStyle>
@@ -10,9 +10,8 @@
     </LineStyle>
   </Style>
   <Placemark>
-    <name>Grove Park Link</name>
-    <Snippet></Snippet>
-    <description><![CDATA[<div dir="ltr"></div>]]></description>
+    <name>Grove Park Start Link</name>
+    <description><![CDATA[]]></description>
     <styleUrl>#style1</styleUrl>
     <LineString>
       <tessellate>1</tessellate>

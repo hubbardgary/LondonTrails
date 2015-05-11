@@ -1,27 +1,25 @@
-<?xml version='1.0' encoding='UTF-8'?>
-<kml xmlns='http://www.opengis.net/kml/2.2'>
-	<Document>
-		<name>04 end link</name>
-		<description><![CDATA[]]></description>
-		<Folder>
-			<name>Untitled layer</name>
-			<Placemark>
-				<styleUrl>#line-FF0000-1</styleUrl>
-				<name>04 West Wickham Common to Hamsey Green</name>
-				<ExtendedData>
-				</ExtendedData>
-				<description><![CDATA[8.5 miles (13.5 km).Completed 14th March 2009.]]></description>
-				<LineString>
-					<tessellate>1</tessellate>
-					<coordinates>-0.0645372,51.3189817,0.0 -0.064113,51.318532,0.0 </coordinates>
-				</LineString>
-			</Placemark>
-		</Folder>
-		<Style id='line-FF0000-1'>
-			<LineStyle>
-				<color>ff0000FF</color>
-				<width>1</width>
-			</LineStyle>
-		</Style>
-	</Document>
+<?xml version="1.0" encoding="UTF-8"?>
+<kml xmlns="http://earth.google.com/kml/2.2">
+<Document>
+  <name>04 End Link</name>
+  <description><![CDATA[]]></description>
+  <Style id="style1">
+    <LineStyle>
+      <color>99FF0000</color>
+      <width>5</width>
+    </LineStyle>
+  </Style>
+  <Placemark>
+    <name>Hamsey Green End Link</name>
+    <description><![CDATA[]]></description>
+    <styleUrl>#style1</styleUrl>
+    <LineString>
+      <tessellate>1</tessellate>
+      <coordinates>
+        -0.064537,51.318982,0.000000
+        -0.064113,51.318532,0.000000
+      </coordinates>
+    </LineString>
+  </Placemark>
+</Document>
 </kml>

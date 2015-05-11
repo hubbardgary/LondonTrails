@@ -1,26 +1,26 @@
-<?xml version='1.0' encoding='UTF-8'?>
-<kml xmlns='http://www.opengis.net/kml/2.2'>
-	<Document>
-		<name>08 Start Link</name>
-		<description><![CDATA[]]></description>
-		<Folder>
-			<name>Untitled layer</name>
-			<Placemark>
-				<styleUrl>#line-FF0000-3</styleUrl>
-				<name>08 Start Link</name>
-				<ExtendedData>
-				</ExtendedData>
-				<LineString>
-					<tessellate>1</tessellate>
-					<coordinates>-0.42276700000000006,51.466724,0.0 -0.4226908,51.4667189,0.0 -0.420667,51.467311,0.0 </coordinates>
-				</LineString>
-			</Placemark>
-		</Folder>
-		<Style id='line-FF0000-3'>
-			<LineStyle>
-				<color>ff0000FF</color>
-				<width>3</width>
-			</LineStyle>
-		</Style>
-	</Document>
+<?xml version="1.0" encoding="UTF-8"?>
+<kml xmlns="http://earth.google.com/kml/2.2">
+<Document>
+  <name>08 Start Link</name>
+  <description><![CDATA[]]></description>
+  <Style id="style1">
+    <LineStyle>
+      <color>99FF0000</color>
+      <width>5</width>
+    </LineStyle>
+  </Style>
+  <Placemark>
+    <name>Donkey Wood Start Link</name>
+    <description><![CDATA[]]></description>
+    <styleUrl>#style1</styleUrl>
+    <LineString>
+      <tessellate>1</tessellate>
+      <coordinates>
+        -0.422767,51.466724,0.000000
+        -0.422691,51.466719,0.000000
+        -0.420667,51.467311,0.000000
+      </coordinates>
+    </LineString>
+  </Placemark>
+</Document>
 </kml>

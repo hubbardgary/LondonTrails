@@ -5,13 +5,13 @@
   <description><![CDATA[]]></description>
   <Style id="style1">
     <LineStyle>
-      <color>D90000FF</color>
-      <width>2</width>
+      <color>99FF0000</color>
+      <width>5</width>
     </LineStyle>
   </Style>
   <Placemark>
-    <name>06 Richmond End Link</name>
-    <description><![CDATA[<div dir="ltr"></div>]]></description>
+    <name>Richmond End Link</name>
+    <description><![CDATA[]]></description>
     <styleUrl>#style1</styleUrl>
     <LineString>
       <tessellate>1</tessellate>

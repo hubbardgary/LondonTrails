@@ -1,27 +1,30 @@
-<?xml version='1.0' encoding='UTF-8'?>
-<kml xmlns='http://www.opengis.net/kml/2.2'>
-	<Document>
-		<name>02 end link</name>
-		<description><![CDATA[]]></description>
-		<Folder>
-			<name>Untitled layer</name>
-			<Placemark>
-				<styleUrl>#line-FF0000-3</styleUrl>
-				<name>02 Old Bexley to Jubilee Park</name>
-				<ExtendedData>
-				</ExtendedData>
-				<description><![CDATA[7.5 miles (11.5 km).Completed 31st January 2009.]]></description>
-				<LineString>
-					<tessellate>1</tessellate>
-					<coordinates>0.06852,51.392967,0.0 0.0693461,51.3913596,0.0 0.0692978,51.3911199,0.0 0.0696786,51.3905824,0.0 0.0707268,51.390743,0.0 0.073262,51.38847400000001,0.0 0.0742301,51.3887514,0.0 </coordinates>
-				</LineString>
-			</Placemark>
-		</Folder>
-		<Style id='line-FF0000-3'>
-			<LineStyle>
-				<color>ff0000FF</color>
-				<width>3</width>
-			</LineStyle>
-		</Style>
-	</Document>
+<?xml version="1.0" encoding="UTF-8"?>
+<kml xmlns="http://earth.google.com/kml/2.2">
+<Document>
+  <name>02 End Link</name>
+  <description><![CDATA[]]></description>
+  <Style id="style1">
+    <LineStyle>
+      <color>99FF0000</color>
+      <width>5</width>
+    </LineStyle>
+  </Style>
+  <Placemark>
+    <name>Jubilee Park End Link</name>
+    <description><![CDATA[]]></description>
+    <styleUrl>#style1</styleUrl>
+    <LineString>
+      <tessellate>1</tessellate>
+      <coordinates>
+        0.068520,51.392967,0.000000
+        0.069346,51.391360,0.000000
+        0.069298,51.391120,0.000000
+        0.069679,51.390582,0.000000
+        0.070727,51.390743,0.000000
+        0.073262,51.388474,0.000000
+        0.074230,51.388751,0.000000
+      </coordinates>
+    </LineString>
+  </Placemark>
+</Document>
 </kml>

@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<kml xmlns="http://earth.google.com/kml/2.2">
+<Document>
+  <Placemark>
+    <name>Crown and Treaty pub</name>
+    <description><![CDATA[In 1644. during the Civil War, an attempt at a peace treaty was negotiated in Place House, which is now this aptly named pub.]]></description>
+    <styleUrl>#style1</styleUrl>
+    <Point>
+      <coordinates>-0.484042,51.549960,0.000000</coordinates>
+    </Point>
+  </Placemark>
+  <Placemark>
+    <name>Former William King Flour Mill</name>
+    <description><![CDATA[This site was used for producing flour for many years. It was bought by local farmer William King in the late 19th Century and the Kingsmill brand of bread is named after him. The site is now a residential development.]]></description>
+    <styleUrl>#style2</styleUrl>
+    <Point>
+      <coordinates>-0.484139,51.552426,0.000000</coordinates>
+    </Point>
+  </Placemark>
+  <Placemark>
+    <name>Denham Deep Lock</name>
+    <description><![CDATA[This lock's 3.5 metre drop makes it the deepest on the Grand Union Canal.]]></description>
+    <styleUrl>#style3</styleUrl>
+    <Point>
+      <coordinates>-0.482245,51.565393,0.000000</coordinates>
+    </Point>
+  </Placemark>
+  <Placemark>
+    <name>Copper Mill Lane</name>
+    <description><![CDATA[The mills that used to stand here started producing copper in the early 19th century. There is a rumour that the copper orb on the roof of St Paul's Cathedral came from here.]]></description>
+    <styleUrl>#style4</styleUrl>
+    <Point>
+      <coordinates>-0.499138,51.609855,0.000000</coordinates>
+    </Point>
+  </Placemark>
+  <Placemark>
+    <name>Ye Olde Greene Manne</name>
+    <description><![CDATA[This pub dates back to 1728 and was supposedly visited by Dick Turpin. He left the inn through the rear window to escape from the Bow Street Runners.]]></description>
+    <styleUrl>#style5</styleUrl>
+    <Point>
+      <coordinates>-0.445477,51.621187,0.000000</coordinates>
+    </Point>
+  </Placemark>
+  <Placemark>
+    <name>Coal Post</name>
+    <description><![CDATA[This white iron post, possibly hiding in the undergrowth, marks the boundary at which you had to pay tax on coal being carried into London.]]></description>
+    <styleUrl>#style6</styleUrl>
+    <Point>
+      <coordinates>-0.443696,51.619512,0.000000</coordinates>
+    </Point>
+  </Placemark>
+</Document>
+</kml>

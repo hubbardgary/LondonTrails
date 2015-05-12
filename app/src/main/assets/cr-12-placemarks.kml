@@ -3,7 +3,7 @@
 <Document>
   <Placemark>
     <name>Parkland Walk</name>
-    <description><![CDATA[<div dir="ltr">London's longest nature reserve, the Parkland Walk is a disused railway line that was in use between 1867 to 1970, connecting Finsbury Park to Edgware and Alexandra Palace. Plans to make it part of the Northern Line were interrupted by World War II and were never revisited.</div>]]></description>
+    <description><![CDATA[London's longest nature reserve, the Parkland Walk is a disused railway line that was in use between 1867 to 1970, connecting Finsbury Park to Edgware and Alexandra Palace. Plans to make it part of the Northern Line were interrupted by World War II and were never revisited.]]></description>
     <styleUrl>#style1</styleUrl>
     <Point>
       <coordinates>-0.1410198,51.5756693,0.0</coordinates>
@@ -11,7 +11,7 @@
   </Placemark>
   <Placemark>
     <name>Spriggen</name>
-    <description><![CDATA[<div dir="ltr">Near the abandoned platform of the old Crouch End station, as you pass under the bridge, look up to see a sculpture of a Spriggen - a mythical creature from Cornish folklore. The sculpture was created by Marilyn Collins.</div>]]></description>
+    <description><![CDATA[Near the abandoned platform of the old Crouch End station, as you pass under the bridge, look up to see a sculpture of a Spriggen - a mythical creature from Cornish folklore. The sculpture was created by Marilyn Collins.]]></description>
     <styleUrl>#style4</styleUrl>
     <Point>
       <coordinates>-0.1269999,51.5747492,0.0</coordinates>
@@ -19,7 +19,7 @@
   </Placemark>
   <Placemark>
     <name>Emirates Stadium</name>
-    <description><![CDATA[<div dir="ltr">As you cross the bridge between Finsbury Park and the Parkland Walk, Arsenal's Emirates Stadium (also known as Ashburton Grove) can be seen to the south. Arsenal have played home games here since 2006 when they moved from their Highbury stadium.</div>]]></description>
+    <description><![CDATA[As you cross the bridge between Finsbury Park and the Parkland Walk, Arsenal's Emirates Stadium (also known as Ashburton Grove) can be seen to the south. Arsenal have played home games here since 2006 when they moved from their Highbury stadium.]]></description>
     <styleUrl>#style6</styleUrl>
     <Point>
       <coordinates>-0.1084471,51.555128,0.0</coordinates>
@@ -27,7 +27,7 @@
   </Placemark>
   <Placemark>
     <name>Finsbury Park</name>
-    <description><![CDATA[<div dir="ltr">This 110 acre park was formally opened in 1869. It has played host to a number of high profile bands including Bob Dylan, Oasis, Stone Roses and Arctic Monkeys. Rage Against The Machine played a free gig here in June 2010 following the successful fan-led campaign to make their single, 'Killing In The Name' the 2009 Christmas number one. Unusually for England, the park also contains an American football pitch and a baseball diamond.</div>]]></description>
+    <description><![CDATA[This 110 acre park was formally opened in 1869. It has played host to a number of high profile bands including Bob Dylan, Oasis, Stone Roses and Arctic Monkeys. Rage Against The Machine played a free gig here in June 2010 following the successful fan-led campaign to make their single, 'Killing In The Name' the 2009 Christmas number one. Unusually for England, the park also contains an American football pitch and a baseball diamond.]]></description>
     <styleUrl>#style5</styleUrl>
     <Point>
       <coordinates>-0.1026535,51.5696813,0.0</coordinates>
@@ -35,7 +35,7 @@
   </Placemark>
   <Placemark>
     <name>New River</name>
-    <description><![CDATA[<div dir="ltr">Neither 'new' nor a 'river', this watercourse was opened in 1613 to supply drinking water to Londoners. It brings water 40 miles from Hertfordshire and was meticulously planned to ensure the route follows the natural descent of the land, thus being entirely enabled by gravity.</div>]]></description>
+    <description><![CDATA[Neither 'new' nor a 'river', this watercourse was opened in 1613 to supply drinking water to Londoners. It brings water 40 miles from Hertfordshire and was meticulously planned to ensure the route follows the natural descent of the land, thus being entirely enabled by gravity.]]></description>
     <styleUrl>#style5</styleUrl>
     <Point>
       <coordinates>-0.0971174,51.5736956,0.0</coordinates>
@@ -43,7 +43,7 @@
   </Placemark>
   <Placemark>
     <name>The Castle</name>
-    <description><![CDATA[<div dir="ltr">Originally a water pumping station, this impressive building is now an indoor climbing centre.</div>]]></description>
+    <description><![CDATA[Originally a water pumping station, this impressive building is now an indoor climbing centre.]]></description>
     <styleUrl>#style5</styleUrl>
     <Point>
       <coordinates>-0.0930619,51.5654298,0.0</coordinates>
@@ -51,7 +51,7 @@
   </Placemark>
   <Placemark>
     <name>Abney Park Cemetery</name>
-    <description><![CDATA[<div dir="ltr">This cemetery was opened in 1840 but was never consecrated. As a result, the 300,000 graves contained within include the resting places of people of many faiths. Burial rights ceased in 1978 and the cemetery is now a nature reserve.</div>]]></description>
+    <description><![CDATA[This cemetery was opened in 1840 but was never consecrated. As a result, the 300,000 graves contained within include the resting places of people of many faiths. Burial rights ceased in 1978 and the cemetery is now a nature reserve.]]></description>
     <styleUrl>#style5</styleUrl>
     <Point>
       <coordinates>-0.077548,51.5639459,0.0</coordinates>

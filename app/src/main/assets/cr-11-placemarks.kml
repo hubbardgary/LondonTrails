@@ -3,7 +3,7 @@
 <Document>
   <Placemark>
     <name>The Decoy</name>
-    <description><![CDATA[<div dir="ltr">This area of Brent Park is so named as it was once used to capture ducks. Nowadays the pond is often populated by ducks in no imminent danger.</div>]]></description>
+    <description><![CDATA[This area of Brent Park is so named as it was once used to capture ducks. Nowadays the pond is often populated by ducks in no imminent danger.]]></description>
     <styleUrl>#style1</styleUrl>
     <Point>
       <coordinates>-0.2110577,51.5854965,0.0</coordinates>
@@ -11,7 +11,7 @@
   </Placemark>
   <Placemark>
     <name>River junction</name>
-    <description><![CDATA[<div dir="ltr">This is the point where Dollis Brook and Mutton Brook merge with the River Brent. Dollis Brook rises at Moat Mount which you may have encountered on Section 16 of the London Loop.</div>]]></description>
+    <description><![CDATA[This is the point where Dollis Brook and Mutton Brook merge with the River Brent. Dollis Brook rises at Moat Mount which you may have encountered on Section 16 of the London Loop.]]></description>
     <styleUrl>#style4</styleUrl>
     <Point>
       <coordinates>-0.2111435,51.5872964,0.0</coordinates>
@@ -19,7 +19,7 @@
   </Placemark>
   <Placemark>
     <name>La Délivrance</name>
-    <description><![CDATA[<div dir="ltr">This statue of a naked lady holding aloft a sword was created by French sculptor Émile Guillaume to commemorate the victory of the Allied troops at the Battle of the Marne in September 1914.</div>]]></description>
+    <description><![CDATA[This statue of a naked lady holding aloft a sword was created by French sculptor Émile Guillaume to commemorate the victory of the Allied troops at the Battle of the Marne in September 1914.]]></description>
     <styleUrl>#style6</styleUrl>
     <Point>
       <coordinates>-0.1999748,51.5909759,0.0</coordinates>
@@ -27,7 +27,7 @@
   </Placemark>
   <Placemark>
     <name>Hampstead Garden Suburb</name>
-    <description><![CDATA[<div dir="ltr">This settlement was founded by Henrietta Barnet in 1906 and was intended to provide low-density housing with pleasant surroundings for an integrated community of people from all backgrounds. Residents of the area nowadays are almost exclusively occupied by the wealthy middle class.</div>]]></description>
+    <description><![CDATA[This settlement was founded by Henrietta Barnet in 1906 and was intended to provide low-density housing with pleasant surroundings for an integrated community of people from all backgrounds. Residents of the area nowadays are almost exclusively occupied by the wealthy middle class.]]></description>
     <styleUrl>#style5</styleUrl>
     <Point>
       <coordinates>-0.1865423,51.5856832,0.0</coordinates>
@@ -35,7 +35,7 @@
   </Placemark>
   <Placemark>
     <name>East Finchley Tube Station</name>
-    <description><![CDATA[<div dir="ltr">Perched above the ticket hall you will see The Archer, facing towards Central London as if he's just fired an arrow along the railway track. The statue is the work of Eric Aumonier.</div>]]></description>
+    <description><![CDATA[Perched above the ticket hall you will see The Archer, facing towards Central London as if he's just fired an arrow along the railway track. The statue is the work of Eric Aumonier.]]></description>
     <styleUrl>#style5</styleUrl>
     <Point>
       <coordinates>-0.1643658,51.5871564,0.0</coordinates>
@@ -43,7 +43,7 @@
   </Placemark>
   <Placemark>
     <name>Highgate Wood</name>
-    <description><![CDATA[<div dir="ltr">A 70 acre area of woodland, Highgate Wood was originally part of the ancient Forest of Middlesex which covered much of London, Hertfordshire and Essex.</div>]]></description>
+    <description><![CDATA[A 70 acre area of woodland, Highgate Wood was originally part of the ancient Forest of Middlesex which covered much of London, Hertfordshire and Essex.]]></description>
     <styleUrl>#style5</styleUrl>
     <Point>
       <coordinates>-0.1506436,51.5851965,0.0</coordinates>
@@ -51,7 +51,7 @@
   </Placemark>
   <Placemark>
     <name>Capital Ring Plaque</name>
-    <description><![CDATA[<div dir="ltr">Whilst strolling through the wood, you may glimpse an understated plaque commemorating the official opening of the Capital Ring on 21st September 2005.</div>]]></description>
+    <description><![CDATA[Whilst strolling through the wood, you may glimpse an understated plaque commemorating the official opening of the Capital Ring on 21st September 2005.]]></description>
     <styleUrl>#style5</styleUrl>
     <Point>
       <coordinates>-0.148809,51.5837833,0.0</coordinates>

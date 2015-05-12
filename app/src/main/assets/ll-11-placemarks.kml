@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<kml xmlns="http://earth.google.com/kml/2.2">
+<Document>
+  <Placemark>
+    <name>Scratchwood</name>
+    <description><![CDATA[This area of oak woodland and its neighbour, Moat Mount, were once part of the same shooting estate]]></description>
+    <styleUrl>#style1</styleUrl>
+    <Point>
+      <coordinates>-0.265989,51.640048,0.000000</coordinates>
+    </Point>
+  </Placemark>
+  <Placemark>
+    <name>A1 Crossing</name>
+    <description><![CDATA[The worst feature of the London Loop due to the amount of road walking required to cross it, the A1 is at least interesting in that, at 410 miles, its the longest numbered road in the UK. It connects London, the capital of England, with Edinburgh, the capital of Scotland. It was designated by the Ministry of Transport in 1921 and largely follows the route of the old Great North Road.]]></description>
+    <styleUrl>#style2</styleUrl>
+    <Point>
+      <coordinates>-0.254188,51.627741,0.000000</coordinates>
+    </Point>
+  </Placemark>
+  <Placemark>
+    <name>Underhill Stadium</name>
+    <description><![CDATA[Home of Barnet FC from 1907-2013, when the club (nicknamed 'The Bees') moved to their new Hive stadium in Canons Park. Underhill, with its capacity of 6,023, was also used by Arsenal reserves until 2012. Current tenants are the London Broncos rugby league team.]]></description>
+    <styleUrl>#style3</styleUrl>
+    <Point>
+      <coordinates>-0.191735,51.646219,0.000000</coordinates>
+    </Point>
+  </Placemark>
+  <Placemark>
+    <name>Old Red Lion</name>
+    <description><![CDATA[This pub lies on the route of the old Great North Road. Barnet Hill used to be very steep and the Red Lion sometimes provided travellers with two extra horses - a Hercules pair - to help heave their coaches up the hill. Barnet Hill was rebuilt in the 1820s and the gradient reduced.]]></description>
+    <styleUrl>#style4</styleUrl>
+    <Point>
+      <coordinates>-0.190670,51.647526,0.000000</coordinates>
+    </Point>
+  </Placemark>
+  <Placemark>
+    <name>Monken Hadley Common</name>
+    <description><![CDATA[Once a large royal hunting forest which sprawled to Potters Bar, occupied by 3,000 deer. Queen Elizabeth used to hunt here. All that is left today is the 240 acres that residents claimed for grazing in the late 1700s.]]></description>
+    <styleUrl>#style5</styleUrl>
+    <Point>
+      <coordinates>-0.191188,51.661402,0.000000</coordinates>
+    </Point>
+  </Placemark>
+  <Placemark>
+    <name>Beech Hill Lake</name>
+    <description><![CDATA[Created in 1880 by Charles Jack as a feature in the grounds of his Beech Hill House, this lake is still referred to by some as 'Jack's Lake'.]]></description>
+    <styleUrl>#style6</styleUrl>
+    <Point>
+      <coordinates>-0.163400,51.657902,0.000000</coordinates>
+    </Point>
+  </Placemark>
+</Document>
+</kml>

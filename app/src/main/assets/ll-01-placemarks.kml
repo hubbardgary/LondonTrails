@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<kml xmlns="http://earth.google.com/kml/2.2">
+<Document>
+  <Placemark>
+    <name>Pilgrim Ferry Memorial Plaque</name>
+    <description><![CDATA[This plaque commemorates the 800th anniversary of the founding of a ferry crossing between Rainham and Erith which operated from 1199 until 1854.]]></description>
+    <styleUrl>#style1</styleUrl>
+    <Point>
+      <coordinates>0.180631,51.481824,0.000000</coordinates>
+    </Point>
+  </Placemark>
+  <Placemark>
+    <name>Erith Pier</name>
+    <description><![CDATA[This is the longest pier on the Thames and was opened in 1957. Rail tracks used to run the length of the pier to aid unloading of cargo directly onto railway carts. The rail buffers can still be seen at the end of the pier.]]></description>
+    <styleUrl>#style2</styleUrl>
+    <Point>
+      <coordinates>0.183721,51.481824,0.000000</coordinates>
+    </Point>
+  </Placemark>
+  <Placemark>
+    <name>Queen Elizabeth II Bridge</name>
+    <description><![CDATA[The bridge you can see in the distance forms part of the Dartford Crossing (the other part being two tunnels). It carries the M25 across the Thames and at the time of its opening in 1991 had the longest cable-stayed span of any bridge in Europe.]]></description>
+    <styleUrl>#style3</styleUrl>
+    <Point>
+      <coordinates>0.258865,51.464970,0.000000</coordinates>
+    </Point>
+  </Placemark>
+  <Placemark>
+    <name>Dartford Creek Flood Barrier</name>
+    <description><![CDATA[Built as part of the Thames Barrier system in 1981, this barrier, consisting of two 160 tonne steel gates, provides flood protection for the homes and businesses in the Dartford and Crayford area.]]></description>
+    <styleUrl>#style4</styleUrl>
+    <Point>
+      <coordinates>0.216594,51.478242,0.000000</coordinates>
+    </Point>
+  </Placemark>
+  <Placemark>
+    <name>Hall Place</name>
+    <description><![CDATA[This Tudor mansion, built in the mid 1500s for the Lord Mayor of London, is open to the public for those wishing to enjoy its opulent interior and award winning gardens.]]></description>
+    <styleUrl>#style5</styleUrl>
+    <Point>
+      <coordinates>0.159275,51.448006,0.000000</coordinates>
+    </Point>
+  </Placemark>
+  <Placemark>
+    <name>Church of St Mary the Virgin</name>
+    <description><![CDATA[This picturesque church, with its unusual octagonal upper steeple, has been a place of worship for over 800 years. It probably succeeded an earlier Saxon church that appeared in the Domesday Book in 1086.]]></description>
+    <styleUrl>#style6</styleUrl>
+    <Point>
+      <coordinates>0.153632,51.440159,0.000000</coordinates>
+    </Point>
+  </Placemark>
+</Document>
+</kml>

@@ -3,7 +3,7 @@
 <Document>
   <Placemark>
     <name>Springfield Park</name>
-    <description><![CDATA[<div dir="ltr">Opened in 1905, this park was created from the grounds occupied by three private houses, one of which was converted into a cafe. It is home to Springfield marina which is usually populated by colourful narrow boats.</div>]]></description>
+    <description><![CDATA[Opened in 1905, this park was created from the grounds occupied by three private houses, one of which was converted into a cafe. It is home to Springfield marina which is usually populated by colourful narrow boats.]]></description>
     <styleUrl>#style1</styleUrl>
     <Point>
       <coordinates>-0.05905150000000001,51.5700814,0.0</coordinates>
@@ -11,7 +11,7 @@
   </Placemark>
   <Placemark>
     <name>A. V. Roe Commemorative Plaque</name>
-    <description><![CDATA[<div dir="ltr">A plaque under the railway arch commemorates A. V. Roe's work in the early 1900s building primitive aeroplanes in this area. Test flights would take place across the marshes.</div>]]></description>
+    <description><![CDATA[A plaque under the railway arch commemorates A. V. Roe's work in the early 1900s building primitive aeroplanes in this area. Test flights would take place across the marshes.]]></description>
     <styleUrl>#style4</styleUrl>
     <Point>
       <coordinates>-0.0510478,51.5679207,0.0</coordinates>
@@ -19,7 +19,7 @@
   </Placemark>
   <Placemark>
     <name>River Lea</name>
-    <description><![CDATA[<div dir="ltr">This inconsistently spelled river (sometimes Lee, sometimes Lea) marks the boundary between the London Boroughs of Hackney and Waltham Forest.</div>]]></description>
+    <description><![CDATA[This inconsistently spelled river (sometimes Lee, sometimes Lea) marks the boundary between the London Boroughs of Hackney and Waltham Forest.]]></description>
     <styleUrl>#style6</styleUrl>
     <Point>
       <coordinates>-0.0543737,51.5702681,0.0</coordinates>
@@ -27,7 +27,7 @@
   </Placemark>
   <Placemark>
     <name>Nature's Throne</name>
-    <description><![CDATA[<div dir="ltr">This artwork, nicknamed 'Ackney 'Enge, consists of several concrete blocks which are the remains of the foundations of a pumping station that used to stand here.</div>]]></description>
+    <description><![CDATA[This artwork, nicknamed 'Ackney 'Enge, consists of several concrete blocks which are the remains of the foundations of a pumping station that used to stand here.]]></description>
     <styleUrl>#style5</styleUrl>
     <Point>
       <coordinates>-0.043838,51.561274700000006,0.0</coordinates>
@@ -35,7 +35,7 @@
   </Placemark>
   <Placemark>
     <name>Hackney Marshes</name>
-    <description><![CDATA[<div dir="ltr">Hackney Marshes appears in the Guinness Book of Records for having the largest number of football pitches - over 80.</div>]]></description>
+    <description><![CDATA[Hackney Marshes appears in the Guinness Book of Records for having the largest number of football pitches - over 80.]]></description>
     <styleUrl>#style6</styleUrl>
     <Point>
       <coordinates>-0.0322294,51.5569291,0.0</coordinates>
@@ -43,7 +43,7 @@
   </Placemark>
   <Placemark>
     <name>Queen Elizabeth II Olympic Park</name>
-    <description><![CDATA[<div dir="ltr">The main site of the 2012 Olympics, this park is now open for the public to enjoy the meadows and venues that were created for the Olympics.</div>]]></description>
+    <description><![CDATA[The main site of the 2012 Olympics, this park is now open for the public to enjoy the meadows and venues that were created for the Olympics.]]></description>
     <styleUrl>#style5</styleUrl>
     <Point>
       <coordinates>-0.017488,51.5438797,0.0</coordinates>

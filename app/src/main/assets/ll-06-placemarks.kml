@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<kml xmlns="http://earth.google.com/kml/2.2">
+<Document>
+  <Placemark>
+    <name>Nonsuch Park</name>
+    <description><![CDATA[This green space is the last surviving part of the Little Park of Nonsuch, a deer hunting park created by Henry VIII.]]></description>
+    <styleUrl>#style1</styleUrl>
+    <Point>
+      <coordinates>-0.232687,51.356373,0.000000</coordinates>
+    </Point>
+  </Placemark>
+  <Placemark>
+    <name>Site of Nonsuch Palace</name>
+    <description><![CDATA[Built in 1538, this palace is thought to be one of Henry VIII's grandest palaces. It was demolished in 1682 by Charles II's mistress. She sold the materials to pay off gambling debts.]]></description>
+    <styleUrl>#style2</styleUrl>
+    <Point>
+      <coordinates>-0.238845,51.354692,0.000000</coordinates>
+    </Point>
+  </Placemark>
+  <Placemark>
+    <name>Ewell Castle school</name>
+    <description><![CDATA[Built in 1814 for Thomas Calverley on part of the Nonsuch Palace Estate, this mansion became a school in 1926.]]></description>
+    <styleUrl>#style3</styleUrl>
+    <Point>
+      <coordinates>-0.247176,51.350621,0.000000</coordinates>
+    </Point>
+  </Placemark>
+  <Placemark>
+    <name>The Watch House</name>
+    <description><![CDATA[Probably built around 1770, this small building accommodated the local hand-operated fire engine and has a section with barred windows that acted as the local jail.]]></description>
+    <styleUrl>#style4</styleUrl>
+    <Point>
+      <coordinates>-0.249125,51.349604,0.000000</coordinates>
+    </Point>
+  </Placemark>
+  <Placemark>
+    <name>Bourne Hall Gate</name>
+    <description><![CDATA[This gateway, surrounding wall, and water wheel are all the remains of the 1770s mansion that used to occupy the Bourne Hall grounds.]]></description>
+    <styleUrl>#style5</styleUrl>
+    <Point>
+      <coordinates>-0.250272,51.350326,0.000000</coordinates>
+    </Point>
+  </Placemark>
+  <Placemark>
+    <name>Bourne Hall</name>
+    <description><![CDATA[This 1970s flying saucer shaped building, surrounded by landscaped gardens, is a wedding, conference and events venue. It is also home to Ewell Library and a museum.]]></description>
+    <styleUrl>#style6</styleUrl>
+    <Point>
+      <coordinates>-0.252259,51.350469,0.000000</coordinates>
+    </Point>
+  </Placemark>
+  <Placemark>
+    <name>River Hogsmill Source</name>
+    <description><![CDATA[The Hogsmill rises here and flows to the Thames at Kingston. Historically it was used to drive flour and gunpowder mills.]]></description>
+    <styleUrl>#style7</styleUrl>
+    <Point>
+      <coordinates>-0.251224,51.351434,0.000000</coordinates>
+    </Point>
+  </Placemark>
+  <Placemark>
+    <name>Coronation Stone</name>
+    <description><![CDATA[Legend has it the coronation of seven Anglo-Saxon kings took place on this stone between 900 and 979 AD.]]></description>
+    <styleUrl>#style8</styleUrl>
+    <Point>
+      <coordinates>-0.306722,51.408410,0.000000</coordinates>
+    </Point>
+  </Placemark>
+</Document>
+</kml>

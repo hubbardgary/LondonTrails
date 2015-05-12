@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<kml xmlns="http://earth.google.com/kml/2.2">
+<Document>
+  <Placemark>
+    <name>Coney Hall Recreation Ground</name>
+    <description><![CDATA[This small park contains a Greenwich Meridian stone, marking 0 degrees longitude.]]></description>
+    <styleUrl>#style1</styleUrl>
+    <Point>
+      <coordinates>-0.002317,51.366971,0.000000</coordinates>
+    </Point>
+  </Placemark>
+  <Placemark>
+    <name>Threehalfpenny Wood</name>
+    <description><![CDATA[This area of woodland is home to a small boundary stone marking the boundary between Bromley and Croydon.]]></description>
+    <styleUrl>#style2</styleUrl>
+    <Point>
+      <coordinates>-0.019419,51.366127,0.000000</coordinates>
+    </Point>
+  </Placemark>
+  <Placemark>
+    <name>Addington Hills</name>
+    <description><![CDATA[London's largest surviving area of heathland, the viewing platform here offers spectacular views of London to the north.]]></description>
+    <styleUrl>#style3</styleUrl>
+    <Point>
+      <coordinates>-0.059288,51.363049,0.000000</coordinates>
+    </Point>
+  </Placemark>
+  <Placemark>
+    <name>Heathfield House</name>
+    <description><![CDATA[Built in the late 18th Century, this manor house is apparently an excellent example of a 'Ferme Ornée' (French for ornamental farm) due to the inclusion of a garden with a working farm. It is currently used as a training centre, and the farm leased to a local farmer.]]></description>
+    <styleUrl>#style4</styleUrl>
+    <Point>
+      <coordinates>-0.056538,51.358604,0.000000</coordinates>
+    </Point>
+  </Placemark>
+  <Placemark>
+    <name>The Vanguard Way</name>
+    <description><![CDATA[A short part of this section is shared with the Vanguard Way, a long distance walking route from Croydon to Newhaven on the south coast.]]></description>
+    <styleUrl>#style5</styleUrl>
+    <Point>
+      <coordinates>-0.059116,51.349988,0.000000</coordinates>
+    </Point>
+  </Placemark>
+</Document>
+</kml>

@@ -3,7 +3,7 @@
 <Document>
   <Placemark>
     <name>Upper Norwood Recreation Ground</name>
-    <description><![CDATA[<div dir="ltr">The River Effra, one of London's many subterranean rivers, flows through this large green space.</div>]]></description>
+    <description><![CDATA[The River Effra, one of London's many subterranean rivers, flows through this large green space.]]></description>
     <styleUrl>#style4</styleUrl>
     <Point>
       <coordinates>-0.091882,51.417374,0.000000</coordinates>
@@ -11,7 +11,7 @@
   </Placemark>
   <Placemark>
     <name>Norwood Grove</name>
-    <description><![CDATA[<div dir="ltr">This Grade II listed building was originally built in the 1840s by Arthur Anderson, the founder of Peninsular and Oriental Steam Navigation Company, more commonly known today as P&amp;O.</div>]]></description>
+    <description><![CDATA[This Grade II listed building was originally built in the 1840s by Arthur Anderson, the founder of Peninsular and Oriental Steam Navigation Company, more commonly known today as P&amp;O.]]></description>
     <styleUrl>#style2</styleUrl>
     <Point>
       <coordinates>-0.114198,51.419464,0.000000</coordinates>
@@ -19,7 +19,7 @@
   </Placemark>
   <Placemark>
     <name>Norwood Grove Recreation Ground</name>
-    <description><![CDATA[<div dir="ltr">This large park is home to a large colourful garden and offers excellent views of the North Downs.</div>]]></description>
+    <description><![CDATA[This large park is home to a large colourful garden and offers excellent views of the North Downs.]]></description>
     <styleUrl>#style5</styleUrl>
     <Point>
       <coordinates>-0.114563,51.418976,0.000000</coordinates>
@@ -27,7 +27,7 @@
   </Placemark>
   <Placemark>
     <name>The Rookery</name>
-    <description><![CDATA[<div dir="ltr">These impressive formal gardens used to be home to Streatham Spa which was renowned in the 18th Century for its healing properties.</div>]]></description>
+    <description><![CDATA[These impressive formal gardens used to be home to Streatham Spa which was renowned in the 18th Century for its healing properties.]]></description>
     <styleUrl>#style1</styleUrl>
     <Point>
       <coordinates>-0.117985,51.421345,0.000000</coordinates>
@@ -35,7 +35,7 @@
   </Placemark>
   <Placemark>
     <name>Streatham Common</name>
-    <description><![CDATA[<div dir="ltr">An ancient common land where residents had the right to graze their livestock and collect fuel. Nowadays it is home to a cafe, children's playground and paddling pool, and an area of woodland.</div>]]></description>
+    <description><![CDATA[An ancient common land where residents had the right to graze their livestock and collect fuel. Nowadays it is home to a cafe, children's playground and paddling pool, and an area of woodland.]]></description>
     <styleUrl>#style3</styleUrl>
     <Point>
       <coordinates>-0.122620,51.422394,0.000000</coordinates>

@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<kml xmlns="http://earth.google.com/kml/2.2">
+<Document>
+  <Placemark>
+    <name>Five Arches Bridge</name>
+    <description><![CDATA[A Grade II Listed Structure, this bridge was built in 1781 and originally linked the two former estates of North Cray Place and Foots Cray Place.]]></description>
+    <styleUrl>>#style1</styleUrl>
+    <Point>
+      <coordinates>0.130661,51.426568,0.000000</coordinates>
+    </Point>
+  </Placemark>
+  <Placemark>
+    <name>Former home of Cray Wanderers FC</name>
+    <description><![CDATA[Cray Wanderers is one of the oldest existing football clubs in the world. They played here from 1973 until 1998, when they were forced to move due to the Kent league insisting all grounds had floodlights which they were not allowed to install.]]></description>
+    <styleUrl>>#style2</styleUrl>
+    <Point>
+      <coordinates>0.109879,51.419687,0.000000</coordinates>
+    </Point>
+  </Placemark>
+  <Placemark>
+    <name>Sidcup Place</name>
+    <description><![CDATA[Originally built in 1743 as a stately home, Sidcup Place was subsequently used as a boarding school, council offices, and is currently a pub.]]></description>
+    <styleUrl>>#style3</styleUrl>
+    <Point>
+      <coordinates>0.101425,51.421858,0.000000</coordinates>
+    </Point>
+  </Placemark>
+  <Placemark>
+    <name>Scadbury Manor</name>
+    <description><![CDATA[Ruins of an unusual moated manor house which was originally the home to the De Scathebury family in the 1300s. The most obvious feature today is the giant fireplace rising up from the centre of the foundations which dates from around 1930.]]></description>
+    <styleUrl>>#style4</styleUrl>
+    <Point>
+      <coordinates>0.096753,51.410826,0.000000</coordinates>
+    </Point>
+  </Placemark>
+  <Placemark>
+    <name>Willett Memorial</name>
+    <description><![CDATA[This sundial is a memorial to William Willet who campaigned for the introduction of Daylight Saving time, which was finally introduced in 1916, the year after he died. The inscription 'Horas non numero nisi aestivas' translates to 'I only tell the summer hours'. Willet is the great great grandfather of Coldplay singer Chris Martin, whose catalogue of songs include Clocks and Daylight.]]></description>
+    <styleUrl>>#style5</styleUrl>
+    <Point>
+      <coordinates>0.083339,51.403274,0.000000</coordinates>
+    </Point>
+  </Placemark>
+  <Placemark>
+    <name>Edlmann Memorial</name>
+    <description><![CDATA[This stone commemorates Francis Edlmann's purchase of a large part of the Hawkwood estate, which prevented the area being developed and thus saving a large area of woodland.]]></description>
+    <styleUrl>>#style6</styleUrl>
+    <Point>
+      <coordinates>0.080533,51.398051,0.000000</coordinates>
+    </Point>
+  </Placemark>
+</Document>
+</kml>

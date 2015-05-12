@@ -3,7 +3,7 @@
 <Document>
   <Placemark>
     <name>Eltham Palace</name>
-    <description><![CDATA[<div dir="ltr">Originally a royal countryside residence, Eltham Palace is now the site of an art deco mansion built by the Courtauld family in the 1930s. It is also home of London's oldest working moat-crossing bridge.</div>]]></description>
+    <description><![CDATA[Originally a royal countryside residence, Eltham Palace is now the site of an art deco mansion built by the Courtauld family in the 1930s. It is also home of London's oldest working moat-crossing bridge.]]></description>
     <styleUrl>#style1</styleUrl>
     <Point>
       <coordinates>0.048108,51.447247,0.000000</coordinates>
@@ -11,7 +11,7 @@
   </Placemark>
   <Placemark>
     <name>King John&#39;s Walk</name>
-    <description><![CDATA[<div dir="ltr">There are fantastic views towards Central London here.</div>]]></description>
+    <description><![CDATA[There are fantastic views towards Central London here.]]></description>
     <styleUrl>#style3</styleUrl>
     <Point>
       <coordinates>0.045834,51.446377,0.000000</coordinates>
@@ -19,7 +19,7 @@
   </Placemark>
   <Placemark>
     <name>Former Residence of W. G. Grace</name>
-    <description><![CDATA[<div dir="ltr">As indicated by the blue plaque. The house is now a care home for the elderly.</div>]]></description>
+    <description><![CDATA[As indicated by the blue plaque. The house is now a care home for the elderly.]]></description>
     <styleUrl>#style2</styleUrl>
     <Point>
       <coordinates>0.033273,51.440262,0.000000</coordinates>
@@ -27,7 +27,7 @@
   </Placemark>
   <Placemark>
     <name>Conduit Head</name>
-    <description><![CDATA[<div dir="ltr">This unusual crumbling structure was once part of complicated system built in the early 1500s to supply water to Eltham Palace.</div>]]></description>
+    <description><![CDATA[This unusual crumbling structure was once part of complicated system built in the early 1500s to supply water to Eltham Palace.]]></description>
     <styleUrl>#style4</styleUrl>
     <Point>
       <coordinates>0.065123,51.448647,0.000000</coordinates>

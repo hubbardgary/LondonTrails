@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<kml xmlns="http://earth.google.com/kml/2.2">
+<Document>
+  <Placemark>
+    <name>Oxhey Woods</name>
+    <description><![CDATA[Some areas of this 97 hectare nature reserve date back to the last Ice Age, and was probably once part of the vast area of woodland between the River Colne and the River Thames.]]></description>
+    <styleUrl>#style1</styleUrl>
+    <Point>
+      <coordinates>-0.406537,51.624997,0.000000</coordinates>
+    </Point>
+  </Placemark>
+  <Placemark>
+    <name>Grim's Dyke Hotel</name>
+    <description><![CDATA[Built for Sir William Gilbert by the architect Norman Shaw in 1872, this Grade II listed building is now a hotel.]]></description>
+    <styleUrl>#style2</styleUrl>
+    <Point>
+      <coordinates>-0.352045,51.623186,0.000000</coordinates>
+    </Point>
+  </Placemark>
+  <Placemark>
+    <name>Grimsdyke Lake</name>
+    <description><![CDATA[Once part of the ornamental gardens owned by William Gilbert from Gilbert and Sullivan. William Gilbert died here in 1911 while attempting to save a drowning girl, after which his wife had the lake drained.]]></description>
+    <styleUrl>#style3</styleUrl>
+    <Point>
+      <coordinates>-0.354899,51.622773,0.000000</coordinates>
+    </Point>
+  </Placemark>
+  <Placemark>
+    <name>Bentley Priory</name>
+    <description><![CDATA[The mansion beyond the fence to the north was the headquarters of Fighter Command during World War II and as such the Battle of Britain was orchestrated from here. The site is no longer an RAF base with the priory now home to the Battle of Britain museum and residential flats.]]></description>
+    <styleUrl>#style4</styleUrl>
+    <Point>
+      <coordinates>-0.335491,51.624072,0.000000</coordinates>
+    </Point>
+  </Placemark>
+  <Placemark>
+    <name>M1 Motorway</name>
+    <description><![CDATA[One of the main escape routes for cars from the capital, the M1 was the first road to be built to motorway standard in the UK. It originally opened in 1959, and has since been extended further south into London and north into Leeds - 193 miles in total.]]></description>
+    <styleUrl>#style5</styleUrl>
+    <Point>
+      <coordinates>-0.322702,51.642484,0.000000</coordinates>
+    </Point>
+  </Placemark>
+  <Placemark>
+    <name>Aldenham Reservoir</name>
+    <description><![CDATA[This reservoir was built by French prisoners of war in 1795 to allay concerns of mill owners that the Grand Junction Canal would affect river levels, thereby reducing their trade.]]></description>
+    <styleUrl>#style6</styleUrl>
+    <Point>
+      <coordinates>-0.311480,51.646239,0.000000</coordinates>
+    </Point>
+  </Placemark>
+</Document>
+</kml>

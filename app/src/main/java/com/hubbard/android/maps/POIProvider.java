@@ -69,8 +69,7 @@ class POIHandler extends DefaultHandler {
 			bName = false;
 		}
 		if(bDescription) {
-			String sTemp = new String(ch, start, length);
-			currentPOI.snippet = sTemp.substring(sTemp.indexOf('>') + 1, sTemp.lastIndexOf('<'));
+			currentPOI.snippet = new String(ch, start, length);
 			bDescription = false;
 		}
 		if(bCoordinates) {

@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<kml xmlns="http://earth.google.com/kml/2.2">
+<Document>
+  <Placemark>
+    <name>Jubilee Country Park</name>
+    <description><![CDATA[This park was purchased by Bromley Council to celebrate the Silver Jubilee of Queen Elizabeth II in 1977. It opened to the public in 1981.]]></description>
+    <styleUrl>#style1</styleUrl>
+    <Point>
+      <coordinates>0.066240,51.392043,0.000000</coordinates>
+    </Point>
+  </Placemark>
+  <Placemark>
+    <name>Farnborough village</name>
+    <description><![CDATA[This relatively small settlement flourished in the 16th Century as it lies on the old coach route from London to Hastings.]]></description>
+    <styleUrl>#style2</styleUrl>
+    <Point>
+      <coordinates>0.071240,51.359314,0.000000</coordinates>
+    </Point>
+  </Placemark>
+  <Placemark>
+    <name>High Elms Country Park</name>
+    <description><![CDATA[This park spans over 400 acres of open space and woodland. Unfortunately 150 of those acres are taken up by a golf course.]]></description>
+    <styleUrl>#style3</styleUrl>
+    <Point>
+      <coordinates>0.074265,51.352279,0.000000</coordinates>
+    </Point>
+  </Placemark>
+  <Placemark>
+    <name>Down House</name>
+    <description><![CDATA[A short detour from the main Loop route, this house was home to Sir Charles Darwin from 1842 until he died in 1882. Down House is open to the public.]]></description>
+    <styleUrl>#style4</styleUrl>
+    <Point>
+      <coordinates>0.053483,51.331443,0.000000</coordinates>
+    </Point>
+  </Placemark>
+  <Placemark>
+    <name>Biggin Hill Airport</name>
+    <description><![CDATA[Best known for the role it played during the Battle of Britain in World War II when it served as one of the main air bases protecting London from enemy bombers.]]></description>
+    <styleUrl>#style5</styleUrl>
+    <Point>
+      <coordinates>0.029247,51.332113,0.000000</coordinates>
+    </Point>
+  </Placemark>
+  <Placemark>
+    <name>Holwood House</name>
+    <description><![CDATA[This vast mansion was originally built in the 18th Century and was soon extended by Sir John Soane in the 1790s while then prmie minister William Pitt the Younger lived there. At time of writing, it is on the market with an asking price of £12,000,000.]]></description>
+    <styleUrl>#style6</styleUrl>
+    <Point>
+      <coordinates>0.041220,51.353130,0.000000</coordinates>
+    </Point>
+  </Placemark>
+  <Placemark>
+    <name>Wilberforce Memorial</name>
+    <description><![CDATA[This oak tree and bench commemorate an influential conversation between William Wilberforce and then prime minister William Pitt the Younger in which he explained his intention to campaign for the abolition of the slave trade.]]></description>
+    <styleUrl>#style7</styleUrl>
+    <Point>
+      <coordinates>0.037326,51.350804,0.000000</coordinates>
+    </Point>
+  </Placemark>
+  <Placemark>
+    <name>Caesar's Well</name>
+    <description><![CDATA[This is the source of the Ravensbourne and flows into Keston Ponds, which were built in the 19th Century, probably to provide a water supply to nearby Holwood House.]]></description>
+    <styleUrl>#style8</styleUrl>
+    <Point>
+      <coordinates>0.037363,51.357765,0.000000</coordinates>
+    </Point>
+  </Placemark>
+</Document>
+</kml>

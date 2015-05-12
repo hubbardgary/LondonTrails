@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<kml xmlns="http://earth.google.com/kml/2.2">
+<Document>
+  <Placemark>
+    <name>Trent Country Park</name>
+    <description><![CDATA[Dating back to the fourteenth century, Trent Park was once part of Enfield Chase, a large royal hunting ground. It was opened as a country park in 1973 and covers 320 hectares. The manor house within the park is now part of Middlesex University.]]></description>
+    <styleUrl>#style1</styleUrl>
+    <Point>
+      <coordinates>-0.142136,51.657542,0.000000</coordinates>
+    </Point>
+  </Placemark>
+  <Placemark>
+    <name>Camlet Moat</name>
+    <description><![CDATA[Some say that the name of this small moated island and Scheduled Ancient Monument has been abbreviated over the years from 'Camelot'. Excavations in the 1920s revealed stone foundations of a large building and oak beams thought to be from a drawbridge, suggesting this was once an historic stronghold.]]></description>
+    <styleUrl>#style2</styleUrl>
+    <Point>
+      <coordinates>-0.137951,51.667977,0.000000</coordinates>
+    </Point>
+  </Placemark>
+  <Placemark>
+    <name>Trent Park obelisk</name>
+    <description><![CDATA[This tall obelisk was constructed in 1702 and appeared in a 1984 episode of Doctor Who.]]></description>
+    <styleUrl>#style3</styleUrl>
+    <Point>
+      <coordinates>-0.142554,51.666540,0.000000</coordinates>
+    </Point>
+  </Placemark>
+  <Placemark>
+    <name>Turkey Brook </name>
+    <description><![CDATA[This stream rises near Potters Bar and follows much of the route of the London Loop between here and the River Lea.]]></description>
+    <styleUrl>#style4</styleUrl>
+    <Point>
+      <coordinates>-0.105996,51.672136,0.000000</coordinates>
+    </Point>
+  </Placemark>
+  <Placemark>
+    <name>Hilly Fields Park</name>
+    <description><![CDATA[Enfield Urban District Council opened this park in 1911 having bought the land from a local farmer. The bandstand was built in l921 but fell into disrepair until it was restored in 2001]]></description>
+    <styleUrl>#style5</styleUrl>
+    <Point>
+      <coordinates>-0.088277,51.668955,0.000000</coordinates>
+    </Point>
+  </Placemark>
+  <Placemark>
+    <name>Forty Hall</name>
+    <description><![CDATA[This Grade 1 listed Jacobean Manor House was originally built in the 1630s. It now houses a museum charting the history of the house and the area.]]></description>
+    <styleUrl>#style6</styleUrl>
+    <Point>
+      <coordinates>-0.068836,51.670193,0.000000</coordinates>
+    </Point>
+  </Placemark>
+</Document>
+</kml>

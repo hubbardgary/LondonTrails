@@ -3,7 +3,7 @@
 <Document>
   <Placemark>
     <name>All England Lawn Tennis and Croquet Club</name>
-    <description><![CDATA[<div dir="ltr">This large private tennis complex is best known for hosting the Wimbledon Tennis Championships each summer.</div>]]></description>
+    <description><![CDATA[This large private tennis complex is best known for hosting the Wimbledon Tennis Championships each summer.]]></description>
     <styleUrl>#style2</styleUrl>
     <Point>
       <coordinates>-0.213836,51.435024,0.000000</coordinates>
@@ -11,7 +11,7 @@
   </Placemark>
   <Placemark>
     <name>Wimbledon Windmill</name>
-    <description><![CDATA[<div dir="ltr">The last remaining hollow post flour mill in the <br>country, Wimbledon Windmill was built in 1817. Today it houses a museum charting the history of the windmill.</div>]]></description>
+    <description><![CDATA[The last remaining hollow post flour mill in the <br>country, Wimbledon Windmill was built in 1817. Today it houses a museum charting the history of the windmill.]]></description>
     <styleUrl>#style1</styleUrl>
     <Point>
       <coordinates>-0.231619,51.437675,0.000000</coordinates>
@@ -19,7 +19,7 @@
   </Placemark>
   <Placemark>
     <name>Richmond Common</name>
-    <description><![CDATA[<div dir="ltr">Richmond Common is the largest green space in London, spanning 2500 acres. It was created by Charles I in 1634 as a deer park. Today about 630 red and fallow deer roam freely in the park.</div>]]></description>
+    <description><![CDATA[Richmond Common is the largest green space in London, spanning 2500 acres. It was created by Charles I in 1634 as a deer park. Today about 630 red and fallow deer roam freely in the park.]]></description>
     <styleUrl>#style8</styleUrl>
     <Point>
       <coordinates>-0.257707,51.436943,0.000000</coordinates>
@@ -27,7 +27,7 @@
   </Placemark>
   <Placemark>
     <name>King Henry's Mound</name>
-    <description><![CDATA[<div dir="ltr">Named after King Henry VIII, this was thought to be the spot at which he observed the signal marking the execution of Anne Boleyn, thus allowing him to marry Jane Seymour. There are now protected views toward St. Paul's Cathedral from here.</div>]]></description>
+    <description><![CDATA[Named after King Henry VIII, this was thought to be the spot at which he observed the signal marking the execution of Anne Boleyn, thus allowing him to marry Jane Seymour. There are now protected views toward St. Paul's Cathedral from here.]]></description>
     <styleUrl>#style6</styleUrl>
     <Point>
       <coordinates>-0.294818,51.444920,0.000000</coordinates>
@@ -35,7 +35,7 @@
   </Placemark>
   <Placemark>
     <name>Pembroke Lodge</name>
-    <description><![CDATA[<div dir="ltr">In 1847 this Grade II listed Georgian mansion was the home of then Prime Minister, Lord John Russell. It is now a restaurant.</div>]]></description>
+    <description><![CDATA[In 1847 this Grade II listed Georgian mansion was the home of then Prime Minister, Lord John Russell. It is now a restaurant.]]></description>
     <styleUrl>#style7</styleUrl>
     <Point>
       <coordinates>-0.294442,51.442608,0.000000</coordinates>
@@ -43,7 +43,7 @@
   </Placemark>
   <Placemark>
     <name>White Lodge</name>
-    <description><![CDATA[<div dir="ltr">Originally a hunting lodge built for King Charles II in 1730, this lodge is now home to the Royal Ballet School. It also featured in the film Billy Elliot.</div>]]></description>
+    <description><![CDATA[Originally a hunting lodge built for King Charles II in 1730, this lodge is now home to the Royal Ballet School. It also featured in the film Billy Elliot.]]></description>
     <styleUrl>#style4</styleUrl>
     <Point>
       <coordinates>-0.264916,51.445183,0.000000</coordinates>
@@ -51,7 +51,7 @@
   </Placemark>
   <Placemark>
     <name>Thames Path National Trail</name>
-    <description><![CDATA[<div dir="ltr">This stretch of the Capital Ring uses the route of the Thames Path National Trail which follows the River Thames from its source near Kemble in Gloucestershire to the Thames Barrier.</div>]]></description>
+    <description><![CDATA[This stretch of the Capital Ring uses the route of the Thames Path National Trail which follows the River Thames from its source near Kemble in Gloucestershire to the Thames Barrier.]]></description>
     <styleUrl>#style3</styleUrl>
     <Point>
       <coordinates>-0.302875,51.454620,0.000000</coordinates>
@@ -59,7 +59,7 @@
   </Placemark>
   <Placemark>
     <name>Eel Pie Island</name>
-    <description><![CDATA[<div dir="ltr">A short distance from the route taken by the Capital Ring, this private is home to about 120 inhabitants as well as some boathouses and art studios. It is only open to the public a couple of weekends a year. It was previously the site of Eel Pie Island Hotel which hosted ballroom dancing in the 1920s and 1930s, before becoming a popular music venue in the 1960s hosting big names like The Who, Pink Floyd and The Rolling Stones. The hotel burned down in 1971.</div>]]></description>
+    <description><![CDATA[A short distance from the route taken by the Capital Ring, this private is home to about 120 inhabitants as well as some boathouses and art studios. It is only open to the public a couple of weekends a year. It was previously the site of Eel Pie Island Hotel which hosted ballroom dancing in the 1920s and 1930s, before becoming a popular music venue in the 1960s hosting big names like The Who, Pink Floyd and The Rolling Stones. The hotel burned down in 1971.]]></description>
     <styleUrl>#style5</styleUrl>
     <Point>
       <coordinates>-0.324697,51.445396,0.000000</coordinates>

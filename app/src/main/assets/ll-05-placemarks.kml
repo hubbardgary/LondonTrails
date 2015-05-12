@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<kml xmlns="http://earth.google.com/kml/2.2">
+<Document>
+  <Placemark>
+    <name>Riddlesdown Quarry</name>
+    <description><![CDATA[This lime and chalk is about 200 years old and was in use until 1967.]]></description>
+    <styleUrl>#style1</styleUrl>
+    <Point>
+      <coordinates>-0.082741,51.318503,0.000000</coordinates>
+    </Point>
+  </Placemark>
+  <Placemark>
+    <name>Kenley Aerodrome</name>
+    <description><![CDATA[Formerly RAF Kenley, this airfield was one of the three main fighter stations protecting London during the Battle of Britain. Some of the blast pen structures that protected spitfires from bomb damage are still present, alongwith a touching memorial to the personnel who served here.]]></description>
+    <styleUrl>#style2</styleUrl>
+    <Point>
+      <coordinates>-0.099971,51.303132,0.000000</coordinates>
+    </Point>
+  </Placemark>
+  <Placemark>
+    <name>Kenley Observatory</name>
+    <description><![CDATA[This small observatory is currently used by Croydon Astronomical Society. It is open to the public on certain evenings throughout the year.]]></description>
+    <styleUrl>#style3</styleUrl>
+    <Point>
+      <coordinates>-0.103962,51.304661,0.000000</coordinates>
+    </Point>
+  </Placemark>
+  <Placemark>
+    <name>Happy Valley Park</name>
+    <description><![CDATA[The aptly named Happy Valley joins Farthing Downs and Coulsdon Common. With its beautiful rolling hills, it's hard to believe that Croydon is just a couple of miles to the north.]]></description>
+    <styleUrl>#style4</styleUrl>
+    <Point>
+      <coordinates>-0.124283,51.295337,0.000000</coordinates>
+    </Point>
+  </Placemark>
+  <Placemark>
+    <name>Cane Hill Water Tower</name>
+    <description><![CDATA[The tall building in the distance is the water tower of the former Cane Hill Psychiatric Hospital. Most of the other hospital buildings have been demolished and the site may soon be redeveloped into a housing estate in a similar way to nearby Netherne Psychiatric Hospital.]]></description>
+    <styleUrl>#style5</styleUrl>
+    <Point>
+      <coordinates>-0.148476,51.313829,0.000000</coordinates>
+    </Point>
+  </Placemark>
+  <Placemark>
+    <name>Mayfield Lavender Fields</name>
+    <description><![CDATA[This 25 acre field is a stunning site in summer months when the lavender is in bloom. In the 19th Century, Surrey was renowned for its lavender and was a significant supplier to the global perfume industry.]]></description>
+    <styleUrl>#style6</styleUrl>
+    <Point>
+      <coordinates>-0.170846,51.333226,0.000000</coordinates>
+    </Point>
+  </Placemark>
+  <Placemark>
+    <name>HMP Highdown</name>
+    <description><![CDATA[This prison was built in the 1990s on the previous site of Banstead Lunatic Asylum. In November 2010 the prison football team played a friendly match against Wycombe Wanderers. They lost 8-0.]]></description>
+    <styleUrl>#style7</styleUrl>
+    <Point>
+      <coordinates>-0.189815,51.335224,0.000000</coordinates>
+    </Point>
+  </Placemark>
+</Document>
+</kml>

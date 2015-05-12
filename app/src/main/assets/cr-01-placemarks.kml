@@ -3,7 +3,7 @@
 <Document>
   <Placemark>
     <name>Woolwich Foot Tunnel (south entrance)</name>
-    <description><![CDATA[<div dir="ltr">The Capital Ring's official start and end point, the Woolwich Foot Tunnel was first opened on 26th October 1912, initially to provide a means for dockers to commute without relying on the Woolwich ferry.</div>]]></description>
+    <description><![CDATA[The Capital Ring's official start and end point, the Woolwich Foot Tunnel was first opened on 26th October 1912, initially to provide a means for dockers to commute without relying on the Woolwich ferry.]]></description>
     <styleUrl>#style6</styleUrl>
     <Point>
       <coordinates>0.062836,51.494324,0.000000</coordinates>
@@ -11,7 +11,7 @@
   </Placemark>
   <Placemark>
     <name>Thames Barrier</name>
-    <description><![CDATA[<div dir="ltr">The Thames Barrier is one of the largest movable flood barriers in the world, and was opened in 1982. It protects central London from high tides moving in from the North Sea.</div>]]></description>
+    <description><![CDATA[The Thames Barrier is one of the largest movable flood barriers in the world, and was opened in 1982. It protects central London from high tides moving in from the North Sea.]]></description>
     <styleUrl>#style1</styleUrl>
     <Point>
       <coordinates>0.037004,51.496849,0.000000</coordinates>
@@ -19,7 +19,7 @@
   </Placemark>
   <Placemark>
     <name>The Valley</name>
-    <description><![CDATA[<div dir="ltr">Charlton Athletic Football Club have played in the modern stadium here since 1992.</div>]]></description>
+    <description><![CDATA[Charlton Athletic Football Club have played in the modern stadium here since 1992.]]></description>
     <styleUrl>#style2</styleUrl>
     <Point>
       <coordinates>0.036650,51.486515,0.000000</coordinates>
@@ -27,7 +27,7 @@
   </Placemark>
   <Placemark>
     <name>Charlton Park</name>
-    <description><![CDATA[<div dir="ltr">Originally part of the Charlton House estate, which also included the nearby Maryon, Maryon Wilson, and Hornfair parks. The Jacobean period Charlton House is now a community centre and library.</div>]]></description>
+    <description><![CDATA[Originally part of the Charlton House estate, which also included the nearby Maryon, Maryon Wilson, and Hornfair parks. The Jacobean period Charlton House is now a community centre and library.]]></description>
     <styleUrl>#style5</styleUrl>
     <Point>
       <coordinates>0.041692,51.480701,0.000000</coordinates>
@@ -35,7 +35,7 @@
   </Placemark>
   <Placemark>
     <name>Woolwich Common</name>
-    <description><![CDATA[<div dir="ltr">The Royal Artillery Barracks to the north of the Common was the location of the temporary structure hosting shooting events during the 2012 Summer Olympics.</div>]]></description>
+    <description><![CDATA[The Royal Artillery Barracks to the north of the Common was the location of the temporary structure hosting shooting events during the 2012 Summer Olympics.]]></description>
     <styleUrl>#style7</styleUrl>
     <Point>
       <coordinates>0.052056,51.475437,0.000000</coordinates>
@@ -43,7 +43,7 @@
   </Placemark>
   <Placemark>
     <name>Severndroog Castle</name>
-    <description><![CDATA[<div dir="ltr">Nestled on the highest point of the Capital Ring, this intriguing folly was built in 1784 as a memorial for Commodore William James who captured the fort of Suvarnadurg in India in 1755.</div>]]></description>
+    <description><![CDATA[Nestled on the highest point of the Capital Ring, this intriguing folly was built in 1784 as a memorial for Commodore William James who captured the fort of Suvarnadurg in India in 1755.]]></description>
     <styleUrl>#style3</styleUrl>
     <Point>
       <coordinates>0.060022,51.466595,0.000000</coordinates>
@@ -51,7 +51,7 @@
   </Placemark>
   <Placemark>
     <name>Oxleas Meadows</name>
-    <description><![CDATA[<div dir="ltr">A conveniently placed cafe and toilet allows you to enjoy the extensive views of the capital at your leisure.</div>]]></description>
+    <description><![CDATA[A conveniently placed cafe and toilet allows you to enjoy the extensive views of the capital at your leisure.]]></description>
     <styleUrl>#style4</styleUrl>
     <Point>
       <coordinates>0.069737,51.466393,0.000000</coordinates>

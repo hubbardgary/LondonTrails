@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<kml xmlns="http://earth.google.com/kml/2.2">
+<Document>
+  <Placemark>
+    <name>Heathrow flight path</name>
+    <description><![CDATA[Expect a noisy walk through here as a relentless stream of low flying aircraft approach Heathrow Airport.]]></description>
+    <styleUrl>#style1</styleUrl>
+    <Point>
+      <coordinates>-0.413800,51.476017,0.000000</coordinates>
+    </Point>
+  </Placemark>
+  <Placemark>
+    <name>Cranford Park</name>
+    <description><![CDATA[An old manorial estate, the main house was demolished in 1945, but the ice house and stable block remain, as does the Grade I listed church of St Dunstans.]]></description>
+    <styleUrl>#style2</styleUrl>
+    <Point>
+      <coordinates>-0.415013,51.491571,0.000000</coordinates>
+    </Point>
+  </Placemark>
+  <Placemark>
+    <name>Grand Union Canal</name>
+    <description><![CDATA[This waterway opened in 1805 and joins the Thames at Brentford (see Capital Ring section 7) and runs up to Birmingham in the opposite direction.]]></description>
+    <styleUrl>#style3</styleUrl>
+    <Point>
+      <coordinates>-0.409364,51.500462,0.000000</coordinates>
+    </Point>
+  </Placemark>
+  <Placemark>
+    <name>Coffee Factory</name>
+    <description><![CDATA[The Nestle Coffee Factory is responsible for burnt coffee smell along this stretch. The factory opened in 1938 after Nestle produced the world's first instant coffee.]]></description>
+    <styleUrl>#style4</styleUrl>
+    <Point>
+      <coordinates>-0.414627,51.501550,0.000000</coordinates>
+    </Point>
+  </Placemark>
+  <Placemark>
+    <name>Canal Mileposts</name>
+    <description><![CDATA[GJC stands for Grand Junction Canal which was the original name for the 93 mile stretch that links Brentford to Braunston in Northampton]]></description>
+    <styleUrl>#style5</styleUrl>
+    <Point>
+      <coordinates>-0.423607,51.506365,0.000000</coordinates>
+    </Point>
+  </Placemark>
+  <Placemark>
+    <name>Stockley Park</name>
+    <description><![CDATA[This large business park opened in the 1980s. Workers are rewarded for their commute with some pleasant surroundings to explore in their lunch break.]]></description>
+    <styleUrl>#style6</styleUrl>
+    <Point>
+      <coordinates>-0.449088,51.514498,0.000000</coordinates>
+    </Point>
+  </Placemark>
+  <Placemark>
+    <name>Horton Bridge 193</name>
+    <description><![CDATA[Bridges on the Grand Union Canal are numbered in ascending order from Birmingham, so Horton Bridge is the 193rd bridge over the canal from Birmingham.]]></description>
+    <styleUrl>#style7</styleUrl>
+    <Point>
+      <coordinates>-0.464677,51.509580,0.000000</coordinates>
+    </Point>
+  </Placemark>
+  <Placemark>
+    <name>Coal Tax Marker</name>
+    <description><![CDATA[This small canal-side obelisk warned canal users they would shortly need to pay tax on any coal being brought in to London. The tax was introduced in 1667 to assist the rebuild of London after The Great Fire.]]></description>
+    <styleUrl>#style8</styleUrl>
+    <Point>
+      <coordinates>-0.490318,51.515827,0.000000</coordinates>
+    </Point>
+  </Placemark>
+  <Placemark>
+    <name>Little Britain Lake</name>
+    <description><![CDATA[This pretty lake earned its name because, if you squint slightly, it is a similar shape to mainland Britain.]]></description>
+    <styleUrl>#style9</styleUrl>
+    <Point>
+      <coordinates>-0.489664,51.520547,0.000000</coordinates>
+    </Point>
+  </Placemark>
+</Document>
+</kml>

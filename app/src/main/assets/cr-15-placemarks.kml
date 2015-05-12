@@ -3,7 +3,7 @@
 <Document>
   <Placemark>
     <name>University of East London</name>
-    <description><![CDATA[<div dir="ltr">The Docklands campus of UEL was the first university built in London for 50 years when in opened in 1999.</div>]]></description>
+    <description><![CDATA[The Docklands campus of UEL was the first university built in London for 50 years when in opened in 1999.]]></description>
     <styleUrl>#style1</styleUrl>
     <Point>
       <coordinates>0.0686002,51.5068393,0.0</coordinates>
@@ -11,7 +11,7 @@
   </Placemark>
   <Placemark>
     <name>Cyprus</name>
-    <description><![CDATA[<div dir="ltr">This area is named after the Mediterranean island. It was built in 1881, a few years after British colonisation of the island.</div>]]></description>
+    <description><![CDATA[This area is named after the Mediterranean island. It was built in 1881, a few years after British colonisation of the island.]]></description>
     <styleUrl>#style4</styleUrl>
     <Point>
       <coordinates>0.0640082,51.508462,0.0</coordinates>
@@ -19,7 +19,7 @@
   </Placemark>
   <Placemark>
     <name>London City Airport</name>
-    <description><![CDATA[<div dir="ltr">This airport opened in 1987. As of 2013, it is the fifth busiest airport in London and the 15th busiest in the UK, serving 3.3 million passengers a year.</div>]]></description>
+    <description><![CDATA[This airport opened in 1987. As of 2013, it is the fifth busiest airport in London and the 15th busiest in the UK, serving 3.3 million passengers a year.]]></description>
     <styleUrl>#style6</styleUrl>
     <Point>
       <coordinates>0.0627208,51.5049494,0.0</coordinates>
@@ -27,7 +27,7 @@
   </Placemark>
   <Placemark>
     <name>King George V Lock</name>
-    <description><![CDATA[<div dir="ltr">The immense gates of this lock were just large enough to allow passage to the 35,655 ton Cunard liner Mauretania in 1939.</div>]]></description>
+    <description><![CDATA[The immense gates of this lock were just large enough to allow passage to the 35,655 ton Cunard liner Mauretania in 1939.]]></description>
     <styleUrl>#style5</styleUrl>
     <Point>
       <coordinates>0.0738734,51.5021045,0.0</coordinates>
@@ -35,7 +35,7 @@
   </Placemark>
   <Placemark>
     <name>Woolwich Foot Tunnel (north entrance)</name>
-    <description><![CDATA[<div dir="ltr">First opened on 26th October 1912, this foot tunnel was initially created to allow dock workers to commute without relying on the Woolwich ferry. The halfway point of the tunnel marks the boundary between the London Boroughs of Newham and Greenwich, who are jointly responsible for maintaining the tunnel.</div>]]></description>
+    <description><![CDATA[First opened on 26th October 1912, this foot tunnel was initially created to allow dock workers to commute without relying on the Woolwich ferry. The halfway point of the tunnel marks the boundary between the London Boroughs of Newham and Greenwich, who are jointly responsible for maintaining the tunnel.]]></description>
     <styleUrl>#style5</styleUrl>
     <Point>
       <coordinates>0.06163180000000001,51.4987183,0.0</coordinates>
@@ -43,7 +43,7 @@
   </Placemark>
   <Placemark>
     <name>Woolwich Ferry</name>
-    <description><![CDATA[<div dir="ltr">The Woolwich Ferry offers a free service for pedestrians and vehicles across the Thames. It can be used as an alternative route to the Woolwich foot tunnel, though to do amounts to cheating unless you have a very good reason.</div>]]></description>
+    <description><![CDATA[The Woolwich Ferry offers a free service for pedestrians and vehicles across the Thames. It can be used as an alternative route to the Woolwich foot tunnel, though to do amounts to cheating unless you have a very good reason.]]></description>
     <styleUrl>#style5</styleUrl>
     <Point>
       <coordinates>0.06180879999999999,51.4964774,0.0</coordinates>
@@ -51,7 +51,7 @@
   </Placemark>
   <Placemark>
     <name>Docklands Light Railway</name>
-    <description><![CDATA[<div dir="ltr">This automated metro system opened in 1987. It uses minimal staffing across the network, the driverless trains being the most obvious example of this.</div>]]></description>
+    <description><![CDATA[This automated metro system opened in 1987. It uses minimal staffing across the network, the driverless trains being the most obvious example of this.]]></description>
     <styleUrl>#style5</styleUrl>
     <Point>
       <coordinates>0.05018410000000001,51.5088827,0.0</coordinates>

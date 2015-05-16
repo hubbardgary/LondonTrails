@@ -48,7 +48,7 @@ public class MainActivity extends Activity {
 		final Context context = this;
 
         // Add Capital Ring listener
-		button = (Button)findViewById(R.id.button1);
+		button = (Button)findViewById(R.id.CapitalRingBtn);
 
 		button.setOnClickListener(new OnClickListener() {
 			
@@ -61,7 +61,7 @@ public class MainActivity extends Activity {
 		});
 
         // Add London Loop listener
-        button = (Button)findViewById(R.id.button2);
+        button = (Button)findViewById(R.id.LondonLoopBtn);
         button.setOnClickListener(new OnClickListener() {
 
             @Override

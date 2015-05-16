@@ -61,12 +61,13 @@ public class RouteOptions extends Activity implements OnItemSelectedListener {
         }
         glob.setSectionMap(hshSectionMap);
 
-        source = populateSpinner(R.id.spinner1, sectionResource);
-        destination = populateSpinner(R.id.spinner2, sectionResource);
+        source = populateSpinner(R.id.StartLocationSpinner, sectionResource);
+        destination = populateSpinner(R.id.DestinationSpinner, sectionResource);
 
-        direction = populateSpinner(R.id.spinner3, R.array.directions);
+        direction = populateSpinner(R.id.DirectionSpinner, R.array.directions);
         if(!currRoute.circular) {
             direction.setVisibility(View.GONE);
+            findViewById(R.id.DirectionLbl).setVisibility(View.GONE);
         }
 
         addListenerOnButton();
@@ -81,7 +82,7 @@ public class RouteOptions extends Activity implements OnItemSelectedListener {
 
     @Override
     public void onItemSelected(AdapterView arg0, View arg1, int pos, long arg3) {
-        destination = (Spinner) findViewById(R.id.spinner2);
+        destination = (Spinner) findViewById(R.id.DestinationSpinner);
 
         String strStart = (String)source.getSelectedItem();
         String strEnd = (String)destination.getSelectedItem();
@@ -111,14 +112,14 @@ public class RouteOptions extends Activity implements OnItemSelectedListener {
     public void addListenerOnButton() {
         final Context context = this;
 
-        button = (Button)findViewById(R.id.button2);
+        button = (Button)findViewById(R.id.GoBtn);
         button.setOnClickListener(new OnClickListener() {
             @Override
             public void onClick(View arg0) {
 
                 // Grab start and end from spinner controls
-                Spinner start = (Spinner)findViewById(R.id.spinner1);
-                Spinner end = (Spinner)findViewById(R.id.spinner2);
+                Spinner start = (Spinner)findViewById(R.id.StartLocationSpinner);
+                Spinner end = (Spinner)findViewById(R.id.DestinationSpinner);
 
                 String strStart = (String)start.getSelectedItem();
                 int iStart = hshSectionMap.get(strStart);
@@ -130,7 +131,7 @@ public class RouteOptions extends Activity implements OnItemSelectedListener {
                 Intent intent = new Intent(context, ShowMapActivity.class);
                 intent.putExtra("start", iStart);
                 intent.putExtra("end", iEnd);
-                intent.putExtra("direction", ((Spinner)findViewById(R.id.spinner3)).getSelectedItemPosition());
+                intent.putExtra("direction", ((Spinner)findViewById(R.id.DirectionSpinner)).getSelectedItemPosition());
                 startActivity(intent);
             }
         });
@@ -144,7 +145,7 @@ public class RouteOptions extends Activity implements OnItemSelectedListener {
         dataAdapter1.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
         spinner.setAdapter(dataAdapter1);
 
-        if(iSpinnerId == R.id.spinner1) {
+        if(iSpinnerId == R.id.StartLocationSpinner) {
             spinner.setOnItemSelectedListener(this);
         }
 

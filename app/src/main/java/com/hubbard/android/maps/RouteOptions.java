@@ -19,7 +19,7 @@ import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.Spinner;
 
-public class LondonLoopOptions extends Activity implements OnItemSelectedListener {
+public class RouteOptions extends Activity implements OnItemSelectedListener {
 
     Button button;
     Spinner source, destination, direction;
@@ -27,33 +27,47 @@ public class LondonLoopOptions extends Activity implements OnItemSelectedListene
     ArrayAdapter<String> dataAdapter1, dataAdapter2;
     HashMap<String, Integer> hshSectionMap;
     Resources res;
+    int sectionResource;
+    String[] sectionsArray;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_london_loop_options);
+        setContentView(R.layout.activity_route_options);
 
         res = getResources();
+        sectionResource = getIntent().getExtras().getInt("routeSections");
+        sectionsArray = res.getStringArray(sectionResource);
+
         GlobalObjects glob = (GlobalObjects)getApplicationContext();
         Route currRoute = glob.getCurrentRoute();
-        currRoute = new LondonLoop();
+
+        switch (sectionResource) {
+            case R.array.capital_ring_sections :
+                currRoute = new CapitalRing();
+                break;
+            case R.array.london_loop_sections :
+                currRoute = new LondonLoop();
+                break;
+        }
+
         glob.setCurrentRoute(currRoute);
 
         hshSectionMap = glob.getSectionMap();
         hshSectionMap = new HashMap<String, Integer>();
-        String[] sections = res.getStringArray(R.array.london_loop_sections);
+        String[] sections = sectionsArray;
         for(int i = 0; i < sections.length; i++) {
             hshSectionMap.put((String)sections[i], i);
         }
         glob.setSectionMap(hshSectionMap);
 
-        source = populateSpinner(R.id.spinner1, R.array.london_loop_sections);
-        destination = populateSpinner(R.id.spinner2, R.array.london_loop_sections);
+        source = populateSpinner(R.id.spinner1, sectionResource);
+        destination = populateSpinner(R.id.spinner2, sectionResource);
 
         direction = populateSpinner(R.id.spinner3, R.array.directions);
-//        if(!currRoute.circular) {
-//            direction.setVisibility(View.GONE);
-//        }
+        if(!currRoute.circular) {
+            direction.setVisibility(View.GONE);
+        }
 
         addListenerOnButton();
     }
@@ -61,7 +75,7 @@ public class LondonLoopOptions extends Activity implements OnItemSelectedListene
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         // Inflate the menu; this adds items to the action bar if it is present.
-        getMenuInflater().inflate(R.menu.london_loop_options, menu);
+        getMenuInflater().inflate(R.menu.route_options, menu);
         return true;
     }
 
@@ -77,7 +91,7 @@ public class LondonLoopOptions extends Activity implements OnItemSelectedListene
             strEnd = "";
         }
 
-        destContents = new ArrayList<String>(Arrays.asList(res.getStringArray(R.array.london_loop_sections)));
+        destContents = new ArrayList<String>(Arrays.asList(sectionsArray));
 
         if(!strStart.equals("")) {
             destContents.remove(destContents.indexOf(source.getSelectedItem()));
@@ -136,5 +150,4 @@ public class LondonLoopOptions extends Activity implements OnItemSelectedListene
 
         return spinner;
     }
-
 }

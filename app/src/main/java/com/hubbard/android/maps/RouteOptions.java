@@ -29,6 +29,7 @@ public class RouteOptions extends Activity implements OnItemSelectedListener {
     Resources res;
     int sectionResource;
     String[] sectionsArray;
+    Route currRoute;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -40,7 +41,7 @@ public class RouteOptions extends Activity implements OnItemSelectedListener {
         sectionsArray = res.getStringArray(sectionResource);
 
         GlobalObjects glob = (GlobalObjects)getApplicationContext();
-        Route currRoute = glob.getCurrentRoute();
+        currRoute = glob.getCurrentRoute();
 
         switch (sectionResource) {
             case R.array.capital_ring_sections :
@@ -131,7 +132,18 @@ public class RouteOptions extends Activity implements OnItemSelectedListener {
                 Intent intent = new Intent(context, ShowMapActivity.class);
                 intent.putExtra("start", iStart);
                 intent.putExtra("end", iEnd);
-                intent.putExtra("direction", ((Spinner)findViewById(R.id.DirectionSpinner)).getSelectedItemPosition());
+
+                if(currRoute.circular) {
+                    intent.putExtra("direction", ((Spinner) findViewById(R.id.DirectionSpinner)).getSelectedItemPosition());
+                }
+                else {
+                    if(iStart < iEnd)
+                        // Route will be walked forwards, so clockwise
+                        intent.putExtra("direction", 0);
+                    else
+                        // Route will be walked backwards, so anticlockwise
+                        intent.putExtra("direction", 1);
+                }
                 startActivity(intent);
             }
         });

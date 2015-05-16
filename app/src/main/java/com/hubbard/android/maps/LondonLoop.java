@@ -4,8 +4,8 @@ import java.util.ArrayList;
 
 public class LondonLoop extends Route {
 
-
     public LondonLoop() {
+        name = "London Loop";
         circular = false;
         sections = new Section[15];
         for(int i = 0; i < sections.length; i++) {

@@ -75,13 +75,6 @@ public class RouteOptions extends Activity implements OnItemSelectedListener {
     }
 
     @Override
-    public boolean onCreateOptionsMenu(Menu menu) {
-        // Inflate the menu; this adds items to the action bar if it is present.
-        getMenuInflater().inflate(R.menu.route_options, menu);
-        return true;
-    }
-
-    @Override
     public void onItemSelected(AdapterView arg0, View arg1, int pos, long arg3) {
         destination = (Spinner) findViewById(R.id.DestinationSpinner);
 

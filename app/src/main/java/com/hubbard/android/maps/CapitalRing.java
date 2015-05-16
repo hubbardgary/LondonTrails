@@ -5,6 +5,7 @@ import java.util.ArrayList;
 public class CapitalRing extends Route {
 	
 	public CapitalRing() {
+		name = "Capital Ring";
 		circular = true;
 		sections = new Section[15];
 		for(int i = 0; i < sections.length; i++) {

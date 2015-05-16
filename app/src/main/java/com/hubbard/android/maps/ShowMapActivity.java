@@ -69,6 +69,7 @@ public class ShowMapActivity extends Activity implements LocationListener,
 	double maxLat, minLat, maxLon, minLon;	// Used to define range of path on map
 	
 	GlobalObjects glob;
+    Route currRoute;
 
 	private enum Direction {
 		CLOCKWISE,
@@ -84,6 +85,8 @@ public class ShowMapActivity extends Activity implements LocationListener,
 				.getMap();
 
 		glob = (GlobalObjects)getApplicationContext();
+        currRoute = glob.getCurrentRoute();
+        setTitle(currRoute.name);
 
 		startLocation = getIntent().getExtras().getInt("start");
 		endLocation = getIntent().getExtras().getInt("end");
@@ -191,7 +194,7 @@ public class ShowMapActivity extends Activity implements LocationListener,
 		} else {
 			menu.add(Menu.NONE, R.id.view_option_show_markers, 4, R.string.show_markers);
 		}
-		menu.add(Menu.NONE, R.id.view_option_reset_focus, 5, R.string.reset_focus);
+        menu.add(Menu.NONE, R.id.view_option_reset_focus, 5, R.string.reset_focus);
 
 		switch(map.getMapType()) {
 		case GoogleMap.MAP_TYPE_NORMAL:
@@ -390,7 +393,6 @@ public class ShowMapActivity extends Activity implements LocationListener,
 		
 
 		private String GetCoordinatesString(int startLocation, int endLocation) {
-			Route currRoute = glob.getCurrentRoute();
 			int currentLocation = startLocation;
 			String coordinates = "";
 			while(currentLocation != endLocation) {
@@ -546,7 +548,6 @@ public class ShowMapActivity extends Activity implements LocationListener,
 		}
 
 		private void LoadPOIMarkers(int startLocation, int endLocation) {
-			Route currRoute = glob.getCurrentRoute();
 			int currentLocation = startLocation;
 			while(currentLocation != endLocation) {
 				InputStream myFile;

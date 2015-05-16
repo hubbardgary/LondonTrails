@@ -371,8 +371,8 @@ public class ShowMapActivity extends Activity implements LocationListener,
 
 		@Override
 		protected void onPostExecute(Integer i) {
-			PushPin(start, "Start", "Your walk starts here", R.drawable.start);
-			PushPin(end, "Finish", "Your walk ends here", R.drawable.stop);
+			PushPin(start, "Start", "Your walk starts here", R.drawable.waypoint_start);
+			PushPin(end, "Finish", "Your walk ends here", R.drawable.waypoint_stop);
 			map.addPolyline(line);
 			
 			markers = new ArrayList<Marker>();
@@ -382,7 +382,7 @@ public class ShowMapActivity extends Activity implements LocationListener,
 								p.coords,
 								p.title, 
 								p.snippet, 
-								R.drawable.flag
+								R.drawable.waypoint_pause
 						)
 				);
 			}

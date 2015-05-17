@@ -13,6 +13,7 @@
     <name>Hendon Park End link</name>
     <description><![CDATA[]]></description>
     <styleUrl>#style1</styleUrl>
+    <LineString>
       <tessellate>1</tessellate>
       <coordinates>
         -0.220300,51.579632,0.000000

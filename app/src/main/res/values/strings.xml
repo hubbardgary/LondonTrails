@@ -3,9 +3,9 @@
 
     <string name="app_name">London Trails</string>
     <string name="action_settings">Settings</string>
-    <string name="streetmap_view">Street Map View</string>
-    <string name="satellite_view">Satellite View</string>
-    <string name="terrain_view">Terrain View</string>
+    <string name="streetmap_view">Street Map</string>
+    <string name="satellite_view">Satellite</string>
+    <string name="terrain_view">Terrain</string>
     <string name="hide_markers">Hide Points of Interest</string>
     <string name="show_markers">Show Points of Interest</string>
     <string name="reset_focus">Reset Focus</string>

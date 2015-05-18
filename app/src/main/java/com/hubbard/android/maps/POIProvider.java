@@ -47,7 +47,7 @@ class POIHandler extends DefaultHandler {
 	}
 	
 	public void startElement(String uri, String localName, String name, Attributes attributes) throws SAXException {
-		if(name.equalsIgnoreCase("Placemark")) {
+		if(name.equalsIgnoreCase("placemark")) {
 			currentPOI = new POI();	
 		}
 		else if(name.equalsIgnoreCase("name")) {
@@ -83,7 +83,7 @@ class POIHandler extends DefaultHandler {
 	
 	public void endElement(String uri, String localName, String name)
 			throws SAXException {
-		if(name.equalsIgnoreCase("Placemark")) {
+		if(name.equalsIgnoreCase("placemark")) {
 			pointsOfInterest.add(currentPOI);
 		}
 	}

@@ -39,8 +39,6 @@ import com.google.android.gms.common.GooglePlayServicesClient;
 import com.google.android.gms.location.LocationClient;
 import com.google.android.gms.location.LocationRequest;
 
-import com.hubbard.android.maps.CoordinateProvider;
-
 public class ShowMapActivity extends Activity implements LocationListener, 
 														LocationSource, 
 														GooglePlayServicesClient.ConnectionCallbacks,
@@ -113,7 +111,7 @@ public class ShowMapActivity extends Activity implements LocationListener,
 			}
 		});
 
-		locationManager=(LocationManager)getSystemService(LOCATION_SERVICE);
+		locationManager = (LocationManager)getSystemService(LOCATION_SERVICE);
 		crit.setAccuracy(Criteria.ACCURACY_COARSE); // How do you just make it use the best available?
 		map.setMyLocationEnabled(true);
 
@@ -390,7 +388,6 @@ public class ShowMapActivity extends Activity implements LocationListener,
 				);
 			}
 		}
-		
 
 		private String GetCoordinatesString(int startLocation, int endLocation) {
 			int currentLocation = startLocation;
@@ -398,7 +395,6 @@ public class ShowMapActivity extends Activity implements LocationListener,
 			while(currentLocation != endLocation) {
 
 				InputStream myFile;
-				myFile = null;
 				try {
 					Section s = currRoute.sections[currentLocation];
 					String filename;
@@ -439,12 +435,7 @@ public class ShowMapActivity extends Activity implements LocationListener,
 		
 		private double[][] ParseCoordinates(String coordinates) {
             String[] coordinatesParsed;
-            if(coordinates.indexOf(' ') > -1) {
-                coordinatesParsed = coordinates.split(",0.0 ");
-            }
-            else {
-                coordinatesParsed = coordinates.split(",0.000000"); // SAXParser loses "\n" characters so split on altitude which isn't set
-            }
+			coordinatesParsed = coordinates.split(",0.000000"); // SAXParser loses "\n" characters so split on altitude which isn't set
 
 			int lenNew = coordinatesParsed.length;
 			double[][] wayPoints = new double[lenNew][2];
@@ -551,14 +542,11 @@ public class ShowMapActivity extends Activity implements LocationListener,
 			int currentLocation = startLocation;
 			while(currentLocation != endLocation) {
 				InputStream myFile;
-				myFile = null;
 				try {
 					Section s = currRoute.sections[currentLocation];
 					myFile = getAssets().open(s.poiResource);
 					
 					pointsOfInterest.addAll(POIProvider.getPOIs(myFile));
-					
-					
 				} catch (IOException e) {
 					// TODO Auto-generated catch block
 					e.printStackTrace();
@@ -574,5 +562,4 @@ public class ShowMapActivity extends Activity implements LocationListener,
 			bMarkersVisible = true;
 		}
 	}
-	
 } 

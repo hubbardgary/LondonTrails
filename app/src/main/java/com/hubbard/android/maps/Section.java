@@ -4,8 +4,6 @@ import java.util.ArrayList;
 
 public class Section {
 	public ArrayList<WayPoint> sectionWayPoints;
-	public ArrayList<WayPoint> startLinkWayPoints;
-	public ArrayList<WayPoint> endLinkWayPoints;
 	
 	public String sectionResource;
 	public String startLinkResource;

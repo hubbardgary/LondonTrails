@@ -61,7 +61,7 @@ public class ShowMapActivity extends Activity implements LocationListener,
 	LatLngBounds.Builder defaultBounds;
 	List<Marker> markers;
 	boolean bMarkersVisible;
-	int startLocation, endLocation;
+	int start, end;
 	Direction direction;
 	
 	double maxLat, minLat, maxLon, minLon;	// Used to define range of path on map
@@ -86,16 +86,9 @@ public class ShowMapActivity extends Activity implements LocationListener,
         currRoute = glob.getCurrentRoute();
         setTitle(currRoute.name);
 
-		startLocation = getIntent().getExtras().getInt("start");
-		endLocation = getIntent().getExtras().getInt("end");
+		start = getIntent().getExtras().getInt("latLngStart");
+		end = getIntent().getExtras().getInt("latLngEnd");
 		direction = getIntent().getExtras().getInt("direction") == 0 ? Direction.CLOCKWISE : Direction.ANTI_CLOCKWISE;
-
-		if(direction == Direction.ANTI_CLOCKWISE) {
-			// We're going anti-clockwise so swap start and end locations for the purpose of drawing the route.
-			int tempLocation = startLocation;
-			startLocation = endLocation;
-			endLocation = tempLocation;
-		}
 
 		SetPOIWindowAdapter();
 		
@@ -257,7 +250,7 @@ public class ShowMapActivity extends Activity implements LocationListener,
 	/*
 	 * Called by Location Services when the request to connect the
 	 * client finishes successfully. At this point, you can
-	 * request the current location or start periodic updates
+	 * request the current location or latLngStart periodic updates
 	 */
 	@Override
 	public void onConnected(Bundle dataBundle) {
@@ -283,7 +276,7 @@ public class ShowMapActivity extends Activity implements LocationListener,
 		/*
 		 * Google Play services can resolve some errors it detects.
 		 * If the error has a resolution, try sending an Intent to
-		 * start a Google Play services activity that can resolve
+		 * latLngStart a Google Play services activity that can resolve
 		 * error.
 		 */
 		// IGNORING THIS FOR NOW
@@ -349,31 +342,40 @@ public class ShowMapActivity extends Activity implements LocationListener,
 	private class BackgroundStuff extends AsyncTask<Void, Void, Integer> {
 		
 		PolylineOptions line;
-		LatLng start, end;
+		LatLng latLngStart, latLngEnd;
 		List<POI> pointsOfInterest = new ArrayList<POI>();
 		
 		@Override
 		protected Integer doInBackground(Void... params) {
-			
-			Path path = GetPath(startLocation, endLocation, direction);
-			start = SetStartCoords(path, direction);
-			end = SetEndCoords(path, direction);
 
-			InitialiseMaxMinLatLon(start, end);
+			int from = start;
+			int to = end;
+
+			if(direction == Direction.ANTI_CLOCKWISE) {
+				// We're going anti-clockwise so swap form and to locations for the purpose of drawing the route.
+				from = end;
+				to = start;
+			}
+			
+			Path path = GetPath(from, to, direction);
+			latLngStart = SetStartCoords(path, direction);
+			latLngEnd = SetEndCoords(path, direction);
+
+			InitialiseMaxMinLatLon(latLngStart, latLngEnd);
 			
 			DrawPath(path);
 
 			// Set viewable bounds based on the coordinates we calculated earlier.
 			SetDefaultBounds(new LatLng(minLat, minLon), new LatLng(maxLat, maxLon));
 			
-			LoadPOIMarkers(startLocation, endLocation);
+			LoadPOIMarkers(from, to);
 			return 1;
 		}
 
 		@Override
 		protected void onPostExecute(Integer i) {
-			PushPin(start, "Start", "Your walk starts here", R.drawable.waypoint_start);
-			PushPin(end, "Finish", "Your walk ends here", R.drawable.waypoint_stop);
+			PushPin(latLngStart, currRoute.endPoints[start], "Your walk starts here", R.drawable.waypoint_start);
+			PushPin(latLngEnd, currRoute.endPoints[end], "Your walk ends here", R.drawable.waypoint_stop);
 			map.addPolyline(line);
 			
 			markers = new ArrayList<Marker>();
@@ -411,7 +413,7 @@ public class ShowMapActivity extends Activity implements LocationListener,
 					coordinates += CoordinateProvider.getRoute(myFile);
 
 					// We've constructed co-ordinates for this section so move to the next one
-                    // If it's a circular route, allow wraparound from end to start
+                    // If it's a circular route, allow wraparound from latLngEnd to latLngStart
 					if(currRoute.circular && currentLocation == currRoute.sections.length - 1) {
 						currentLocation = 0;
 					} else {

@@ -8,18 +8,38 @@ public class CapitalRing extends Route {
 		name = "Capital Ring";
 		circular = true;
 		sections = new Section[15];
+		endPoints = populateEndPoints();
+
 		for(int i = 0; i < sections.length; i++) {
-			sections[i] = populateSection(i);
+			sections[i] = populateSections(i);
 		}
 	}
 
-	private Section populateSection(int section) {
+	private String[] populateEndPoints() {
+		return new String[]{
+			"Woolwich Arsenal Rail Station",
+			"Falconwood Rail Station",
+			"Grove Park Rail Station",
+			"Crystal Palace Rail Station",
+			"Streatham Common Rail Station",
+			"Wimbledon Park Underground Station",
+			"Richmond Rail Station",
+			"Boston Manor Underground Station",
+			"Greenford Station (Rail and Underground)",
+			"South Kenton Station (Overground and Underground)",
+			"Hendon Central Underground Station",
+			"Highgate Underground Station",
+			"Stoke Newington Rail Station",
+			"Hackney Wick Rail Station",
+			"Royal Albert DLR Station"
+		};
+	}
+
+	private Section populateSections(int section) {
 		Section s = new Section();
 
-		// Initalise WayPoint arrays but don't populate until we know we'll use them
-		s.startLinkWayPoints = new ArrayList<WayPoint>();
+		// Initialise WayPoint arrays but don't populate until we know we'll use them
 		s.sectionWayPoints = new ArrayList<WayPoint>();
-		s.endLinkWayPoints = new ArrayList<WayPoint>();
 
 		switch (section) {
 			case 0:

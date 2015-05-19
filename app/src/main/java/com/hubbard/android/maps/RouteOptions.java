@@ -83,7 +83,7 @@ public class RouteOptions extends Activity implements OnItemSelectedListener {
 
         if(clickedSpinner.getId() == R.id.StartLocationSpinner) {
             if (strStart.equals(strEnd)) {
-                // Clear end to prevent start and end being the same.
+                // Clear latLngEnd to prevent latLngStart and latLngEnd being the same.
                 strEnd = "";
             }
 
@@ -116,14 +116,14 @@ public class RouteOptions extends Activity implements OnItemSelectedListener {
             @Override
             public void onClick(View arg0) {
 
-                // Grab start and end from spinner controls
+                // Grab latLngStart and latLngEnd from spinner controls
                 int iStart = GetSelectedItemId((Spinner) findViewById(R.id.StartLocationSpinner));
                 int iEnd = GetSelectedItemId((Spinner) findViewById(R.id.DestinationSpinner));
 
-                // Invoke Map Activity, passing in the start and end points
+                // Invoke Map Activity, passing in the latLngStart and latLngEnd points
                 Intent intent = new Intent(context, ShowMapActivity.class);
-                intent.putExtra("start", iStart);
-                intent.putExtra("end", iEnd);
+                intent.putExtra("latLngStart", iStart);
+                intent.putExtra("latLngEnd", iEnd);
 
                 if (currRoute.circular) {
                     intent.putExtra("direction", ((Spinner) findViewById(R.id.DirectionSpinner)).getSelectedItemPosition());
@@ -159,7 +159,7 @@ public class RouteOptions extends Activity implements OnItemSelectedListener {
         if(currRoute.circular) {
             int direction = ((Spinner) findViewById(R.id.DirectionSpinner)).getSelectedItemPosition();
             if(direction == 1) {
-                // anti-clockwise, so swap start and end and calculate as clockwise.
+                // anti-clockwise, so swap latLngStart and latLngEnd and calculate as clockwise.
                 int temp = endSection;
                 endSection = startSection;
                 startSection = temp;
@@ -167,7 +167,7 @@ public class RouteOptions extends Activity implements OnItemSelectedListener {
         }
         else {
             if(startSection > endSection) {
-                // anti-clockwise, so swap start and end and calculate as clockwise.
+                // anti-clockwise, so swap latLngStart and latLngEnd and calculate as clockwise.
                 int temp = endSection;
                 endSection = startSection;
                 startSection = temp;

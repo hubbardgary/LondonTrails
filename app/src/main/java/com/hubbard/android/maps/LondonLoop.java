@@ -8,18 +8,39 @@ public class LondonLoop extends Route {
         name = "London Loop";
         circular = false;
         sections = new Section[15];
+        endPoints = populateEndPoints();
+
         for(int i = 0; i < sections.length; i++) {
-            sections[i] = populateSection(i);
+            sections[i] = populateSections(i);
         }
     }
 
-    private Section populateSection(int section) {
+    private String[] populateEndPoints() {
+        return new String[] {
+            "Erith Rail Station",
+            "Bexley Rail Station",
+            "Petts Wood Rail Station",
+            "Hayes Rail Station",
+            "Hamsey Green Bus Stop",
+            "Banstead Rail Station",
+            "Kingston Rail Station",
+            "Hatton Cross Underground Station",
+            "Uxbridge Underground Station",
+            "Moor Park Underground Station",
+            "Elstree & Borehamwood Rail Station",
+            "Cockfosters Underground Station",
+            "Enfield Lock Rail Station",
+            "Chigwell Underground Station",
+            "Harold Wood Rail Station",
+            "Purfleet Rail Station"
+        };
+    }
+
+    private Section populateSections(int section) {
         Section s = new Section();
 
         // Initialise WayPoint arrays but don't populate until we know we'll use them
-        s.startLinkWayPoints = new ArrayList<WayPoint>();
         s.sectionWayPoints = new ArrayList<WayPoint>();
-        s.endLinkWayPoints = new ArrayList<WayPoint>();
 
         switch (section) {
             case 0:

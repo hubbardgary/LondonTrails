@@ -320,12 +320,7 @@ public class ShowMapActivity extends Activity implements LocationListener,
 		map.setInfoWindowAdapter(new InfoWindowAdapter() {
 
 			@Override
-			public View getInfoWindow(Marker arg0) {
-				return null;
-			}
-
-			@Override
-			public View getInfoContents(Marker marker) {
+			public View getInfoWindow(Marker marker) {
 				// Inflate the layout...
 				View v = getLayoutInflater().inflate(R.layout.popup, null);
 				// ... then get a handle on the title and snippet elements from the view...
@@ -335,6 +330,11 @@ public class ShowMapActivity extends Activity implements LocationListener,
 				title.setText(marker.getTitle());
 				info.setText(marker.getSnippet());
 				return v;
+			}
+
+			@Override
+			public View getInfoContents(Marker marker) {
+				return null;
 			}
 		});
 	}
@@ -374,8 +374,8 @@ public class ShowMapActivity extends Activity implements LocationListener,
 
 		@Override
 		protected void onPostExecute(Integer i) {
-			PushPin(latLngStart, currRoute.endPoints[start], "Your walk starts here", R.drawable.waypoint_start);
-			PushPin(latLngEnd, currRoute.endPoints[end], "Your walk ends here", R.drawable.waypoint_stop);
+			PushPin(latLngStart, currRoute.endPoints[start], "Your walk starts here.", R.drawable.waypoint_start);
+			PushPin(latLngEnd, currRoute.endPoints[end], "Your walk ends here.", R.drawable.waypoint_stop);
 			map.addPolyline(line);
 			
 			markers = new ArrayList<Marker>();

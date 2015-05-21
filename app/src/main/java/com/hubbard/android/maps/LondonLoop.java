@@ -8,29 +8,29 @@ class LondonLoop extends Route {
         setSections(new Section[15]);
         setEndPoints(populateEndPoints());
 
-        for(int i = 0; i < getSections().length; i++) {
+        for (int i = 0; i < getSections().length; i++) {
             setSection(i, populateSections(i));
         }
     }
 
     private String[] populateEndPoints() {
-        return new String[] {
-            "Erith Rail Station",
-            "Bexley Rail Station",
-            "Petts Wood Rail Station",
-            "Hayes Rail Station",
-            "Hamsey Green Bus Stop",
-            "Banstead Rail Station",
-            "Kingston Rail Station",
-            "Hatton Cross Underground Station",
-            "Uxbridge Underground Station",
-            "Moor Park Underground Station",
-            "Elstree & Borehamwood Rail Station",
-            "Cockfosters Underground Station",
-            "Enfield Lock Rail Station",
-            "Chigwell Underground Station",
-            "Harold Wood Rail Station",
-            "Purfleet Rail Station"
+        return new String[]{
+                "Erith Rail Station",
+                "Bexley Rail Station",
+                "Petts Wood Rail Station",
+                "Hayes Rail Station",
+                "Hamsey Green Bus Stop",
+                "Banstead Rail Station",
+                "Kingston Rail Station",
+                "Hatton Cross Underground Station",
+                "Uxbridge Underground Station",
+                "Moor Park Underground Station",
+                "Elstree & Borehamwood Rail Station",
+                "Cockfosters Underground Station",
+                "Enfield Lock Rail Station",
+                "Chigwell Underground Station",
+                "Harold Wood Rail Station",
+                "Purfleet Rail Station"
         };
     }
 

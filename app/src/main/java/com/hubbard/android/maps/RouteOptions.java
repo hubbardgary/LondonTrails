@@ -43,14 +43,14 @@ public class RouteOptions extends Activity implements OnItemSelectedListener {
         sectionResource = getIntent().getExtras().getInt("routeSections");
         sectionsArray = res.getStringArray(sectionResource);
 
-        GlobalObjects glob = (GlobalObjects)getApplicationContext();
+        GlobalObjects glob = (GlobalObjects) getApplicationContext();
         currRoute = glob.getCurrentRoute();
 
         switch (sectionResource) {
-            case R.array.capital_ring_sections :
+            case R.array.capital_ring_sections:
                 currRoute = new CapitalRing();
                 break;
-            case R.array.london_loop_sections :
+            case R.array.london_loop_sections:
                 currRoute = new LondonLoop();
                 break;
         }
@@ -60,7 +60,7 @@ public class RouteOptions extends Activity implements OnItemSelectedListener {
         hshSectionMap = glob.getSectionMap();
         hshSectionMap = new HashMap<String, Integer>();
         String[] sections = sectionsArray;
-        for(int i = 0; i < sections.length; i++) {
+        for (int i = 0; i < sections.length; i++) {
             hshSectionMap.put(sections[i], i);
         }
         glob.setSectionMap(hshSectionMap);
@@ -69,7 +69,7 @@ public class RouteOptions extends Activity implements OnItemSelectedListener {
         destination = populateSpinner(R.id.DestinationSpinner, sectionResource);
 
         direction = populateSpinner(R.id.DirectionSpinner, R.array.directions);
-        if(!currRoute.isCircular()) {
+        if (!currRoute.isCircular()) {
             direction.setVisibility(View.GONE);
             findViewById(R.id.DirectionLbl).setVisibility(View.GONE);
         }
@@ -80,11 +80,11 @@ public class RouteOptions extends Activity implements OnItemSelectedListener {
     @Override
     public void onItemSelected(AdapterView parent, View view, int pos, long id) {
 
-        Spinner clickedSpinner = (Spinner)parent;
+        Spinner clickedSpinner = (Spinner) parent;
         String strStart = (String) source.getSelectedItem();
         String strEnd = (String) destination.getSelectedItem();
 
-        if(clickedSpinner.getId() == R.id.StartLocationSpinner) {
+        if (clickedSpinner.getId() == R.id.StartLocationSpinner) {
             if (strStart.equals(strEnd)) {
                 // Clear latLngEnd to prevent latLngStart and latLngEnd being the same.
                 strEnd = "";
@@ -103,7 +103,7 @@ public class RouteOptions extends Activity implements OnItemSelectedListener {
             destination.setSelection(destContents.indexOf(strEnd));
         }
 
-        if(strStart != null && !strStart.equals("") && strEnd != null && !strEnd.equals("") && !strStart.equals(strEnd))
+        if (strStart != null && !strStart.equals("") && strEnd != null && !strEnd.equals("") && !strStart.equals(strEnd))
             UpdateDistance(CalculateDistance());
     }
 
@@ -114,7 +114,7 @@ public class RouteOptions extends Activity implements OnItemSelectedListener {
     private void addListenerOnButton() {
         final Context context = this;
 
-        button = (Button)findViewById(R.id.GoBtn);
+        button = (Button) findViewById(R.id.GoBtn);
         button.setOnClickListener(new OnClickListener() {
             @Override
             public void onClick(View arg0) {
@@ -156,34 +156,33 @@ public class RouteOptions extends Activity implements OnItemSelectedListener {
     }
 
     private double CalculateDistance() {
-        int startSection = GetSelectedItemId((Spinner)findViewById(R.id.StartLocationSpinner));
-        int endSection = GetSelectedItemId((Spinner)findViewById(R.id.DestinationSpinner));
-        
-        if(currRoute.isCircular()) {
+        int startSection = GetSelectedItemId((Spinner) findViewById(R.id.StartLocationSpinner));
+        int endSection = GetSelectedItemId((Spinner) findViewById(R.id.DestinationSpinner));
+
+        if (currRoute.isCircular()) {
             int direction = ((Spinner) findViewById(R.id.DirectionSpinner)).getSelectedItemPosition();
-            if(direction == 1) {
+            if (direction == 1) {
+                // anti-clockwise, so swap latLngStart and latLngEnd and calculate as clockwise.
+                int temp = endSection;
+                endSection = startSection;
+                startSection = temp;
+            }
+        } else {
+            if (startSection > endSection) {
                 // anti-clockwise, so swap latLngStart and latLngEnd and calculate as clockwise.
                 int temp = endSection;
                 endSection = startSection;
                 startSection = temp;
             }
         }
-        else {
-            if(startSection > endSection) {
-                // anti-clockwise, so swap latLngStart and latLngEnd and calculate as clockwise.
-                int temp = endSection;
-                endSection = startSection;
-                startSection = temp;
-            }
-        }
-        
+
         double totalDistance = 0;
         int i = startSection;
         do {
             totalDistance += currRoute.getSection(i).getDistanceInKm();
             i++;
 
-            if(currRoute.isCircular()) {
+            if (currRoute.isCircular()) {
                 // allow wraparound for circular routes
                 if (i < 0)
                     i = currRoute.getSections().length - 1;
@@ -191,25 +190,25 @@ public class RouteOptions extends Activity implements OnItemSelectedListener {
                     i = 0;
             }
 
-        } while(i != endSection);
+        } while (i != endSection);
 
         int previousSection = endSection - 1;
-        if(currRoute.isCircular() && previousSection < 0)
+        if (currRoute.isCircular() && previousSection < 0)
             previousSection = currRoute.getSections().length - 1;
 
         totalDistance += currRoute.getSection(startSection).getStartLinkDistanceInKm();
         totalDistance += currRoute.getSection(previousSection).getEndLinkDistanceInKm();
-        
+
         return totalDistance;
     }
 
     private int GetSelectedItemId(Spinner s) {
-        String item = (String)s.getSelectedItem();
+        String item = (String) s.getSelectedItem();
         return hshSectionMap.get(item);
     }
 
     private void UpdateDistance(double distance) {
-        TextView txtDistance = (TextView)findViewById(R.id.DistanceValue);
+        TextView txtDistance = (TextView) findViewById(R.id.DistanceValue);
         txtDistance.setText(String.format("%.2f km (%.2f miles)", distance, distance * 0.62137));
     }
 }

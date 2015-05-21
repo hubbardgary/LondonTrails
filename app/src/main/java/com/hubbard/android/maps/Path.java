@@ -5,7 +5,7 @@ class Path {
     private String description;
     private int color;
     private int width;
-    private double[][] wayPoints = new double[][] {};
+    private double[][] wayPoints = new double[][]{};
 
     public double[][] getWayPoints() {
         return wayPoints;

@@ -15,54 +15,54 @@ import android.widget.Button;
 
 public class MainActivity extends Activity {
 
-	private Button button;
-	private Resources res;
-	
-	@Override
-	protected void onCreate(Bundle savedInstanceState) {
-		super.onCreate(savedInstanceState);
-		setContentView(R.layout.activity_main);
-		addListenerOnButton();
+    private Button button;
+    private Resources res;
 
-		res = getResources();
-		
-		 // Getting Google Play availability status
-	    int status = GooglePlayServicesUtil.isGooglePlayServicesAvailable(getBaseContext());
-	    if(status != ConnectionResult.SUCCESS) {
-	    	// Google Play Services are not available
-	        int requestCode = 10;
-	        Dialog dialog = GooglePlayServicesUtil.getErrorDialog(status, this, requestCode);
-	        dialog.show();
-	    }
-	}
+    @Override
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.activity_main);
+        addListenerOnButton();
 
-	private void addListenerOnButton() {
-		final Context context = this;
+        res = getResources();
+
+        // Getting Google Play availability status
+        int status = GooglePlayServicesUtil.isGooglePlayServicesAvailable(getBaseContext());
+        if (status != ConnectionResult.SUCCESS) {
+            // Google Play Services are not available
+            int requestCode = 10;
+            Dialog dialog = GooglePlayServicesUtil.getErrorDialog(status, this, requestCode);
+            dialog.show();
+        }
+    }
+
+    private void addListenerOnButton() {
+        final Context context = this;
 
         // Add Capital Ring listener
-		button = (Button)findViewById(R.id.CapitalRingBtn);
+        button = (Button) findViewById(R.id.CapitalRingBtn);
 
-		button.setOnClickListener(new OnClickListener() {
-			
-			@Override
-			public void onClick(View arg0) {
-				Intent intent = new Intent(context, RouteOptions.class);
-				intent.putExtra("routeSections", R.array.capital_ring_sections);
-				startActivity(intent);
-			}
-		});
-
-        // Add London Loop listener
-        button = (Button)findViewById(R.id.LondonLoopBtn);
         button.setOnClickListener(new OnClickListener() {
 
             @Override
             public void onClick(View arg0) {
-				Intent intent = new Intent(context, RouteOptions.class);
-				intent.putExtra("routeSections", R.array.london_loop_sections);
+                Intent intent = new Intent(context, RouteOptions.class);
+                intent.putExtra("routeSections", R.array.capital_ring_sections);
                 startActivity(intent);
             }
         });
-	}
+
+        // Add London Loop listener
+        button = (Button) findViewById(R.id.LondonLoopBtn);
+        button.setOnClickListener(new OnClickListener() {
+
+            @Override
+            public void onClick(View arg0) {
+                Intent intent = new Intent(context, RouteOptions.class);
+                intent.putExtra("routeSections", R.array.london_loop_sections);
+                startActivity(intent);
+            }
+        });
+    }
 
 }

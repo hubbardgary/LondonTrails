@@ -6,20 +6,22 @@ import android.app.Application;
 
 public class GlobalObjects extends Application {
 
-	private Route currentRoute;
-	private HashMap<String, Integer> hshSectionMap;
+    private Route currentRoute;
+    private HashMap<String, Integer> hshSectionMap;
 
-	public Route getCurrentRoute() {
-		return currentRoute;
-	}
-	public void setCurrentRoute(Route r) {
-		currentRoute = r;
-	}
-	
-	public HashMap<String, Integer> getSectionMap() {
-		return hshSectionMap;
-	}
-	public void setSectionMap(HashMap<String, Integer> h) {
-		hshSectionMap = h;
-	}
+    public Route getCurrentRoute() {
+        return currentRoute;
+    }
+
+    public void setCurrentRoute(Route r) {
+        currentRoute = r;
+    }
+
+    public HashMap<String, Integer> getSectionMap() {
+        return hshSectionMap;
+    }
+
+    public void setSectionMap(HashMap<String, Integer> h) {
+        hshSectionMap = h;
+    }
 }

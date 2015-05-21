@@ -53,21 +53,25 @@ public class ShowMapActivity extends Activity implements LocationListener,
 	private static final long UPDATE_INTERVAL = MILLISECONDS_PER_SECOND * UPDATE_INTERVAL_IN_SECONDS;
 	private static final int FASTEST_INTERVAL_IN_SECONDS = 1;
 	private static final long FASTEST_INTERVAL = MILLISECONDS_PER_SECOND * FASTEST_INTERVAL_IN_SECONDS;
-	LocationRequest mLocationRequest;
-	LocationClient mLocationClient;
-	boolean mUpdatesRequested;
-	SharedPreferences mPrefs;
-	SharedPreferences.Editor mEditor;
-	LatLngBounds.Builder defaultBounds;
-	List<Marker> markers;
-	boolean bMarkersVisible;
-	int start, end;
-	Direction direction;
+	private LocationRequest mLocationRequest;
+	private LocationClient mLocationClient;
+	private boolean mUpdatesRequested;
+	private SharedPreferences mPrefs;
+	private SharedPreferences.Editor mEditor;
+	private LatLngBounds.Builder defaultBounds;
+	private List<Marker> markers;
+	private boolean bMarkersVisible;
+	private int start;
+	private int end;
+	private Direction direction;
 	
-	double maxLat, minLat, maxLon, minLon;	// Used to define range of path on map
+	private double maxLat;
+	private double minLat;
+	private double maxLon;
+	private double minLon;	// Used to define range of path on map
 	
-	GlobalObjects glob;
-    Route currRoute;
+	private GlobalObjects glob;
+    private Route currRoute;
 
 	private enum Direction {
 		CLOCKWISE,
@@ -84,7 +88,7 @@ public class ShowMapActivity extends Activity implements LocationListener,
 
 		glob = (GlobalObjects)getApplicationContext();
         currRoute = glob.getCurrentRoute();
-        setTitle(currRoute.name);
+        setTitle(currRoute.getName());
 
 		start = getIntent().getExtras().getInt("latLngStart");
 		end = getIntent().getExtras().getInt("latLngEnd");
@@ -255,7 +259,7 @@ public class ShowMapActivity extends Activity implements LocationListener,
 	@Override
 	public void onConnected(Bundle dataBundle) {
 		// Display the connection status
-		Toast.makeText(this, "Connected", Toast.LENGTH_SHORT).show();
+		//Toast.makeText(this, "Connected", Toast.LENGTH_SHORT).show();
 	}
 	/*
 	 * Called by Location Services if the connection to the
@@ -264,8 +268,7 @@ public class ShowMapActivity extends Activity implements LocationListener,
 	@Override
 	public void onDisconnected() {
 		// Display the connection status
-		Toast.makeText(this, "Disconnected. Please re-connect.",
-				Toast.LENGTH_SHORT).show();
+		//Toast.makeText(this, "Disconnected. Please re-connect.", Toast.LENGTH_SHORT).show();
 	}
 	/*
 	 * Called by Location Services if the attempt to
@@ -374,17 +377,17 @@ public class ShowMapActivity extends Activity implements LocationListener,
 
 		@Override
 		protected void onPostExecute(Integer i) {
-			PushPin(latLngStart, currRoute.endPoints[start], "Your walk starts here.", R.drawable.waypoint_start);
-			PushPin(latLngEnd, currRoute.endPoints[end], "Your walk ends here.", R.drawable.waypoint_stop);
+			PushPin(latLngStart, currRoute.getEndPoint(start), "Your walk starts here.", R.drawable.waypoint_start);
+			PushPin(latLngEnd, currRoute.getEndPoint(end), "Your walk ends here.", R.drawable.waypoint_stop);
 			map.addPolyline(line);
 			
 			markers = new ArrayList<Marker>();
 			for (POI p: pointsOfInterest) {
 				markers.add(
 						PushPin(
-								p.coords,
-								p.title, 
-								p.snippet, 
+								p.getCoords(),
+								p.getTitle(),
+								p.getSnippet(),
 								R.drawable.waypoint_pause
 						)
 				);
@@ -398,31 +401,31 @@ public class ShowMapActivity extends Activity implements LocationListener,
 
 				InputStream myFile;
 				try {
-					Section s = currRoute.sections[currentLocation];
+					Section s = currRoute.getSection(currentLocation);
 					String filename;
 
 					if(currentLocation == startLocation) {
-						if(!s.startLinkResource.equals("")) {
-							filename = s.startLinkResource;
+						if(!s.getStartLinkResource().equals("")) {
+							filename = s.getStartLinkResource();
 							myFile = getApplicationContext().getAssets().open(filename);
 							coordinates += CoordinateProvider.getRoute(myFile);
 						}
 					}
-					filename = s.sectionResource;
+					filename = s.getSectionResource();
 					myFile = getAssets().open(filename);
 					coordinates += CoordinateProvider.getRoute(myFile);
 
 					// We've constructed co-ordinates for this section so move to the next one
                     // If it's a circular route, allow wraparound from latLngEnd to latLngStart
-					if(currRoute.circular && currentLocation == currRoute.sections.length - 1) {
+					if(currRoute.isCircular() && currentLocation == currRoute.getSections().length - 1) {
 						currentLocation = 0;
 					} else {
 						currentLocation++;
 					}
 
 					if(currentLocation == endLocation) {
-						if(!s.endLinkResource.equals("")) {
-							filename = s.endLinkResource;
+						if(!s.getEndLinkResource().equals("")) {
+							filename = s.getEndLinkResource();
 							myFile = getAssets().open(filename);
 							coordinates += CoordinateProvider.getRoute(myFile);
 						}
@@ -459,22 +462,22 @@ public class ShowMapActivity extends Activity implements LocationListener,
 			String coordinates = GetCoordinatesString(startLocation, endLocation);
 
 			Path path = new Path();
-			path.mWayPoints = ParseCoordinates(coordinates);
+			path.setWayPoints(ParseCoordinates(coordinates));
 			return path;
 		}
 		
 		private LatLng SetStartCoords(Path path, Direction direction) {
 			if(direction == Direction.CLOCKWISE)
-				return new LatLng((path.mWayPoints[0][1]), (path.mWayPoints[0][0]));
+				return new LatLng((path.getWayPointLat(0)), (path.getWayPointLng(0)));
 			else
-				return new LatLng((path.mWayPoints[path.mWayPoints.length-1][1]), (path.mWayPoints[path.mWayPoints.length-1][0]));
+				return new LatLng((path.getWayPointLat(path.getWayPoints().length-1)), (path.getWayPointLng(path.getWayPoints().length-1)));
 		}
-		
+
 		private LatLng SetEndCoords(Path path, Direction direction) {
 			if(direction == Direction.CLOCKWISE)
-				return new LatLng((path.mWayPoints[path.mWayPoints.length-1][1]), (path.mWayPoints[path.mWayPoints.length-1][0]));
+				return new LatLng((path.getWayPointLat(path.getWayPoints().length-1)), (path.getWayPointLng(path.getWayPoints().length-1)));
 			else
-				return new LatLng((path.mWayPoints[0][1]), (path.mWayPoints[0][0]));
+				return new LatLng((path.getWayPointLat(0)), (path.getWayPointLng(0)));
 		}
 		
 		private void InitialiseMaxMinLatLon(LatLng start, LatLng end) {
@@ -500,7 +503,7 @@ public class ShowMapActivity extends Activity implements LocationListener,
 		}
 		
 		private PolylineOptions DrawPath(Path path) {
-			if (path.mWayPoints.length > 2) {	// If length is 1, we only have 1 point so can't draw a line
+			if (path.getWayPoints().length > 2) {	// If length is 1, we only have 1 point so can't draw a line
 				line = new PolylineOptions();
 				line.width(5);
 				line.color(Color.RED);
@@ -508,14 +511,14 @@ public class ShowMapActivity extends Activity implements LocationListener,
 				LatLng from = null;
 				LatLng to = null;
 
-				for (int i = 1; i < path.mWayPoints.length; i++) {
+				for (int i = 1; i < path.getWayPoints().length; i++) {
 					
 					if(from == null)
-						from = new LatLng((path.mWayPoints[0][1]), (path.mWayPoints[0][0]));
+						from = new LatLng((path.getWayPointLat(0)), (path.getWayPointLng(0)));
 					else
 						from = new LatLng(to.latitude, to.longitude);						
 					
-					to = new LatLng((path.mWayPoints[i][1]), (path.mWayPoints[i][0]));
+					to = new LatLng((path.getWayPointLat(i)), (path.getWayPointLng(i)));
 					line.add(from, to);
 
 					UpdateMaxMinLatLng(to);
@@ -545,8 +548,8 @@ public class ShowMapActivity extends Activity implements LocationListener,
 			while(currentLocation != endLocation) {
 				InputStream myFile;
 				try {
-					Section s = currRoute.sections[currentLocation];
-					myFile = getAssets().open(s.poiResource);
+					Section s = currRoute.getSection(currentLocation);
+					myFile = getAssets().open(s.getPoiResource());
 					
 					pointsOfInterest.addAll(POIProvider.getPOIs(myFile));
 				} catch (IOException e) {
@@ -555,7 +558,7 @@ public class ShowMapActivity extends Activity implements LocationListener,
 				}
 				
 				// for circular routes, if we're at the final section, jump to the first section
-				if(currRoute.circular && currentLocation == currRoute.sections.length - 1) {
+				if(currRoute.isCircular() && currentLocation == currRoute.getSections().length - 1) {
 					currentLocation = 0;
 				} else {
 					currentLocation++;

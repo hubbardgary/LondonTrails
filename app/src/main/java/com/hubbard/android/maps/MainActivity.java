@@ -15,8 +15,8 @@ import android.widget.Button;
 
 public class MainActivity extends Activity {
 
-	Button button;
-	Resources res;
+	private Button button;
+	private Resources res;
 	
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
@@ -36,7 +36,7 @@ public class MainActivity extends Activity {
 	    }
 	}
 
-	public void addListenerOnButton() {
+	private void addListenerOnButton() {
 		final Context context = this;
 
         // Add Capital Ring listener

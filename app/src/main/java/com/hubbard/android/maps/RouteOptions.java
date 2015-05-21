@@ -21,15 +21,18 @@ import android.widget.TextView;
 
 public class RouteOptions extends Activity implements OnItemSelectedListener {
 
-    Button button;
-    Spinner source, destination, direction;
-    List<String> sourceContents, destContents;
-    ArrayAdapter<String> dataAdapter1, dataAdapter2;
-    HashMap<String, Integer> hshSectionMap;
-    Resources res;
-    int sectionResource;
-    String[] sectionsArray;
-    Route currRoute;
+    private Button button;
+    private Spinner source;
+    private Spinner destination;
+    private Spinner direction;
+    private List<String> destContents;
+    private ArrayAdapter<String> dataAdapter1;
+    private ArrayAdapter<String> dataAdapter2;
+    private HashMap<String, Integer> hshSectionMap;
+    private Resources res;
+    private int sectionResource;
+    private String[] sectionsArray;
+    private Route currRoute;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -58,7 +61,7 @@ public class RouteOptions extends Activity implements OnItemSelectedListener {
         hshSectionMap = new HashMap<String, Integer>();
         String[] sections = sectionsArray;
         for(int i = 0; i < sections.length; i++) {
-            hshSectionMap.put((String)sections[i], i);
+            hshSectionMap.put(sections[i], i);
         }
         glob.setSectionMap(hshSectionMap);
 
@@ -66,7 +69,7 @@ public class RouteOptions extends Activity implements OnItemSelectedListener {
         destination = populateSpinner(R.id.DestinationSpinner, sectionResource);
 
         direction = populateSpinner(R.id.DirectionSpinner, R.array.directions);
-        if(!currRoute.circular) {
+        if(!currRoute.isCircular()) {
             direction.setVisibility(View.GONE);
             findViewById(R.id.DirectionLbl).setVisibility(View.GONE);
         }
@@ -100,7 +103,7 @@ public class RouteOptions extends Activity implements OnItemSelectedListener {
             destination.setSelection(destContents.indexOf(strEnd));
         }
 
-        if(strStart != null && strStart != "" && strEnd != null && strEnd != "" && strStart != strEnd)
+        if(strStart != null && !strStart.equals("") && strEnd != null && !strEnd.equals("") && !strStart.equals(strEnd))
             UpdateDistance(CalculateDistance());
     }
 
@@ -108,7 +111,7 @@ public class RouteOptions extends Activity implements OnItemSelectedListener {
     public void onNothingSelected(AdapterView arg0) {
     }
 
-    public void addListenerOnButton() {
+    private void addListenerOnButton() {
         final Context context = this;
 
         button = (Button)findViewById(R.id.GoBtn);
@@ -125,7 +128,7 @@ public class RouteOptions extends Activity implements OnItemSelectedListener {
                 intent.putExtra("latLngStart", iStart);
                 intent.putExtra("latLngEnd", iEnd);
 
-                if (currRoute.circular) {
+                if (currRoute.isCircular()) {
                     intent.putExtra("direction", ((Spinner) findViewById(R.id.DirectionSpinner)).getSelectedItemPosition());
                 } else {
                     if (iStart < iEnd)
@@ -156,7 +159,7 @@ public class RouteOptions extends Activity implements OnItemSelectedListener {
         int startSection = GetSelectedItemId((Spinner)findViewById(R.id.StartLocationSpinner));
         int endSection = GetSelectedItemId((Spinner)findViewById(R.id.DestinationSpinner));
         
-        if(currRoute.circular) {
+        if(currRoute.isCircular()) {
             int direction = ((Spinner) findViewById(R.id.DirectionSpinner)).getSelectedItemPosition();
             if(direction == 1) {
                 // anti-clockwise, so swap latLngStart and latLngEnd and calculate as clockwise.
@@ -177,25 +180,25 @@ public class RouteOptions extends Activity implements OnItemSelectedListener {
         double totalDistance = 0;
         int i = startSection;
         do {
-            totalDistance += currRoute.sections[i].distanceInKm;
+            totalDistance += currRoute.getSection(i).getDistanceInKm();
             i++;
 
-            if(currRoute.circular) {
+            if(currRoute.isCircular()) {
                 // allow wraparound for circular routes
                 if (i < 0)
-                    i = currRoute.sections.length - 1;
-                if (i > currRoute.sections.length - 1)
+                    i = currRoute.getSections().length - 1;
+                if (i > currRoute.getSections().length - 1)
                     i = 0;
             }
 
         } while(i != endSection);
 
         int previousSection = endSection - 1;
-        if(currRoute.circular && previousSection < 0)
-            previousSection = currRoute.sections.length - 1;
+        if(currRoute.isCircular() && previousSection < 0)
+            previousSection = currRoute.getSections().length - 1;
 
-        totalDistance += currRoute.sections[startSection].startLinkDistanceInKm;
-        totalDistance += currRoute.sections[previousSection].endLinkDistanceInKm;
+        totalDistance += currRoute.getSection(startSection).getStartLinkDistanceInKm();
+        totalDistance += currRoute.getSection(previousSection).getEndLinkDistanceInKm();
         
         return totalDistance;
     }

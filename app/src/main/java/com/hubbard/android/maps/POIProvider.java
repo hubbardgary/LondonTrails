@@ -15,7 +15,7 @@ import org.xml.sax.helpers.DefaultHandler;
 
 import com.google.android.gms.maps.model.LatLng;
 
-public class POIProvider {
+class POIProvider {
 
 	public static List<POI> getPOIs(InputStream is) {
 		POIHandler handler = new POIHandler();
@@ -35,10 +35,10 @@ public class POIProvider {
 
 class POIHandler extends DefaultHandler {
 	
-	boolean bName = false;
-	boolean bDescription = false;
-	boolean bCoordinates = false;	
-	POI currentPOI;
+	private boolean name = false;
+	private boolean description = false;
+	private boolean coordinates = false;
+	private POI currentPOI;
 	
 	List<POI> pointsOfInterest;
 	
@@ -51,33 +51,33 @@ class POIHandler extends DefaultHandler {
 			currentPOI = new POI();	
 		}
 		else if(name.equalsIgnoreCase("name")) {
-			bName = true;
+			this.name = true;
 		}
 		else if(name.equalsIgnoreCase("description")) {
-			bDescription = true;
+			description = true;
 		}
 		else if(name.equalsIgnoreCase("coordinates")) {
-			bCoordinates = true;
+			coordinates = true;
 		}
 	}
 	
 	public void characters(char[] ch, int start, int length)
 			throws SAXException {
 
-		if(bName) {
-			currentPOI.title = new String(ch, start, length);
-			bName = false;
+		if(name) {
+			currentPOI.setTitle(new String(ch, start, length));
+			name = false;
 		}
-		if(bDescription) {
-			currentPOI.snippet = new String(ch, start, length);
-			bDescription = false;
+		if(description) {
+			currentPOI.setSnippet(new String(ch, start, length));
+			description = false;
 		}
-		if(bCoordinates) {
+		if(coordinates) {
 			String sLonLat = new String(ch, start, length);
 			String sLon = sLonLat.substring(0, sLonLat.indexOf(','));
 			String sLat = sLonLat.substring(sLonLat.indexOf(',') + 1, sLonLat.lastIndexOf(','));
-			currentPOI.coords = new LatLng(Double.parseDouble(sLat), Double.parseDouble(sLon));
-			bCoordinates = false;
+			currentPOI.setCoords(new LatLng(Double.parseDouble(sLat), Double.parseDouble(sLon)));
+			coordinates = false;
 		}
 	}
 	

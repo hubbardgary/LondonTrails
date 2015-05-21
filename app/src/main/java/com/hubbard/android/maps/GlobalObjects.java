@@ -8,13 +8,7 @@ public class GlobalObjects extends Application {
 
 	private Route currentRoute;
 	private HashMap<String, Integer> hshSectionMap;
-	
-	@Override
-	public void onCreate() {
-		
-		super.onCreate();
-	}
-	
+
 	public Route getCurrentRoute() {
 		return currentRoute;
 	}

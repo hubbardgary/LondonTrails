@@ -11,10 +11,10 @@ import org.xml.sax.Attributes;
 import org.xml.sax.SAXException;
 import org.xml.sax.helpers.DefaultHandler;
 
-public class CoordinateProvider {
+class CoordinateProvider {
 	
 	public static String getRoute(InputStream is) {
-		KMLHandler handler = new KMLHandler();
+		CoordinateProviderHandler handler = new CoordinateProviderHandler();
 		try {
 			SAXParser parser = SAXParserFactory.newInstance().newSAXParser();
 			parser.parse(is, handler);
@@ -29,11 +29,11 @@ public class CoordinateProvider {
 	}
 }
 	
-class KMLHandler extends DefaultHandler {
+class CoordinateProviderHandler extends DefaultHandler {
 	private StringBuffer elementContent;
 	String coordinates = "";
 	
-	public KMLHandler() {
+	public CoordinateProviderHandler() {
 	}
 
 	public void startElement(String uri, String localName, String name, Attributes attributes) throws SAXException {

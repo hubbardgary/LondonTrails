@@ -33,6 +33,7 @@ import com.google.android.gms.maps.model.LatLng;
 import com.google.android.gms.maps.model.LatLngBounds;
 import com.google.android.gms.maps.model.Marker;
 import com.google.android.gms.maps.model.MarkerOptions;
+import com.google.android.gms.maps.model.Polyline;
 import com.google.android.gms.maps.model.PolylineOptions;
 import com.google.android.gms.common.ConnectionResult;
 import com.google.android.gms.common.GooglePlayServicesClient;
@@ -78,25 +79,28 @@ public class ShowMapActivity extends Activity implements LocationListener,
         ANTI_CLOCKWISE
     }
 
+    private Polyline mapRoute;  // Provides a means of accessing the polyline from within the map
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_show_map);
+
+        start = getIntent().getExtras().getInt("startSection");
+        end = getIntent().getExtras().getInt("endSection");
+        direction = getIntent().getExtras().getInt("direction") == 0 ? Direction.CLOCKWISE : Direction.ANTI_CLOCKWISE;
 
         map = ((MapFragment) getFragmentManager().findFragmentById(R.id.map))
                 .getMap();
 
         glob = (GlobalObjects) getApplicationContext();
         currRoute = glob.getCurrentRoute();
-        setTitle(currRoute.getName());
-
-        start = getIntent().getExtras().getInt("latLngStart");
-        end = getIntent().getExtras().getInt("latLngEnd");
-        direction = getIntent().getExtras().getInt("direction") == 0 ? Direction.CLOCKWISE : Direction.ANTI_CLOCKWISE;
+        setTitle(currRoute.getName() + ": Section " + String.valueOf(start + 1) + " - " + String.valueOf(end + 1));
 
         SetPOIWindowAdapter();
 
-        new BackgroundStuff().execute();
+        // Perform heavy lifting on a background thread
+        new GetMapContent().execute();
 
         // Attempts to move camera before map has loaded will fail.
         // http://stackoverflow.com/questions/13692579/movecamera-with-cameraupdatefactory-newlatlngbounds-crashes
@@ -343,7 +347,7 @@ public class ShowMapActivity extends Activity implements LocationListener,
         });
     }
 
-    private class BackgroundStuff extends AsyncTask<Void, Void, Integer> {
+    private class GetMapContent extends AsyncTask<Void, Void, Integer> {
 
         PolylineOptions line;
         LatLng latLngStart, latLngEnd;
@@ -378,9 +382,10 @@ public class ShowMapActivity extends Activity implements LocationListener,
 
         @Override
         protected void onPostExecute(Integer i) {
+            mapRoute = map.addPolyline(line);
+
             PushPin(latLngStart, currRoute.getEndPoint(start), "Your walk starts here.", R.drawable.waypoint_start);
             PushPin(latLngEnd, currRoute.getEndPoint(end), "Your walk ends here.", R.drawable.waypoint_stop);
-            map.addPolyline(line);
 
             markers = new ArrayList<Marker>();
             for (POI p : pointsOfInterest) {
@@ -533,8 +538,7 @@ public class ShowMapActivity extends Activity implements LocationListener,
                     .position(point)
                     .title(title)
                     .snippet(snippet)
-                    .icon(BitmapDescriptorFactory
-                            .fromResource(icon)));
+                    .icon(BitmapDescriptorFactory.fromResource(icon)));
         }
 
         private void SetDefaultBounds(LatLng minLatLng, LatLng maxLatLng) {

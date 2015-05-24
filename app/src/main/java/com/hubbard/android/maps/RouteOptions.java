@@ -54,6 +54,7 @@ public class RouteOptions extends Activity implements OnItemSelectedListener {
                 currRoute = new LondonLoop();
                 break;
         }
+        setTitle(currRoute.getName());
 
         glob.setCurrentRoute(currRoute);
 
@@ -86,7 +87,7 @@ public class RouteOptions extends Activity implements OnItemSelectedListener {
 
         if (clickedSpinner.getId() == R.id.StartLocationSpinner) {
             if (strStart.equals(strEnd)) {
-                // Clear latLngEnd to prevent latLngStart and latLngEnd being the same.
+                // Clear End to prevent Start and End being the same.
                 strEnd = "";
             }
 
@@ -119,14 +120,14 @@ public class RouteOptions extends Activity implements OnItemSelectedListener {
             @Override
             public void onClick(View arg0) {
 
-                // Grab latLngStart and latLngEnd from spinner controls
+                // Grab Start and End from spinner controls
                 int iStart = GetSelectedItemId((Spinner) findViewById(R.id.StartLocationSpinner));
                 int iEnd = GetSelectedItemId((Spinner) findViewById(R.id.DestinationSpinner));
 
-                // Invoke Map Activity, passing in the latLngStart and latLngEnd points
+                // Invoke Map Activity, passing in the Start and End sections
                 Intent intent = new Intent(context, ShowMapActivity.class);
-                intent.putExtra("latLngStart", iStart);
-                intent.putExtra("latLngEnd", iEnd);
+                intent.putExtra("startSection", iStart);
+                intent.putExtra("endSection", iEnd);
 
                 if (currRoute.isCircular()) {
                     intent.putExtra("direction", ((Spinner) findViewById(R.id.DirectionSpinner)).getSelectedItemPosition());
@@ -162,14 +163,14 @@ public class RouteOptions extends Activity implements OnItemSelectedListener {
         if (currRoute.isCircular()) {
             int direction = ((Spinner) findViewById(R.id.DirectionSpinner)).getSelectedItemPosition();
             if (direction == 1) {
-                // anti-clockwise, so swap latLngStart and latLngEnd and calculate as clockwise.
+                // anti-clockwise, so swap Start and End and calculate as clockwise.
                 int temp = endSection;
                 endSection = startSection;
                 startSection = temp;
             }
         } else {
             if (startSection > endSection) {
-                // anti-clockwise, so swap latLngStart and latLngEnd and calculate as clockwise.
+                // anti-clockwise, so swap Start and End and calculate as clockwise.
                 int temp = endSection;
                 endSection = startSection;
                 startSection = temp;

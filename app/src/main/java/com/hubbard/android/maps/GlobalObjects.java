@@ -3,6 +3,7 @@ package com.hubbard.android.maps;
 import java.util.HashMap;
 
 import android.app.Application;
+import android.text.Html;
 
 public class GlobalObjects extends Application {
 
@@ -23,5 +24,12 @@ public class GlobalObjects extends Application {
 
     public void setSectionMap(HashMap<String, Integer> h) {
         hshSectionMap = h;
+    }
+
+    public static CharSequence getButtonText(String title, String subtitle) {
+        return Html.fromHtml("<b><big>" + title + "</big></b>" + "<br />" + "<small>" + subtitle + "</small>");
+    }
+    public static CharSequence getButtonText(String title) {
+        return Html.fromHtml("<b><big>" + title + "</big></b>");
     }
 }

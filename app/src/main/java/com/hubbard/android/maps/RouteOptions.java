@@ -10,6 +10,7 @@ import android.app.Activity;
 import android.content.Context;
 import android.content.Intent;
 import android.content.res.Resources;
+import android.text.Html;
 import android.view.View;
 import android.view.View.OnClickListener;
 import android.widget.AdapterView;
@@ -38,6 +39,7 @@ public class RouteOptions extends Activity implements OnItemSelectedListener {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_route_options);
+        ((Button)findViewById(R.id.GoBtn)).setText(GlobalObjects.getButtonText("Go!"));
 
         res = getResources();
         sectionResource = getIntent().getExtras().getInt("routeSections");

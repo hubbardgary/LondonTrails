@@ -9,6 +9,7 @@ import android.app.Activity;
 import android.app.Dialog;
 import android.content.Context;
 import android.content.Intent;
+import android.text.Html;
 import android.view.View;
 import android.view.View.OnClickListener;
 import android.widget.Button;
@@ -22,6 +23,10 @@ public class MainActivity extends Activity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
+        ((Button)findViewById(R.id.CapitalRingBtn)).setText(GlobalObjects.getButtonText("Capital Ring", "approx 122km (76 miles)"));
+        ((Button)findViewById(R.id.LondonLoopBtn)).setText(GlobalObjects.getButtonText("London Loop", "approx 240km (149 miles)"));
+
         addListenerOnButton();
 
         res = getResources();

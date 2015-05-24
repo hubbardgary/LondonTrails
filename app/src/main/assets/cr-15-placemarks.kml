@@ -11,7 +11,7 @@
   </Placemark>
   <Placemark>
     <name>Cyprus</name>
-    <description><![CDATA[This area is named after the Mediterranean island. It was built in 1881, a few years after British colonisation of the island.]]></description>
+    <description><![CDATA[This area is named after the Cyprus Estate, which was built to house dock workers in 1881, a few years after British colonisation of the Mediterranean island.]]></description>
     <styleUrl>#style4</styleUrl>
     <Point>
       <coordinates>0.0640082,51.508462,0.0</coordinates>
@@ -43,7 +43,7 @@
   </Placemark>
   <Placemark>
     <name>Woolwich Ferry</name>
-    <description><![CDATA[The Woolwich Ferry offers a free service for pedestrians and vehicles across the Thames. It can be used as an alternative route to the Woolwich foot tunnel, though to do amounts to cheating unless you have a very good reason.]]></description>
+    <description><![CDATA[The Woolwich Ferry offers a free service for pedestrians and vehicles across the Thames. It can be used as an alternative route to the Woolwich foot tunnel, though to do so amounts to cheating unless you have a very good reason.]]></description>
     <styleUrl>#style5</styleUrl>
     <Point>
       <coordinates>0.06180879999999999,51.4964774,0.0</coordinates>

@@ -11,15 +11,15 @@
   </Placemark>
   <Placemark>
     <name>Wimbledon Windmill</name>
-    <description><![CDATA[The last remaining hollow post flour mill in the <br>country, Wimbledon Windmill was built in 1817. Today it houses a museum charting the history of the windmill.]]></description>
+    <description><![CDATA[The last remaining hollow post flour mill in the country, Wimbledon Windmill was built in 1817. Today it houses a museum charting the history of the windmill.]]></description>
     <styleUrl>#style1</styleUrl>
     <Point>
       <coordinates>-0.231619,51.437675,0.000000</coordinates>
     </Point>
   </Placemark>
   <Placemark>
-    <name>Richmond Common</name>
-    <description><![CDATA[Richmond Common is the largest green space in London, spanning 2500 acres. It was created by Charles I in 1634 as a deer park. Today about 630 red and fallow deer roam freely in the park.]]></description>
+    <name>Richmond Park</name>
+    <description><![CDATA[Richmond Park is the largest of the Royal Parks, spanning 2500 acres. It was created by Charles I in 1634 as a deer park. Today about 630 red and fallow deer roam freely here.]]></description>
     <styleUrl>#style8</styleUrl>
     <Point>
       <coordinates>-0.257707,51.436943,0.000000</coordinates>
@@ -59,7 +59,7 @@
   </Placemark>
   <Placemark>
     <name>Eel Pie Island</name>
-    <description><![CDATA[A short distance from the route taken by the Capital Ring, this private is home to about 120 inhabitants as well as some boathouses and art studios. It is only open to the public a couple of weekends a year. It was previously the site of Eel Pie Island Hotel which hosted ballroom dancing in the 1920s and 1930s, before becoming a popular music venue in the 1960s hosting big names like The Who, Pink Floyd and The Rolling Stones. The hotel burned down in 1971.]]></description>
+    <description><![CDATA[A short distance from the route taken by the Capital Ring, this private island is home to about 120 inhabitants. It was previously the site of Eel Pie Island Hotel became a popular music venue in the 1960s hosting big names like The Who and The Rolling Stones. The hotel burned down in 1971.]]></description>
     <styleUrl>#style5</styleUrl>
     <Point>
       <coordinates>-0.324697,51.445396,0.000000</coordinates>

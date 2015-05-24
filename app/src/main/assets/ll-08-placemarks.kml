@@ -19,10 +19,10 @@
   </Placemark>
   <Placemark>
     <name>Grand Union Canal</name>
-    <description><![CDATA[This waterway opened in 1805 and joins the Thames at Brentford (see Capital Ring section 7) and runs up to Birmingham in the opposite direction.]]></description>
+    <description><![CDATA[This waterway opened in 1805 and joins the Thames at Brentford (see Capital Ring section 7). It runs up to Birmingham in the opposite direction.]]></description>
     <styleUrl>#style3</styleUrl>
     <Point>
-      <coordinates>-0.409364,51.500462,0.000000</coordinates>
+      <coordinates>-0.423607,51.506365,0.000000</coordinates>
     </Point>
   </Placemark>
   <Placemark>
@@ -31,14 +31,6 @@
     <styleUrl>#style4</styleUrl>
     <Point>
       <coordinates>-0.414627,51.501550,0.000000</coordinates>
-    </Point>
-  </Placemark>
-  <Placemark>
-    <name>Canal Mileposts</name>
-    <description><![CDATA[GJC stands for Grand Junction Canal which was the original name for the 93 mile stretch that links Brentford to Braunston in Northampton]]></description>
-    <styleUrl>#style5</styleUrl>
-    <Point>
-      <coordinates>-0.423607,51.506365,0.000000</coordinates>
     </Point>
   </Placemark>
   <Placemark>

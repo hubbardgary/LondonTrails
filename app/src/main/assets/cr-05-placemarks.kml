@@ -11,7 +11,7 @@
   </Placemark>
   <Placemark>
     <name>Tooting Bec Lido</name>
-    <description><![CDATA[This huge open-air swimming pool measures over 90m long and 30m wide, making it the largest swimming pool in the UK by surface area.]]></description>
+    <description><![CDATA[This huge open-air swimming pool measures over 90m long and 30m wide, making it one of the largest swimming pools in the UK.]]></description>
     <styleUrl>#style5</styleUrl>
     <Point>
       <coordinates>-0.139196,51.432098,0.000000</coordinates>
@@ -51,7 +51,7 @@
   </Placemark>
   <Placemark>
     <name>River Wandle</name>
-    <description><![CDATA[This used to be one of the country's fastest flowing rivers and as such powered many watermills when the area largely industrial.]]></description>
+    <description><![CDATA[This used to be one of the country's fastest flowing rivers and as such powered many watermills when the area was largely industrial.]]></description>
     <styleUrl>#style4</styleUrl>
     <Point>
       <coordinates>-0.190099,51.442261,0.000000</coordinates>

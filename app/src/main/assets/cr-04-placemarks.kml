@@ -3,7 +3,7 @@
 <Document>
   <Placemark>
     <name>Upper Norwood Recreation Ground</name>
-    <description><![CDATA[The River Effra, one of London's many subterranean rivers, flows through this large green space.]]></description>
+    <description><![CDATA[The River Effra, one of London's many subterranean rivers, flows beneath this large green space.]]></description>
     <styleUrl>#style4</styleUrl>
     <Point>
       <coordinates>-0.091882,51.417374,0.000000</coordinates>
@@ -11,7 +11,7 @@
   </Placemark>
   <Placemark>
     <name>Norwood Grove</name>
-    <description><![CDATA[This Grade II listed building was originally built in the 1840s by Arthur Anderson, the founder of Peninsular and Oriental Steam Navigation Company, more commonly known today as P&amp;O.]]></description>
+    <description><![CDATA[This Grade II listed building was originally built in the 1840s by Arthur Anderson, the founder of Peninsular and Oriental Steam Navigation Company, more commonly known today as P&O.]]></description>
     <styleUrl>#style2</styleUrl>
     <Point>
       <coordinates>-0.114198,51.419464,0.000000</coordinates>

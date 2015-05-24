@@ -3,7 +3,7 @@
 <Document>
   <Placemark>
     <name>Springfield Park</name>
-    <description><![CDATA[Opened in 1905, this park was created from the grounds occupied by three private houses, one of which was converted into a cafe. It is home to Springfield marina which is usually populated by colourful narrow boats.]]></description>
+    <description><![CDATA[Opened in 1905, this park was created from the grounds belonging to three private houses, one of which was converted into a cafe. It is home to Springfield marina which is usually filled with colourful narrow boats.]]></description>
     <styleUrl>#style1</styleUrl>
     <Point>
       <coordinates>-0.05905150000000001,51.5700814,0.0</coordinates>
@@ -35,7 +35,7 @@
   </Placemark>
   <Placemark>
     <name>Hackney Marshes</name>
-    <description><![CDATA[Hackney Marshes appears in the Guinness Book of Records for having the largest number of football pitches - over 80.]]></description>
+    <description><![CDATA[One of the largest commons in Greater London, Hackney Marshes is famous for its sprawl of over 80 football pitches.]]></description>
     <styleUrl>#style6</styleUrl>
     <Point>
       <coordinates>-0.0322294,51.5569291,0.0</coordinates>

@@ -27,7 +27,7 @@
   </Placemark>
   <Placemark>
     <name>Down House</name>
-    <description><![CDATA[A short detour from the main Loop route, this house was home to Sir Charles Darwin from 1842 until he died in 1882. Down House is open to the public.]]></description>
+    <description><![CDATA[A moderate detour from the main LOOP route, this house was home to Sir Charles Darwin from 1842 until he died in 1882. Down House is open to the public.]]></description>
     <styleUrl>#style4</styleUrl>
     <Point>
       <coordinates>0.053483,51.331443,0.000000</coordinates>
@@ -35,7 +35,7 @@
   </Placemark>
   <Placemark>
     <name>Biggin Hill Airport</name>
-    <description><![CDATA[Best known for the role it played during the Battle of Britain in World War II when it served as one of the main air bases protecting London from enemy bombers.]]></description>
+    <description><![CDATA[This airfield is best known for the role it played during the Battle of Britain in World War II when it served as one of the main air bases protecting London from enemy bombers.]]></description>
     <styleUrl>#style5</styleUrl>
     <Point>
       <coordinates>0.029247,51.332113,0.000000</coordinates>
@@ -43,7 +43,7 @@
   </Placemark>
   <Placemark>
     <name>Holwood House</name>
-    <description><![CDATA[This vast mansion was originally built in the 18th Century and was soon extended by Sir John Soane in the 1790s while then prmie minister William Pitt the Younger lived there. At time of writing, it is on the market with an asking price of £12,000,000.]]></description>
+    <description><![CDATA[This vast mansion was originally built in the 18th Century and was soon extended by Sir John Soane in the 1790s while then prime minister William Pitt the Younger lived here. At time of writing, it is on the market with a guide price of £12,000,000.]]></description>
     <styleUrl>#style6</styleUrl>
     <Point>
       <coordinates>0.041220,51.353130,0.000000</coordinates>
@@ -59,7 +59,7 @@
   </Placemark>
   <Placemark>
     <name>Caesar's Well</name>
-    <description><![CDATA[This is the source of the Ravensbourne and flows into Keston Ponds, which were built in the 19th Century, probably to provide a water supply to nearby Holwood House.]]></description>
+    <description><![CDATA[This is the source of the River Ravensbourne which flows into Keston Ponds, which were built in the 19th Century, probably to provide a water supply to nearby Holwood House.]]></description>
     <styleUrl>#style8</styleUrl>
     <Point>
       <coordinates>0.037363,51.357765,0.000000</coordinates>

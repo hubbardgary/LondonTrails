@@ -11,7 +11,7 @@
   </Placemark>
   <Placemark>
     <name>Hampton Court Palace</name>
-    <description><![CDATA[Originally built around 1514 for Cardinal Thomas Wolsey during the reign of Henry VIII. It was soon passed to Henry VIII after Wolsey fell from favour, and it was occupied by the royal family until the 1700s. It was initially opened to visitors by Queen Victoria in 1838.]]></description>
+    <description><![CDATA[Originally built around 1514 for Cardinal Thomas Wolsey during the reign of Henry VIII. It was seized by Henry VIII after Wolsey fell from favour, and it was occupied by the royal family until the 1700s. It was initially opened to visitors by Queen Victoria in 1838.]]></description>
     <styleUrl>#style2</styleUrl>
     <Point>
       <coordinates>-0.338388,51.403516,0.000000</coordinates>
@@ -53,7 +53,7 @@
   </Placemark>
   <Placemark>
     <name>Hatton Cross magic roundabout</name>
-    <description><![CDATA[One of a few of these slightly baffling intersections around the country.]]></description>
+    <description><![CDATA[This is a small example of the few of these slightly baffling intersections found around the UK.]]></description>
     <styleUrl>#style7</styleUrl>
     <Point>
       <coordinates>-0.423349,51.467857,0.000000</coordinates>

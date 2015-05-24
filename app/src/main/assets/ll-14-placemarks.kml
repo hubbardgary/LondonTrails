@@ -3,7 +3,7 @@
 <Document>
   <Placemark>
     <name>Ye Olde King's Head</name>
-    <description><![CDATA[What's the connection between Charles Dickens, Dick Turpin, Alan Sugar and Turkish cuisine? This pub apparently. Built in 1547, this is one of the oldest pubs in England. It is believed to be the pub that appeared as The Maypole Inn in Charles Dickens's 'Barnaby Rudge', and was apparently regularly frequented by highwayman Dick Turpin. In 2010, the building was purchased by Sir Alan Sugar and is now home to an expensive Turkish restaurant serving Chigwell's affluent residents.]]></description>
+    <description><![CDATA[What's the connection between Charles Dickens, Dick Turpin, Alan Sugar and Turkish cuisine? This pub apparently. Built in 1547, this is believed to be the pub that appeared as The Maypole Inn in Charles Dickens's 'Barnaby Rudge', and was apparently regularly frequented by highwayman Dick Turpin. In 2010, the building was purchased by Sir Alan Sugar and is now home to an expensive Turkish restaurant serving Chigwell's affluent residents.]]></description>
     <styleUrl>#style1</styleUrl>
     <Point>
       <coordinates>0.080777,51.624305,0.000000</coordinates>
@@ -19,7 +19,7 @@
   </Placemark>
   <Placemark>
     <name>Havering Country Park</name>
-    <description><![CDATA[Formerly part of the Havering Palace estate, the route the LOOP takes passes several giant redwood trees (Wellingtonia) - the tallest living thing on Earth. This is one of only two plantations in the country. ]]></description>
+    <description><![CDATA[Formerly part of the Havering Palace estate, the route the LOOP takes passes several giant redwood trees (Wellingtonia) - one of the tallest, widest, and longest-living organisms on Earth. This is one of only two plantations in the country. ]]></description>
     <styleUrl>#style3</styleUrl>
     <Point>
       <coordinates>0.171576,51.614259,0.000000</coordinates>

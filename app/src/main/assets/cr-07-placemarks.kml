@@ -3,14 +3,14 @@
 <Document>
   <Placemark>
     <name>Richmond Lock and Footbridge</name>
-    <description><![CDATA[The demolition of the old London Bridge in 1832 resulted tides in the Thames rising and falling far more rapidly than previously. This caused the river here to be unnavigable in low tide. This lock and bridge were built to rectify this between 1891 and 1894.]]></description>
+    <description><![CDATA[The demolition of the old London Bridge in 1832 caused tides in the Thames to rise and fall far more rapidly than previously, making the river here unnavigable in low tide. This lock and bridge were built to rectify this between 1891 and 1894.]]></description>
     <styleUrl>#style1</styleUrl>
     <Point>
       <coordinates>-0.317230,51.462204,0.000000</coordinates>
     </Point>
   </Placemark>
   <Placemark>
-    <name>Duke of Northumberland&#39;s River</name>
+    <name>Duke of Northumberland's River</name>
     <description><![CDATA[This eastern section of the Duke of Northumberland's River was built by the monks of Syon Abbey to provide water to power their flour mill. The water is diverted from the River Crane at Donkey Wood, which features in Section 7 of the London Loop.]]></description>
     <styleUrl>#style4</styleUrl>
     <Point>
@@ -19,7 +19,7 @@
   </Placemark>
   <Placemark>
     <name>Syon Park</name>
-    <description><![CDATA[This 200 acre estate is the former site of Syon Monastery. The monastery was dissolved in 1539 as part of King Henry VIII's purge to suppress opposition of him declaring himself head of the Church of England, and to benefit from the wealth that existed within them. Now it is the site of Syon House and Gardens, a trout fishery, and an aquatics and garden centre.]]></description>
+    <description><![CDATA[This 200 acre estate is the former site of Syon Monastery. The monastery was dissolved in 1539 as part of King Henry VIII's suppression. Now it is the site of Syon House and Gardens, a trout fishery, and an aquatics and garden centre.]]></description>
     <styleUrl>#style6</styleUrl>
     <Point>
       <coordinates>-0.318528,51.472866,0.000000</coordinates>
@@ -27,7 +27,7 @@
   </Placemark>
   <Placemark>
     <name>Syon House</name>
-    <description><![CDATA[Syon House was built in 1547 by the 1st Duke of Somerset. Since 1762, it has been the family home of the Duke of Northumberland, who stills owns and looks after the land. ]]></description>
+    <description><![CDATA[Syon House was built in 1547 by the 1st Duke of Somerset. Since 1762, it has been the family home of the Duke of Northumberland, who stills owns and looks after the land.]]></description>
     <styleUrl>#style5</styleUrl>
     <Point>
       <coordinates>-0.312488,51.476776,0.000000</coordinates>
@@ -35,7 +35,7 @@
   </Placemark>
   <Placemark>
     <name>The Great Conservatory</name>
-    <description><![CDATA[Designed by Charles Fowler in 1828, this was the first large scale conservatory to be built from metal and glass. It originally housed the Duke of Northumberland's collection of plants inspired the design of the Crystal Palace.]]></description>
+    <description><![CDATA[Designed by Charles Fowler in 1828, this was the first large scale conservatory to be built from metal and glass. It originally housed the Duke of Northumberland's collection of plants and inspired the design of the Crystal Palace.]]></description>
     <styleUrl>#style3</styleUrl>
     <Point>
       <coordinates>-0.312692,51.478577,0.000000</coordinates>
@@ -43,7 +43,7 @@
   </Placemark>
   <Placemark>
     <name>Grand Union Canal</name>
-    <description><![CDATA[The Grand Union Canal, established in 1929, is the longest canal in the UK. It starts where the River Brent meets the Thames and stretches 137 miles (220 km) to Birmingham, traversing 166 locks en-route. The section from Brentford to Braunston was previously called the Grand Junction Canal.]]></description>
+    <description><![CDATA[The Grand Union Canal, established in 1929, is the longest canal in the UK. It starts where the River Brent meets the Thames and stretches 137 miles (220 km) to Birmingham, traversing 166 locks en-route. This section from Brentford to Braunston was previously called the Grand Junction Canal.]]></description>
     <styleUrl>#style2</styleUrl>
     <Point>
       <coordinates>-0.311469,51.483421,0.000000</coordinates>

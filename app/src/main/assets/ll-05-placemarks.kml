@@ -3,7 +3,7 @@
 <Document>
   <Placemark>
     <name>Riddlesdown Quarry</name>
-    <description><![CDATA[This lime and chalk is about 200 years old and was in use until 1967.]]></description>
+    <description><![CDATA[This lime and chalk pit is about 200 years old and was in use until 1967.]]></description>
     <styleUrl>#style1</styleUrl>
     <Point>
       <coordinates>-0.082741,51.318503,0.000000</coordinates>
@@ -51,7 +51,7 @@
   </Placemark>
   <Placemark>
     <name>HMP Highdown</name>
-    <description><![CDATA[This prison was built in the 1990s on the previous site of Banstead Lunatic Asylum. In November 2010 the prison football team played a friendly match against Wycombe Wanderers. They lost 8-0.]]></description>
+    <description><![CDATA[This prison was built in the 1990s on the previous site of Banstead Lunatic Asylum.]]></description>
     <styleUrl>#style7</styleUrl>
     <Point>
       <coordinates>-0.189815,51.335224,0.000000</coordinates>

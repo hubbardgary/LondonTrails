@@ -10,8 +10,8 @@
     </Point>
   </Placemark>
   <Placemark>
-    <name>Site of Nonsuch Palace</name>
-    <description><![CDATA[Built in 1538, this palace is thought to be one of Henry VIII's grandest palaces. It was demolished in 1682 by Charles II's mistress. She sold the materials to pay off gambling debts.]]></description>
+    <name>Former Site of Nonsuch Palace</name>
+    <description><![CDATA[Built in 1538, this was thought to be one of Henry VIII's grandest palaces. It was demolished in 1682 by Charles II's mistress. She sold the materials to pay off gambling debts.]]></description>
     <styleUrl>#style2</styleUrl>
     <Point>
       <coordinates>-0.238845,51.354692,0.000000</coordinates>
@@ -19,7 +19,7 @@
   </Placemark>
   <Placemark>
     <name>Ewell Castle school</name>
-    <description><![CDATA[Built in 1814 for Thomas Calverley on part of the Nonsuch Palace Estate, this mansion became a school in 1926.]]></description>
+    <description><![CDATA[Built in 1814 for Thomas Calverley on part of the Nonsuch Palace Estate, this mansion, with its distinctive castellations, became a school in 1926.]]></description>
     <styleUrl>#style3</styleUrl>
     <Point>
       <coordinates>-0.247176,51.350621,0.000000</coordinates>

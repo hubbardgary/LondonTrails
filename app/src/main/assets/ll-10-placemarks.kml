@@ -3,7 +3,7 @@
 <Document>
   <Placemark>
     <name>Oxhey Woods</name>
-    <description><![CDATA[Some areas of this 97 hectare nature reserve date back to the last Ice Age, and was probably once part of the vast area of woodland between the River Colne and the River Thames.]]></description>
+    <description><![CDATA[Some areas of this 97 hectare nature reserve date back to the last Ice Age. This land was probably once part of the vast area of woodland between the River Colne and the River Thames.]]></description>
     <styleUrl>#style1</styleUrl>
     <Point>
       <coordinates>-0.406537,51.624997,0.000000</coordinates>
@@ -19,7 +19,7 @@
   </Placemark>
   <Placemark>
     <name>Grimsdyke Lake</name>
-    <description><![CDATA[Once part of the ornamental gardens owned by William Gilbert from Gilbert and Sullivan. William Gilbert died here in 1911 while attempting to save a drowning girl, after which his wife had the lake drained.]]></description>
+    <description><![CDATA[This was once part of the ornamental gardens owned by William Gilbert from Gilbert and Sullivan. William Gilbert died here in 1911 while attempting to save a drowning girl, after which his wife had the lake drained.]]></description>
     <styleUrl>#style3</styleUrl>
     <Point>
       <coordinates>-0.354899,51.622773,0.000000</coordinates>
@@ -43,7 +43,7 @@
   </Placemark>
   <Placemark>
     <name>Aldenham Reservoir</name>
-    <description><![CDATA[This reservoir was built by French prisoners of war in 1795 to allay concerns of mill owners that the Grand Junction Canal would affect river levels, thereby reducing their trade.]]></description>
+    <description><![CDATA[This reservoir was built by French prisoners of war in 1795 to allay the concerns of mill owners that the Grand Junction Canal would affect river levels, thereby reducing their trade.]]></description>
     <styleUrl>#style6</styleUrl>
     <Point>
       <coordinates>-0.311480,51.646239,0.000000</coordinates>

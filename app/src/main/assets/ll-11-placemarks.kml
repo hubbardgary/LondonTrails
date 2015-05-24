@@ -11,7 +11,7 @@
   </Placemark>
   <Placemark>
     <name>A1 Crossing</name>
-    <description><![CDATA[The worst feature of the London Loop due to the amount of road walking required to cross it, the A1 is at least interesting in that, at 410 miles, its the longest numbered road in the UK. It connects London, the capital of England, with Edinburgh, the capital of Scotland. It was designated by the Ministry of Transport in 1921 and largely follows the route of the old Great North Road.]]></description>
+    <description><![CDATA[The worst feature of the London Loop due to the amount of road walking required to cross it, the A1 is at least interesting in that, at 410 miles, its the longest numbered road in the UK. It connects the capital of England with the capital of Scotland. It was designated by the Ministry of Transport in 1921 and largely follows the route of the old Great North Road.]]></description>
     <styleUrl>#style2</styleUrl>
     <Point>
       <coordinates>-0.254188,51.627741,0.000000</coordinates>
@@ -35,7 +35,7 @@
   </Placemark>
   <Placemark>
     <name>Monken Hadley Common</name>
-    <description><![CDATA[Once a large royal hunting forest which sprawled to Potters Bar, occupied by 3,000 deer. Queen Elizabeth used to hunt here. All that is left today is the 240 acres that residents claimed for grazing in the late 1700s.]]></description>
+    <description><![CDATA[This common was once a large royal hunting forest that sprawled to Potters Bar, occupied by 3,000 deer. Queen Elizabeth used to hunt here. All that is left today is the 240 acres that residents claimed for grazing in the late 1700s.]]></description>
     <styleUrl>#style5</styleUrl>
     <Point>
       <coordinates>-0.191188,51.661402,0.000000</coordinates>

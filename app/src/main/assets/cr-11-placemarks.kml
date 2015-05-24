@@ -3,7 +3,7 @@
 <Document>
   <Placemark>
     <name>The Decoy</name>
-    <description><![CDATA[This area of Brent Park is so named as it was once used to capture ducks. Nowadays the pond is often populated by ducks in no imminent danger.]]></description>
+    <description><![CDATA[This area of Brent Park is so named as it was once used to capture ducks. Nowadays the pond is often populated by carefree ducks in no imminent danger.]]></description>
     <styleUrl>#style1</styleUrl>
     <Point>
       <coordinates>-0.2110577,51.5854965,0.0</coordinates>
@@ -27,7 +27,7 @@
   </Placemark>
   <Placemark>
     <name>Hampstead Garden Suburb</name>
-    <description><![CDATA[This settlement was founded by Henrietta Barnet in 1906 and was intended to provide low-density housing with pleasant surroundings for an integrated community of people from all backgrounds. Residents of the area nowadays are almost exclusively occupied by the wealthy middle class.]]></description>
+    <description><![CDATA[This settlement was founded by Henrietta Barnet in 1906 and was intended to provide pleasant dwellings for an integrated community of people from all backgrounds. Nowadays the residences are occupied almost exclusively by the wealthy middle class.]]></description>
     <styleUrl>#style5</styleUrl>
     <Point>
       <coordinates>-0.1865423,51.5856832,0.0</coordinates>

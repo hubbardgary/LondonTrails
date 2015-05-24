@@ -3,7 +3,7 @@
 <Document>
   <Placemark>
     <name>Royal Small Arms Factory</name>
-    <description><![CDATA[This building slightly off the main route was part of the government-owned rifle factory. It is known for producing the Lee Enfield rifle, named after the location of production, by the River Lee. The rifle was used by British forces in the Boer War and both World Wars. Half the site was closed in 1963 and, after privatisation, finally closed in 1988.]]></description>
+    <description><![CDATA[This building, slightly off the main route, was part of the government-owned rifle factory. It is known for producing the Lee Enfield rifle, named after the location of production, by the River Lee. The rifle was used by British forces in the Boer War and both World Wars. Half the site was closed in 1963 and, after privatisation, finally closed in 1988.]]></description>
     <styleUrl>#style1</styleUrl>
     <Point>
       <coordinates>-0.016517,51.668227,0.000000</coordinates>
@@ -11,7 +11,7 @@
   </Placemark>
   <Placemark>
     <name>King George V Reservoir</name>
-    <description><![CDATA[This reservoir and its neighbouring William Girling Reservoir are part of the Lee Valley Reservoir Chain that supply a large portion of London's drinking water. The King George V Reservoir was opened in 1913 by, you guessed it, King George V.]]></description>
+    <description><![CDATA[This reservoir and its neighbouring William Girling Reservoir are part of the Lee Valley Reservoir Chain that supply a large portion of London's drinking water. The King George V Reservoir was opened in 1913.]]></description>
     <styleUrl>#style2</styleUrl>
     <Point>
       <coordinates>-0.015278,51.657462,0.000000</coordinates>
@@ -27,7 +27,7 @@
   </Placemark>
   <Placemark>
     <name>Epping Forest</name>
-    <description><![CDATA[The LOOP just skirts a tiny edge of this large ancient woodland, which, at over 6000 acres, is London's largest open space. Scenes from Monty Python and the Holy Grail were filmed in the forest.]]></description>
+    <description><![CDATA[The LOOP just skirts a tiny edge of this large ancient woodland, which spans over 6000 acres. Scenes from Monty Python and the Holy Grail were filmed in the forest.]]></description>
     <styleUrl>#style4</styleUrl>
     <Point>
       <coordinates>0.013475,51.640301,0.000000</coordinates>

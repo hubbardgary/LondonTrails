@@ -81,6 +81,8 @@ public class ShowMapActivity extends Activity implements LocationListener,
 
     private Polyline mapRoute;  // Provides a means of accessing the polyline from within the map
 
+    private static final int DEFAULT_BOUNDS_PADDING = 100;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -107,7 +109,7 @@ public class ShowMapActivity extends Activity implements LocationListener,
         map.setOnMapLoadedCallback(new GoogleMap.OnMapLoadedCallback() {
             @Override
             public void onMapLoaded() {
-                CameraUpdate cu = CameraUpdateFactory.newLatLngBounds(defaultBounds.build(), 100);
+                CameraUpdate cu = CameraUpdateFactory.newLatLngBounds(defaultBounds.build(), DEFAULT_BOUNDS_PADDING);
                 map.animateCamera(cu, 800, null);
             }
         });
@@ -372,11 +374,10 @@ public class ShowMapActivity extends Activity implements LocationListener,
             InitialiseMaxMinLatLon(latLngStart, latLngEnd);
 
             DrawPath(path);
+            LoadPOIMarkers(from, to);
 
             // Set viewable bounds based on the coordinates we calculated earlier.
             SetDefaultBounds(new LatLng(minLat, minLon), new LatLng(maxLat, maxLon));
-
-            LoadPOIMarkers(from, to);
             return 1;
         }
 
@@ -507,6 +508,12 @@ public class ShowMapActivity extends Activity implements LocationListener,
             }
         }
 
+        private void UpdateMaxMinLatLng(List<POI> points) {
+            for(int i = 0; i < points.size(); i++) {
+                UpdateMaxMinLatLng(points.get(i).getCoords());
+            }
+        }
+
         private PolylineOptions DrawPath(Path path) {
             if (path.getWayPoints().length > 2) {    // If length is 1, we only have 1 point so can't draw a line
                 line = new PolylineOptions();
@@ -569,6 +576,8 @@ public class ShowMapActivity extends Activity implements LocationListener,
                 }
             }
             bMarkersVisible = true;
+
+            UpdateMaxMinLatLng(pointsOfInterest);
         }
     }
 } 

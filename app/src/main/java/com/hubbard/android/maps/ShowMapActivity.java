@@ -6,7 +6,6 @@ import java.util.ArrayList;
 import java.util.List;
 
 import android.app.Activity;
-import android.content.Context;
 import android.content.SharedPreferences;
 import android.graphics.Color;
 import android.location.Criteria;
@@ -92,8 +91,15 @@ public class ShowMapActivity extends Activity implements LocationListener,
         end = getIntent().getExtras().getInt("endSection");
         direction = getIntent().getExtras().getInt("direction") == 0 ? Direction.CLOCKWISE : Direction.ANTI_CLOCKWISE;
 
-        map = ((MapFragment) getFragmentManager().findFragmentById(R.id.map))
-                .getMap();
+        // Open the shared preferences
+        mPrefs = getSharedPreferences(getString(R.string.shared_preferences_name), MODE_PRIVATE);
+
+        // Default to Terrain view if no preference is present
+        int mapType = mPrefs.getInt(getString(R.string.shared_prefs_map_type), GoogleMap.MAP_TYPE_TERRAIN);
+
+        map = ((MapFragment) getFragmentManager().findFragmentById(R.id.map)).getMap();
+
+        map.setMapType(mapType);
 
         glob = (GlobalObjects) getApplicationContext();
         currRoute = glob.getCurrentRoute();
@@ -128,9 +134,6 @@ public class ShowMapActivity extends Activity implements LocationListener,
         mLocationRequest.setInterval(UPDATE_INTERVAL);
         // Set the fastest update interval to 1 second
         mLocationRequest.setFastestInterval(FASTEST_INTERVAL);
-        // Open the shared preferences
-        mPrefs = getSharedPreferences("SharedPreferences",
-                Context.MODE_PRIVATE);
         // Get a SharedPreferences editor
         mEditor = mPrefs.edit();
         /*
@@ -154,12 +157,15 @@ public class ShowMapActivity extends Activity implements LocationListener,
         switch (item.getItemId()) {
             case R.id.view_option_streetmap:
                 map.setMapType(GoogleMap.MAP_TYPE_NORMAL);
+                glob.setMapPreference(GoogleMap.MAP_TYPE_NORMAL);
                 return true;
             case R.id.view_option_satellite:
                 map.setMapType(GoogleMap.MAP_TYPE_HYBRID);
+                glob.setMapPreference(GoogleMap.MAP_TYPE_HYBRID);
                 return true;
             case R.id.view_option_terrain:
                 map.setMapType(GoogleMap.MAP_TYPE_TERRAIN);
+                glob.setMapPreference(GoogleMap.MAP_TYPE_TERRAIN);
                 return true;
             case R.id.view_option_hide_markers:
                 for (Marker m : markers) {
@@ -199,13 +205,13 @@ public class ShowMapActivity extends Activity implements LocationListener,
 
         switch (map.getMapType()) {
             case GoogleMap.MAP_TYPE_NORMAL:
-                menu.removeItem(R.id.view_option_streetmap);
+                submenu.removeItem(R.id.view_option_streetmap);
                 break;
             case GoogleMap.MAP_TYPE_HYBRID:
-                menu.removeItem(R.id.view_option_satellite);
+                submenu.removeItem(R.id.view_option_satellite);
                 break;
             case GoogleMap.MAP_TYPE_TERRAIN:
-                menu.removeItem(R.id.view_option_terrain);
+                submenu.removeItem(R.id.view_option_terrain);
                 break;
         }
         return true;
@@ -311,8 +317,7 @@ public class ShowMapActivity extends Activity implements LocationListener,
 		 * Gets "false" if an error occurs
 		 */
         if (mPrefs.contains("KEY_UPDATES_ON")) {
-            mUpdatesRequested =
-                    mPrefs.getBoolean("KEY_UPDATES_ON", false);
+            mUpdatesRequested = mPrefs.getBoolean("KEY_UPDATES_ON", false);
 
             // Otherwise, turn off location updates
         } else {

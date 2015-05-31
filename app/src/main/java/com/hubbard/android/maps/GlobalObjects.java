@@ -3,6 +3,7 @@ package com.hubbard.android.maps;
 import java.util.HashMap;
 
 import android.app.Application;
+import android.content.SharedPreferences;
 import android.text.Html;
 
 public class GlobalObjects extends Application {
@@ -31,5 +32,11 @@ public class GlobalObjects extends Application {
     }
     public static CharSequence getButtonText(String title) {
         return Html.fromHtml("<b><big>" + title + "</big></b>");
+    }
+
+    public void setMapPreference(int mapType) {
+        SharedPreferences.Editor editor = getSharedPreferences(getString(R.string.shared_preferences_name), MODE_PRIVATE).edit();
+        editor.putInt(getString(R.string.shared_prefs_map_type), mapType);
+        editor.apply();
     }
 }

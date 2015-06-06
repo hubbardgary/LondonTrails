@@ -2,8 +2,12 @@ package com.hubbard.android.maps;
 
 class LondonLoop extends Route {
 
+    private static double distanceInKM = 240;
+    private static String name = "London Loop";
+
     public LondonLoop() {
-        setName("London Loop");
+        setName(name);
+        setDistanceInKm(distanceInKM);
         setCircular(false);
         setSections(new Section[15]);
         setEndPoints(populateEndPoints());
@@ -175,6 +179,16 @@ class LondonLoop extends Route {
                 break;
         }
         return s;
+    }
+
+    // Static methods used for displaying details about the route without
+    // needing to instantiate a Route object.
+    public static String getRouteName() {
+        return name;
+    }
+
+    public static String getRouteDistanceText() {
+        return String.format("approx %.1f km (%.1f miles)", distanceInKM, GlobalObjects.convertKmToMiles(distanceInKM));
     }
 
 }

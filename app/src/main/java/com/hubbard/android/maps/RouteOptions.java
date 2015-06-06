@@ -212,6 +212,6 @@ public class RouteOptions extends Activity implements OnItemSelectedListener {
 
     private void UpdateDistance(double distance) {
         TextView txtDistance = (TextView) findViewById(R.id.DistanceValue);
-        txtDistance.setText(String.format("%.2f km (%.2f miles)", distance, distance * 0.62137));
+        txtDistance.setText(String.format("%.2f km (%.2f miles)", distance, GlobalObjects.convertKmToMiles(distance)));
     }
 }

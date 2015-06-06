@@ -3,13 +3,11 @@ package com.hubbard.android.maps;
 import com.google.android.gms.common.ConnectionResult;
 import com.google.android.gms.common.GooglePlayServicesUtil;
 
-import android.content.res.Resources;
 import android.os.Bundle;
 import android.app.Activity;
 import android.app.Dialog;
 import android.content.Context;
 import android.content.Intent;
-import android.text.Html;
 import android.view.View;
 import android.view.View.OnClickListener;
 import android.widget.Button;
@@ -17,19 +15,16 @@ import android.widget.Button;
 public class MainActivity extends Activity {
 
     private Button button;
-    private Resources res;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        ((Button)findViewById(R.id.CapitalRingBtn)).setText(GlobalObjects.getButtonText("Capital Ring", "approx 122km (76 miles)"));
-        ((Button)findViewById(R.id.LondonLoopBtn)).setText(GlobalObjects.getButtonText("London Loop", "approx 240km (149 miles)"));
+        ((Button)findViewById(R.id.CapitalRingBtn)).setText(GlobalObjects.getButtonText(CapitalRing.getRouteName(), CapitalRing.getRouteDistanceText()));
+        ((Button)findViewById(R.id.LondonLoopBtn)).setText(GlobalObjects.getButtonText(LondonLoop.getRouteName(), LondonLoop.getRouteDistanceText()));
 
         addListenerOnButton();
-
-        res = getResources();
 
         // Getting Google Play availability status
         int status = GooglePlayServicesUtil.isGooglePlayServicesAvailable(getBaseContext());

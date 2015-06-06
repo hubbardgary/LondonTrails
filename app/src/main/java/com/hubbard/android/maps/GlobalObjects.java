@@ -10,6 +10,7 @@ public class GlobalObjects extends Application {
 
     private Route currentRoute;
     private HashMap<String, Integer> hshSectionMap;
+    private static final double kmToMilesMultiplier = 0.62137;
 
     public Route getCurrentRoute() {
         return currentRoute;
@@ -38,5 +39,9 @@ public class GlobalObjects extends Application {
         SharedPreferences.Editor editor = getSharedPreferences(getString(R.string.shared_preferences_name), MODE_PRIVATE).edit();
         editor.putInt(getString(R.string.shared_prefs_map_type), mapType);
         editor.apply();
+    }
+
+    public static double convertKmToMiles(double km) {
+        return km * kmToMilesMultiplier;
     }
 }

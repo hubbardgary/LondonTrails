@@ -2,8 +2,12 @@ package com.hubbard.android.maps;
 
 class CapitalRing extends Route {
 
+    private static double distanceInKM = 122;
+    private static String name = "Capital Ring";
+
     public CapitalRing() {
-        setName("Capital Ring");
+        setName(name);
+        setDistanceInKm(distanceInKM);
         setCircular(true);
         setSections(new Section[15]);
         setEndPoints(populateEndPoints());
@@ -174,6 +178,16 @@ class CapitalRing extends Route {
                 break;
         }
         return s;
+    }
+
+    // Static methods used for displaying details about the route without
+    // needing to instantiate a Route object.
+    public static String getRouteName() {
+        return name;
+    }
+
+    public static String getRouteDistanceText() {
+        return String.format("approx %.1f km (%.1f miles)", distanceInKM, GlobalObjects.convertKmToMiles(distanceInKM));
     }
 
 }

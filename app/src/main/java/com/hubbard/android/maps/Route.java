@@ -6,6 +6,7 @@ public class Route {
     private String[] endPoints;  // Can't go in Section because if route is non-circular, there are more end points than sections.
     private boolean circular;
     private String name;
+    private double distanceInKm;
 
     public Route() {
     }
@@ -48,5 +49,13 @@ public class Route {
 
     public void setName(String name) {
         this.name = name;
+    }
+
+    public double getDistanceInKm() {
+        return distanceInKm;
+    }
+
+    public void setDistanceInKm(double distanceInKm) {
+        this.distanceInKm = distanceInKm;
     }
 }

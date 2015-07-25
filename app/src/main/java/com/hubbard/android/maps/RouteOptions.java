@@ -77,6 +77,10 @@ public class RouteOptions extends Activity implements OnItemSelectedListener {
             findViewById(R.id.DirectionLbl).setVisibility(View.GONE);
         }
 
+        if(currRoute.isCircular()) {
+            destination.setSelection(1); // Default destination to second section
+        }
+
         addListenerOnButton();
     }
 
@@ -87,27 +91,34 @@ public class RouteOptions extends Activity implements OnItemSelectedListener {
         String strStart = (String) source.getSelectedItem();
         String strEnd = (String) destination.getSelectedItem();
 
-        if (clickedSpinner.getId() == R.id.StartLocationSpinner) {
-            if (strStart.equals(strEnd)) {
-                // Clear End to prevent Start and End being the same.
-                strEnd = "";
+        if(currRoute.isCircular()) {
+            UpdateDistance(CalculateDistance());
+        } else {
+            // If it's not circular, start and end locations cannot be the same
+            if (clickedSpinner.getId() == R.id.StartLocationSpinner) {
+                if (strStart.equals(strEnd)) {
+                    // Clear End to prevent Start and End being the same.
+                    strEnd = "";
+                }
+
+                destContents = new ArrayList<String>(Arrays.asList(sectionsArray));
+
+                if (!strStart.equals("")) {
+                    destContents.remove(destContents.indexOf(source.getSelectedItem()));
+                }
+                new ArrayAdapter<String>(this, android.R.layout.simple_spinner_item, destContents);
+                dataAdapter2 = new ArrayAdapter<String>(this, android.R.layout.simple_spinner_item, destContents);
+                dataAdapter2.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+                destination.setAdapter(dataAdapter2);
+                dataAdapter2.notifyDataSetChanged();
+                destination.setSelection(destContents.indexOf(strEnd));
             }
 
-            destContents = new ArrayList<String>(Arrays.asList(sectionsArray));
-
-            if (!strStart.equals("")) {
-                destContents.remove(destContents.indexOf(source.getSelectedItem()));
-            }
-            new ArrayAdapter<String>(this, android.R.layout.simple_spinner_item, destContents);
-            dataAdapter2 = new ArrayAdapter<String>(this, android.R.layout.simple_spinner_item, destContents);
-            dataAdapter2.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
-            destination.setAdapter(dataAdapter2);
-            dataAdapter2.notifyDataSetChanged();
-            destination.setSelection(destContents.indexOf(strEnd));
+            if (strStart != null && !strStart.equals("") && strEnd != null && !strEnd.equals("") && !strStart.equals(strEnd))
+                UpdateDistance(CalculateDistance());
         }
 
-        if (strStart != null && !strStart.equals("") && strEnd != null && !strEnd.equals("") && !strStart.equals(strEnd))
-            UpdateDistance(CalculateDistance());
+
     }
 
     @Override

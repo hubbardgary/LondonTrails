@@ -397,8 +397,12 @@ public class ShowMapActivity extends Activity implements LocationListener,
         protected void onPostExecute(Integer i) {
             mapRoute = map.addPolyline(line);
 
-            PushPin(latLngStart, currRoute.getEndPoint(start), "Your walk starts here.", R.drawable.waypoint_start);
-            PushPin(latLngEnd, currRoute.getEndPoint(end), "Your walk ends here.", R.drawable.waypoint_stop);
+            if(start == end) {
+                PushPin(latLngStart, currRoute.getEndPoint(start), "Your walk starts and ends here.", R.drawable.waypoint_startstop);
+            } else {
+                PushPin(latLngStart, currRoute.getEndPoint(start), "Your walk starts here.", R.drawable.waypoint_start);
+                PushPin(latLngEnd, currRoute.getEndPoint(end), "Your walk ends here.", R.drawable.waypoint_stop);
+            }
 
             markers = new ArrayList<Marker>();
             for (POI p : pointsOfInterest) {
@@ -421,8 +425,8 @@ public class ShowMapActivity extends Activity implements LocationListener,
         private String GetCoordinatesString(int startLocation, int endLocation) {
             int currentLocation = startLocation;
             String coordinates = "";
-            while (currentLocation != endLocation) {
 
+            do {
                 InputStream myFile;
                 try {
                     Section s = currRoute.getSection(currentLocation);
@@ -459,6 +463,8 @@ public class ShowMapActivity extends Activity implements LocationListener,
                     e.printStackTrace();
                 }
             }
+            while(currentLocation != endLocation);
+
             return coordinates;
         }
 
@@ -573,7 +579,7 @@ public class ShowMapActivity extends Activity implements LocationListener,
 
         private void LoadPOIMarkers(int startLocation, int endLocation) {
             int currentLocation = startLocation;
-            while (currentLocation != endLocation) {
+            do {
                 InputStream myFile;
                 try {
                     Section s = currRoute.getSection(currentLocation);
@@ -592,6 +598,8 @@ public class ShowMapActivity extends Activity implements LocationListener,
                     currentLocation++;
                 }
             }
+            while (currentLocation != endLocation);
+
             bMarkersVisible = true;
 
             UpdateMaxMinLatLng(pointsOfInterest);

@@ -72,6 +72,8 @@ public class ShowMapActivity extends Activity implements LocationListener,
 
     private GlobalObjects glob;
     private Route currRoute;
+    private boolean mapHasLoaded = false;
+    private boolean initialAnimationHasFired = false;
 
     private enum Direction {
         CLOCKWISE,
@@ -81,6 +83,7 @@ public class ShowMapActivity extends Activity implements LocationListener,
     private Polyline mapRoute;  // Provides a means of accessing the polyline from within the map
 
     private static final int DEFAULT_BOUNDS_PADDING = 100;
+    private static final int INITIAL_CAMERA_ANIMATION_SPEED_MS = 800;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -115,8 +118,12 @@ public class ShowMapActivity extends Activity implements LocationListener,
         map.setOnMapLoadedCallback(new GoogleMap.OnMapLoadedCallback() {
             @Override
             public void onMapLoaded() {
-                CameraUpdate cu = CameraUpdateFactory.newLatLngBounds(defaultBounds.build(), DEFAULT_BOUNDS_PADDING);
-                map.animateCamera(cu, 800, null);
+                mapHasLoaded = true;
+                if(defaultBounds != null) {
+                    CameraUpdate cu = CameraUpdateFactory.newLatLngBounds(defaultBounds.build(), DEFAULT_BOUNDS_PADDING);
+                    map.animateCamera(cu, INITIAL_CAMERA_ANIMATION_SPEED_MS, null);
+                    initialAnimationHasFired = true;
+                }
             }
         });
 
@@ -180,7 +187,7 @@ public class ShowMapActivity extends Activity implements LocationListener,
                 bMarkersVisible = true;
                 return true;
             case R.id.view_option_reset_focus:
-                CameraUpdate cu = CameraUpdateFactory.newLatLngBounds(defaultBounds.build(), 100);
+                CameraUpdate cu = CameraUpdateFactory.newLatLngBounds(defaultBounds.build(), DEFAULT_BOUNDS_PADDING);
                 map.animateCamera(cu);
                 return true;
             default:
@@ -233,7 +240,7 @@ public class ShowMapActivity extends Activity implements LocationListener,
             mListener.onLocationChanged(location);
             LatLngBounds bounds = this.map.getProjection().getVisibleRegion().latLngBounds;
             if (!bounds.contains(new LatLng(location.getLatitude(), location.getLongitude()))) {
-                //Move the camera to the user's location once it's available!
+                //Move the camera to the user's location once it's available
                 map.animateCamera(CameraUpdateFactory.newLatLng(new LatLng(location.getLatitude(), location.getLongitude())));
             }
         }
@@ -403,6 +410,11 @@ public class ShowMapActivity extends Activity implements LocationListener,
                                 R.drawable.waypoint_pause
                         )
                 );
+            }
+
+            if(mapHasLoaded && !initialAnimationHasFired) {
+                CameraUpdate cu = CameraUpdateFactory.newLatLngBounds(defaultBounds.build(), DEFAULT_BOUNDS_PADDING);
+                map.animateCamera(cu, INITIAL_CAMERA_ANIMATION_SPEED_MS, null);
             }
         }
 

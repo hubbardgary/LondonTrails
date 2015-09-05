@@ -1,5 +1,7 @@
 package com.hubbard.android.maps;
 
+import android.content.Context;
+
 import java.io.IOException;
 import java.io.InputStream;
 import java.util.ArrayList;
@@ -16,6 +18,45 @@ import org.xml.sax.helpers.DefaultHandler;
 import com.google.android.gms.maps.model.LatLng;
 
 class POIProvider {
+
+    private Route route;
+    private Context context;
+    private int startLocation;
+    private int endLocation;
+
+    public POIProvider(Context context, int startLocation, int endLocation) {
+        this.context = context;
+        this.startLocation = startLocation;
+        this.endLocation = endLocation;
+        this.route = ((GlobalObjects) context.getApplicationContext()).getCurrentRoute();
+    }
+
+    public List<POI> getPOIsForRoute() {
+        int currentLocation = startLocation;
+        List<POI> poi = new ArrayList<POI>();
+        do {
+            InputStream myFile;
+            try {
+                Section s = route.getSection(currentLocation);
+                myFile = context.getAssets().open(s.getPoiResource());
+
+                poi.addAll(getPOIs(myFile));
+            } catch (IOException e) {
+                // TODO Auto-generated catch block
+                e.printStackTrace();
+            }
+
+            // for circular routes, if we're at the final section, jump to the first section
+            if (route.isCircular() && currentLocation == route.getSections().length - 1) {
+                currentLocation = 0;
+            } else {
+                currentLocation++;
+            }
+        }
+        while (currentLocation != endLocation);
+
+        return poi;
+    }
 
     public static List<POI> getPOIs(InputStream is) {
         POIHandler handler = new POIHandler();

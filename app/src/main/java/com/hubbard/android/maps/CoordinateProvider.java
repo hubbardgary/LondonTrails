@@ -1,5 +1,7 @@
 package com.hubbard.android.maps;
 
+import android.content.Context;
+
 import java.io.IOException;
 import java.io.InputStream;
 
@@ -12,6 +14,84 @@ import org.xml.sax.SAXException;
 import org.xml.sax.helpers.DefaultHandler;
 
 class CoordinateProvider {
+
+    private Route route;
+    private Context context;
+    private int startLocation;
+    private int endLocation;
+
+    public CoordinateProvider(Context context, int startLocation, int endLocation) {
+        this.context = context;
+        this.startLocation = startLocation;
+        this.endLocation = endLocation;
+        this.route = ((GlobalObjects) context.getApplicationContext()).getCurrentRoute();
+    }
+
+    public double[][] GetPathWayPoints() {
+        return ParseCoordinates(GetCoordinatesString());
+    }
+
+    private String GetCoordinatesString() {
+        int currentLocation = startLocation;
+        StringBuilder coordinates = new StringBuilder();
+
+        do {
+            Section s = ((GlobalObjects) context.getApplicationContext()).getCurrentRoute().getSection(currentLocation);
+
+            if (currentLocation == startLocation) {
+                coordinates.append(AppendCoordinates(s.getStartLinkResource()));
+            }
+
+            coordinates.append(AppendCoordinates(s.getSectionResource()));
+
+            currentLocation = NextSection(currentLocation);
+
+            if (currentLocation == endLocation) {
+                coordinates.append(AppendCoordinates(s.getEndLinkResource()));
+            }
+        }
+        while(currentLocation != endLocation);
+
+        return coordinates.toString();
+    }
+
+    private String AppendCoordinates(String filename) {
+        if(filename != "") {
+            try {
+                return getRoute(context.getAssets().open(filename));
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
+        }
+        return "";
+    }
+
+    private int NextSection(int currentLocation) {
+        // If it's a circular route, allow wraparound from latLngEnd to latLngStart
+        if (route.isCircular() && currentLocation == route.getSections().length - 1) {
+            return 0;
+        } else {
+            return currentLocation + 1;
+        }
+    }
+    private double[][] ParseCoordinates(String coordinates) {
+        String[] coordinatesParsed;
+        coordinatesParsed = coordinates.split(",0.000000"); // SAXParser loses "\n" characters so split on altitude which isn't set
+
+        int lenNew = coordinatesParsed.length;
+        double[][] wayPoints = new double[lenNew][2];
+        for (int i = 0; i < lenNew; i++) {
+            String[] xyParsed = coordinatesParsed[i].split(",");
+            for (int j = 0; j < 2 && j < xyParsed.length; j++) {
+                try {
+                    wayPoints[i][j] = Double.parseDouble(xyParsed[j]);
+                } catch (Exception e) {
+                    e.printStackTrace();
+                }
+            }
+        }
+        return wayPoints;
+    }
 
     public static String getRoute(InputStream is) {
         CoordinateProviderHandler handler = new CoordinateProviderHandler();

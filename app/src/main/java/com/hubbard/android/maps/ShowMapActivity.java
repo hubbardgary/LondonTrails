@@ -1,7 +1,5 @@
 package com.hubbard.android.maps;
 
-import java.io.IOException;
-import java.io.InputStream;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -19,7 +17,6 @@ import android.view.MenuItem;
 import android.view.SubMenu;
 import android.view.View;
 import android.widget.TextView;
-import android.widget.Toast;
 
 import com.google.android.gms.maps.CameraUpdate;
 import com.google.android.gms.maps.CameraUpdateFactory;
@@ -46,7 +43,7 @@ public class ShowMapActivity extends Activity implements LocationListener,
     private GoogleMap map;
     private LocationManager locationManager;
     private OnLocationChangedListener mListener = null;
-    private Criteria crit = new Criteria();
+    private Criteria criteria = new Criteria();
 
     private static final int MILLISECONDS_PER_SECOND = 1000;
     private static final int UPDATE_INTERVAL_IN_SECONDS = 5;
@@ -60,7 +57,7 @@ public class ShowMapActivity extends Activity implements LocationListener,
     private SharedPreferences.Editor mEditor;
     private LatLngBounds.Builder defaultBounds;
     private List<Marker> markers;
-    private boolean bMarkersVisible;
+    private boolean bMarkersVisible = true;
     private int start;
     private int end;
     private Direction direction;
@@ -128,7 +125,7 @@ public class ShowMapActivity extends Activity implements LocationListener,
         });
 
         locationManager = (LocationManager) getSystemService(LOCATION_SERVICE);
-        crit.setAccuracy(Criteria.ACCURACY_COARSE); // How do you just make it use the best available?
+        criteria.setAccuracy(Criteria.ACCURACY_COARSE); // How do you just make it use the best available?
         map.setMyLocationEnabled(true);
 
         boolean mUpdatesRequested;
@@ -361,6 +358,8 @@ public class ShowMapActivity extends Activity implements LocationListener,
         });
     }
 
+
+
     private class GetMapContent extends AsyncTask<Void, Void, Integer> {
 
         PolylineOptions line;
@@ -379,14 +378,15 @@ public class ShowMapActivity extends Activity implements LocationListener,
                 to = start;
             }
 
-            Path path = GetPath(from, to, direction);
-            latLngStart = SetStartCoords(path, direction);
-            latLngEnd = SetEndCoords(path, direction);
-
-            InitialiseMaxMinLatLon(latLngStart, latLngEnd);
+            Path path = GetPath(from, to);
+            pointsOfInterest = GetPOI(from, to);
 
             DrawPath(path);
-            LoadPOIMarkers(from, to);
+
+            latLngStart = SetStartCoords(path, direction);
+            latLngEnd = SetEndCoords(path, direction);
+            InitialiseMaxMinLatLon(latLngStart, latLngEnd);
+            UpdateMaxMinLatLng(pointsOfInterest);
 
             // Set viewable bounds based on the coordinates we calculated earlier.
             SetDefaultBounds(new LatLng(minLat, minLon), new LatLng(maxLat, maxLon));
@@ -422,77 +422,16 @@ public class ShowMapActivity extends Activity implements LocationListener,
             }
         }
 
-        private String GetCoordinatesString(int startLocation, int endLocation) {
-            int currentLocation = startLocation;
-            String coordinates = "";
-
-            do {
-                InputStream myFile;
-                try {
-                    Section s = currRoute.getSection(currentLocation);
-                    String filename;
-
-                    if (currentLocation == startLocation) {
-                        if (!s.getStartLinkResource().equals("")) {
-                            filename = s.getStartLinkResource();
-                            myFile = getApplicationContext().getAssets().open(filename);
-                            coordinates += CoordinateProvider.getRoute(myFile);
-                        }
-                    }
-                    filename = s.getSectionResource();
-                    myFile = getAssets().open(filename);
-                    coordinates += CoordinateProvider.getRoute(myFile);
-
-                    // We've constructed co-ordinates for this section so move to the next one
-                    // If it's a circular route, allow wraparound from latLngEnd to latLngStart
-                    if (currRoute.isCircular() && currentLocation == currRoute.getSections().length - 1) {
-                        currentLocation = 0;
-                    } else {
-                        currentLocation++;
-                    }
-
-                    if (currentLocation == endLocation) {
-                        if (!s.getEndLinkResource().equals("")) {
-                            filename = s.getEndLinkResource();
-                            myFile = getAssets().open(filename);
-                            coordinates += CoordinateProvider.getRoute(myFile);
-                        }
-                    }
-                } catch (IOException e) {
-                    // TODO Auto-generated catch block
-                    e.printStackTrace();
-                }
-            }
-            while(currentLocation != endLocation);
-
-            return coordinates;
-        }
-
-        private double[][] ParseCoordinates(String coordinates) {
-            String[] coordinatesParsed;
-            coordinatesParsed = coordinates.split(",0.000000"); // SAXParser loses "\n" characters so split on altitude which isn't set
-
-            int lenNew = coordinatesParsed.length;
-            double[][] wayPoints = new double[lenNew][2];
-            for (int i = 0; i < lenNew; i++) {
-                String[] xyParsed = coordinatesParsed[i].split(",");
-                for (int j = 0; j < 2 && j < xyParsed.length; j++) {
-                    try {
-                        wayPoints[i][j] = Double.parseDouble(xyParsed[j]);
-                    } catch (Exception e) {
-                        e.printStackTrace();
-                    }
-                }
-            }
-            return wayPoints;
-        }
-
-        private Path GetPath(int startLocation, int endLocation, Direction direction) {
-            String coordinates = GetCoordinatesString(startLocation, endLocation);
-
+        private Path GetPath(int startLocation, int endLocation) {
+            CoordinateProvider cp = new CoordinateProvider(getApplicationContext(), startLocation, endLocation);
             Path path = new Path();
-            path.setWayPoints(ParseCoordinates(coordinates));
+            path.setWayPoints(cp.GetPathWayPoints());
             return path;
+        }
+
+        private List<POI> GetPOI(int startLocation, int endLocation) {
+            POIProvider pp = new POIProvider(getApplicationContext(), startLocation, endLocation);
+            return pp.getPOIsForRoute();
         }
 
         private LatLng SetStartCoords(Path path, Direction direction) {
@@ -517,18 +456,14 @@ public class ShowMapActivity extends Activity implements LocationListener,
         }
 
         private void UpdateMaxMinLatLng(LatLng point) {
-            if (point.latitude > maxLat) {
+            if (point.latitude > maxLat)
                 maxLat = point.latitude;
-            }
-            if (point.latitude < minLat) {
+            if (point.latitude < minLat)
                 minLat = point.latitude;
-            }
-            if (point.longitude > maxLon) {
+            if (point.longitude > maxLon)
                 maxLon = point.longitude;
-            }
-            if (point.longitude < minLon) {
+            if (point.longitude < minLon)
                 minLon = point.longitude;
-            }
         }
 
         private void UpdateMaxMinLatLng(List<POI> points) {
@@ -575,34 +510,6 @@ public class ShowMapActivity extends Activity implements LocationListener,
             defaultBounds = new LatLngBounds.Builder();
             defaultBounds.include(minLatLng);
             defaultBounds.include(maxLatLng);
-        }
-
-        private void LoadPOIMarkers(int startLocation, int endLocation) {
-            int currentLocation = startLocation;
-            do {
-                InputStream myFile;
-                try {
-                    Section s = currRoute.getSection(currentLocation);
-                    myFile = getAssets().open(s.getPoiResource());
-
-                    pointsOfInterest.addAll(POIProvider.getPOIs(myFile));
-                } catch (IOException e) {
-                    // TODO Auto-generated catch block
-                    e.printStackTrace();
-                }
-
-                // for circular routes, if we're at the final section, jump to the first section
-                if (currRoute.isCircular() && currentLocation == currRoute.getSections().length - 1) {
-                    currentLocation = 0;
-                } else {
-                    currentLocation++;
-                }
-            }
-            while (currentLocation != endLocation);
-
-            bMarkersVisible = true;
-
-            UpdateMaxMinLatLng(pointsOfInterest);
         }
     }
 } 

@@ -71,7 +71,7 @@
         <Button
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Go!"
+            android:text="@string/route_options_confirm_text"
             android:id="@+id/GoBtn"
             android:background="@drawable/button_background"
             android:textColor="#ffffff"

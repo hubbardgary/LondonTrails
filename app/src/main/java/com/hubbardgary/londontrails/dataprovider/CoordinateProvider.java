@@ -1,6 +1,9 @@
-package com.hubbard.android.maps;
+package com.hubbardgary.londontrails.dataprovider;
 
-import android.content.Context;
+import android.content.res.AssetManager;
+
+import com.hubbardgary.londontrails.model.Route;
+import com.hubbardgary.londontrails.model.Section;
 
 import java.io.IOException;
 import java.io.InputStream;
@@ -13,18 +16,21 @@ import org.xml.sax.Attributes;
 import org.xml.sax.SAXException;
 import org.xml.sax.helpers.DefaultHandler;
 
-class CoordinateProvider {
+public class CoordinateProvider {
 
     private Route route;
-    private Context context;
+    //private Context context;
+    private AssetManager assetManager;
     private int startLocation;
     private int endLocation;
 
-    public CoordinateProvider(Context context, int startLocation, int endLocation) {
-        this.context = context;
+    //public CoordinateProvider(Context context, int startLocation, int endLocation) {
+    public CoordinateProvider(Route route, AssetManager assetManager, int startLocation, int endLocation) {
+  //      this.context = context;
         this.startLocation = startLocation;
         this.endLocation = endLocation;
-        this.route = ((GlobalObjects) context.getApplicationContext()).getCurrentRoute();
+        this.route = route;
+        this.assetManager = assetManager;
     }
 
     public double[][] GetPathWayPoints() {
@@ -36,7 +42,7 @@ class CoordinateProvider {
         StringBuilder coordinates = new StringBuilder();
 
         do {
-            Section s = ((GlobalObjects) context.getApplicationContext()).getCurrentRoute().getSection(currentLocation);
+            Section s = route.getSection(currentLocation);
 
             if (currentLocation == startLocation) {
                 coordinates.append(AppendCoordinates(s.getStartLinkResource()));
@@ -58,7 +64,7 @@ class CoordinateProvider {
     private String AppendCoordinates(String filename) {
         if(filename != "") {
             try {
-                return getRoute(context.getAssets().open(filename));
+                return getRoute(assetManager.open(filename));
             } catch (IOException e) {
                 e.printStackTrace();
             }

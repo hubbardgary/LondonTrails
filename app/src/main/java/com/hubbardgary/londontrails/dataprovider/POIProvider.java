@@ -1,6 +1,7 @@
-package com.hubbard.android.maps;
+package com.hubbardgary.londontrails.dataprovider;
 
 import android.content.Context;
+import android.content.res.AssetManager;
 
 import java.io.IOException;
 import java.io.InputStream;
@@ -15,20 +16,25 @@ import org.xml.sax.Attributes;
 import org.xml.sax.SAXException;
 import org.xml.sax.helpers.DefaultHandler;
 
-import com.google.android.gms.maps.model.LatLng;
+import com.hubbardgary.londontrails.model.POI;
+import com.hubbardgary.londontrails.model.Route;
+import com.hubbardgary.londontrails.model.Section;
 
-class POIProvider {
+public class POIProvider {
 
     private Route route;
-    private Context context;
+    //private Context context;
+    private AssetManager assetManager;
     private int startLocation;
     private int endLocation;
 
-    public POIProvider(Context context, int startLocation, int endLocation) {
-        this.context = context;
+//    public POIProvider(Context context, int startLocation, int endLocation) {
+    public POIProvider(Route route, AssetManager assetManager, int startLocation, int endLocation) {
+//        this.context = context;
         this.startLocation = startLocation;
         this.endLocation = endLocation;
-        this.route = ((GlobalObjects) context.getApplicationContext()).getCurrentRoute();
+        this.route = route;
+        this.assetManager = assetManager;
     }
 
     public List<POI> getPOIsForRoute() {
@@ -38,7 +44,7 @@ class POIProvider {
             InputStream myFile;
             try {
                 Section s = route.getSection(currentLocation);
-                myFile = context.getAssets().open(s.getPoiResource());
+                myFile = assetManager.open(s.getPoiResource());
 
                 poi.addAll(getPOIs(myFile));
             } catch (IOException e) {
@@ -114,7 +120,9 @@ class POIHandler extends DefaultHandler {
             String sLonLat = new String(ch, start, length);
             String sLon = sLonLat.substring(0, sLonLat.indexOf(','));
             String sLat = sLonLat.substring(sLonLat.indexOf(',') + 1, sLonLat.lastIndexOf(','));
-            currentPOI.setCoords(new LatLng(Double.parseDouble(sLat), Double.parseDouble(sLon)));
+            //currentPOI.setCoords(new LatLng(Double.parseDouble(sLat), Double.parseDouble(sLon)));
+            currentPOI.setLatitude(Double.parseDouble(sLat));
+            currentPOI.setLongitude(Double.parseDouble(sLon));
             coordinates = false;
         }
     }

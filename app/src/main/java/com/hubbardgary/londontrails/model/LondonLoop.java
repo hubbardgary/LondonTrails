@@ -1,6 +1,8 @@
-package com.hubbard.android.maps;
+package com.hubbardgary.londontrails.model;
 
-class LondonLoop extends Route {
+import com.hubbardgary.londontrails.config.GlobalObjects;
+
+public class LondonLoop extends Route {
 
     private static double distanceInKM = 240;
     private static String name = "London Loop";
@@ -190,5 +192,4 @@ class LondonLoop extends Route {
     public static String getRouteDistanceText() {
         return String.format("approx %.1f km (%.1f miles)", distanceInKM, GlobalObjects.convertKmToMiles(distanceInKM));
     }
-
 }

@@ -1,6 +1,8 @@
-package com.hubbard.android.maps;
+package com.hubbardgary.londontrails.model;
 
-class CapitalRing extends Route {
+import com.hubbardgary.londontrails.config.GlobalObjects;
+
+public class CapitalRing extends Route {
 
     private static double distanceInKM = 122;
     private static String name = "Capital Ring";
@@ -189,5 +191,4 @@ class CapitalRing extends Route {
     public static String getRouteDistanceText() {
         return String.format("approx %.1f km (%.1f miles)", distanceInKM, GlobalObjects.convertKmToMiles(distanceInKM));
     }
-
 }

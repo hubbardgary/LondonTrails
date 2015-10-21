@@ -1,6 +1,6 @@
-package com.hubbard.android.maps;
+package com.hubbardgary.londontrails.viewmodel;
 
-class Path {
+public class PathViewModel {
     private String name;
     private String description;
     private int color;

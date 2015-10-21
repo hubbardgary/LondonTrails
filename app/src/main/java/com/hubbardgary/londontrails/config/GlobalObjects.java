@@ -1,10 +1,13 @@
-package com.hubbard.android.maps;
+package com.hubbardgary.londontrails.config;
 
 import java.util.HashMap;
 
 import android.app.Application;
 import android.content.SharedPreferences;
 import android.text.Html;
+
+import com.hubbardgary.londontrails.R;
+import com.hubbardgary.londontrails.model.Route;
 
 public class GlobalObjects extends Application {
 
@@ -18,6 +21,16 @@ public class GlobalObjects extends Application {
 
     public void setCurrentRoute(Route r) {
         currentRoute = r;
+    }
+
+    public static int getSectionsFromRouteId(int routeId) {
+        switch (routeId) {
+            case R.id.rte_capital_ring:
+                return R.array.capital_ring_sections;
+            case R.id.rte_london_loop:
+                return R.array.london_loop_sections;
+        }
+        return 0;
     }
 
     public HashMap<String, Integer> getSectionMap() {

@@ -1,4 +1,4 @@
-package com.hubbard.android.maps;
+package com.hubbardgary.londontrails.model;
 
 public class Route {
 

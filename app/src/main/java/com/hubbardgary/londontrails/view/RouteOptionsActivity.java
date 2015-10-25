@@ -33,7 +33,7 @@ public class RouteOptionsActivity extends Activity implements IRouteOptionsView,
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_route_options);
 
-        presenter = new RouteOptionsPresenter(this, (GlobalObjects)getApplicationContext(), getApplicationContext().getResources());//, this.getApplicationContext(), this);
+        presenter = new RouteOptionsPresenter(this, (GlobalObjects)getApplicationContext(), getApplicationContext().getResources());
         vm = presenter.getViewModel();
 
         setTitle(vm.name);

@@ -10,6 +10,7 @@ import android.view.View;
 import android.view.View.OnClickListener;
 import android.widget.Button;
 import android.widget.LinearLayout;
+import android.widget.Toast;
 
 import com.google.android.gms.common.ConnectionResult;
 import com.google.android.gms.common.GooglePlayServicesUtil;
@@ -66,10 +67,15 @@ public class MainActivity extends Activity implements IMainView {
     public void checkGooglePlayAvailability() {
         int status = GooglePlayServicesUtil.isGooglePlayServicesAvailable(getBaseContext());
         if (status != ConnectionResult.SUCCESS) {
-            // Google Play Services are not available
-            int requestCode = 10;
-            Dialog dialog = GooglePlayServicesUtil.getErrorDialog(status, this, requestCode);
-            dialog.show();
+            if(GooglePlayServicesUtil.isUserRecoverableError(status)) {
+                // Google Play Services might need installing/updating, so prompt user to take appropriate action
+                int requestCode = 10;
+                Dialog dialog = GooglePlayServicesUtil.getErrorDialog(status, this, requestCode);
+                dialog.show();
+            } else {
+                // Google Play Services unavailable
+                Toast.makeText(this, "Error: Google Maps is not available on this device.", Toast.LENGTH_SHORT).show();
+            }
         }
     }
 

@@ -1,13 +1,8 @@
 package com.hubbardgary.londontrails.view;
 
 import android.app.Activity;
-import android.content.SharedPreferences;
 import android.content.res.AssetManager;
 import android.graphics.Color;
-import android.location.Criteria;
-import android.location.Location;
-import android.location.LocationListener;
-import android.location.LocationManager;
 import android.os.AsyncTask;
 import android.os.Bundle;
 import android.view.Menu;
@@ -17,7 +12,6 @@ import android.view.SubMenu;
 import com.google.android.gms.maps.CameraUpdate;
 import com.google.android.gms.maps.CameraUpdateFactory;
 import com.google.android.gms.maps.GoogleMap;
-import com.google.android.gms.maps.LocationSource;
 import com.google.android.gms.maps.MapFragment;
 import com.google.android.gms.maps.model.BitmapDescriptorFactory;
 import com.google.android.gms.maps.model.LatLng;
@@ -25,52 +19,27 @@ import com.google.android.gms.maps.model.LatLngBounds;
 import com.google.android.gms.maps.model.Marker;
 import com.google.android.gms.maps.model.MarkerOptions;
 import com.google.android.gms.maps.model.Polyline;
-import com.google.android.gms.common.ConnectionResult;
-import com.google.android.gms.common.GooglePlayServicesClient;
-import com.google.android.gms.location.LocationClient;
-import com.google.android.gms.location.LocationRequest;
 
 import java.util.ArrayList;
+import java.util.LinkedHashMap;
 import java.util.List;
+import java.util.Map;
 
 import com.google.android.gms.maps.model.PolylineOptions;
 import com.hubbardgary.londontrails.config.GlobalObjects;
 import com.hubbardgary.londontrails.R;
 import com.hubbardgary.londontrails.model.POI;
+import com.hubbardgary.londontrails.presenter.ShowMapPresenter;
 import com.hubbardgary.londontrails.viewmodel.MapContentViewModel;
 import com.hubbardgary.londontrails.viewmodel.PathViewModel;
-import com.hubbardgary.londontrails.model.Route;
 import com.hubbardgary.londontrails.presenter.MapContentPresenter;
+import com.hubbardgary.londontrails.viewmodel.ShowMapViewModel;
 
-public class ShowMapActivity extends Activity implements LocationListener,
-                                                         LocationSource,
-                                                         GooglePlayServicesClient.ConnectionCallbacks,
-                                                         GooglePlayServicesClient.OnConnectionFailedListener {
+public class ShowMapActivity extends Activity implements IShowMapView {
     private GoogleMap map;
-    private LocationManager locationManager;
-    private OnLocationChangedListener locationChangedListener = null;
-    private Criteria criteria = new Criteria();
-
-    private static final int MILLISECONDS_PER_SECOND = 1000;
-    private static final int UPDATE_INTERVAL_IN_SECONDS = 5;
-    private static final long UPDATE_INTERVAL = MILLISECONDS_PER_SECOND * UPDATE_INTERVAL_IN_SECONDS;
-    private static final int FASTEST_INTERVAL_IN_SECONDS = 1;
-    private static final long FASTEST_INTERVAL = MILLISECONDS_PER_SECOND * FASTEST_INTERVAL_IN_SECONDS;
-    private LocationRequest locationRequest;
-    private LocationClient locationClient;
-    private boolean updatesRequested;
-    private SharedPreferences prefs;
-    private SharedPreferences.Editor editor;
-
     private LatLngBounds.Builder defaultBounds;
     private List<Marker> markers;
-    private boolean markersVisible = true;
-    private int start;
-    private int end;
-    private int direction;
 
-    private GlobalObjects glob;
-    private Route currentRoute;
     private boolean mapHasLoaded = false;
     private boolean initialAnimationHasFired = false;
 
@@ -79,29 +48,16 @@ public class ShowMapActivity extends Activity implements LocationListener,
     private static final int DEFAULT_BOUNDS_PADDING = 100;
     private static final int INITIAL_CAMERA_ANIMATION_SPEED_MS = 800;
 
+    private ShowMapPresenter presenter;
+    private ShowMapViewModel vm;
+
 
     public GoogleMap getMap() {
         return map;
     }
 
-    public int getStart() {
-        return start;
-    }
-
-    public void setStart(int start) {
-        this.start = start;
-    }
-
-    public int getEnd() {
-        return end;
-    }
-
-    public void setEnd(int end) {
-        this.end = end;
-    }
-
-    public Route getCurrentRoute() {
-        return currentRoute;
+    public ShowMapViewModel getShowMapVm() {
+        return vm;
     }
 
     public void setMapRoute(Polyline mapRoute) {
@@ -117,29 +73,41 @@ public class ShowMapActivity extends Activity implements LocationListener,
     }
 
     @Override
+    public int getIntFromIntent(String item) {
+        return getIntent().getExtras().getInt(item);
+    }
+    @Override
+    public void updateViewModel(ShowMapViewModel vm) {
+        this.vm = vm;
+    }
+    @Override
+    public void setMarkerVisibility(boolean visibility) {
+        for (Marker m : markers) {
+            m.setVisible(visibility);
+        }
+    }
+    @Override
+    public void resetCameraPosition() {
+        CameraUpdate cu = CameraUpdateFactory.newLatLngBounds(defaultBounds.build(), DEFAULT_BOUNDS_PADDING);
+        map.animateCamera(cu);
+    }
+    @Override
+    public void setMapType(int mapType) {
+        map.setMapType(mapType);
+    }
+
+    @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_show_map);
 
-        start = getIntent().getExtras().getInt("startSection");
-        end = getIntent().getExtras().getInt("endSection");
-        direction = getIntent().getExtras().getInt("direction");
-
-        // Open the shared preferences
-        prefs = getSharedPreferences(getString(R.string.shared_preferences_name), MODE_PRIVATE);
-
-        // Default to Terrain view if no preference is present
-        int mapType = prefs.getInt(getString(R.string.shared_prefs_map_type), GoogleMap.MAP_TYPE_TERRAIN);
+        presenter = new ShowMapPresenter(this, (GlobalObjects) getApplicationContext());
+        vm = presenter.getViewModel();
+        setTitle(vm.name);
 
         map = ((MapFragment) getFragmentManager().findFragmentById(R.id.map)).getMap();
-
-        map.setMapType(mapType);
-
-        glob = (GlobalObjects) getApplicationContext();
-        currentRoute = glob.getCurrentRoute();
-        setTitle(currentRoute.getName() + ": Section " + String.valueOf(start + 1) + " - " + String.valueOf(end + 1));
-
-        SetPOIWindowAdapter();
+        map.setMapType(vm.mapType);
+        map.setInfoWindowAdapter(new com.hubbardgary.londontrails.view.InfoWindowAdapter(this));
 
         // Perform heavy lifting on a background thread
         new MapContentActivity(this).execute();
@@ -157,24 +125,8 @@ public class ShowMapActivity extends Activity implements LocationListener,
     }
 
     private void initializeLocationServices() {
-        locationManager = (LocationManager) getSystemService(LOCATION_SERVICE);
-        criteria.setAccuracy(Criteria.ACCURACY_COARSE); // How do you just make it use the best available?
+        map.getUiSettings().setZoomControlsEnabled(true);
         map.setMyLocationEnabled(true);
-
-        boolean updatesRequested;
-        locationRequest = LocationRequest.create();
-        locationRequest.setPriority(LocationRequest.PRIORITY_HIGH_ACCURACY);
-        locationRequest.setInterval(UPDATE_INTERVAL);
-        locationRequest.setFastestInterval(FASTEST_INTERVAL);
-        editor = prefs.edit();
-        // Create a new location client, using the enclosing class to handle callbacks.
-        locationClient = new LocationClient(this, this, this);
-        // Start with updates turned off
-        updatesRequested = true;
-    }
-
-    private void SetPOIWindowAdapter() {
-        map.setInfoWindowAdapter(new com.hubbardgary.londontrails.view.InfoWindowAdapter(this));
     }
 
     private void zoomIn() {
@@ -191,163 +143,31 @@ public class ShowMapActivity extends Activity implements LocationListener,
         getMenuInflater().inflate(R.menu.show_map, menu);
         return true;
     }
-
-    @Override
-    public boolean onOptionsItemSelected(MenuItem item) {
-        switch (item.getItemId()) {
-            case R.id.view_option_streetmap:
-                map.setMapType(GoogleMap.MAP_TYPE_NORMAL);
-                glob.setMapPreference(GoogleMap.MAP_TYPE_NORMAL);
-                return true;
-            case R.id.view_option_satellite:
-                map.setMapType(GoogleMap.MAP_TYPE_HYBRID);
-                glob.setMapPreference(GoogleMap.MAP_TYPE_HYBRID);
-                return true;
-            case R.id.view_option_terrain:
-                map.setMapType(GoogleMap.MAP_TYPE_TERRAIN);
-                glob.setMapPreference(GoogleMap.MAP_TYPE_TERRAIN);
-                return true;
-            case R.id.view_option_hide_markers:
-                for (Marker m : markers) {
-                    m.setVisible(false);
-                }
-                markersVisible = false;
-                return true;
-            case R.id.view_option_show_markers:
-                for (Marker m : markers) {
-                    m.setVisible(true);
-                }
-                markersVisible = true;
-                return true;
-            case R.id.view_option_reset_focus:
-                CameraUpdate cu = CameraUpdateFactory.newLatLngBounds(defaultBounds.build(), DEFAULT_BOUNDS_PADDING);
-                map.animateCamera(cu);
-                return true;
-            default:
-                return super.onOptionsItemSelected(item);
-        }
-    }
-
     @Override
     public boolean onPrepareOptionsMenu(Menu menu) {
         menu.clear();
-        SubMenu submenu = menu.addSubMenu(Menu.NONE, Menu.NONE, 1, "Change Map View");
-        submenu.add(Menu.NONE, R.id.view_option_streetmap, 1, R.string.streetmap_view);
-        submenu.add(Menu.NONE, R.id.view_option_satellite, 2, R.string.satellite_view);
-        submenu.add(Menu.NONE, R.id.view_option_terrain, 3, R.string.terrain_view);
-
-        if (markersVisible) {
-            menu.add(Menu.NONE, R.id.view_option_hide_markers, 4, R.string.hide_markers);
-        } else {
-            menu.add(Menu.NONE, R.id.view_option_show_markers, 4, R.string.show_markers);
-        }
-        menu.add(Menu.NONE, R.id.view_option_reset_focus, 5, R.string.reset_focus);
-
-        switch (map.getMapType()) {
-            case GoogleMap.MAP_TYPE_NORMAL:
-                submenu.removeItem(R.id.view_option_streetmap);
-                break;
-            case GoogleMap.MAP_TYPE_HYBRID:
-                submenu.removeItem(R.id.view_option_satellite);
-                break;
-            case GoogleMap.MAP_TYPE_TERRAIN:
-                submenu.removeItem(R.id.view_option_terrain);
-                break;
-        }
+        SubMenu subMenu = menu.addSubMenu(Menu.NONE, Menu.NONE, 0, vm.mapTypeSubMenu.nameResource);
+        addMenuItems(subMenu, vm.mapTypeSubMenu.menuItems);
+        addMenuItems(menu, vm.optionsMenu.menuItems);
         return true;
     }
     @Override
-    public void activate(OnLocationChangedListener listener) {
-        locationChangedListener = listener;
-    }
-    @Override
-    public void deactivate() {
-        locationChangedListener = null;
-    }
-    @Override
-    public void onLocationChanged(Location location) {
-        if (locationChangedListener != null) {
-            locationChangedListener.onLocationChanged(location);
-            LatLngBounds bounds = this.map.getProjection().getVisibleRegion().latLngBounds;
-            if (!bounds.contains(new LatLng(location.getLatitude(), location.getLongitude()))) {
-                //Move the camera to the user's location once it's available
-                map.animateCamera(CameraUpdateFactory.newLatLng(new LatLng(location.getLatitude(), location.getLongitude())));
-            }
+    public boolean onOptionsItemSelected(MenuItem item) {
+        try {
+            presenter.menuItemSelected(item.getItemId());
+            return true;
+        }
+        catch(Exception e) {
+            return super.onOptionsItemSelected(item);
         }
     }
-    @Override
-    public void onProviderDisabled(String provider) {
-        // TODO Auto-generated method stub
-    }
-    @Override
-    public void onProviderEnabled(String provider) {
-        // TODO Auto-generated method stub
-    }
-    @Override
-    public void onStatusChanged(String provider, int status, Bundle extras) {
-        // TODO Auto-generated method stub
-    }
 
-    /*
-     * Called by Location Services when the request to connect the
-     * client finishes successfully. At this point, you can
-     * request the current location or latLngStart periodic updates
-     */
-    @Override
-    public void onConnected(Bundle dataBundle) {
-        // Display the connection status
-        //Toast.makeText(this, "Connected", Toast.LENGTH_SHORT).show();
-    }
-    /*
-     * Called by Location Services if the connection to the
-     * location client drops because of an error.
-     */
-    @Override
-    public void onDisconnected() {
-        // Display the connection status
-        //Toast.makeText(this, "Disconnected. Please re-connect.", Toast.LENGTH_SHORT).show();
-    }
-    /*
-     * Called by Location Services if the attempt to
-     * Location Services fails.
-     */
-    @Override
-    public void onConnectionFailed(ConnectionResult connectionResult) {
-		/*
-		 * Google Play services can resolve some errors it detects.
-		 * If the error has a resolution, try sending an Intent to
-		 * latLngStart a Google Play services activity that can resolve
-		 * error.
-		 */
-        // IGNORING THIS FOR NOW
-    }
-    @Override
-    protected void onPause() {
-        // Save the current setting for updates
-        editor.putBoolean("KEY_UPDATES_ON", updatesRequested);
-        editor.commit();
-        super.onPause();
-    }
-    @Override
-    protected void onStart() {
-        locationClient.connect();
-        super.onStart();
-    }
-    @Override
-    protected void onResume() {
-		/*
-		 * Get any previous setting for location updates
-		 * Gets "false" if an error occurs
-		 */
-        if (prefs.contains("KEY_UPDATES_ON")) {
-            updatesRequested = prefs.getBoolean("KEY_UPDATES_ON", false);
-
-            // Otherwise, turn off location updates
-        } else {
-            editor.putBoolean("KEY_UPDATES_ON", false);
-            editor.commit();
+    public void addMenuItems(Menu menu, LinkedHashMap<Integer, String> items) {
+        int i = 0;
+        for (Map.Entry<Integer, String> entry : items.entrySet()) {
+            menu.add(Menu.NONE, entry.getKey(), i, entry.getValue());
+            i++;
         }
-        super.onResume();
     }
 
     /*
@@ -360,10 +180,12 @@ public class ShowMapActivity extends Activity implements LocationListener,
         PolylineOptions line;
         MapContentPresenter presenter;
         MapContentViewModel vm;
+        ShowMapViewModel showMapVm;
 
         public MapContentActivity(ShowMapActivity showMapActivity) {
             this.showMapActivity = showMapActivity;
-            presenter = new MapContentPresenter(this);
+            showMapVm = showMapActivity.getShowMapVm();
+            presenter = new MapContentPresenter(this, showMapVm);
             vm = presenter.getMapContentViewModel();
         }
 
@@ -372,7 +194,7 @@ public class ShowMapActivity extends Activity implements LocationListener,
             drawPath(vm.path);
 
             // Set default zoom bounds based on the route and points of interest we're plotting
-            initializeDefaultBounds(new LatLng(vm.minimumLatitude, vm.minimumLongitude), new LatLng(vm.maximumLatitude, vm.maximumLongitude));
+            initializeDefaultBounds(vm.minimumLatitude, vm.minimumLongitude, vm.maximumLatitude, vm.maximumLongitude);
             return 1;
         }
 
@@ -380,11 +202,11 @@ public class ShowMapActivity extends Activity implements LocationListener,
         protected void onPostExecute(Integer i) {
             showMapActivity.setMapRoute(showMapActivity.getMap().addPolyline(line));
 
-            if (showMapActivity.getStart() == showMapActivity.getEnd()) {
-                pushPin(vm.startLatitude, vm.startLongitude, showMapActivity.getCurrentRoute().getEndPoint(showMapActivity.getStart()), "Your walk starts and ends here.", R.drawable.waypoint_startstop);
+            if (showMapVm.start == showMapVm.end) {
+                pushPin(vm.startLatitude, vm.startLongitude, showMapVm.route.getEndPoint(showMapVm.start), "Your walk starts and ends here.", R.drawable.waypoint_startstop);
             } else {
-                pushPin(vm.startLatitude, vm.startLongitude, showMapActivity.getCurrentRoute().getEndPoint(showMapActivity.getStart()), "Your walk starts here.", R.drawable.waypoint_start);
-                pushPin(vm.endLatitude, vm.endLongitude, showMapActivity.getCurrentRoute().getEndPoint(showMapActivity.getEnd()), "Your walk ends here.", R.drawable.waypoint_stop);
+                pushPin(vm.startLatitude, vm.startLongitude, showMapVm.route.getEndPoint(showMapVm.start), "Your walk starts here.", R.drawable.waypoint_start);
+                pushPin(vm.endLatitude, vm.endLongitude, showMapVm.route.getEndPoint(showMapVm.end), "Your walk ends here.", R.drawable.waypoint_stop);
             }
 
             List<Marker> markers = new ArrayList<Marker>();
@@ -432,36 +254,16 @@ public class ShowMapActivity extends Activity implements LocationListener,
                     .icon(BitmapDescriptorFactory.fromResource(icon)));
         }
 
-        public void initializeDefaultBounds(LatLng minLatLng, LatLng maxLatLng) {
+        @Override
+        public void initializeDefaultBounds(double minLatitude, double minLongitude, double maxLatitude, double maxLongitude) {
             LatLngBounds.Builder bounds = new LatLngBounds.Builder();
-            bounds.include(minLatLng);
-            bounds.include(maxLatLng);
+            bounds.include(new LatLng(minLatitude, minLongitude));
+            bounds.include(new LatLng(maxLatitude, maxLongitude));
             showMapActivity.setDefaultBounds(bounds);
         }
-
-        @Override
-        public Route getRoute() {
-            return glob.getCurrentRoute();
-        }
-
         @Override
         public AssetManager getAssetManager() {
             return getApplicationContext().getAssets();
-        }
-
-        @Override
-        public int getStart() {
-            return start;
-        }
-
-        @Override
-        public int getEnd() {
-            return end;
-        }
-
-        @Override
-        public boolean isClockwise() {
-            return direction == 0;
         }
     }
 }

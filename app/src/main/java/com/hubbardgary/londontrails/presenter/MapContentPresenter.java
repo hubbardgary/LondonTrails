@@ -6,15 +6,18 @@ import com.hubbardgary.londontrails.model.POI;
 import com.hubbardgary.londontrails.view.IMapContentView;
 import com.hubbardgary.londontrails.viewmodel.MapContentViewModel;
 import com.hubbardgary.londontrails.viewmodel.PathViewModel;
+import com.hubbardgary.londontrails.viewmodel.ShowMapViewModel;
 
 import java.util.List;
 
 public class MapContentPresenter {
 
     private IMapContentView view;
+    private ShowMapViewModel showMapVm;
 
-    public MapContentPresenter(IMapContentView view) {
+    public MapContentPresenter(IMapContentView view, ShowMapViewModel showMapVm) {
         this.view = view;
+        this.showMapVm = showMapVm;
     }
 
     public MapContentViewModel getMapContentViewModel() {
@@ -32,35 +35,35 @@ public class MapContentPresenter {
     }
 
     public PathViewModel getPath() {
-        int start = view.getStart();
-        int end = view.getEnd();
+        int start = showMapVm.start;
+        int end = showMapVm.end;
 
         // If anti-clockwise, swap start and end and calculate as normal
-        if(!view.isClockwise()) {
-            start = view.getEnd();
-            end = view.getStart();
+        if(!showMapVm.isClockwise) {
+            start = showMapVm.end;
+            end = showMapVm.start;
         }
-        CoordinateProvider cp = new CoordinateProvider(view.getRoute(), view.getAssetManager(), start, end);
+        CoordinateProvider cp = new CoordinateProvider(showMapVm.route, view.getAssetManager(), start, end);
         PathViewModel path = new PathViewModel();
         path.setWayPoints(cp.GetPathWayPoints());
         return path;
     }
 
     public List<POI> getPOI() {
-        int start = view.getStart();
-        int end = view.getEnd();
+        int start = showMapVm.start;
+        int end = showMapVm.end;
 
         // If anti-clockwise, swap start and end and calculate as normal
-        if(!view.isClockwise()) {
-            start = view.getEnd();
-            end = view.getStart();
+        if(!showMapVm.isClockwise) {
+            start = showMapVm.end;
+            end = showMapVm.start;
         }
-        POIProvider pp = new POIProvider(view.getRoute(), view.getAssetManager(), start, end);
+        POIProvider pp = new POIProvider(showMapVm.route, view.getAssetManager(), start, end);
         return pp.getPOIsForRoute();
     }
 
     private MapContentViewModel setStartCoords(MapContentViewModel vm) {
-        if (view.isClockwise()) {
+        if (showMapVm.isClockwise) {
             vm.startLatitude = vm.path.getWayPointLat(0);
             vm.startLongitude = vm.path.getWayPointLng(0);
         }
@@ -72,7 +75,7 @@ public class MapContentPresenter {
     }
 
     private MapContentViewModel setEndCoords(MapContentViewModel vm) {
-        if (view.isClockwise()) {
+        if (showMapVm.isClockwise) {
             vm.endLatitude = vm.path.getWayPointLat(vm.path.getWayPoints().length - 1);
             vm.endLongitude = vm.path.getWayPointLng(vm.path.getWayPoints().length - 1);
         }

@@ -6,6 +6,7 @@ import android.app.Application;
 import android.content.SharedPreferences;
 import android.text.Html;
 
+import com.google.android.gms.maps.GoogleMap;
 import com.hubbardgary.londontrails.R;
 import com.hubbardgary.londontrails.model.Route;
 
@@ -37,8 +38,8 @@ public class GlobalObjects extends Application {
         return hshSectionMap;
     }
 
-    public void setSectionMap(HashMap<String, Integer> h) {
-        hshSectionMap = h;
+    public void setSectionMap(HashMap<String, Integer> sectionMap) {
+        hshSectionMap = sectionMap;
     }
 
     public static CharSequence getButtonText(String title, String subtitle) {
@@ -52,6 +53,16 @@ public class GlobalObjects extends Application {
         SharedPreferences.Editor editor = getSharedPreferences(getString(R.string.shared_preferences_name), MODE_PRIVATE).edit();
         editor.putInt(getString(R.string.shared_prefs_map_type), mapType);
         editor.apply();
+    }
+
+    public String getStringFromResource(int resourceId) {
+        return getString(resourceId);
+    }
+
+    public int getMapPreference() {
+        SharedPreferences preferences = getSharedPreferences(getString(R.string.shared_preferences_name), MODE_PRIVATE);
+        // Default to Terrain if no preference is set
+        return preferences.getInt(getString(R.string.shared_prefs_map_type), GoogleMap.MAP_TYPE_TERRAIN);
     }
 
     public static double convertKmToMiles(double km) {

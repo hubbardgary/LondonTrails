@@ -1,24 +1,10 @@
 package com.hubbardgary.londontrails.model;
 
-import com.google.android.gms.maps.model.LatLng;
-
 public class POI {
-
-    //private LatLng coords;
     private double latitude;
     private double longitude;
     private String title;
-    public String snippet;
-
-//    public LatLng getCoords() {
-//        return coords;
-//    }
-//
-//    public void setCoords(LatLng coords) {
-//        this.coords = coords;
-//    }
-
-
+    private String snippet;
 
     public double getLongitude() {
         return longitude;

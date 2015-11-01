@@ -8,4 +8,5 @@ public interface IShowMapView {
     void setMarkerVisibility(boolean visible);
     void resetCameraPosition();
     void setMapType(int mapType);
+    void goToMyLocation();
 }

@@ -24,8 +24,8 @@ public class MapContentPresenter {
         MapContentViewModel vm = new MapContentViewModel();
 
         vm.path = getPath();
-        vm = setStartCoords(vm);
-        vm = setEndCoords(vm);
+        vm = setStartCoordinates(vm);
+        vm = setEndCoordinates(vm);
         vm = initialiseMaxMinLatLon(vm);
 
         vm.poi = getPOI();
@@ -62,7 +62,7 @@ public class MapContentPresenter {
         return pp.getPOIsForRoute();
     }
 
-    private MapContentViewModel setStartCoords(MapContentViewModel vm) {
+    private MapContentViewModel setStartCoordinates(MapContentViewModel vm) {
         if (showMapVm.isClockwise) {
             vm.startLatitude = vm.path.getWayPointLat(0);
             vm.startLongitude = vm.path.getWayPointLng(0);
@@ -74,7 +74,7 @@ public class MapContentPresenter {
         return vm;
     }
 
-    private MapContentViewModel setEndCoords(MapContentViewModel vm) {
+    private MapContentViewModel setEndCoordinates(MapContentViewModel vm) {
         if (showMapVm.isClockwise) {
             vm.endLatitude = vm.path.getWayPointLat(vm.path.getWayPoints().length - 1);
             vm.endLongitude = vm.path.getWayPointLng(vm.path.getWayPoints().length - 1);
@@ -112,5 +112,4 @@ public class MapContentPresenter {
         }
         return vm;
     }
-
 }

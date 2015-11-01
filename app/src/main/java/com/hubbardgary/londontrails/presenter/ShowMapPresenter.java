@@ -39,6 +39,7 @@ public class ShowMapPresenter {
             menuVm.menuItems.put(R.id.view_option_show_markers, globals.getStringFromResource(R.string.show_markers));
         }
         menuVm.menuItems.put(R.id.view_option_reset_focus, globals.getStringFromResource(R.string.reset_focus));
+        menuVm.menuItems.put(R.id.view_option_where_am_i, globals.getStringFromResource(R.string.where_am_i));
         return menuVm;
     }
 
@@ -75,6 +76,9 @@ public class ShowMapPresenter {
                 return;
             case R.id.view_option_reset_focus:
                 view.resetCameraPosition();
+                return;
+            case R.id.view_option_where_am_i:
+                view.goToMyLocation();
                 return;
         }
         view.updateViewModel(vm);

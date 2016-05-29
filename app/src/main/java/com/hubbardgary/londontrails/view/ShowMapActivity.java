@@ -1,10 +1,12 @@
 package com.hubbardgary.londontrails.view;
 
+import android.content.Context;
 import android.os.Bundle;
 import android.support.v4.app.FragmentActivity;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.SubMenu;
+import android.widget.Toast;
 
 import com.google.android.gms.maps.CameraUpdate;
 import com.google.android.gms.maps.CameraUpdateFactory;
@@ -19,6 +21,9 @@ import com.google.android.gms.maps.model.Polyline;
 import java.util.LinkedHashMap;
 import java.util.List;
 import java.util.Map;
+import java.util.concurrent.Executors;
+import java.util.concurrent.ScheduledThreadPoolExecutor;
+import java.util.concurrent.TimeUnit;
 
 import com.hubbardgary.londontrails.config.GlobalObjects;
 import com.hubbardgary.londontrails.R;
@@ -33,10 +38,12 @@ public class ShowMapActivity extends FragmentActivity implements
     private static final int DEFAULT_BOUNDS_PADDING = 100;
     private static final int INITIAL_CAMERA_ANIMATION_SPEED_MS = 800;
 
+    private final Context currentContext = this;
     private GoogleMap map;
     private LatLngBounds.Builder defaultBounds;
     private List<Marker> markers;
     private Polyline mapRoute;  // Provides a means of accessing the polyline from within the map
+    private boolean mapLoaded = false;
 
     private ShowMapPresenter presenter;
     private ShowMapViewModel vm;
@@ -154,12 +161,14 @@ public class ShowMapActivity extends FragmentActivity implements
         map.getUiSettings().setMapToolbarEnabled(false);
         map.setMapType(vm.mapType);
         map.setInfoWindowAdapter(new InfoWindowAdapter(this));
+        setInternetConnectionAlert(5);
 
         // Attempts to move camera before map has loaded will fail.
         // http://stackoverflow.com/questions/13692579/movecamera-with-cameraupdatefactory-newlatlngbounds-crashes
         map.setOnMapLoadedCallback(new GoogleMap.OnMapLoadedCallback() {
             @Override
             public void onMapLoaded() {
+                mapLoaded = true;
                 zoomToCurrentRoute();
             }
         });
@@ -208,6 +217,31 @@ public class ShowMapActivity extends FragmentActivity implements
             CameraUpdate cu = CameraUpdateFactory.newLatLngBounds(defaultBounds.build(), DEFAULT_BOUNDS_PADDING);
             map.animateCamera(cu, INITIAL_CAMERA_ANIMATION_SPEED_MS, null);
         }
+    }
+
+    /**
+     * Trigger an alert if map hasn't loaded after the given time period in seconds.
+     * This will pop up a toast message suggesting the user checks their Internet connection.
+     */
+    private void setInternetConnectionAlert(int delayInSeconds) {
+        ScheduledThreadPoolExecutor scheduler = (ScheduledThreadPoolExecutor) Executors.newScheduledThreadPool(1);
+        Runnable checkInternetTask = new Runnable() {
+            @Override
+            public void run() {
+                runOnUiThread(new Runnable() {
+                    @Override
+                    public void run() {
+                        if(!((ShowMapActivity)currentContext).mapLoaded)
+                            Toast.makeText(
+                                    currentContext,
+                                    getString(R.string.check_internet_connection),
+                                    Toast.LENGTH_LONG)
+                                    .show();
+                    }
+                });
+            }
+        };
+        scheduler.schedule(checkInternetTask, delayInSeconds, TimeUnit.SECONDS);
     }
 
 }

@@ -1,12 +1,10 @@
 package com.hubbardgary.londontrails.view;
 
-import android.location.Location;
 import android.os.Bundle;
 import android.support.v4.app.FragmentActivity;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.SubMenu;
-import android.widget.Toast;
 
 import com.google.android.gms.maps.CameraUpdate;
 import com.google.android.gms.maps.CameraUpdateFactory;
@@ -14,12 +12,8 @@ import com.google.android.gms.maps.GoogleMap;
 import com.google.android.gms.maps.MapFragment;
 import com.google.android.gms.maps.OnMapReadyCallback;
 import com.google.android.gms.maps.SupportMapFragment;
-import com.google.android.gms.maps.model.BitmapDescriptorFactory;
-import com.google.android.gms.maps.model.CameraPosition;
-import com.google.android.gms.maps.model.LatLng;
 import com.google.android.gms.maps.model.LatLngBounds;
 import com.google.android.gms.maps.model.Marker;
-import com.google.android.gms.maps.model.MarkerOptions;
 import com.google.android.gms.maps.model.Polyline;
 
 import java.util.LinkedHashMap;
@@ -33,7 +27,6 @@ import com.hubbardgary.londontrails.viewmodel.ShowMapViewModel;
 
 public class ShowMapActivity extends FragmentActivity implements
         OnMapReadyCallback,
-        LocationProvider.LocationCallback,
         IShowMapView {
 
     private static final int DEFAULT_BOUNDS_PADDING = 100;
@@ -43,8 +36,6 @@ public class ShowMapActivity extends FragmentActivity implements
     private LatLngBounds.Builder defaultBounds;
     private List<Marker> markers;
     private Polyline mapRoute;  // Provides a means of accessing the polyline from within the map
-    private LocationProvider locationProvider;
-    public Marker myLocationMarker;
 
     private ShowMapPresenter presenter;
     private ShowMapViewModel vm;
@@ -98,38 +89,27 @@ public class ShowMapActivity extends FragmentActivity implements
     }
 
     @Override
-    public void goToMyLocation() {
-        if(myLocationMarker != null) {
-            CameraPosition cameraPosition = new CameraPosition.Builder()
-                .target(myLocationMarker.getPosition())
-                .zoom(15)
-                .build();
-
-            map.animateCamera(CameraUpdateFactory.newCameraPosition(cameraPosition));
-        } else {
-            Toast.makeText(this, "Current location not known.", Toast.LENGTH_SHORT).show();
-        }
-    }
-
-    @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_show_map);
         setUpMapIfNeeded();
-        locationProvider = new LocationProvider(this, this);
+        initializeLocationServices();
+    }
+
+    private void initializeLocationServices() {
+        map.getUiSettings().setZoomControlsEnabled(true);
+        map.setMyLocationEnabled(true);
     }
 
     @Override
     protected void onResume() {
         super.onResume();
         setUpMapIfNeeded();
-        locationProvider.connect();
     }
 
     @Override
     protected void onPause() {
         super.onPause();
-        locationProvider.disconnect();
     }
 
     @Override
@@ -174,20 +154,6 @@ public class ShowMapActivity extends FragmentActivity implements
         map.setMapType(vm.mapType);
         map.setInfoWindowAdapter(new InfoWindowAdapter(this));
 
-        map.setOnMarkerClickListener(new GoogleMap.OnMarkerClickListener() {
-            @Override
-            public boolean onMarkerClick(Marker marker) {
-                // Prevent map centring on My Location marker
-                if(myLocationMarker != null && marker.getId().equals(myLocationMarker.getId())) {
-                    // Consume event
-                    return true;
-                } else {
-                    // Perform default action
-                    return false;
-                }
-            }
-        });
-
         // Attempts to move camera before map has loaded will fail.
         // http://stackoverflow.com/questions/13692579/movecamera-with-cameraupdatefactory-newlatlngbounds-crashes
         map.setOnMapLoadedCallback(new GoogleMap.OnMapLoadedCallback() {
@@ -196,22 +162,6 @@ public class ShowMapActivity extends FragmentActivity implements
                 zoomToCurrentRoute();
             }
         });
-    }
-
-    @Override
-    public void handleNewLocation(Location location) {
-        double currentLatitude = location.getLatitude();
-        double currentLongitude = location.getLongitude();
-        LatLng latLng = new LatLng(currentLatitude, currentLongitude);
-        //Toast.makeText(this, "Location: " + latLng.latitude + ", " + latLng.longitude, Toast.LENGTH_SHORT).show();
-        if(myLocationMarker == null) {
-            myLocationMarker = map.addMarker(new MarkerOptions()
-                    .position(new LatLng(currentLatitude, currentLongitude))
-                    .anchor(0.5f, 0.5f)   // By default, markers hover above the position, but we want the My Location icon to be centred.
-                    .icon(BitmapDescriptorFactory.fromResource(R.drawable.my_location)));
-        } else {
-            myLocationMarker.setPosition(latLng);
-        }
     }
 
     /**

@@ -24,7 +24,4 @@
     <item
         android:id="@+id/view_option_reset_focus"
         android:title="@string/reset_focus"/>
-    <item
-        android:id="@+id/view_option_where_am_i"
-        android:title="@string/where_am_i"/>
 </menu>

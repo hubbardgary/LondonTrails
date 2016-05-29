@@ -13,7 +13,6 @@
     <string name="shared_prefs_map_type">mapType</string>
     <string name="route_options_confirm_text">Go!</string>
     <string name="change_map_view">Change Map View</string>
-    <string name="where_am_i">Where Am I?</string>
 
     <string-array name="capital_ring_sections">
         <item>1: Woolwich</item>

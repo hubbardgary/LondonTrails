@@ -15,6 +15,8 @@ import com.google.android.gms.location.LocationServices;
 /*
  * Heavily based on this excellent tutorial:
  * http://blog.teamtreehouse.com/beginners-guide-location-android
+ *
+ * TODO: Not currently used due to issues with accuracy. Consider reintroducing at a later date.
  */
 public class LocationProvider implements
         GoogleApiClient.ConnectionCallbacks,
@@ -104,4 +106,3 @@ public class LocationProvider implements
         locationCallback.handleNewLocation(location);
     }
 }
-

@@ -1,4 +1,4 @@
-package com.hubbardgary.londontrails.view;
+package com.hubbardgary.londontrails.view.interfaces;
 
 import android.content.res.AssetManager;
 

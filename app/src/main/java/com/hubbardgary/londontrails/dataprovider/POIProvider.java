@@ -1,6 +1,5 @@
 package com.hubbardgary.londontrails.dataprovider;
 
-import android.content.Context;
 import android.content.res.AssetManager;
 
 import java.io.IOException;
@@ -23,14 +22,11 @@ import com.hubbardgary.londontrails.model.Section;
 public class POIProvider {
 
     private Route route;
-    //private Context context;
     private AssetManager assetManager;
     private int startLocation;
     private int endLocation;
 
-//    public POIProvider(Context context, int startLocation, int endLocation) {
     public POIProvider(Route route, AssetManager assetManager, int startLocation, int endLocation) {
-//        this.context = context;
         this.startLocation = startLocation;
         this.endLocation = endLocation;
         this.route = route;
@@ -120,7 +116,6 @@ class POIHandler extends DefaultHandler {
             String sLonLat = new String(ch, start, length);
             String sLon = sLonLat.substring(0, sLonLat.indexOf(','));
             String sLat = sLonLat.substring(sLonLat.indexOf(',') + 1, sLonLat.lastIndexOf(','));
-            //currentPOI.setCoords(new LatLng(Double.parseDouble(sLat), Double.parseDouble(sLon)));
             currentPOI.setLatitude(Double.parseDouble(sLat));
             currentPOI.setLongitude(Double.parseDouble(sLon));
             coordinates = false;

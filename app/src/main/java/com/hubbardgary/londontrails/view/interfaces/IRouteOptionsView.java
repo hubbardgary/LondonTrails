@@ -1,4 +1,4 @@
-package com.hubbardgary.londontrails.view;
+package com.hubbardgary.londontrails.view.interfaces;
 
 import com.hubbardgary.londontrails.viewmodel.RouteViewModel;
 

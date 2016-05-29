@@ -13,6 +13,7 @@ import com.google.android.gms.maps.model.PolylineOptions;
 import com.hubbardgary.londontrails.R;
 import com.hubbardgary.londontrails.model.POI;
 import com.hubbardgary.londontrails.presenter.MapContentPresenter;
+import com.hubbardgary.londontrails.view.interfaces.IMapContentView;
 import com.hubbardgary.londontrails.viewmodel.MapContentViewModel;
 import com.hubbardgary.londontrails.viewmodel.PathViewModel;
 import com.hubbardgary.londontrails.viewmodel.ShowMapViewModel;

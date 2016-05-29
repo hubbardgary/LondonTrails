@@ -3,7 +3,7 @@ package com.hubbardgary.londontrails.presenter;
 import com.hubbardgary.londontrails.dataprovider.CoordinateProvider;
 import com.hubbardgary.londontrails.dataprovider.POIProvider;
 import com.hubbardgary.londontrails.model.POI;
-import com.hubbardgary.londontrails.view.IMapContentView;
+import com.hubbardgary.londontrails.view.interfaces.IMapContentView;
 import com.hubbardgary.londontrails.viewmodel.MapContentViewModel;
 import com.hubbardgary.londontrails.viewmodel.PathViewModel;
 import com.hubbardgary.londontrails.viewmodel.ShowMapViewModel;

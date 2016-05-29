@@ -18,6 +18,7 @@ import java.util.Map;
 import com.hubbardgary.londontrails.R;
 import com.hubbardgary.londontrails.config.GlobalObjects;
 import com.hubbardgary.londontrails.presenter.RouteOptionsPresenter;
+import com.hubbardgary.londontrails.view.interfaces.IRouteOptionsView;
 import com.hubbardgary.londontrails.viewmodel.RouteViewModel;
 
 public class RouteOptionsActivity extends Activity implements IRouteOptionsView, OnItemSelectedListener {

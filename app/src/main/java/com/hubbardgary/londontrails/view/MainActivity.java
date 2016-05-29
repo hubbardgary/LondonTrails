@@ -15,6 +15,7 @@ import android.widget.Toast;
 import com.google.android.gms.common.ConnectionResult;
 import com.google.android.gms.common.GooglePlayServicesUtil;
 import com.hubbardgary.londontrails.R;
+import com.hubbardgary.londontrails.view.interfaces.IMainView;
 import com.hubbardgary.londontrails.viewmodel.ButtonViewModel;
 import com.hubbardgary.londontrails.presenter.MainPresenter;
 

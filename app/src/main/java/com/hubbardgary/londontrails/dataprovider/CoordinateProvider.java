@@ -19,14 +19,11 @@ import org.xml.sax.helpers.DefaultHandler;
 public class CoordinateProvider {
 
     private Route route;
-    //private Context context;
     private AssetManager assetManager;
     private int startLocation;
     private int endLocation;
 
-    //public CoordinateProvider(Context context, int startLocation, int endLocation) {
     public CoordinateProvider(Route route, AssetManager assetManager, int startLocation, int endLocation) {
-  //      this.context = context;
         this.startLocation = startLocation;
         this.endLocation = endLocation;
         this.route = route;
@@ -62,7 +59,7 @@ public class CoordinateProvider {
     }
 
     private String AppendCoordinates(String filename) {
-        if(filename != "") {
+        if(!filename.equals("")) {
             try {
                 return getRoute(assetManager.open(filename));
             } catch (IOException e) {

@@ -1,7 +1,5 @@
 package com.hubbardgary.londontrails.config;
 
-import java.util.HashMap;
-
 import android.app.Application;
 import android.content.SharedPreferences;
 import android.text.Html;
@@ -13,7 +11,6 @@ import com.hubbardgary.londontrails.model.Route;
 public class GlobalObjects extends Application {
 
     private Route currentRoute;
-    private HashMap<String, Integer> hshSectionMap;
     private static final double kmToMilesMultiplier = 0.62137;
 
     public Route getCurrentRoute() {
@@ -34,19 +31,8 @@ public class GlobalObjects extends Application {
         return 0;
     }
 
-    public HashMap<String, Integer> getSectionMap() {
-        return hshSectionMap;
-    }
-
-    public void setSectionMap(HashMap<String, Integer> sectionMap) {
-        hshSectionMap = sectionMap;
-    }
-
     public static CharSequence getButtonText(String title, String subtitle) {
         return Html.fromHtml("<b><big>" + title + "</big></b>" + "<br />" + "<small>" + subtitle + "</small>");
-    }
-    public static CharSequence getButtonText(String title) {
-        return Html.fromHtml("<b><big>" + title + "</big></b>");
     }
 
     public void setMapPreference(int mapType) {

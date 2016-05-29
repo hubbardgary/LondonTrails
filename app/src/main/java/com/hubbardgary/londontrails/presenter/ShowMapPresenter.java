@@ -3,7 +3,7 @@ package com.hubbardgary.londontrails.presenter;
 import com.google.android.gms.maps.GoogleMap;
 import com.hubbardgary.londontrails.R;
 import com.hubbardgary.londontrails.config.GlobalObjects;
-import com.hubbardgary.londontrails.view.IShowMapView;
+import com.hubbardgary.londontrails.view.interfaces.IShowMapView;
 import com.hubbardgary.londontrails.viewmodel.MenuViewModel;
 import com.hubbardgary.londontrails.viewmodel.ShowMapViewModel;
 

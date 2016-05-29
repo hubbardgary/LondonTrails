@@ -7,7 +7,7 @@ import com.hubbardgary.londontrails.model.CapitalRing;
 import com.hubbardgary.londontrails.config.GlobalObjects;
 import com.hubbardgary.londontrails.model.LondonLoop;
 import com.hubbardgary.londontrails.model.Route;
-import com.hubbardgary.londontrails.view.IRouteOptionsView;
+import com.hubbardgary.londontrails.view.interfaces.IRouteOptionsView;
 import com.hubbardgary.londontrails.view.ShowMapActivity;
 import com.hubbardgary.londontrails.viewmodel.RouteViewModel;
 

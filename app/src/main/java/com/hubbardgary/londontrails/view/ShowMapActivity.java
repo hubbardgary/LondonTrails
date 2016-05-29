@@ -23,6 +23,7 @@ import java.util.Map;
 import com.hubbardgary.londontrails.config.GlobalObjects;
 import com.hubbardgary.londontrails.R;
 import com.hubbardgary.londontrails.presenter.ShowMapPresenter;
+import com.hubbardgary.londontrails.view.interfaces.IShowMapView;
 import com.hubbardgary.londontrails.viewmodel.ShowMapViewModel;
 
 public class ShowMapActivity extends FragmentActivity implements

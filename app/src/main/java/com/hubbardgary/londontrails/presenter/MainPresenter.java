@@ -1,7 +1,7 @@
 package com.hubbardgary.londontrails.presenter;
 
 import com.hubbardgary.londontrails.R;
-import com.hubbardgary.londontrails.view.IMainView;
+import com.hubbardgary.londontrails.view.interfaces.IMainView;
 import com.hubbardgary.londontrails.viewmodel.ButtonViewModel;
 import com.hubbardgary.londontrails.model.CapitalRing;
 import com.hubbardgary.londontrails.config.GlobalObjects;

@@ -16,13 +16,6 @@ public class AboutPresenter {
     private final String aboutTextHtml =
             "<body>" +
             "<h1>Discover a hidden side of London!</h1>" +
-            "<p>" +
-            "The walking routes included in this app are recognised by Transport for London " +
-            "(TfL) and as such are generally quite well signposted." +
-            "</p>" +
-            "<p>" +
-            "London Trails has no affiliation with TfL." +
-            "</p>" +
             "<h2>Support</h2>" +
             "<p>" +
             "For support and queries, please contact london.trails.app@gmail.com</a>." +

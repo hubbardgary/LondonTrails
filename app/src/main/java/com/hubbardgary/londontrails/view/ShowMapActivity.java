@@ -1,8 +1,12 @@
 package com.hubbardgary.londontrails.view;
 
 import android.content.Context;
+import android.content.pm.PackageManager;
 import android.os.Bundle;
+import android.support.annotation.NonNull;
+import android.support.v4.app.ActivityCompat;
 import android.support.v4.app.FragmentActivity;
+import android.support.v4.content.ContextCompat;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.SubMenu;
@@ -37,6 +41,7 @@ public class ShowMapActivity extends FragmentActivity implements
 
     private static final int DEFAULT_BOUNDS_PADDING = 100;
     private static final int INITIAL_CAMERA_ANIMATION_SPEED_MS = 800;
+    private static final int MY_PERMISSION_ACCESS_FINE_LOCATION = 1;
 
     private final Context currentContext = this;
     private GoogleMap map;
@@ -101,18 +106,40 @@ public class ShowMapActivity extends FragmentActivity implements
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_show_map);
         setUpMapIfNeeded();
-        initializeLocationServices();
     }
 
     private void initializeLocationServices() {
+        enableZoomControls();
+        enableMyLocationIfAllowed();
+    }
+
+    private void enableZoomControls() {
         map.getUiSettings().setZoomControlsEnabled(true);
-        map.setMyLocationEnabled(true);
+    }
+
+    private void enableMyLocationIfAllowed() {
+        if(ContextCompat.checkSelfPermission(this, android.Manifest.permission.ACCESS_FINE_LOCATION ) != PackageManager.PERMISSION_GRANTED) {
+            ActivityCompat.requestPermissions(this, new String[] {  android.Manifest.permission.ACCESS_FINE_LOCATION  }, MY_PERMISSION_ACCESS_FINE_LOCATION);
+        } else {
+            map.setMyLocationEnabled(true);
+            setInternetConnectionAlert(10);
+        }
+    }
+
+    @Override
+    public void onRequestPermissionsResult(int requestCode, @NonNull String permissions[], @NonNull int[] grantResults) {
+        switch (requestCode) {
+            case MY_PERMISSION_ACCESS_FINE_LOCATION:
+                // If request is cancelled, the result arrays are empty.
+                if (grantResults.length > 0 && grantResults[0] == PackageManager.PERMISSION_GRANTED) {
+                    enableMyLocationIfAllowed();
+                }
+        }
     }
 
     @Override
     protected void onResume() {
         super.onResume();
-        setUpMapIfNeeded();
     }
 
     @Override
@@ -157,11 +184,10 @@ public class ShowMapActivity extends FragmentActivity implements
     @Override
     public void onMapReady(GoogleMap map) {
         this.map = map;
-        map.getUiSettings().setZoomControlsEnabled(true);
+        initializeLocationServices();
         map.getUiSettings().setMapToolbarEnabled(false);
         map.setMapType(vm.mapType);
         map.setInfoWindowAdapter(new InfoWindowAdapter(this));
-        setInternetConnectionAlert(5);
 
         // Attempts to move camera before map has loaded will fail.
         // http://stackoverflow.com/questions/13692579/movecamera-with-cameraupdatefactory-newlatlngbounds-crashes
@@ -192,12 +218,7 @@ public class ShowMapActivity extends FragmentActivity implements
     private void setUpMapIfNeeded() {
         // Do a null check to confirm that we have not already instantiated the map.
         if (map == null) {
-            // Try to obtain the map from the SupportMapFragment.
-            map = ((MapFragment) getFragmentManager().findFragmentById(R.id.map)).getMap();
-            // Check if we were successful in obtaining the map.
-            if (map != null) {
-                setUpMap();
-            }
+            setUpMap();
         }
     }
 

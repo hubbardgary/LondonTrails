@@ -47,8 +47,8 @@ public class GlobalObjects extends Application {
 
     public int getMapPreference() {
         SharedPreferences preferences = getSharedPreferences(getString(R.string.shared_preferences_name), MODE_PRIVATE);
-        // Default to Terrain if no preference is set
-        return preferences.getInt(getString(R.string.shared_prefs_map_type), GoogleMap.MAP_TYPE_TERRAIN);
+        // Default to Normal if no preference is set
+        return preferences.getInt(getString(R.string.shared_prefs_map_type), GoogleMap.MAP_TYPE_NORMAL);
     }
 
     public static double convertKmToMiles(double km) {

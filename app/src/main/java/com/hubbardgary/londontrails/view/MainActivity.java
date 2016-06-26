@@ -6,6 +6,8 @@ import android.os.Bundle;
 import android.app.Activity;
 import android.app.Dialog;
 import android.util.TypedValue;
+import android.view.Menu;
+import android.view.MenuItem;
 import android.view.View;
 import android.view.View.OnClickListener;
 import android.widget.Button;
@@ -62,6 +64,23 @@ public class MainActivity extends Activity implements IMainView {
         for(ButtonViewModel buttonVm : buttons) {
             Button button = addButton(buttonVm);
             addOnClickListener(button);
+        }
+    }
+
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        getMenuInflater().inflate(R.menu.main, menu);
+        return true;
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        try {
+            presenter.menuItemSelected(item.getItemId());
+            return true;
+        }
+        catch(Exception e) {
+            return super.onOptionsItemSelected(item);
         }
     }
 

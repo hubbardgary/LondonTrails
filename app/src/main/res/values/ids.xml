@@ -2,4 +2,5 @@
 <resources>
     <item type="id" name="rte_capital_ring" />
     <item type="id" name="rte_london_loop" />
+    <item type="id" name="btn_legal" />
 </resources>

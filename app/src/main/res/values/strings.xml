@@ -51,9 +51,12 @@
         <item>15: Harold Wood</item>
         <item>16: Purfleet</item>
     </string-array>
-    
+
     <string-array name="directions">
         <item>Clockwise</item>
         <item>Anti-clockwise</item>
     </string-array>
+
+    <string name="about">About</string>
+    <string name="legal">Google Maps Legal Notices</string>
 </resources>

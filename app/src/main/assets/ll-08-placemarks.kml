@@ -27,7 +27,7 @@
   </Placemark>
   <Placemark>
     <name>Coffee Factory</name>
-    <description><![CDATA[The Nestle Coffee Factory is responsible for burnt coffee smell along this stretch. The factory opened in 1938 after Nestle produced the world's first instant coffee.]]></description>
+    <description><![CDATA[The Nestle Coffee Factory is responsible for the burnt coffee smell along this stretch. The factory opened in 1938 after Nestle produced the world's first instant coffee.]]></description>
     <styleUrl>#style4</styleUrl>
     <Point>
       <coordinates>-0.414627,51.501550,0.000000</coordinates>

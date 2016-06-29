@@ -3,7 +3,7 @@
 <Document>
   <Placemark>
     <name>Hanwell Locks</name>
-    <description><![CDATA[A series of six locks that raises the canal 16 metres in height. The Capital Ring veers away from the canal just before the second lock in the series.]]></description>
+    <description><![CDATA[This series of six locks raises the canal 16 metres in height. The Capital Ring veers away from the canal just before the second lock in the series.]]></description>
     <styleUrl>#style1</styleUrl>
     <Point>
       <coordinates>-0.3445887565612793,51.50380078442383,0.0</coordinates>
@@ -11,7 +11,7 @@
   </Placemark>
   <Placemark>
     <name>Wharncliffe Viaduct</name>
-    <description><![CDATA[This viaduct was constructed for the opening of the Great Western Railway (GWR) in 1838 by Isambard Kingdom Brunel. It is named after Lord Wharncliffe who steered the bill for the construction of the GWR through parliament, and it is his coat of arms that can be seen in the centre of the structure.]]></description>
+    <description><![CDATA[This viaduct was constructed by Isambard Kingdom Brunel for the opening of the Great Western Railway (GWR) in 1838. It is named after Lord Wharncliffe who steered the bill for the construction of the GWR through parliament, and it is his coat of arms that can be seen in the centre of the structure.]]></description>
     <styleUrl>#style4</styleUrl>
     <Point>
       <coordinates>-0.3445136547088623,51.51094934429628,0.0</coordinates>

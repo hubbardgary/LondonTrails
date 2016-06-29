@@ -27,7 +27,7 @@
   </Placemark>
   <Placemark>
     <name>Havering-atte-Bower</name>
-    <description><![CDATA[The 'atte-Bower' suffix means 'at the royal residence', and refers to Havering Palace - a historic royal residence - which once stood here. ]]></description>
+    <description><![CDATA[The 'atte-Bower' suffix means 'at the royal residence', and refers to Havering Palace, which once stood here.]]></description>
     <styleUrl>#style4</styleUrl>
     <Point>
       <coordinates>0.183034,51.616684,0.000000</coordinates>
@@ -35,7 +35,7 @@
   </Placemark>
   <Placemark>
     <name>Site of Pyrgo House</name>
-    <description><![CDATA[Demolished in 1814, the iron gateposts here are all that remains of Pyrgo Palace. Henry VIII's daughters Mary and Elizabeth grew up here.]]></description>
+    <description><![CDATA[Demolished in 1814, the iron gateposts are all that remains of the house that used to stand here, where Henry VIII's daughters Mary and Elizabeth grew up.]]></description>
     <styleUrl>#style5</styleUrl>
     <Point>
       <coordinates>0.192642,51.620679,0.000000</coordinates>

@@ -19,7 +19,7 @@
   </Placemark>
   <Placemark>
     <name>Grimsdyke Lake</name>
-    <description><![CDATA[This was once part of the ornamental gardens owned by William Gilbert from Gilbert and Sullivan. William Gilbert died here in 1911 while attempting to save a drowning girl, after which his wife had the lake drained.]]></description>
+    <description><![CDATA[This was once part of the ornamental gardens owned by William Gilbert of Gilbert and Sullivan fame. William Gilbert died here in 1911 while attempting to save a drowning girl, after which his wife had the lake drained.]]></description>
     <styleUrl>#style3</styleUrl>
     <Point>
       <coordinates>-0.354899,51.622773,0.000000</coordinates>
@@ -35,7 +35,7 @@
   </Placemark>
   <Placemark>
     <name>M1 Motorway</name>
-    <description><![CDATA[One of the main escape routes for cars from the capital, the M1 was the first road to be built to motorway standard in the UK. It originally opened in 1959, and has since been extended further south into London and north into Leeds - 193 miles in total.]]></description>
+    <description><![CDATA[One of the main escape routes for road traffic from the capital, the M1 was the first road to be built to motorway standard in the UK. It originally opened in 1959, and has since been extended further south into London and north into Leeds - 193 miles in total.]]></description>
     <styleUrl>#style5</styleUrl>
     <Point>
       <coordinates>-0.322702,51.642484,0.000000</coordinates>

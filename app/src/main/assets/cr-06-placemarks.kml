@@ -10,6 +10,14 @@
     </Point>
   </Placemark>
   <Placemark>
+    <name>Wimbledon Common</name>
+    <description><![CDATA[This large common, covering a total area of 1140 acres, is home to famous fictitious environmental campaigners, the wombles.]]></description>
+    <styleUrl>#style1</styleUrl>
+    <Point>
+      <coordinates>-0.233459,51.440750,0.000000</coordinates>
+    </Point>
+  </Placemark>
+  <Placemark>
     <name>Wimbledon Windmill</name>
     <description><![CDATA[The last remaining hollow post flour mill in the country, Wimbledon Windmill was built in 1817. Today it houses a museum charting the history of the windmill.]]></description>
     <styleUrl>#style1</styleUrl>
@@ -22,7 +30,7 @@
     <description><![CDATA[Richmond Park is the largest of the Royal Parks, spanning 2500 acres. It was created by Charles I in 1634 as a deer park. Today about 630 red and fallow deer roam freely here.]]></description>
     <styleUrl>#style8</styleUrl>
     <Point>
-      <coordinates>-0.257707,51.436943,0.000000</coordinates>
+      <coordinates>-0.273800,51.447023,0.000000</coordinates>
     </Point>
   </Placemark>
   <Placemark>
@@ -51,18 +59,10 @@
   </Placemark>
   <Placemark>
     <name>Thames Path National Trail</name>
-    <description><![CDATA[This stretch of the Capital Ring uses the route of the Thames Path National Trail which follows the River Thames from its source near Kemble in Gloucestershire to the Thames Barrier.]]></description>
+    <description><![CDATA[This stretch of the Capital Ring follows the route of the Thames Path National Trail which tracks the River Thames from its source near Kemble in Gloucestershire to the Thames Barrier.]]></description>
     <styleUrl>#style3</styleUrl>
     <Point>
       <coordinates>-0.302875,51.454620,0.000000</coordinates>
-    </Point>
-  </Placemark>
-  <Placemark>
-    <name>Eel Pie Island</name>
-    <description><![CDATA[A short distance from the route taken by the Capital Ring, this private island is home to about 120 inhabitants. It was previously the site of Eel Pie Island Hotel became a popular music venue in the 1960s hosting big names like The Who and The Rolling Stones. The hotel burned down in 1971.]]></description>
-    <styleUrl>#style5</styleUrl>
-    <Point>
-      <coordinates>-0.324697,51.445396,0.000000</coordinates>
     </Point>
   </Placemark>
 </Document>

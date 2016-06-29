@@ -18,14 +18,6 @@
     </Point>
   </Placemark>
   <Placemark>
-    <name>The Valley</name>
-    <description><![CDATA[Charlton Athletic Football Club have played in the modern stadium here since 1992.]]></description>
-    <styleUrl>#style2</styleUrl>
-    <Point>
-      <coordinates>0.036650,51.486515,0.000000</coordinates>
-    </Point>
-  </Placemark>
-  <Placemark>
     <name>Charlton Park</name>
     <description><![CDATA[Originally part of the Charlton House estate, which also included the nearby Maryon, Maryon Wilson, and Hornfair parks, the Jacobean period Charlton House is now a community centre and library.]]></description>
     <styleUrl>#style5</styleUrl>
@@ -51,7 +43,7 @@
   </Placemark>
   <Placemark>
     <name>Oxleas Meadows</name>
-    <description><![CDATA[A conveniently placed cafe and toilet allows you to enjoy the extensive views of the capital at your leisure.]]></description>
+    <description><![CDATA[A conveniently placed cafe and toilet allows you to enjoy the expansive views of the capital at your leisure.]]></description>
     <styleUrl>#style4</styleUrl>
     <Point>
       <coordinates>0.069737,51.466393,0.000000</coordinates>

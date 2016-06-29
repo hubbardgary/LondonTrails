@@ -3,7 +3,7 @@
 <Document>
   <Placemark>
     <name>Richmond Lock and Footbridge</name>
-    <description><![CDATA[The demolition of the old London Bridge in 1832 caused tides in the Thames to rise and fall far more rapidly than previously, making the river here unnavigable in low tide. This lock and bridge were built to rectify this between 1891 and 1894.]]></description>
+    <description><![CDATA[The demolition of the old London Bridge in 1832 caused tides in the Thames to rise and fall far more rapidly than previously, making the river here unnavigable in low tide. This lock and bridge were built between 1891 and 1894 to rectify the problem.]]></description>
     <styleUrl>#style1</styleUrl>
     <Point>
       <coordinates>-0.317230,51.462204,0.000000</coordinates>
@@ -35,7 +35,7 @@
   </Placemark>
   <Placemark>
     <name>The Great Conservatory</name>
-    <description><![CDATA[Designed by Charles Fowler in 1828, this was the first large scale conservatory to be built from metal and glass. It originally housed the Duke of Northumberland's collection of plants and inspired the design of the Crystal Palace.]]></description>
+    <description><![CDATA[Designed by Charles Fowler in 1828, this was the first large scale conservatory to be built from metal and glass. It originally housed the Duke of Northumberland's collection of plants, and inspired the design of the Crystal Palace.]]></description>
     <styleUrl>#style3</styleUrl>
     <Point>
       <coordinates>-0.312692,51.478577,0.000000</coordinates>

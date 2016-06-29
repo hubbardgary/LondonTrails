@@ -11,7 +11,7 @@
   </Placemark>
   <Placemark>
     <name>Norwood Grove</name>
-    <description><![CDATA[This Grade II listed building was originally built in the 1840s by Arthur Anderson, the founder of Peninsular and Oriental Steam Navigation Company, more commonly known today as P&O.]]></description>
+    <description><![CDATA[This Grade II listed building was originally built in the 1840s by Arthur Anderson, the founder of the Peninsular and Oriental Steam Navigation Company, more commonly known today as P&O.]]></description>
     <styleUrl>#style2</styleUrl>
     <Point>
       <coordinates>-0.114198,51.419464,0.000000</coordinates>
@@ -19,7 +19,7 @@
   </Placemark>
   <Placemark>
     <name>Norwood Grove Recreation Ground</name>
-    <description><![CDATA[This large park is home to a large colourful garden and offers excellent views of the North Downs.]]></description>
+    <description><![CDATA[This park is home to a large colourful garden and offers excellent views of the North Downs.]]></description>
     <styleUrl>#style5</styleUrl>
     <Point>
       <coordinates>-0.114563,51.418976,0.000000</coordinates>

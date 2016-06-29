@@ -2,11 +2,19 @@
 <kml xmlns="http://earth.google.com/kml/2.2">
 <Document>
   <Placemark>
+    <name>Wembley Stadium</name>
+    <description><![CDATA[This stadium, completed in 2007, replaced the original Wembley Stadium that stood on this spot between 1923 and 2003. The distinctive arch, which is the world's longest unsupported roof structure, is visible from miles around.]]></description>
+    <styleUrl>#style1</styleUrl>
+    <Point>
+      <coordinates>-0.279722,51.556514,0.0</coordinates>
+    </Point>
+  </Placemark>
+  <Placemark>
     <name>Fryent Country Park</name>
     <description><![CDATA[A trig point marks the peak of this large greenspace, where on a clear day St Paul's Cathedral and the BT Tower can be glimpsed to the east.]]></description>
     <styleUrl>#style1</styleUrl>
     <Point>
-      <coordinates>-0.2802587,51.5727888,0.0</coordinates>
+      <coordinates>-0.274057,51.577055,0.0</coordinates>
     </Point>
   </Placemark>
   <Placemark>
@@ -19,7 +27,7 @@
   </Placemark>
   <Placemark>
     <name>Old St. Andrew's Church</name>
-    <description><![CDATA[This Grade I listed building was probably built no later than 1100. As the local population increased after World War I, it became too small for regular congregations which from 1934 took place in the 'recycled' church round the corner.]]></description>
+    <description><![CDATA[This Grade I listed building dates from around 1100. As the local population increased after World War I, it became too small for regular congregations which from 1934 took place in the 'recycled' church round the corner.]]></description>
     <styleUrl>#style6</styleUrl>
     <Point>
       <coordinates>-0.2608341,51.5676957,0.0</coordinates>
@@ -27,7 +35,7 @@
   </Placemark>
   <Placemark>
     <name>Brent Reservoir</name>
-    <description><![CDATA[Also known as Welsh Harp after a pub that stood nearby until the late 1970s. The reservoir and surrounding green space are home to numerous birds, insects and mammals. The reservoir also hosted the rowing events of the 1948 Olympic Games.]]></description>
+    <description><![CDATA[Also known as Welsh Harp after a pub that stood nearby until the late 1970s, this reservoir hosted the rowing events of the 1948 Olympic Games.]]></description>
     <styleUrl>#style5</styleUrl>
     <Point>
       <coordinates>-0.2475572,51.5703348,0.0</coordinates>
@@ -35,7 +43,7 @@
   </Placemark>
   <Placemark>
     <name>M1 Motorway</name>
-    <description><![CDATA[One of the main escape routes for cars from the capital, the M1 was the first road to be built to motorway standard in the UK. It originally opened in 1959, and has since been extended further south into London and north to Leeds - 193 miles in total.]]></description>
+    <description><![CDATA[One of the main escape routes for road traffic from the capital, the M1 was the first road to be built to motorway standard in the UK. It originally opened in 1959, and has since been extended further south into London and north to Leeds - 193 miles in total.]]></description>
     <styleUrl>#style5</styleUrl>
     <Point>
       <coordinates>-0.23661379999999999,51.5767495,0.0</coordinates>

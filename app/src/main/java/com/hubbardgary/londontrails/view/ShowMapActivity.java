@@ -49,6 +49,8 @@ public class ShowMapActivity extends FragmentActivity implements
     private List<Marker> markers;
     private Polyline mapRoute;  // Provides a means of accessing the polyline from within the map
     private boolean mapLoaded = false;
+    private boolean showToast = true;
+    private boolean toastTriggered = false;
 
     private ShowMapPresenter presenter;
     private ShowMapViewModel vm;
@@ -122,7 +124,6 @@ public class ShowMapActivity extends FragmentActivity implements
             ActivityCompat.requestPermissions(this, new String[] {  android.Manifest.permission.ACCESS_FINE_LOCATION  }, MY_PERMISSION_ACCESS_FINE_LOCATION);
         } else {
             map.setMyLocationEnabled(true);
-            setInternetConnectionAlert(10);
         }
     }
 
@@ -139,11 +140,17 @@ public class ShowMapActivity extends FragmentActivity implements
 
     @Override
     protected void onResume() {
+        showToast = true;
+        if(!mapLoaded && !toastTriggered) {
+            setInternetConnectionAlert(10);
+            toastTriggered = true;
+        }
         super.onResume();
     }
 
     @Override
     protected void onPause() {
+        showToast = false;
         super.onPause();
     }
 
@@ -252,12 +259,14 @@ public class ShowMapActivity extends FragmentActivity implements
                 runOnUiThread(new Runnable() {
                     @Override
                     public void run() {
-                        if(!((ShowMapActivity)currentContext).mapLoaded)
+                        if(showToast && !((ShowMapActivity)currentContext).mapLoaded) {
                             Toast.makeText(
                                     currentContext,
                                     getString(R.string.check_internet_connection),
                                     Toast.LENGTH_LONG)
                                     .show();
+                        }
+                        toastTriggered = false;
                     }
                 });
             }

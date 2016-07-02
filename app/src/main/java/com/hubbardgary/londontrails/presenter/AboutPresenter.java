@@ -3,6 +3,7 @@ package com.hubbardgary.londontrails.presenter;
 import android.text.Html;
 import android.text.Spanned;
 
+import com.hubbardgary.londontrails.BuildConfig;
 import com.hubbardgary.londontrails.R;
 import com.hubbardgary.londontrails.view.GoogleMapsLicenceActivity;
 import com.hubbardgary.londontrails.view.interfaces.IAboutView;
@@ -17,6 +18,9 @@ public class AboutPresenter {
             "<body>" +
             "<h1>Discover a hidden side of London!</h1>" +
             "<h2>Support</h2>" +
+            "<p>" +
+            "Version " + BuildConfig.VERSION_NAME +
+            "</p>" +
             "<p>" +
             "For support and queries, please contact london.trails.app@gmail.com</a>." +
             "</p>" +

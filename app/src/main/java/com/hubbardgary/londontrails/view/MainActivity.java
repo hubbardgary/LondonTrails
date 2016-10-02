@@ -5,6 +5,7 @@ import android.graphics.Color;
 import android.os.Bundle;
 import android.app.Activity;
 import android.app.Dialog;
+import android.support.v4.content.ContextCompat;
 import android.util.TypedValue;
 import android.view.Menu;
 import android.view.MenuItem;
@@ -15,7 +16,7 @@ import android.widget.LinearLayout;
 import android.widget.Toast;
 
 import com.google.android.gms.common.ConnectionResult;
-import com.google.android.gms.common.GooglePlayServicesUtil;
+import com.google.android.gms.common.GoogleApiAvailability;
 import com.hubbardgary.londontrails.R;
 import com.hubbardgary.londontrails.view.interfaces.IMainView;
 import com.hubbardgary.londontrails.viewmodel.ButtonViewModel;
@@ -50,7 +51,7 @@ public class MainActivity extends Activity implements IMainView {
         Button button = new Button(this);
         button.setId(buttonVm.id);
         button.setText(buttonVm.label);
-        button.setBackground(getResources().getDrawable(R.drawable.button_background));
+        button.setBackground(ContextCompat.getDrawable(this, R.drawable.button_background));
         button.setTextSize(TypedValue.COMPLEX_UNIT_SP, 20);
         button.setTextColor(Color.WHITE);
         LinearLayout.LayoutParams params = new LinearLayout.LayoutParams(LinearLayout.LayoutParams.MATCH_PARENT, LinearLayout.LayoutParams.WRAP_CONTENT);
@@ -85,12 +86,13 @@ public class MainActivity extends Activity implements IMainView {
     }
 
     public void checkGooglePlayAvailability() {
-        int status = GooglePlayServicesUtil.isGooglePlayServicesAvailable(getBaseContext());
+        final int PLAY_SERVICES_RESOLUTION_REQUEST = 9000;
+        GoogleApiAvailability googleAPI = GoogleApiAvailability.getInstance();
+        int status = googleAPI.isGooglePlayServicesAvailable(getBaseContext());
         if (status != ConnectionResult.SUCCESS) {
-            if(GooglePlayServicesUtil.isUserRecoverableError(status)) {
+            if(googleAPI.isUserResolvableError(status)) {
                 // Google Play Services might need installing/updating, so prompt user to take appropriate action
-                int requestCode = 10;
-                Dialog dialog = GooglePlayServicesUtil.getErrorDialog(status, this, requestCode);
+                Dialog dialog = googleAPI.getErrorDialog(this, status, PLAY_SERVICES_RESOLUTION_REQUEST);
                 dialog.show();
             } else {
                 // Google Play Services unavailable

@@ -3,10 +3,14 @@
           xmlns:android="http://schemas.android.com/apk/res/android"
           android:installLocation="preferExternal">
 
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION"/>
     <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION"/>
 
-    <!-- Needed only if your app targets Android 5.0 (API level 21) or higher. -->
-    <uses-feature android:name="android.hardware.location.gps" />
+    <!-- App uses location features, but they are not required for it to operate -->
+    <uses-feature android:name="android.hardware.location.network"
+                  android:required="false" />
+    <uses-feature android:name="android.hardware.location.gps"
+                  android:required="false" />
 
     <application
         android:name=".config.GlobalObjects"

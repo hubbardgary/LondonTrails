@@ -1,15 +1,18 @@
 package com.hubbardgary.londontrails.model;
 
-public class Route {
+public abstract class Route {
 
     private Section[] sections;
     private String[] endPoints;  // Can't go in Section because if route is non-circular, there are more end points than sections.
     private boolean circular;
     private String name;
     private double distanceInKm;
+    private int routeId;
 
     public Route() {
     }
+
+    public abstract int getRouteId();
 
     public Section[] getSections() {
         return sections;

@@ -11,6 +11,7 @@
     <string name="reset_focus">Reset Focus</string>
     <string name="shared_preferences_name">SharedPreferences</string>
     <string name="shared_prefs_map_type">mapType</string>
+    <string name="shared_prefs_current_route_id">currentRoute</string>
     <string name="route_options_confirm_text">Go!</string>
     <string name="change_map_view">Change Map View</string>
     <string name="check_internet_connection">This is taking longer than it should.\nCheck your Internet connection.</string>

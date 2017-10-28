@@ -6,6 +6,8 @@ import android.text.Html;
 
 import com.google.android.gms.maps.GoogleMap;
 import com.hubbardgary.londontrails.R;
+import com.hubbardgary.londontrails.model.CapitalRing;
+import com.hubbardgary.londontrails.model.LondonLoop;
 import com.hubbardgary.londontrails.model.Route;
 
 public class GlobalObjects extends Application {
@@ -14,11 +16,28 @@ public class GlobalObjects extends Application {
     private static final double kmToMilesMultiplier = 0.62137;
 
     public Route getCurrentRoute() {
+        if (currentRoute != null)
+            return currentRoute;
+
+        SharedPreferences preferences = getSharedPreferences(getString(R.string.shared_preferences_name), MODE_PRIVATE);
+
+        int routeId = preferences.getInt(getString(R.string.shared_prefs_current_route_id), R.id.rte_capital_ring);
+        switch (routeId) {
+            case R.id.rte_london_loop:
+                currentRoute = new LondonLoop();
+                break;
+            case R.id.rte_capital_ring:
+                currentRoute = new CapitalRing();
+                break;
+        }
         return currentRoute;
     }
 
     public void setCurrentRoute(Route r) {
         currentRoute = r;
+        SharedPreferences.Editor editor = getSharedPreferences(getString(R.string.shared_preferences_name), MODE_PRIVATE).edit();
+        editor.putInt(getString(R.string.shared_prefs_current_route_id), r.getRouteId());
+        editor.apply();
     }
 
     public static int getSectionsFromRouteId(int routeId) {

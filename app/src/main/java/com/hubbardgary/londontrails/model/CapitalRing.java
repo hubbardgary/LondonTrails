@@ -1,11 +1,16 @@
 package com.hubbardgary.londontrails.model;
 
+import com.hubbardgary.londontrails.R;
 import com.hubbardgary.londontrails.config.GlobalObjects;
 
 public class CapitalRing extends Route {
 
     private static double distanceInKM = 122;
     private static String name = "Capital Ring";
+
+    public int getRouteId() {
+        return R.id.rte_capital_ring;
+    }
 
     public CapitalRing() {
         setName(name);

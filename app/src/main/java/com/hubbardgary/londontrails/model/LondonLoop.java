@@ -1,11 +1,16 @@
 package com.hubbardgary.londontrails.model;
 
+import com.hubbardgary.londontrails.R;
 import com.hubbardgary.londontrails.config.GlobalObjects;
 
 public class LondonLoop extends Route {
 
     private static double distanceInKM = 240;
     private static String name = "London Loop";
+
+    public int getRouteId() {
+        return R.id.rte_london_loop;
+    }
 
     public LondonLoop() {
         setName(name);

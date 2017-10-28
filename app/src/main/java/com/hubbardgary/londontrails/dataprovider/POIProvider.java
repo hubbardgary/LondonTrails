@@ -113,11 +113,11 @@ class POIHandler extends DefaultHandler {
             description = false;
         }
         if (coordinates) {
-            String sLonLat = new String(ch, start, length);
-            String sLon = sLonLat.substring(0, sLonLat.indexOf(','));
-            String sLat = sLonLat.substring(sLonLat.indexOf(',') + 1, sLonLat.lastIndexOf(','));
-            currentPOI.setLatitude(Double.parseDouble(sLat));
-            currentPOI.setLongitude(Double.parseDouble(sLon));
+            String lonLat = new String(ch, start, length);
+            String lon = lonLat.substring(0, lonLat.indexOf(','));
+            String lat = lonLat.substring(lonLat.indexOf(',') + 1, lonLat.lastIndexOf(','));
+            currentPOI.setLatitude(Double.parseDouble(lat));
+            currentPOI.setLongitude(Double.parseDouble(lon));
             coordinates = false;
         }
     }

@@ -70,8 +70,8 @@ public class RouteOptionsActivity extends Activity implements IRouteOptionsView,
         directionSpinner.setOnItemSelectedListener(this);
     }
 
-    private Spinner populateSpinner(int iSpinnerId, List<String> contents) {
-        Spinner spinner = (Spinner) findViewById(iSpinnerId);
+    private Spinner populateSpinner(int spinnerId, List<String> contents) {
+        Spinner spinner = (Spinner) findViewById(spinnerId);
         ArrayAdapter<String> dataAdapter;
         dataAdapter = new ArrayAdapter<String>(this, android.R.layout.simple_spinner_item, contents);
         dataAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);

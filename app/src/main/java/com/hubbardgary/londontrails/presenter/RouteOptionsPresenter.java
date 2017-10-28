@@ -117,12 +117,14 @@ public class RouteOptionsPresenter {
     public RouteViewModel startSectionChanged(RouteViewModel vm) {
         if (!routeVm.isCircular) {
             // If it's not circular, start and end locations cannot be the same
-            String dest = sectionArray[vm.startSection];
+            String dest = sectionArray[vm.endSection];
             List<String> destContents = new ArrayList<String>(Arrays.asList(routeVm.sectionsArray));
             destContents.remove(destContents.indexOf(sectionArray[vm.startSection]));
             if (destContents.indexOf(dest) == -1) {
                 vm.endSection = getSectionId(destContents.get(0));
                 vm.endSelectedIndex = 0;
+            } else {
+                vm.endSelectedIndex = destContents.indexOf(dest);
             }
             vm.endOptions = destContents;
             view.refreshDestinationSpinner(vm);

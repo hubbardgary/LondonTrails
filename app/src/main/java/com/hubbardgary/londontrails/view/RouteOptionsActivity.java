@@ -36,7 +36,6 @@ public class RouteOptionsActivity extends Activity implements IRouteOptionsView,
 
         presenter = new RouteOptionsPresenter(this, (GlobalObjects)getApplicationContext(), getApplicationContext().getResources());
         vm = presenter.getViewModel();
-
         setTitle(vm.name);
         initializeSpinners();
         if(!vm.isCircular)
@@ -44,6 +43,22 @@ public class RouteOptionsActivity extends Activity implements IRouteOptionsView,
         startSpinner.setSelection(vm.startSelectedIndex);
         endSpinner.setSelection(vm.endSelectedIndex);
         addListenerOnGoButton();
+    }
+
+    @Override
+    public void onSaveInstanceState(Bundle savedInstanceState) {
+        super.onSaveInstanceState(savedInstanceState);
+        savedInstanceState.putInt("startSection", GetSelectedItemId(startSpinner));
+        savedInstanceState.putInt("endSection", GetSelectedItemId(endSpinner));
+    }
+
+    @Override
+    public void onRestoreInstanceState(Bundle savedInstanceState) {
+        super.onRestoreInstanceState(savedInstanceState);
+
+        // If app is killed by Android, route options may need to be restored manually
+        vm.startSection = savedInstanceState.getInt("startSection");
+        vm.endSection = savedInstanceState.getInt("endSection");
     }
 
     private void initializeSpinners() {

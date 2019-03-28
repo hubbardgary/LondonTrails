@@ -57,14 +57,33 @@ public class MapContentActivity extends AsyncTask<Void, Void, Integer> implement
     @Override
     protected void onPostExecute(Integer i) {
         showMapActivity.setMapRoute(showMapActivity.getMap().addPolyline(path));
+        addStartAndEndMarkers();
+        addWayPointMarkers();
+    }
 
+    private void addStartAndEndMarkers() {
         if (showMapVm.start == showMapVm.end) {
-            pushPin(vm.startLatitude, vm.startLongitude, showMapVm.route.getEndPoint(showMapVm.start), "Your walk starts and ends here.", R.drawable.waypoint_startstop);
-        } else {
-            pushPin(vm.startLatitude, vm.startLongitude, showMapVm.route.getEndPoint(showMapVm.start), "Your walk starts here.", R.drawable.waypoint_start);
-            pushPin(vm.endLatitude, vm.endLongitude, showMapVm.route.getEndPoint(showMapVm.end), "Your walk ends here.", R.drawable.waypoint_stop);
+            if (showMapVm.route.isLinear()) {
+                // Linear, so we're walking the full circuit
+                pushPin(vm.startLatitude, vm.startLongitude, showMapVm.route.getSection(showMapVm.start).getStartLocationName(), "Your walk starts and ends here.", R.drawable.waypoint_startstop);
+            } else {
+                // All disjointed routes fall into here as you can't chain sections
+                pushPin(vm.startLatitude, vm.startLongitude, showMapVm.route.getSection(showMapVm.start).getStartLocationName(), "Your walk starts here.", R.drawable.waypoint_start);
+                pushPin(vm.endLatitude, vm.endLongitude, showMapVm.route.getSection(showMapVm.end).getEndLocationName(), "Your walk ends here.", R.drawable.waypoint_stop);
+            }
+            return;
         }
 
+        if (showMapVm.isClockwise) {
+            pushPin(vm.startLatitude, vm.startLongitude, showMapVm.route.getSection(showMapVm.start).getStartLocationName(), "Your walk starts here.", R.drawable.waypoint_start);
+            pushPin(vm.endLatitude, vm.endLongitude, showMapVm.route.getSection(showMapVm.end - 1).getEndLocationName(), "Your walk ends here.", R.drawable.waypoint_stop);
+        } else {
+            pushPin(vm.startLatitude, vm.startLongitude, showMapVm.route.getSection(showMapVm.start - 1).getEndLocationName(), "Your walk starts here.", R.drawable.waypoint_start);
+            pushPin(vm.endLatitude, vm.endLongitude, showMapVm.route.getSection(showMapVm.end).getStartLocationName(), "Your walk ends here.", R.drawable.waypoint_stop);
+        }
+    }
+
+    private void addWayPointMarkers() {
         List<Marker> markers = new ArrayList<Marker>();
         for (POI p : vm.poi) {
             markers.add(

@@ -1,7 +1,9 @@
 package com.hubbardgary.londontrails.presenter;
 
 import com.hubbardgary.londontrails.R;
+import com.hubbardgary.londontrails.model.GreenChainWalk;
 import com.hubbardgary.londontrails.view.AboutActivity;
+import com.hubbardgary.londontrails.view.DisjointedRouteOptionsActivity;
 import com.hubbardgary.londontrails.view.interfaces.IMainView;
 import com.hubbardgary.londontrails.viewmodel.ButtonViewModel;
 import com.hubbardgary.londontrails.model.CapitalRing;
@@ -32,6 +34,7 @@ public class MainPresenter {
             buttons = new ArrayList<ButtonViewModel>();
             buttons.add(new ButtonViewModel(R.id.rte_capital_ring, GlobalObjects.getButtonText(CapitalRing.getRouteName(), CapitalRing.getRouteDistanceText())));
             buttons.add(new ButtonViewModel(R.id.rte_london_loop, GlobalObjects.getButtonText(LondonLoop.getRouteName(), LondonLoop.getRouteDistanceText())));
+            buttons.add(new ButtonViewModel(R.id.rte_green_chain_walk, GlobalObjects.getButtonText(GreenChainWalk.getRouteName(), GreenChainWalk.getRouteDistanceText())));
         }
         return buttons;
     }
@@ -39,7 +42,12 @@ public class MainPresenter {
     public void routeButtonClicked(int routeId) {
         HashMap<String, Integer> intents = new HashMap<String, Integer>();
         intents.put("routeSections", GlobalObjects.getSectionsFromRouteId(routeId));
-        view.invokeActivity(intents, RouteOptionsActivity.class);
+        // TODO: Try to get linear/disjointed from the selected route
+        if (routeId == R.id.rte_green_chain_walk) {
+            view.invokeActivity(intents, DisjointedRouteOptionsActivity.class);
+        } else {
+            view.invokeActivity(intents, RouteOptionsActivity.class);
+        }
     }
 
     public void menuItemSelected(int itemId) {

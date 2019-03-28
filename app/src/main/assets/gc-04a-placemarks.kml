@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<kml xmlns="http://earth.google.com/kml/2.2">
+<Document>
+  <Placemark>
+    <name>Charlton Park</name>
+    <description><![CDATA[Originally part of the Charlton House estate, which also included the nearby Maryon, Maryon Wilson, and Hornfair parks, the Jacobean period Charlton House is now a community centre and library.]]></description>
+    <styleUrl>#style5</styleUrl>
+    <Point>
+      <coordinates>0.041692,51.480701,0.000000</coordinates>
+    </Point>
+  </Placemark>
+</Document>
+</kml>

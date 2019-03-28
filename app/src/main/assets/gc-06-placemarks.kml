@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<kml xmlns="http://earth.google.com/kml/2.2">
+<Document>
+  <Placemark>
+    <name>Eltham Palace</name>
+    <description><![CDATA[Originally a royal countryside residence, Eltham Palace is now the site of an art deco mansion built by the Courtauld family in the 1930s. It is also home of London's oldest working moat-crossing bridge.]]></description>
+    <styleUrl>#style1</styleUrl>
+    <Point>
+      <coordinates>0.048108,51.447247,0.000000</coordinates>
+    </Point>
+  </Placemark>
+  <Placemark>
+    <name><![CDATA[King John's Walk]]></name>
+    <description><![CDATA[There are fantastic views towards Central London here.]]></description>
+    <styleUrl>#style3</styleUrl>
+    <Point>
+      <coordinates>0.045834,51.446377,0.000000</coordinates>
+    </Point>
+  </Placemark>
+  <Placemark>
+    <name>Former Residence of W. G. Grace</name>
+    <description><![CDATA[Widely regarded as one of the greatest cricketers of all time, and famous for his impressively large beard, William Gilbert Grace played cricket for an incredible 44 seasons between 1865 and 1908. The house is now a care home for the elderly.]]></description>
+    <styleUrl>#style2</styleUrl>
+    <Point>
+      <coordinates>0.033273,51.440262,0.000000</coordinates>
+    </Point>
+  </Placemark>
+  <Placemark>
+    <name>Conduit Head</name>
+    <description><![CDATA[This unusual crumbling structure was once part of a complicated system built in the early 1500s to supply water to Eltham Palace.]]></description>
+    <styleUrl>#style4</styleUrl>
+    <Point>
+      <coordinates>0.065123,51.448647,0.000000</coordinates>
+    </Point>
+  </Placemark>
+</Document>
+</kml>

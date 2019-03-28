@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <item type="id" name="rte_capital_ring" />
+    <item type="id" name="rte_green_chain_walk" />
     <item type="id" name="rte_london_loop" />
     <item type="id" name="btn_legal" />
 </resources>

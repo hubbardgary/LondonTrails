@@ -6,6 +6,8 @@ public class Section {
     private String startLinkResource;
     private String endLinkResource;
     private String poiResource;
+    private String startLocationName;
+    private String endLocationName;
     private double distanceInKm;
     private double startLinkDistanceInKm;
     private double endLinkDistanceInKm;
@@ -43,6 +45,22 @@ public class Section {
 
     public void setPoiResource(String poiResource) {
         this.poiResource = poiResource;
+    }
+
+    public String getStartLocationName() {
+        return startLocationName;
+    }
+
+    public void setStartLocationName(String startLocationName) {
+        this.startLocationName = startLocationName;
+    }
+
+    public String getEndLocationName() {
+        return endLocationName;
+    }
+
+    public void setEndLocationName(String endLocationName) {
+        this.endLocationName = endLocationName;
     }
 
     public double getDistanceInKm() {

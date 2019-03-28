@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<kml xmlns="http://earth.google.com/kml/2.2">
+<Document>
+  <Placemark>
+    <name>Downham Woodland Walk</name>
+    <description><![CDATA[This small patch of woodland is one of the remaining sections of the Great North Wood which covered a large area of South London.]]></description>
+    <styleUrl>#style4</styleUrl>
+    <Point>
+      <coordinates>0.001953,51.429920,0.000000</coordinates>
+    </Point>
+  </Placemark>
+  <Placemark>
+    <name>Beckenham Place Park</name>
+    <description><![CDATA[As well as being home to the former mansion, Beckenham Place Park provides numerous sporting facilities. The mansion itself is now an information centre and events venue.]]></description>
+    <styleUrl>#style3</styleUrl>
+    <Point>
+      <coordinates>-0.012445,51.420033,0.000000</coordinates>
+    </Point>
+  </Placemark>
+</Document>
+</kml>

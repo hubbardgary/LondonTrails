@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<kml xmlns="http://earth.google.com/kml/2.2">
+<Document>
+  <name>01 Thamesmead to Lesnes Abbey</name>
+  <description><![CDATA[]]></description>
+  <Style id="style1">
+    <LineStyle>
+      <color>99FF0000</color>
+      <width>5</width>
+    </LineStyle>
+  </Style>
+  <Placemark>
+    <name>Section 9B - Chislehurst Village to Elmstead Woods</name>
+    <description><![CDATA[]]></description>
+    <styleUrl>#style1</styleUrl>
+    <LineString>
+      <tessellate>1</tessellate>
+      <coordinates>
+            0.0683193,51.4175902,0.000000
+            0.0671418,51.4187845,0.000000
+            0.0664793,51.4193165,0.000000
+            0.0663505,51.4192629,0.000000
+            0.0651006,51.4200641,0.000000
+            0.0645803,51.4198316,0.000000
+            0.0638883,51.4196259,0.000000
+            0.0631051,51.4191509,0.000000
+            0.0614636,51.4185554,0.000000
+            0.060455,51.4202615,0.000000
+            0.0595753,51.4207165,0.000000
+            0.0590281,51.4206964,0.000000
+            0.0580625,51.4205291,0.000000
+            0.056775,51.4204488,0.000000
+            0.0505523,51.4230714,0.000000
+            0.050268,51.4232855,0.000000
+            0.049855,51.4234193,0.000000
+            0.0488143,51.4221014,0.000000
+            0.0464217,51.4225095,0.000000
+            0.0406282,51.4219341,0.000000
+            0.0368159,51.4226961,0.000000
+      </coordinates>
+    </LineString>
+  </Placemark>
+</Document>
+</kml>

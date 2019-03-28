@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<kml xmlns="http://earth.google.com/kml/2.2">
+<Document>
+  <name>01 Start Link</name>
+  <description><![CDATA[]]></description>
+  <Style id="style1">
+    <LineStyle>
+      <color>99FF0000</color>
+      <width>5</width>
+    </LineStyle>
+  </Style>
+  <Placemark>
+    <name>Section 9B - Start Link</name>
+    <description><![CDATA[]]></description>
+    <styleUrl>#style1</styleUrl>
+    <LineString>
+      <tessellate>1</tessellate>
+      <coordinates>
+            0.0699844,51.4169608,0.000000
+            0.0693434,51.4169341,0.000000
+            0.0687694,51.4171047,0.000000
+            0.0683193,51.4175902,0.000000
+      </coordinates>
+    </LineString>
+  </Placemark>
+</Document>
+</kml>

@@ -14,7 +14,7 @@ public class ShowMapViewModel {
     public MenuViewModel mapTypeSubMenu;
 
     public ShowMapViewModel(int start, int end, int direction, Route route, int mapType) {
-        this.name = route.getName() + ": Section " + String.valueOf(start + 1) + " - " + String.valueOf(end + 1);
+        this.name = route.getName() + ": Section " +  String.valueOf(start + 1) + (start != end ? " - " + String.valueOf(end + 1) : "");
         this.start = start;
         this.end = end;
         this.isClockwise = direction == 0 ? true : false;

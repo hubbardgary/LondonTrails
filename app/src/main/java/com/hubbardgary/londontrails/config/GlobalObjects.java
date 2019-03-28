@@ -46,6 +46,8 @@ public class GlobalObjects extends Application {
                 return R.array.capital_ring_sections;
             case R.id.rte_london_loop:
                 return R.array.london_loop_sections;
+            case R.id.rte_green_chain_walk:
+                return R.array.green_chain_walk_sections;
         }
         return 0;
     }

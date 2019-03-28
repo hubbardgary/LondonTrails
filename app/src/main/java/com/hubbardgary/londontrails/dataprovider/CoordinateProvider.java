@@ -47,7 +47,11 @@ public class CoordinateProvider {
 
             coordinates.append(AppendCoordinates(s.getSectionResource()));
 
-            currentLocation = NextSection(currentLocation);
+            // If route is not linear, we only display one section at a time,
+            // so no need to increment the section.
+            if (route.isLinear()) {
+                currentLocation = NextSection(currentLocation);
+            }
 
             if (currentLocation == endLocation) {
                 coordinates.append(AppendCoordinates(s.getEndLinkResource()));

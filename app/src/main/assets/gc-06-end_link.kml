@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<kml xmlns="http://earth.google.com/kml/2.2">
+<Document>
+  <name>01 End Link</name>
+  <description><![CDATA[]]></description>
+  <Style id="style1">
+    <LineStyle>
+      <color>99FF0000</color>
+      <width>5</width>
+    </LineStyle>
+  </Style>
+  <Placemark>
+    <name>Section 6 - End Link</name>
+    <description><![CDATA[]]></description>
+    <styleUrl>#style1</styleUrl>
+    <LineString>
+      <tessellate>1</tessellate>
+      <coordinates>
+            0.0394509,51.4392132,0.000000
+            0.0399019,51.438999,0.000000
+            0.0403632,51.4382232,0.000000
+            0.0413181,51.4375811,0.000000
+            0.0431098,51.4376614,0.000000
+            0.0474979,51.4388786,0.000000
+            0.0484371,51.4394004,0.000000
+            0.0491103,51.43928,0.000000
+            0.0491559,51.439372,0.000000
+            0.0492176,51.4393553,0.000000
+            0.0492632,51.4394272,0.000000
+            0.0504691,51.4391903,0.000000
+            0.050917,51.4395464,0.000000
+            0.0511486,51.4399106,0.000000
+            0.0498314,51.4401735,0.000000
+      </coordinates>
+    </LineString>
+  </Placemark>
+</Document>
+</kml>

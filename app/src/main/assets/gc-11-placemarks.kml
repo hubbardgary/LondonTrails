@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<kml xmlns="http://earth.google.com/kml/2.2">
+<Document>
+  <Placemark>
+    <name>Concert Bowl</name>
+    <description><![CDATA[This concert space has been little used in recent times, but between the 1970s and 1990s it was the venue of Crystal Palace Garden Party which played host to a string of big name bands such as Pink Floyd, Bob Marley, The Cure and Pixies.]]></description>
+    <styleUrl>#style2</styleUrl>
+    <Point>
+      <coordinates>-0.069190,51.424046,0.000000</coordinates>
+    </Point>
+  </Placemark>
+  <Placemark>
+    <name>Site of The Crystal Palace</name>
+    <description><![CDATA[The vast Crystal Palace was originally built in Hyde Park to host the Great Exhibition in 1851. It was later dismantled and re-erected with several modifications in the park that now carries its name. Several exhibitions were hosted in the building's new location before it was destroyed by fire in 1936.]]></description>
+    <styleUrl>#style1</styleUrl>
+    <Point>
+      <coordinates>-0.073857,51.421829,0.000000</coordinates>
+    </Point>
+  </Placemark>
+</Document>
+</kml>

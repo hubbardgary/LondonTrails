@@ -48,11 +48,15 @@ public class POIProvider {
                 e.printStackTrace();
             }
 
-            // for circular routes, if we're at the final section, jump to the first section
-            if (route.isCircular() && currentLocation == route.getSections().length - 1) {
-                currentLocation = 0;
-            } else {
-                currentLocation++;
+            // If route is not linear, we only display one section at a time,
+            // so no need to increment the section.
+            if (route.isLinear()) {
+                // for circular routes, if we're at the final section, jump to the first section
+                if (route.isCircular() && currentLocation == route.getSections().length - 1) {
+                    currentLocation = 0;
+                } else {
+                    currentLocation++;
+                }
             }
         }
         while (currentLocation != endLocation);

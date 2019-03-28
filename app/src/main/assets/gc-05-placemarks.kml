@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<kml xmlns="http://earth.google.com/kml/2.2">
+<Document>
+  <Placemark>
+    <name>Thames Barrier</name>
+    <description><![CDATA[The Thames Barrier is one of the largest movable flood barriers in the world, and was opened in 1982. It protects central London from high tides moving in from the North Sea.]]></description>
+    <styleUrl>#style1</styleUrl>
+    <Point>
+      <coordinates>0.037004,51.496849,0.000000</coordinates>
+    </Point>
+  </Placemark>
+  <Placemark>
+    <name>Charlton Park</name>
+    <description><![CDATA[Originally part of the Charlton House estate, which also included the nearby Maryon, Maryon Wilson, and Hornfair parks, the Jacobean period Charlton House is now a community centre and library.]]></description>
+    <styleUrl>#style5</styleUrl>
+    <Point>
+      <coordinates>0.041692,51.480701,0.000000</coordinates>
+    </Point>
+  </Placemark>
+  <Placemark>
+    <name>Oxleas Meadows</name>
+    <description><![CDATA[A conveniently placed cafe and toilet allows you to enjoy the expansive views of the capital at your leisure.]]></description>
+    <styleUrl>#style4</styleUrl>
+    <Point>
+      <coordinates>0.069737,51.466393,0.000000</coordinates>
+    </Point>
+  </Placemark>
+</Document>
+</kml>

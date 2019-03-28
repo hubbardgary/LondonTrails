@@ -48,6 +48,10 @@
             android:label="Select a Route">
         </activity>
         <activity
+            android:name=".view.DisjointedRouteOptionsActivity"
+            android:label="Select a Route">
+        </activity>
+        <activity
             android:name=".view.AboutActivity"
             android:label="@string/about">
         </activity>

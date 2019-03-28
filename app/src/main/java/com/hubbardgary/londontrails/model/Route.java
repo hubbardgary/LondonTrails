@@ -3,11 +3,10 @@ package com.hubbardgary.londontrails.model;
 public abstract class Route {
 
     private Section[] sections;
-    private String[] endPoints;  // Can't go in Section because if route is non-circular, there are more end points than sections.
     private boolean circular;
+    private boolean linear;  // Indicates whether route is contiguous (i.e. multiple sections can be chained into a single walk)
     private String name;
     private double distanceInKm;
-    private int routeId;
 
     public Route() {
     }
@@ -30,20 +29,20 @@ public abstract class Route {
         this.sections[i] = section;
     }
 
-    public String getEndPoint(int i) {
-        return endPoints[i];
-    }
-
-    public void setEndPoints(String[] endPoints) {
-        this.endPoints = endPoints;
-    }
-
     public boolean isCircular() {
         return circular;
     }
 
     public void setCircular(boolean circular) {
         this.circular = circular;
+    }
+
+    public boolean isLinear() {
+        return linear;
+    }
+
+    public void setLinear(boolean linear) {
+        this.linear = linear;
     }
 
     public String getName() {

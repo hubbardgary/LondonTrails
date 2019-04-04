@@ -2,49 +2,48 @@ package com.hubbardgary.londontrails.model;
 
 public class Section {
 
-    private String sectionResource;
-    private String startLinkResource;
-    private String endLinkResource;
-    private String poiResource;
+    private Route route;
+    private String sectionId;
     private String startLocationName;
     private String endLocationName;
     private double distanceInKm;
     private double startLinkDistanceInKm;
     private double endLinkDistanceInKm;
 
-    public Section() {
+    public Section(Route route) {
+        this.route = route;
     }
 
-    public String getSectionResource() {
-        return sectionResource;
+    private String getResource(String routeId, String sectionId, String resourceName) {
+        return String.format("%s-%s-%s.kml", routeId, sectionId, resourceName);
     }
 
-    public void setSectionResource(String sectionResource) {
-        this.sectionResource = sectionResource;
+    public Route getRoute() {
+        return this.route;
     }
 
-    public String getStartLinkResource() {
-        return startLinkResource;
+    public String getRouteShortName() {
+        return this.route.getShortName();
     }
 
-    public void setStartLinkResource(String startLinkResource) {
-        this.startLinkResource = startLinkResource;
+    public String getSectionResource(String routeId) {
+        return getResource(routeId, sectionId, "route");
     }
 
-    public String getEndLinkResource() {
-        return endLinkResource;
+    public String getStartLinkResource(String routeId) {
+        return getResource(routeId, sectionId, "start_link");
     }
 
-    public void setEndLinkResource(String endLinkResource) {
-        this.endLinkResource = endLinkResource;
+    public String getEndLinkResource(String routeId) {
+        return getResource(routeId, sectionId, "end_link");
     }
 
-    public String getPoiResource() {
-        return poiResource;
+    public String getPoiResource(String routeId) {
+        return getResource(routeId, sectionId, "placemarks");
     }
 
-    public void setPoiResource(String poiResource) {
-        this.poiResource = poiResource;
+    public void setSectionId(String id) {
+        this.sectionId = id;
     }
 
     public String getStartLocationName() {

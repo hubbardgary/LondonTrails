@@ -37,15 +37,19 @@ public class POIProvider {
         int currentLocation = startLocation;
         List<POI> poi = new ArrayList<POI>();
         do {
-            InputStream myFile;
+            InputStream is = null;
             try {
                 Section s = route.getSection(currentLocation);
-                myFile = assetManager.open(s.getPoiResource());
-
-                poi.addAll(getPOIs(myFile));
+                is = assetManager.open(s.getPoiResource(route.getShortName()));
+                poi.addAll(getPOIs(is));
             } catch (IOException e) {
-                // TODO Auto-generated catch block
-                e.printStackTrace();
+            } finally {
+                try {
+                    if (is != null) {
+                        is.close();
+                    }
+                } catch (IOException e) {
+                }
             }
 
             // If route is not linear, we only display one section at a time,

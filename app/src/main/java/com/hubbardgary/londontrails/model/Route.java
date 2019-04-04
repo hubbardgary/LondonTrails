@@ -6,6 +6,7 @@ public abstract class Route {
     private boolean circular;
     private boolean linear;  // Indicates whether route is contiguous (i.e. multiple sections can be chained into a single walk)
     private String name;
+    private String shortName;
     private double distanceInKm;
 
     public Route() {
@@ -51,6 +52,14 @@ public abstract class Route {
 
     public void setName(String name) {
         this.name = name;
+    }
+
+    public String getShortName() {
+        return shortName;
+    }
+
+    public void setShortName(String shortName) {
+        this.shortName = shortName;
     }
 
     public double getDistanceInKm() {

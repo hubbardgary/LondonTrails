@@ -14,12 +14,19 @@ public class ShowMapViewModel {
     public MenuViewModel mapTypeSubMenu;
 
     public ShowMapViewModel(int start, int end, int direction, Route route, int mapType) {
-        this.name = route.getName() + ": Section " +  String.valueOf(start + 1) + (start != end ? " - " + String.valueOf(end + 1) : "");
+        this.name = getRouteName(start, end, route);
         this.start = start;
         this.end = end;
         this.isClockwise = direction == 0 ? true : false;
         this.route = route;
         this.mapType = mapType;
         this.markersVisible = true;
+    }
+
+    private String getRouteName(int start, int end, Route route) {
+        if (route.isLinear()) {
+            return String.format("%s: Section %s - %s", route.getName(), String.valueOf(start + 1), String.valueOf(end + 1));
+        }
+        return String.format("%s: Section %s", route.getName(), String.valueOf(start + 1));
     }
 }

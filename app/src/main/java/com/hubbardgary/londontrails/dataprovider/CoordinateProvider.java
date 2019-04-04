@@ -7,6 +7,7 @@ import com.hubbardgary.londontrails.model.Section;
 
 import java.io.IOException;
 import java.io.InputStream;
+import java.util.Arrays;
 
 import javax.xml.parsers.ParserConfigurationException;
 import javax.xml.parsers.SAXParser;
@@ -42,10 +43,10 @@ public class CoordinateProvider {
             Section s = route.getSection(currentLocation);
 
             if (currentLocation == startLocation) {
-                coordinates.append(AppendCoordinates(s.getStartLinkResource()));
+                coordinates.append(AppendCoordinates(s.getStartLinkResource(s.getRouteShortName())));
             }
 
-            coordinates.append(AppendCoordinates(s.getSectionResource()));
+            coordinates.append(AppendCoordinates(s.getSectionResource(s.getRouteShortName())));
 
             // If route is not linear, we only display one section at a time,
             // so no need to increment the section.
@@ -54,7 +55,7 @@ public class CoordinateProvider {
             }
 
             if (currentLocation == endLocation) {
-                coordinates.append(AppendCoordinates(s.getEndLinkResource()));
+                coordinates.append(AppendCoordinates(s.getEndLinkResource(s.getRouteShortName())));
             }
         }
         while(currentLocation != endLocation);
@@ -63,18 +64,26 @@ public class CoordinateProvider {
     }
 
     private String AppendCoordinates(String filename) {
-        if(!filename.equals("")) {
+        InputStream is = null;
+        try {
+            is = assetManager.open(filename);
+            return getRoute(is);
+        } catch (IOException e) {
+            // Not all routes have a start or end link. Swallow any exception here.
+        }
+        finally {
             try {
-                return getRoute(assetManager.open(filename));
+                if (is != null) {
+                    is.close();
+                }
             } catch (IOException e) {
-                e.printStackTrace();
             }
         }
         return "";
     }
 
     private int NextSection(int currentLocation) {
-        // If it's a circular route, allow wraparound from latLngEnd to latLngStart
+        // If it's a circular route, allow wraparound from last section to first section
         if (route.isCircular() && currentLocation == route.getSections().length - 1) {
             return 0;
         } else {

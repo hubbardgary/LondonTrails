@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<kml xmlns="http://earth.google.com/kml/2.2">
+<Document>
+  <Placemark>
+    <name>Avery Hill Winter Gardens</name>
+    <description><![CDATA[Avery Hill Park is one of Greenwich's Green Flag Award-winning sites and is home to Greenwich University's winter garden; a hothouse containing various tropical trees and plants.]]></description>
+    <styleUrl>#style1</styleUrl>
+    <Point>
+      <coordinates>0.0763323,51.4502088,0.000000</coordinates>
+    </Point>
+  </Placemark>
+  <Placemark>
+    <name>Tarn Bird Sanctuary</name>
+    <description>The Tarn is a home to a range of wildfowl and a bird sanctuary. It was originally part of Eltham Lodge. The north west corner has brick ice-well that used to supply ice to the Lodge.</description>
+    <styleUrl>#style1</styleUrl>
+    <Point>
+      <coordinates>0.0522481,51.4406945,0.000000</coordinates>
+    </Point>
+  </Placemark>
+  <Placemark>
+    <name><![CDATA[King John's Walk]]></name>
+    <description><![CDATA[There are fantastic views towards Central London here.]]></description>
+    <styleUrl>#style1</styleUrl>
+    <Point>
+      <coordinates>0.045834,51.446377,0.000000</coordinates>
+    </Point>
+  </Placemark>
+</Document>
+</kml>

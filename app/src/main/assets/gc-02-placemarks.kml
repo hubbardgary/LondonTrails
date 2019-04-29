@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<kml xmlns="http://earth.google.com/kml/2.2">
+<Document>
+  <Placemark>
+	<name>Lesnes Abbey ruins</name>
+	<description>Lesnes Abbey dates back to 1178. It was one of the first monasteries to be shut down as part of the Dissolution of the Monasteries Act in 1534, at which point many of the buildings were demolished. London County Council bought the site in 1930, and it was opened to the public as parkland the following year.</description>
+	<styleUrl>#style1</styleUrl>
+	<Point>
+	  <coordinates>0.1287661,51.4887063,0.000000</coordinates>
+	</Point>
+  </Placemark>
+  <Placemark>
+	<name>Franks Park</name>
+	<description><![CDATA[This area of woodland was purchased by Erith Council in 1920, and named after Frank Beadle, a local philanthropist who donated money for its purchase.]]></description>
+	<styleUrl>#style1</styleUrl>
+	<Point>
+	  <coordinates>0.1599303,51.4877363,0.000000</coordinates>
+	</Point>
+  </Placemark>
+  <Placemark>
+	<name>Fossil Bed</name>
+	<description>Abbey Wood is a Site of Special Scientific Interest and is a rich hunting ground for fossils. Fossils of sharks teeth and sea shells are commonplace, but other finds include the remains of turtles, crocodiles, and birds. Members of the public are permitted to dig here, with prior permission from the ranger.</description>
+	<styleUrl>#style1</styleUrl>
+	<Point>
+	  <coordinates>0.1304608,51.4875007,0.000000</coordinates>
+	</Point>
+  </Placemark>
+  <Placemark>
+	<name>Bostall Heath</name>
+	<description><![CDATA[Bostall Heath, meaning "woody heath", has been a public recreation space since 1877, and was a popular day trip destination in Edwardian times.]]></description>
+	<styleUrl>#style1</styleUrl>
+	<Point>
+	  <coordinates>0.1199137,51.4812675,0.000000</coordinates>
+	</Point>
+  </Placemark>
+  <Placemark>
+	<name>Bostall Woods</name>
+	<description><![CDATA[This ancient woodland was previously called Old Park Wood, and it is said that the highwayman Dick Turpin hid here to avoid capture by the King's soldiers. It was acquired for public use in 1891.]]></description>
+	<styleUrl>#style1</styleUrl>
+	<Point>
+	  <coordinates>0.1098743,51.4816942,0.000000</coordinates>
+	</Point>
+  </Placemark>
+</Document>
+</kml>

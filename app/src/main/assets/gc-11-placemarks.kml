@@ -4,7 +4,7 @@
   <Placemark>
     <name>Concert Bowl</name>
     <description><![CDATA[This concert space has been little used in recent times, but between the 1970s and 1990s it was the venue of Crystal Palace Garden Party which played host to a string of big name bands such as Pink Floyd, Bob Marley, The Cure and Pixies.]]></description>
-    <styleUrl>#style2</styleUrl>
+    <styleUrl>#style1</styleUrl>
     <Point>
       <coordinates>-0.069190,51.424046,0.000000</coordinates>
     </Point>
@@ -15,6 +15,63 @@
     <styleUrl>#style1</styleUrl>
     <Point>
       <coordinates>-0.073857,51.421829,0.000000</coordinates>
+    </Point>
+  </Placemark>
+  <Placemark>
+    <name>Crystal Palace Park</name>
+    <description>A fascinating former Victorian pleasure ground, Crystal Palace Park is now home to the National Sports Centre as well as many other intriguing features.</description>
+    <styleUrl>#style1</styleUrl>
+    <Point>
+      <coordinates>-0.0701883,51.4209196,0.000000</coordinates>
+    </Point>
+  </Placemark>
+  <Placemark>
+    <name>Horniman museum</name>
+    <description><![CDATA[Exhibiting an eclectic array of over 350,000 natural, cultural and historical artifacts, the Horniman Museum was founded in 1901 by Frederick John Horniman. The success of Horniman's tea trading business, which he inherited from his father, allowed him to pursue his passion of collecting interesting items from around the world. These items form the bulk of the museum's display.]]></description>
+    <styleUrl>#style1</styleUrl>
+    <Point>
+      <coordinates>-0.061028,51.4409676,0.000000</coordinates>
+    </Point>
+  </Placemark>
+  <Placemark>
+    <name>Horniman Museum Gardens</name>
+    <description>The Horniman Museum is positioned within 16 acres of gardens which contain a Grade II listed conservatory, butterfly house, bandstand, animal enclosure, and a nature trail.</description>
+    <styleUrl>#style1</styleUrl>
+    <Point>
+      <coordinates>-0.0622082,51.4423485,0.000000</coordinates>
+    </Point>
+  </Placemark>
+  <Placemark>
+    <name>Dulwich Picture Gallery</name>
+    <description><![CDATA[The oldest public art gallery in England, Dulwich Picture Gallery was designed by Sir John Soane and opened in 1817. Among its extensive collection of Old Masters work, it includes Rembrandt's Portrait of Jacob de Gheyn III, which appears in the Guinness Book of Records as the most frequently stolen artwork in the world.]]></description>
+    <styleUrl>#style1</styleUrl>
+    <Point>
+      <coordinates>-0.0863113,51.4460335,0.000000</coordinates>
+    </Point>
+  </Placemark>
+  <Placemark>
+    <name>Nunhead Cemetery</name>
+    <description>Nunhead Cemetery, consecrated in 1840, is one of the Magnificent Seven Victorian cemeteries that are arranged in a ring around the outskirts of 1850s London. By the mid 1900s, the cemetery was reaching full capacity and subsequently fell into disuse and neglect, with nature reclaiming many of the elaborate headstones. It was reopened in 2001 following a large restoration project.</description>
+    <styleUrl>#style1</styleUrl>
+    <Point>
+      <coordinates>-0.051183,51.4629094,0.000000</coordinates>
+    </Point>
+  </Placemark>
+  <Placemark>
+    <name>Alternative end point</name>
+    <description>If you do not wish to retrace your steps and complete the rest of Section 11, you can instead end your walk at nearby West Dulwich Rail Station.</description>
+    <styleUrl>#style1</styleUrl>
+    <Point>
+      <coordinates>-0.0854138,51.4464704,0.000000</coordinates>
+    </Point>
+	<alternativeEndPoint>true</alternativeEndPoint>
+  </Placemark>
+  <Placemark>
+    <name>Dulwich Park Link</name>
+    <description>This optional out-and-back detour will add 1.2 miles (1.9 km) each way to your walk.</description>
+    <styleUrl>#style1</styleUrl>
+    <Point>
+      <coordinates>-0.0669946,51.4385869,0.000000</coordinates>
     </Point>
   </Placemark>
 </Document>

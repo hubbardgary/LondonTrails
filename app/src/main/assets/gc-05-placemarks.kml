@@ -3,26 +3,42 @@
 <Document>
   <Placemark>
     <name>Thames Barrier</name>
-    <description><![CDATA[The Thames Barrier is one of the largest movable flood barriers in the world, and was opened in 1982. It protects central London from high tides moving in from the North Sea.]]></description>
+    <description>Built as part of the Thames Barrier system in 1981, this barrier, consisting of two 160 tonne steel gates, provides flood protection for the homes and businesses in the Dartford and Crayford area.</description>
     <styleUrl>#style1</styleUrl>
     <Point>
-      <coordinates>0.037004,51.496849,0.000000</coordinates>
+      <coordinates>0.037163,51.4972313,0.000000</coordinates>
+    </Point>
+  </Placemark>
+  <Placemark>
+    <name>Maryon Wilson Animal Park</name>
+    <description>This unexpected animal park contains a variety of farm animals, peacocks, and a deer enclosure. Regular free tours are available which give visitors the opportunity to feed and stroke the animals.</description>
+    <styleUrl>#style1</styleUrl>
+    <Point>
+      <coordinates>0.0433313,51.4861267,0.000000</coordinates>
     </Point>
   </Placemark>
   <Placemark>
     <name>Charlton Park</name>
-    <description><![CDATA[Originally part of the Charlton House estate, which also included the nearby Maryon, Maryon Wilson, and Hornfair parks, the Jacobean period Charlton House is now a community centre and library.]]></description>
-    <styleUrl>#style5</styleUrl>
+    <description>Originally part of the Charlton House estate, which also included the nearby Maryon, Maryon Wilson, and Hornfair parks, the Jacobean period Charlton House is now a community centre and library.</description>
+    <styleUrl>#style1</styleUrl>
     <Point>
-      <coordinates>0.041692,51.480701,0.000000</coordinates>
+      <coordinates>0.0421214,51.4808713,0.000000</coordinates>
     </Point>
   </Placemark>
   <Placemark>
-    <name>Oxleas Meadows</name>
-    <description><![CDATA[A conveniently placed cafe and toilet allows you to enjoy the expansive views of the capital at your leisure.]]></description>
-    <styleUrl>#style4</styleUrl>
+    <name>Royal Military Academy</name>
+    <description>Now a major housing development, the Royal Military Academy was previously used for the training of officers and engineers. In 1947 the Royal Military Academy was moved to Sandhurst, but the building remained in use as part of Woolwich Garrison until 2002.</description>
+    <styleUrl>#style1</styleUrl>
     <Point>
-      <coordinates>0.069737,51.466393,0.000000</coordinates>
+      <coordinates>0.0573104,51.4749663,0.000000</coordinates>
+    </Point>
+  </Placemark>
+  <Placemark>
+    <name>Severndroog Castle</name>
+    <description>Nestled on one of the highest points in South London, this intriguing folly was built in 1784 as a memorial for Commodore William James who captured the fort of Suvarnadurg in India in 1755. It was opened to the public in 2014 following renovation.</description>
+    <styleUrl>#style1</styleUrl>
+    <Point>
+      <coordinates>0.0600537,51.4666124,0.000000</coordinates>
     </Point>
   </Placemark>
 </Document>

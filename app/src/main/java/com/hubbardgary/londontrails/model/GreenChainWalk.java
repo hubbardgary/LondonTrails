@@ -54,7 +54,7 @@ public class GreenChainWalk extends Route {
                 s.setEndLinkDistanceInKm(0.65);
                 break;
             case 3:
-                s.setSectionId("04a");
+                s.setSectionId("04");
                 s.setStartLocationName("Charlton Rail Station");
                 s.setEndLocationName("Bostall Hill / Longleigh Lane Bus Stop");
                 s.setDistanceInKm(3.6);
@@ -62,14 +62,6 @@ public class GreenChainWalk extends Route {
                 s.setEndLinkDistanceInKm(0.65);
                 break;
             case 4:
-                s.setSectionId("04b");
-                s.setStartLocationName("Plumstead Rail Station");
-                s.setEndLocationName("Falconwood Rail Station");
-                s.setDistanceInKm(3.6);
-                s.setStartLinkDistanceInKm(0.07);
-                s.setEndLinkDistanceInKm(0.65);
-                break;
-            case 5:
                 s.setSectionId("05");
                 s.setStartLocationName("Charlton Rail Station");
                 s.setEndLocationName("Falconwood Rail Station");
@@ -77,7 +69,7 @@ public class GreenChainWalk extends Route {
                 s.setStartLinkDistanceInKm(0.07);
                 s.setEndLinkDistanceInKm(0.65);
                 break;
-            case 6:
+            case 5:
                 s.setSectionId("06");
                 s.setStartLocationName("Falconwood Rail Station");
                 s.setEndLocationName("Mottingham Rail Station");
@@ -85,7 +77,7 @@ public class GreenChainWalk extends Route {
                 s.setStartLinkDistanceInKm(0.07);
                 s.setEndLinkDistanceInKm(0.65);
                 break;
-            case 7:
+            case 6:
                 s.setSectionId("07");
                 s.setStartLocationName("Falconwood Rail Station");
                 s.setEndLocationName("Mottingham Rail Station");
@@ -93,7 +85,7 @@ public class GreenChainWalk extends Route {
                 s.setStartLinkDistanceInKm(0.07);
                 s.setEndLinkDistanceInKm(0.65);
                 break;
-            case 8:
+            case 7:
                 s.setSectionId("08");
                 s.setStartLocationName("Mottingham Rail Station");
                 s.setEndLocationName("Beckenham Hill Rail Station");
@@ -101,23 +93,15 @@ public class GreenChainWalk extends Route {
                 s.setStartLinkDistanceInKm(0.07);
                 s.setEndLinkDistanceInKm(0.65);
                 break;
-            case 9:
-                s.setSectionId("09a");
+            case 8:
+                s.setSectionId("09");
                 s.setStartLocationName("Mottingham Rail Station");
                 s.setEndLocationName("Ravensbourne Rail Station");
                 s.setDistanceInKm(3.6);
                 s.setStartLinkDistanceInKm(0.07);
                 s.setEndLinkDistanceInKm(0.65);
                 break;
-            case 10:
-                s.setSectionId("09b");
-                s.setStartLocationName("Chislehurst Ashfield Road / Loop Road Bust Stop");
-                s.setEndLocationName("Elmstead Woods Rail Station");
-                s.setDistanceInKm(3.6);
-                s.setStartLinkDistanceInKm(0.07);
-                s.setEndLinkDistanceInKm(0.65);
-                break;
-            case 11:
+            case 9:
                 s.setSectionId("10");
                 s.setStartLocationName("Beckenham Hill Rail Station");
                 s.setEndLocationName("Crystal Palace Rail Station");
@@ -125,7 +109,7 @@ public class GreenChainWalk extends Route {
                 s.setStartLinkDistanceInKm(0.07);
                 s.setEndLinkDistanceInKm(0.65);
                 break;
-            case 12:
+            case 10:
                 s.setSectionId("11");
                 s.setStartLocationName("Crystal Palace Rail Station");
                 s.setEndLocationName("Nunhead Rail Station");

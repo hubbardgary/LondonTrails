@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<kml xmlns="http://earth.google.com/kml/2.2">
+<Document>
+  <Placemark>
+    <name>Chislehurst Link</name>
+    <description>This optional out-and-back extension will take you to the village of Chislehurst, known INSERT SOMETHING OF INTEREST HERE.</description>
+    <styleUrl>#style1</styleUrl>
+    <Point>
+      <coordinates>0.0382657,51.4223943,0.000000</coordinates>
+    </Point>
+  </Placemark>
+  <Placemark>
+    <name>Chislehurst Ashfield Road / Loop Road Bus Stop</name>
+    <description><![CDATA[If you don't wish to retrace your steps and continue to Beckenham Place Park, you can end your walk here.]]></description>
+    <styleUrl>#style1</styleUrl>
+    <Point>
+      <coordinates>0.0699844,51.4169608,0.000000</coordinates>
+    </Point>
+	<alternativeEndPoint>true</alternativeEndPoint>
+  </Placemark>
+  <Placemark>
+    <name>Chislehurst Caves</name>
+    <description>Situated about a mile from the Green Chain Walk, the caves at this popular attraction were constructed for the mining of chalk and flint. They have since been used as a munitions dump, a mushroom farm, an air raid shelter, and a live music venue, hosting acts including Jimi Hendrix, The Who, and The Rolling Stones.</description>
+    <styleUrl>#style1</styleUrl>
+    <Point>
+      <coordinates>0.0567361,51.4072972,0.000000</coordinates>
+    </Point>
+  </Placemark>
+  <Placemark>
+    <name>Marvels Wood</name>
+    <description>The route through this pleasant patch of woodland takes you past some remarkable wood carvings created by chainsaw sculpter, Will Lee.</description>
+    <styleUrl>#style1</styleUrl>
+    <Point>
+      <coordinates>0.0406163,51.4255312,0.000000</coordinates>
+    </Point>
+  </Placemark>
+  <Placemark>
+    <name>Grove Park Cemetery</name>
+    <description>Opened in 1935, and recognised by English Heritage as a Grade II landscape of special historic interest, Grove Park Cemetery contains 56 graves of Commonwealth service personnel from World War II.</description>
+    <styleUrl>#style1</styleUrl>
+    <Point>
+      <coordinates>0.0362067,51.4249625,0.000000</coordinates>
+    </Point>
+  </Placemark>
+  <Placemark>
+    <name>Beckenham Place Park</name>
+    <description><![CDATA[As well as being home to the former mansion, Beckenham Place Park provides numerous sporting facilities. The mansion itself is now an information centre and events venue.]]></description>
+    <styleUrl>#style1</styleUrl>
+    <Point>
+      <coordinates>-0.012445,51.420033,0.000000</coordinates>
+    </Point>
+  </Placemark>
+</Document>
+</kml>

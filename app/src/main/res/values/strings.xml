@@ -38,14 +38,12 @@
         <item>1: Thamesmead to Lesnes Abbey</item>
         <item>2: Erith Riverside to Bostall Woods</item>
         <item>3: Bostall Woods to Oxleas Meadows</item>
-        <item>4A: Charlton Park to Bostall Woods</item>
-        <item>4B: Plumstead Common to Oxleas Meadows</item>
+        <item>4: Charlton Park to Bostall Woods/Oxleas Meadows</item>
         <item>5: Thames Barrier to Oxleas Meadows</item>
         <item>6: Oxleas Wood to Mottingham</item>
         <item>7: Shepherdleas Wood to Middle Park</item>
         <item>8: Mottingham to Beckenham Place Park</item>
-        <item>9A: Mottingham Lane to Beckenham Place Park</item>
-        <item>9B: Chislehurst Village to Elmstead Woods</item>
+        <item>9: Mottingham Lane to Beckenham Place Park/Chislehurst Village</item>
         <item>10: Beckenham Place Park to Crystal Palace Park</item>
         <item>11: Crystal Palace Park to Nunhead Cemetery</item>
     </string-array>

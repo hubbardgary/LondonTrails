@@ -10,11 +10,35 @@
     </Point>
   </Placemark>
   <Placemark>
-    <name>Beckenham Place Park</name>
-    <description><![CDATA[As well as being home to the former mansion, Beckenham Place Park provides numerous sporting facilities. The mansion itself is now an information centre and events venue.]]></description>
-    <styleUrl>#style3</styleUrl>
+    <name>Hither Green Cemetery</name>
+    <description>Opened in 1873, this cemetery was designed by Francis Thorne and was originally built with an Anglican chapel, and a Dissenters chapel. It contains a memorial to the 38 children and six teachers that were killed when Sandhurst Road School was bombed during World War II.</description>
+    <styleUrl>#style1</styleUrl>
     <Point>
-      <coordinates>-0.012445,51.420033,0.000000</coordinates>
+      <coordinates>0.0113052,51.4360748,0.000000</coordinates>
+    </Point>
+  </Placemark>
+  <Placemark>
+    <name>Chinbrook Link</name>
+    <description>This optional out-and-back detour will add an extra 0.85 miles (1.4 km) each way to your walk.</description>
+    <styleUrl>#style1</styleUrl>
+    <Point>
+      <coordinates>0.0279032,51.4335281,0.000000</coordinates>
+    </Point>
+  </Placemark>
+  <Placemark>
+    <name>Chinbrook Meadows</name>
+    <description>Chinbrook Meadows was previously occupied by Chinbrook Farm. The park was opened to the public in 1929.</description>
+    <styleUrl>#style1</styleUrl>
+    <Point>
+      <coordinates>0.0283317,51.4289107,0.000000</coordinates>
+    </Point>
+  </Placemark>
+  <Placemark>
+    <name>Beckenham Place Park</name>
+    <description>As well as being home to the former mansion, Beckenham Place Park provides numerous sporting facilities. The mansion itself is now an information centre and events venue.</description>
+    <styleUrl>#style1</styleUrl>
+    <Point>
+      <coordinates>-0.0195258,51.4189928,0.000000</coordinates>
     </Point>
   </Placemark>
 </Document>

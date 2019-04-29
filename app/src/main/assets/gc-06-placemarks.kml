@@ -18,14 +18,6 @@
     </Point>
   </Placemark>
   <Placemark>
-    <name>Former Residence of W. G. Grace</name>
-    <description><![CDATA[Widely regarded as one of the greatest cricketers of all time, and famous for his impressively large beard, William Gilbert Grace played cricket for an incredible 44 seasons between 1865 and 1908. The house is now a care home for the elderly.]]></description>
-    <styleUrl>#style2</styleUrl>
-    <Point>
-      <coordinates>0.033273,51.440262,0.000000</coordinates>
-    </Point>
-  </Placemark>
-  <Placemark>
     <name>Conduit Head</name>
     <description><![CDATA[This unusual crumbling structure was once part of a complicated system built in the early 1500s to supply water to Eltham Palace.]]></description>
     <styleUrl>#style4</styleUrl>

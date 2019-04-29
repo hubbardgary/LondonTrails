@@ -4,15 +4,23 @@
   <Placemark>
     <name>Beckenham Place Park</name>
     <description><![CDATA[As well as being home to the former mansion, Beckenham Place Park provides numerous sporting facilities. The mansion itself is now an information centre and events venue.]]></description>
-    <styleUrl>#style3</styleUrl>
+    <styleUrl>#style1</styleUrl>
     <Point>
       <coordinates>-0.012445,51.420033,0.000000</coordinates>
     </Point>
   </Placemark>
   <Placemark>
+    <name>Penge</name>
+    <description><![CDATA[During Victorian times, Penge was a highly desirable area due to its direct railway line into Central London and its proximity to the newly relocated Crystal Palace. It was also famous for its high quantity of pubs, dubbed '25 pubs to the square mile'. Most have since been closed or re-purposed, but the oldest, The Crooked Billet on the High Street, which dates from the early 1600s, remains in business.]]></description>
+    <styleUrl>#style1</styleUrl>
+    <Point>
+      <coordinates>-0.0570383,51.4184065,0.000000</coordinates>
+    </Point>
+  </Placemark>
+  <Placemark>
     <name>Crystal Palace Park</name>
     <description><![CDATA[A fascinating former Victorian pleasure ground, Crystal Palace Park is now home to the National Sports Centre as well as many other intriguing features.]]></description>
-    <styleUrl>#style5</styleUrl>
+    <styleUrl>#style1</styleUrl>
     <Point>
       <coordinates>-0.069094,51.420502,0.000000</coordinates>
     </Point>
@@ -20,7 +28,7 @@
   <Placemark>
     <name>Dinosaur Sculptures</name>
     <description><![CDATA[These dinosaur sculptures were unveiled in 1854 and are, for the most part, completely inaccurate, and have been ridiculed by scientists since shortly after their completion. This makes them all the more fun to the present day visitor.]]></description>
-    <styleUrl>#style6</styleUrl>
+    <styleUrl>#style1</styleUrl>
     <Point>
       <coordinates>-0.065596,51.417835,0.000000</coordinates>
     </Point>

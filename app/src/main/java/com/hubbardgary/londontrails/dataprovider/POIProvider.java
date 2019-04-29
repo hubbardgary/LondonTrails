@@ -89,6 +89,7 @@ class POIHandler extends DefaultHandler {
     private boolean name = false;
     private boolean description = false;
     private boolean coordinates = false;
+    private boolean alternativeEndPoint = false;
     private POI currentPOI;
 
     List<POI> pointsOfInterest;
@@ -106,6 +107,8 @@ class POIHandler extends DefaultHandler {
             description = true;
         } else if (name.equalsIgnoreCase("coordinates")) {
             coordinates = true;
+        } else if (name.equalsIgnoreCase("alternativeEndPoint")) {
+            alternativeEndPoint = true;
         }
     }
 
@@ -127,6 +130,10 @@ class POIHandler extends DefaultHandler {
             currentPOI.setLatitude(Double.parseDouble(lat));
             currentPOI.setLongitude(Double.parseDouble(lon));
             coordinates = false;
+        }
+        if (alternativeEndPoint) {
+            currentPOI.setIsAlternativeEndPoint(true);
+            alternativeEndPoint = false;
         }
     }
 

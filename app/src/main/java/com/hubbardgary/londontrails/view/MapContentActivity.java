@@ -101,13 +101,13 @@ public class MapContentActivity extends AsyncTask<Void, Void, Integer> implement
         List<Marker> markers = new ArrayList<Marker>();
         for (POI p : vm.poi) {
             markers.add(
-                    pushPin(
-                            p.getLatitude(),
-                            p.getLongitude(),
-                            p.getTitle(),
-                            p.getSnippet(),
-                            R.drawable.waypoint_pause
-                    )
+                pushPin(
+                    p.getLatitude(),
+                    p.getLongitude(),
+                    p.getTitle(),
+                    p.getSnippet(),
+                    p.getIsAlternativeEndPoint() ? R.drawable.waypoint_stop : R.drawable.waypoint_pause
+                )
             );
         }
         showMapActivity.setMarkers(markers);

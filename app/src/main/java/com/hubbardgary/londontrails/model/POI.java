@@ -5,6 +5,7 @@ public class POI {
     private double longitude;
     private String title;
     private String snippet;
+    private boolean isAlternativeEndPoint = false;
 
     public double getLongitude() {
         return longitude;
@@ -36,5 +37,13 @@ public class POI {
 
     public void setSnippet(String snippet) {
         this.snippet = snippet;
+    }
+
+    public boolean getIsAlternativeEndPoint() {
+        return isAlternativeEndPoint;
+    }
+
+    public void setIsAlternativeEndPoint(boolean isAlternativeEndPoint) {
+        this.isAlternativeEndPoint = isAlternativeEndPoint;
     }
 }

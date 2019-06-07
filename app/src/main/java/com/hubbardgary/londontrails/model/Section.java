@@ -9,6 +9,8 @@ public class Section {
     private double distanceInKm;
     private double startLinkDistanceInKm;
     private double endLinkDistanceInKm;
+    private double extensionDistanceInKm = 0;
+    private String extensionDescription;
 
     public Section(Route route) {
         this.route = route;
@@ -84,5 +86,21 @@ public class Section {
 
     public void setEndLinkDistanceInKm(double endLinkDistanceInKm) {
         this.endLinkDistanceInKm = endLinkDistanceInKm;
+    }
+
+    public double getExtensionDistanceInKm() {
+        return extensionDistanceInKm;
+    }
+
+    public void setExtensionDistanceInKm(double extensionDistanceInKm) {
+        this.extensionDistanceInKm = extensionDistanceInKm;
+    }
+
+    public String getExtensionDescription() {
+        return extensionDescription;
+    }
+
+    public void setExtensionDescription(String extensionDescription) {
+        this.extensionDescription = extensionDescription;
     }
 }

@@ -18,6 +18,7 @@ import com.hubbardgary.londontrails.viewmodel.RouteViewModel;
 
 import java.util.HashMap;
 import java.util.List;
+import java.util.Locale;
 import java.util.Map;
 
 public class DisjointedRouteOptionsActivity extends Activity implements IRouteOptionsView, AdapterView.OnItemSelectedListener {
@@ -111,11 +112,25 @@ public class DisjointedRouteOptionsActivity extends Activity implements IRouteOp
 
     @Override
     public void refreshDestinationSpinner(RouteViewModel vm) {
-
     }
 
     public void refreshDistance(RouteViewModel vm) {
         TextView txtDistance = (TextView) findViewById(R.id.DistanceValue);
-        txtDistance.setText(String.format("%.2f km (%.2f miles)", vm.distanceKm, vm.distanceMiles));
+        txtDistance.setText(String.format(Locale.UK,
+                "%.2f km (%.2f miles)",
+                vm.distanceKm,
+                vm.distanceMiles));
+
+        TextView txtExtension = (TextView) findViewById(R.id.ExtensionDistanceValue);
+        if (vm.extensionDistanceKm > 0) {
+            txtExtension.setText(
+                    String.format(Locale.UK,
+                            "plus %.2f km (%.2f miles) %s",
+                            vm.extensionDistanceKm,
+                            vm.extensionDistanceMiles,
+                            vm.extensionDescription));
+        } else {
+            txtExtension.setText("");
+        }
     }
 }

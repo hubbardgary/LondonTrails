@@ -29,18 +29,6 @@
             android:layout_below="@+id/StartLocationLbl"
             android:layout_centerInParent="true" />
 
-        <Button
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="@string/route_options_confirm_text"
-            android:id="@+id/GoBtn"
-            android:background="@drawable/button_background"
-            android:textColor="#ffffff"
-            android:layout_below="@+id/DistanceValue"
-            android:layout_centerHorizontal="true"
-            android:layout_alignParentRight="true"
-            android:layout_alignParentLeft="true" />
-
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -56,8 +44,27 @@
             android:layout_height="wrap_content"
             android:id="@+id/DistanceValue"
             android:layout_below="@+id/DistanceLbl"
+            android:layout_centerHorizontal="true" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/ExtensionDistanceValue"
+            android:layout_below="@+id/DistanceValue"
             android:layout_centerHorizontal="true"
             android:layout_marginBottom="20dp" />
+
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/route_options_confirm_text"
+            android:id="@+id/GoBtn"
+            android:background="@drawable/button_background"
+            android:textColor="#ffffff"
+            android:layout_below="@+id/ExtensionDistanceValue"
+            android:layout_centerHorizontal="true"
+            android:layout_alignParentRight="true"
+            android:layout_alignParentLeft="true" />
 
     </RelativeLayout>
 </ScrollView>

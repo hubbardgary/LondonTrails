@@ -16,6 +16,9 @@ public class RouteViewModel {
     public List<String> endOptions;
     public double distanceKm;
     public double distanceMiles;
+    public double extensionDistanceKm;
+    public double extensionDistanceMiles;
+    public String extensionDescription;
     public int direction;
     public int startSection;
     public int endSection;

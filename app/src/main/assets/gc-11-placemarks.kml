@@ -58,20 +58,35 @@
     </Point>
   </Placemark>
   <Placemark>
-    <name>Alternative end point</name>
-    <description>If you do not wish to retrace your steps and complete the rest of Section 11, you can instead end your walk at nearby West Dulwich Rail Station.</description>
+    <name>Alternative end point - North Dulwich Rail Station</name>
+    <description>Alternative end point.</description>
     <styleUrl>#style1</styleUrl>
     <Point>
-      <coordinates>-0.0854138,51.4464704,0.000000</coordinates>
+      <coordinates>-0.0882986,51.454251,0.000000</coordinates>
     </Point>
-	<alternativeEndPoint>true</alternativeEndPoint>
+    <alternativeEndPoint>true</alternativeEndPoint>
   </Placemark>
   <Placemark>
     <name>Dulwich Park Link</name>
-    <description>This optional out-and-back detour will add 1.2 miles (1.9 km) each way to your walk.</description>
+    <description>This optional out-and-back extension will add an extra 1.24 miles (2.0 km) each way to your walk.</description>
     <styleUrl>#style1</styleUrl>
     <Point>
       <coordinates>-0.0669946,51.4385869,0.000000</coordinates>
+    </Point>
+  </Placemark>
+  <Placemark>
+    <name>One Tree Hill</name>
+    <styleUrl>#style1</styleUrl>
+    <Point>
+      <coordinates>-0.0520515,51.4511966,0.000000</coordinates>
+    </Point>
+  </Placemark>
+  <Placemark>
+    <name>Brenchley Gardens Fork</name>
+    <description>The route forks here, with the shortest and more accessible route going through Brenchley Gardens, a small park and flower garden.</description>
+    <styleUrl>#style1</styleUrl>
+    <Point>
+      <coordinates>-0.0572726,51.4503162,0.000000</coordinates>
     </Point>
   </Placemark>
 </Document>

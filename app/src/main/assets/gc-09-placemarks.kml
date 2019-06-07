@@ -3,14 +3,14 @@
 <Document>
   <Placemark>
     <name>Chislehurst Link</name>
-    <description>This optional out-and-back extension will take you to the village of Chislehurst, known INSERT SOMETHING OF INTEREST HERE.</description>
+    <description>This optional out-and-back extension will add an extra 1.7 miles (2.8 km) to your walk and will take you to the village of Chislehurst.</description>
     <styleUrl>#style1</styleUrl>
     <Point>
       <coordinates>0.0382657,51.4223943,0.000000</coordinates>
     </Point>
   </Placemark>
   <Placemark>
-    <name>Chislehurst Ashfield Road / Loop Road Bus Stop</name>
+    <name>Alternative end point - Chislehurst Ashfield Road / Loop Road Bus Stop</name>
     <description><![CDATA[If you don't wish to retrace your steps and continue to Beckenham Place Park, you can end your walk here.]]></description>
     <styleUrl>#style1</styleUrl>
     <Point>
@@ -48,6 +48,14 @@
     <styleUrl>#style1</styleUrl>
     <Point>
       <coordinates>-0.012445,51.420033,0.000000</coordinates>
+    </Point>
+  </Placemark>
+  <Placemark>
+    <name>End of Section 9</name>
+    <description>Section 9 officially ends here. From here, you can either retrace your steps to end your walk at Ravensbourne Rail Station, or continue onto Section 8.</description>
+    <styleUrl>#style1</styleUrl>
+    <Point>
+      <coordinates>-0.0123938,51.4174506,0.000000</coordinates>
     </Point>
   </Placemark>
 </Document>

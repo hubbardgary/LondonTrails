@@ -10,14 +10,6 @@
     </Point>
   </Placemark>
   <Placemark>
-    <name>Footpath to Crossness Nature Reserve</name>
-    <description>Surrounded by a sewage treatment plant, industry, and a dual carriageway, Crossness Nature Reserve is surprisingly teeming with wildlife including water voles and over 130 species of birds.</description>
-    <styleUrl>#style1</styleUrl>
-    <Point>
-      <coordinates>0.1322545,51.5047892,0.000000</coordinates>
-    </Point>
-  </Placemark>
-  <Placemark>
     <name>Southmere Lake</name>
     <description>Southmere Lake was formed in the 1960s as a result of a large drainage operation to allow the building of Thamesmead estate on Erith marshes.</description>
     <styleUrl>#style1</styleUrl>

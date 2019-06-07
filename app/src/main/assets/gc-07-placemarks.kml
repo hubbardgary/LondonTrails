@@ -18,11 +18,11 @@
     </Point>
   </Placemark>
   <Placemark>
-    <name><![CDATA[King John's Walk]]></name>
-    <description><![CDATA[There are fantastic views towards Central London here.]]></description>
+    <name>End of Section 7</name>
+    <description>From here, you can either continue along Section 6, or retrace your steps to end your walk at Mottingham Rail Station.</description>
     <styleUrl>#style1</styleUrl>
     <Point>
-      <coordinates>0.045834,51.446377,0.000000</coordinates>
+      <coordinates>0.0442237,51.4437199,0.000000</coordinates>
     </Point>
   </Placemark>
 </Document>

@@ -4,7 +4,7 @@
   <Placemark>
     <name>Downham Woodland Walk</name>
     <description><![CDATA[This small patch of woodland is one of the remaining sections of the Great North Wood which covered a large area of South London.]]></description>
-    <styleUrl>#style4</styleUrl>
+    <styleUrl>#style1</styleUrl>
     <Point>
       <coordinates>0.001953,51.429920,0.000000</coordinates>
     </Point>
@@ -19,7 +19,7 @@
   </Placemark>
   <Placemark>
     <name>Chinbrook Link</name>
-    <description>This optional out-and-back detour will add an extra 0.85 miles (1.4 km) each way to your walk.</description>
+    <description>This optional out-and-back extension will add an extra 0.85 miles (1.4 km) each way to your walk.</description>
     <styleUrl>#style1</styleUrl>
     <Point>
       <coordinates>0.0279032,51.4335281,0.000000</coordinates>
@@ -31,6 +31,14 @@
     <styleUrl>#style1</styleUrl>
     <Point>
       <coordinates>0.0283317,51.4289107,0.000000</coordinates>
+    </Point>
+  </Placemark>
+  <Placemark>
+    <name>End of Chinbrook Link</name>
+    <description>From here you can either retrace your steps to complete the rest of Section 8, or continue onto Section 9, or end your walk at nearby Grove Park Rail Station.</description>
+    <styleUrl>#style1</styleUrl>
+    <Point>
+      <coordinates>0.034629,51.4233835,0.000000</coordinates>
     </Point>
   </Placemark>
   <Placemark>

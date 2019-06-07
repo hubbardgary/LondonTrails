@@ -17,5 +17,13 @@
       <coordinates>0.069909,51.4674092,0.000000</coordinates>
     </Point>
   </Placemark>
+  <Placemark>
+    <name>End of Section 3</name>
+    <description>Section 3 officially ends here. From here, you can either continue onto Section 4 or 5, or retrace your steps to the main section end point at Falconwood Rail Station.</description>
+    <styleUrl>#style1</styleUrl>
+    <Point>
+      <coordinates>0.0695988,51.4664803,0.000000</coordinates>
+    </Point>
+  </Placemark>
 </Document>
 </kml>

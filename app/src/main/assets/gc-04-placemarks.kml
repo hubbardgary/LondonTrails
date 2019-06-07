@@ -3,8 +3,8 @@
 <Document>
   <Placemark>
     <name>End of Section 4</name>
-    <description>Section 4 officially ends here. From here, you can either follow Section 5 towards Charlton and the Thames Barrier, take the short walk to Falconwood station, or retrace your steps to the main section end point.</description>
-    <styleUrl>#style5</styleUrl>
+    <description>Section 4 officially ends here. From here, you can either follow Section 5 towards Charlton and the Thames Barrier, or take the short walk to Falconwood station, or retrace your steps to the main section end point.</description>
+    <styleUrl>#style1</styleUrl>
     <Point>
       <coordinates>0.0695988,51.4664803,0.000000</coordinates>
     </Point>
@@ -12,7 +12,7 @@
   <Placemark>
     <name>Charlton Park</name>
     <description>Originally part of the Charlton House estate, which also included the nearby Maryon, Maryon Wilson, and Hornfair parks, the Jacobean period Charlton House is now a community centre and library.</description>
-    <styleUrl>#style5</styleUrl>
+    <styleUrl>#style1</styleUrl>
     <Point>
       <coordinates>0.0421214,51.4808713,0.000000</coordinates>
     </Point>
@@ -20,7 +20,7 @@
   <Placemark>
     <name>Alternative End Point</name>
     <description><![CDATA[If you do not want to retrace your steps to complete this section, you can finish your walk earlier at nearby Falconwood rail station]]></description>
-    <styleUrl>#style5</styleUrl>
+    <styleUrl>#style1</styleUrl>
     <Point>
       <coordinates>0.0796144,51.459024,0.000000</coordinates>
     </Point>
@@ -29,7 +29,7 @@
   <Placemark>
     <name>Shooters Hill</name>
     <description>Depending on who you believe, Shooters Hill takes its name from archers using the area for practice during Medieval (is Medieval the same as middle ages?) times, its reputation as a favoured location for highwaymen, or the fact that a number of anti-aircraft guns were stationed here during the Second World War. It is the highest point in the Borough of Greenwich.</description>
-    <styleUrl>#style5</styleUrl>
+    <styleUrl>#style1</styleUrl>
     <Point>
       <coordinates>0.0677073,51.4690099,0.000000</coordinates>
     </Point>
@@ -37,15 +37,23 @@
   <Placemark>
     <name>Royal Artillery Barracks</name>
     <description>This large structure was originally built in 1776, and was later doubled in size. It was home of the Royal Artillery until 2007. The shooting events of the 2012 Olympics were hosted here. In the early 1980s, it was targeted by the IRA in two bomb attacks, and in May 2013, drummer Lee Rigby was murdered outside the barracks in a terrorist attack.</description>
-    <styleUrl>#style5</styleUrl>
+    <styleUrl>#style1</styleUrl>
     <Point>
       <coordinates>0.0594579,51.486509,0.000000</coordinates>
     </Point>
   </Placemark>
   <Placemark>
+    <name>Oxleas Meadows Link</name>
+    <description>This optional out-and-back extension will add an extra 1.74 miles (2.8 km) each way to your walk.</description>
+    <styleUrl>#style1</styleUrl>
+    <Point>
+      <coordinates>0.081850,51.481780,0.000000</coordinates>
+    </Point>
+  </Placemark>
+  <Placemark>
     <name>Oxleas Wood</name>
     <description>Oxleas Wood is one of the few remaining areas of ancient deciduous forest in Eltham, with some parts dating back to the last Ice Age over 8000 years ago. The woods are home to the Oxleas Wood Apiary which is managed by apiarist John Large.</description>
-    <styleUrl>#style5</styleUrl>
+    <styleUrl>#style1</styleUrl>
     <Point>
       <coordinates>0.069909,51.4674092,0.000000</coordinates>
     </Point>
@@ -53,7 +61,7 @@
   <Placemark>
     <name>Shrewsbury Park</name>
     <description>Located next to Shrewsbury House, this large open space has fantastic views towards London. It was previously part of the estate belonging to the Earl of Shrewsbury.</description>
-    <styleUrl>#style5</styleUrl>
+    <styleUrl>#style1</styleUrl>
     <Point>
       <coordinates>0.0781575,51.4752595,0.000000</coordinates>
     </Point>

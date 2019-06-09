@@ -76,6 +76,9 @@ public class ShowMapPresenter {
             case R.id.view_option_reset_focus:
                 view.resetCameraPosition();
                 return;
+            case android.R.id.home:
+                view.endActivity();
+                return;
         }
         view.updateViewModel(vm);
     }

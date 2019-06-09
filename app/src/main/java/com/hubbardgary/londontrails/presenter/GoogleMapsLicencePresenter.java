@@ -19,4 +19,12 @@ public class GoogleMapsLicencePresenter {
     private String getGoogleLicenseInfo() {
         return GoogleApiAvailability.getInstance().getOpenSourceSoftwareLicenseInfo(view.getContext());
     }
+
+    public void menuItemSelected(int itemId) {
+        switch (itemId) {
+            case android.R.id.home:
+                view.endActivity();
+                return;
+        }
+    }
 }

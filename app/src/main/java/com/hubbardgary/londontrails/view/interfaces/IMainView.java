@@ -7,6 +7,7 @@ import java.util.List;
 
 public interface IMainView {
     void invokeActivity(HashMap<String, Integer> intents, Class<?> activity);
+    void endActivity();
     void displayButtons(List<ButtonViewModel> buttonsVm);
     void checkGooglePlayAvailability();
 }

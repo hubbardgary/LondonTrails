@@ -5,6 +5,7 @@ import android.os.Bundle;
 import android.app.Activity;
 import android.text.Spanned;
 import android.text.method.LinkMovementMethod;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
@@ -24,8 +25,21 @@ public class AboutActivity extends Activity implements IAboutView {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_about);
+        getActionBar().setDisplayHomeAsUpEnabled(true);
+
         presenter = new AboutPresenter(this);
         presenter.initializeView();
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        try {
+            presenter.menuItemSelected(item.getItemId());
+            return true;
+        }
+        catch(Exception e) {
+            return super.onOptionsItemSelected(item);
+        }
     }
 
     private void addOnClickListener(final Button button) {
@@ -35,6 +49,10 @@ public class AboutActivity extends Activity implements IAboutView {
                 presenter.buttonClicked(v.getId());
             }
         });
+    }
+
+    public void endActivity() {
+        finish();
     }
 
     public void setupButtons() {

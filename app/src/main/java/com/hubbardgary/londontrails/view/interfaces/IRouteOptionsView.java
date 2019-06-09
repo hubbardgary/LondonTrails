@@ -6,6 +6,7 @@ import java.util.HashMap;
 
 public interface IRouteOptionsView {
     void invokeActivity(HashMap<String, Integer> intents, Class<?> activity);
+    void endActivity();
     int getRouteSectionsFromIntent();
     void refreshDestinationSpinner(RouteViewModel vm);
     void refreshDistance(RouteViewModel vm);

@@ -34,6 +34,7 @@ public class MainActivity extends Activity implements IMainView {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+        getActionBar().setDisplayHomeAsUpEnabled(true);
         presenter = new MainPresenter(this);
         presenter.initializeView();
     }
@@ -107,5 +108,9 @@ public class MainActivity extends Activity implements IMainView {
             intent.putExtra(entry.getKey(), entry.getValue());
         }
         this.startActivity(intent);
+    }
+
+    public void endActivity() {
+        finish();
     }
 }

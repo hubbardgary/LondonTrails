@@ -3,6 +3,7 @@ package com.hubbardgary.londontrails.view;
 import android.app.Activity;
 import android.content.Context;
 import android.os.Bundle;
+import android.view.MenuItem;
 import android.widget.TextView;
 
 import com.hubbardgary.londontrails.R;
@@ -17,6 +18,8 @@ public class GoogleMapsLicenceActivity extends Activity implements IGoogleMapsLi
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_google_maps_licence);
+        getActionBar().setDisplayHomeAsUpEnabled(true);
+
         presenter = new GoogleMapsLicencePresenter(this);
         presenter.initializeView();
     }
@@ -28,5 +31,20 @@ public class GoogleMapsLicenceActivity extends Activity implements IGoogleMapsLi
 
     public Context getContext() {
         return getApplicationContext();
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        try {
+            presenter.menuItemSelected(item.getItemId());
+            return true;
+        }
+        catch(Exception e) {
+            return super.onOptionsItemSelected(item);
+        }
+    }
+
+    public void endActivity() {
+        finish();
     }
 }

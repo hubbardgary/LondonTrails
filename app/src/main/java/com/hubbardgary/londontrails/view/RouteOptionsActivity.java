@@ -3,6 +3,8 @@ package com.hubbardgary.londontrails.view;
 import android.content.Intent;
 import android.os.Bundle;
 import android.app.Activity;
+import android.view.Menu;
+import android.view.MenuItem;
 import android.view.View;
 import android.view.View.OnClickListener;
 import android.widget.AdapterView;
@@ -33,6 +35,7 @@ public class RouteOptionsActivity extends Activity implements IRouteOptionsView,
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_route_options);
+        getActionBar().setDisplayHomeAsUpEnabled(true);
 
         presenter = new RouteOptionsPresenter(this, (GlobalObjects)getApplicationContext(), getApplicationContext().getResources());
         vm = presenter.getViewModel();
@@ -43,6 +46,17 @@ public class RouteOptionsActivity extends Activity implements IRouteOptionsView,
         startSpinner.setSelection(vm.startSelectedIndex);
         endSpinner.setSelection(vm.endSelectedIndex);
         addListenerOnGoButton();
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        try {
+            presenter.menuItemSelected(item.getItemId());
+            return true;
+        }
+        catch(Exception e) {
+            return super.onOptionsItemSelected(item);
+        }
     }
 
     @Override
@@ -127,6 +141,10 @@ public class RouteOptionsActivity extends Activity implements IRouteOptionsView,
             intent.putExtra(entry.getKey(), entry.getValue());
         }
         this.startActivity(intent);
+    }
+
+    public void endActivity() {
+        finish();
     }
 
     public int getRouteSectionsFromIntent() {

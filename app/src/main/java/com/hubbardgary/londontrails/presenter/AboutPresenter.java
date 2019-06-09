@@ -5,6 +5,7 @@ import android.text.Spanned;
 
 import com.hubbardgary.londontrails.BuildConfig;
 import com.hubbardgary.londontrails.R;
+import com.hubbardgary.londontrails.view.AboutActivity;
 import com.hubbardgary.londontrails.view.GoogleMapsLicenceActivity;
 import com.hubbardgary.londontrails.view.interfaces.IAboutView;
 
@@ -59,6 +60,14 @@ public class AboutPresenter {
             case R.id.btn_legal:
                 view.invokeActivity(new HashMap<String, Integer>(), GoogleMapsLicenceActivity.class);
                 break;
+        }
+    }
+
+    public void menuItemSelected(int itemId) {
+        switch (itemId) {
+            case android.R.id.home:
+                view.endActivity();
+                return;
         }
     }
 }

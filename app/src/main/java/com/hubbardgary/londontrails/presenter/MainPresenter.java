@@ -55,6 +55,9 @@ public class MainPresenter {
             case R.id.view_option_about:
                 view.invokeActivity(new HashMap<String, Integer>(), AboutActivity.class);
                 return;
+            case android.R.id.home:
+                view.endActivity();
+                return;
         }
     }
 }

@@ -143,4 +143,12 @@ public class RouteOptionsPresenter {
         view.refreshDistance(vm);
         return vm;
     }
+
+    public void menuItemSelected(int itemId) {
+        switch (itemId) {
+            case android.R.id.home:
+                view.endActivity();
+                return;
+        }
+    }
 }

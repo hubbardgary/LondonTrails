@@ -2,6 +2,14 @@
 <kml xmlns="http://earth.google.com/kml/2.2">
 <Document>
   <Placemark>
+    <name>Eltham College</name>
+    <description>Eltham College has operated here since 1912 when it relocated from Blackheath. The college site includes the Gerald Moore Art Gallery, opened in 2012, which is open to the public at select times each week, and exhibits work by a variety of artists including Gerald Moore and Eltham College students.</description>
+    <styleUrl>#style1</styleUrl>
+    <Point>
+      <coordinates>0.0393062,51.438194,0.000000</coordinates>
+    </Point>
+  </Placemark>
+  <Placemark>
     <name>Downham Woodland Walk</name>
     <description><![CDATA[This small patch of woodland is one of the remaining sections of the Great North Wood which covered a large area of South London.]]></description>
     <styleUrl>#style1</styleUrl>
@@ -40,6 +48,15 @@
     <Point>
       <coordinates>0.034629,51.4233835,0.000000</coordinates>
     </Point>
+  </Placemark>
+  <Placemark>
+    <name>Alternative End Point - Grove Park Station</name>
+    <description>If you do not wish to retrace your steps and complete the rest of the section, you can end your walk here.</description>
+    <styleUrl>#style1</styleUrl>
+    <Point>
+      <coordinates>0.0213921,51.4310475,0.000000</coordinates>
+    </Point>
+    <alternativeEndPoint>true</alternativeEndPoint>
   </Placemark>
   <Placemark>
     <name>Beckenham Place Park</name>

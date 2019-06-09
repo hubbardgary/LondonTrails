@@ -51,7 +51,7 @@
   </Placemark>
   <Placemark>
     <name>Nunhead Cemetery</name>
-    <description>Nunhead Cemetery, consecrated in 1840, is one of the Magnificent Seven Victorian cemeteries that are arranged in a ring around the outskirts of 1850s London. By the mid 1900s, the cemetery was reaching full capacity and subsequently fell into disuse and neglect, with nature reclaiming many of the elaborate headstones. It was reopened in 2001 following a large restoration project.</description>
+    <description>Nunhead Cemetery, consecrated in 1840, is one of the Magnificent Seven Victorian cemeteries that were arranged in a ring around the outskirts of 1850s London. By the mid 1900s, the cemetery was reaching full capacity and subsequently fell into disuse and neglect, with nature reclaiming many of the elaborate headstones. It was reopened in 2001 following a large restoration project.</description>
     <styleUrl>#style1</styleUrl>
     <Point>
       <coordinates>-0.051183,51.4629094,0.000000</coordinates>
@@ -59,7 +59,7 @@
   </Placemark>
   <Placemark>
     <name>Alternative end point - North Dulwich Rail Station</name>
-    <description>Alternative end point.</description>
+    <description>If you do not wish to retrace your steps to complete the remainder of Section 11, you can instead end your walk here.</description>
     <styleUrl>#style1</styleUrl>
     <Point>
       <coordinates>-0.0882986,51.454251,0.000000</coordinates>
@@ -75,10 +75,11 @@
     </Point>
   </Placemark>
   <Placemark>
-    <name>One Tree Hill</name>
+    <name>End of the Dulwich Link</name>
+    <description>The Dulwich Link portion of this section ends here. You can either retrace your steps and complete the rest of Section 11, or end your walk at nearby North Dulwich Rail Station.</description>
     <styleUrl>#style1</styleUrl>
     <Point>
-      <coordinates>-0.0520515,51.4511966,0.000000</coordinates>
+      <coordinates>-0.0854138,51.4464704,0.000000</coordinates>
     </Point>
   </Placemark>
   <Placemark>
@@ -87,6 +88,22 @@
     <styleUrl>#style1</styleUrl>
     <Point>
       <coordinates>-0.0572726,51.4503162,0.000000</coordinates>
+    </Point>
+  </Placemark>
+  <Placemark>
+    <name>One Tree Hill</name>
+    <description><![CDATA[Offering some fantastic views of central London, One Tree Hill is actually home to many trees. The 'One Tree' refers to the Oak of Honor, surrounded by railings, which marked the boundary of lands belonging to the Honour of Gloucester.]]></description>
+    <styleUrl>#style1</styleUrl>
+    <Point>
+      <coordinates>-0.0520515,51.4511966,0.000000</coordinates>
+    </Point>
+  </Placemark>
+  <Placemark>
+    <name>Beechcroft Reservoir Valve House</name>
+    <description>A short detour from the main route will reveal this odd looking structure in the middle of a golf course. Built in 1909, it is one of the largest underground reservoirs in Europe, capable of holding 55 million gallons of water.</description>
+    <styleUrl>#style1</styleUrl>
+    <Point>
+      <coordinates>-0.0522442,51.4542962,0.000000</coordinates>
     </Point>
   </Placemark>
 </Document>

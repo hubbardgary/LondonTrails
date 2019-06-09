@@ -35,7 +35,7 @@
   </Placemark>
   <Placemark>
     <name>End of Section 1</name>
-    <description>Section 1 officially ends here. From here, you can continue onto Section 2, or retrace your steps to end your walk at Abbey Wood rail station.</description>
+    <description>Section 1 officially ends here. From here, you can continue onto Section 2, or retrace your steps to end your walk at Abbey Wood Rail Station.</description>
     <styleUrl>#style1</styleUrl>
     <Point>
       <coordinates>0.1288318,51.4873444,0.000000</coordinates>

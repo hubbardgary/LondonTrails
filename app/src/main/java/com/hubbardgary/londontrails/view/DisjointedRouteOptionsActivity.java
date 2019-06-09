@@ -32,7 +32,9 @@ public class DisjointedRouteOptionsActivity extends Activity implements IRouteOp
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_disjointed_route_options);
-        getActionBar().setDisplayHomeAsUpEnabled(true);
+        if(getActionBar() != null) {
+            getActionBar().setDisplayHomeAsUpEnabled(true);
+        }
 
         presenter = new DisjointedRouteOptionsPresenter(this, (GlobalObjects)getApplicationContext(), getApplicationContext().getResources());
         vm = presenter.getViewModel();

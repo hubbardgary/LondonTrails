@@ -34,7 +34,9 @@ public class MainActivity extends Activity implements IMainView {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        getActionBar().setDisplayHomeAsUpEnabled(true);
+        if(getActionBar() != null) {
+            getActionBar().setDisplayHomeAsUpEnabled(true);
+        }
         presenter = new MainPresenter(this);
         presenter.initializeView();
     }

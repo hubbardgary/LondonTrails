@@ -35,7 +35,9 @@ public class RouteOptionsActivity extends Activity implements IRouteOptionsView,
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_route_options);
-        getActionBar().setDisplayHomeAsUpEnabled(true);
+        if(getActionBar() != null) {
+            getActionBar().setDisplayHomeAsUpEnabled(true);
+        }
 
         presenter = new RouteOptionsPresenter(this, (GlobalObjects)getApplicationContext(), getApplicationContext().getResources());
         vm = presenter.getViewModel();

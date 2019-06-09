@@ -25,7 +25,9 @@ public class AboutActivity extends Activity implements IAboutView {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_about);
-        getActionBar().setDisplayHomeAsUpEnabled(true);
+        if(getActionBar() != null) {
+            getActionBar().setDisplayHomeAsUpEnabled(true);
+        }
 
         presenter = new AboutPresenter(this);
         presenter.initializeView();

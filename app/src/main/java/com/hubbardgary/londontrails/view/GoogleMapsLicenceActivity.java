@@ -18,7 +18,9 @@ public class GoogleMapsLicenceActivity extends Activity implements IGoogleMapsLi
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_google_maps_licence);
-        getActionBar().setDisplayHomeAsUpEnabled(true);
+        if(getActionBar() != null) {
+            getActionBar().setDisplayHomeAsUpEnabled(true);
+        }
 
         presenter = new GoogleMapsLicencePresenter(this);
         presenter.initializeView();

@@ -17,7 +17,7 @@ public class ShowMapViewModel {
         this.name = getRouteName(start, end, route);
         this.start = start;
         this.end = end;
-        this.isClockwise = direction == 0 ? true : false;
+        this.isClockwise = direction == 0;
         this.route = route;
         this.mapType = mapType;
         this.markersVisible = true;

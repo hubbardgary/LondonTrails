@@ -13,7 +13,6 @@ import android.widget.TextView;
 import com.hubbardgary.londontrails.R;
 import com.hubbardgary.londontrails.config.GlobalObjects;
 import com.hubbardgary.londontrails.presenter.DisjointedRouteOptionsPresenter;
-import com.hubbardgary.londontrails.presenter.RouteOptionsPresenter;
 import com.hubbardgary.londontrails.view.interfaces.IRouteOptionsView;
 import com.hubbardgary.londontrails.viewmodel.RouteViewModel;
 
@@ -77,7 +76,7 @@ public class DisjointedRouteOptionsActivity extends Activity implements IRouteOp
     private Spinner populateSpinner(int spinnerId, List<String> contents) {
         Spinner spinner = (Spinner) findViewById(spinnerId);
         ArrayAdapter<String> dataAdapter;
-        dataAdapter = new ArrayAdapter<String>(this, android.R.layout.simple_spinner_item, contents);
+        dataAdapter = new ArrayAdapter<>(this, android.R.layout.simple_spinner_item, contents);
         dataAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
         spinner.setAdapter(dataAdapter);
         dataAdapter.notifyDataSetChanged();

@@ -3,6 +3,8 @@ package com.hubbardgary.londontrails.model;
 import com.hubbardgary.londontrails.R;
 import com.hubbardgary.londontrails.config.GlobalObjects;
 
+import java.util.Locale;
+
 public class GreenChainWalk extends Route {
 
     private static double distanceInKM = 85.3; // Includes all main sections and extensions (out-and-back) but not transport links.
@@ -136,6 +138,6 @@ public class GreenChainWalk extends Route {
     }
 
     public static String getRouteDistanceText() {
-        return String.format("approx %.1f km (%.1f miles)", distanceInKM, GlobalObjects.convertKmToMiles(distanceInKM));
+        return String.format(Locale.UK, "approx %.1f km (%.1f miles)", distanceInKM, GlobalObjects.convertKmToMiles(distanceInKM));
     }
 }

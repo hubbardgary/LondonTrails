@@ -28,8 +28,8 @@ public class RouteViewModel {
     public RouteViewModel(String name, String[] sectionsArray, boolean isCircular, List<String> directions) {
         this.name = name;
         this.sectionsArray = sectionsArray;
-        this.startOptions = new ArrayList<String>(Arrays.asList(this.sectionsArray));
-        this.endOptions = new ArrayList<String>(Arrays.asList(this.sectionsArray));
+        this.startOptions = new ArrayList<>(Arrays.asList(this.sectionsArray));
+        this.endOptions = new ArrayList<>(Arrays.asList(this.sectionsArray));
         this.directionOptions = directions;
         this.isCircular = isCircular;
         this.startSection = 0;

@@ -29,9 +29,9 @@ public class MainPresenter {
         view.checkGooglePlayAvailability();
     }
 
-    public List<ButtonViewModel> getButtons() {
+    private List<ButtonViewModel> getButtons() {
         if(buttons == null) {
-            buttons = new ArrayList<ButtonViewModel>();
+            buttons = new ArrayList<>();
             buttons.add(new ButtonViewModel(R.id.rte_capital_ring, GlobalObjects.getButtonText(CapitalRing.getRouteName(), CapitalRing.getRouteDistanceText())));
             buttons.add(new ButtonViewModel(R.id.rte_london_loop, GlobalObjects.getButtonText(LondonLoop.getRouteName(), LondonLoop.getRouteDistanceText())));
             buttons.add(new ButtonViewModel(R.id.rte_green_chain_walk, GlobalObjects.getButtonText(GreenChainWalk.getRouteName(), GreenChainWalk.getRouteDistanceText())));
@@ -40,7 +40,7 @@ public class MainPresenter {
     }
 
     public void routeButtonClicked(int routeId) {
-        HashMap<String, Integer> intents = new HashMap<String, Integer>();
+        HashMap<String, Integer> intents = new HashMap<>();
         intents.put("routeSections", GlobalObjects.getSectionsFromRouteId(routeId));
         // TODO: Try to get linear/disjointed from the selected route
         if (routeId == R.id.rte_green_chain_walk) {

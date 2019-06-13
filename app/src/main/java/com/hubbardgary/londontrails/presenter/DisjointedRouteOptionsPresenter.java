@@ -51,17 +51,17 @@ public class DisjointedRouteOptionsPresenter {
     }
 
     public void activitySubmit(RouteViewModel vm) {
-        HashMap<String, Integer> intents = new HashMap<String, Integer>();
+        HashMap<String, Integer> intents = new HashMap<>();
         intents.put("startSection", vm.startSection);
         intents.put("endSection", vm.startSection);
         view.invokeActivity(intents, ShowMapActivity.class);
     }
 
-    public String[] getDirections() {
+    private String[] getDirections() {
         return res.getStringArray(R.array.directions);
     }
 
-    public double calculateDistanceInKm(int startSection) {
+    private double calculateDistanceInKm(int startSection) {
         Section s = route.getSection(startSection);
         return s.getDistanceInKm() +
                 s.getStartLinkDistanceInKm() +

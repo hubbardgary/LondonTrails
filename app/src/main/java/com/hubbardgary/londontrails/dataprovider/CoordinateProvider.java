@@ -7,7 +7,6 @@ import com.hubbardgary.londontrails.model.Section;
 
 import java.io.IOException;
 import java.io.InputStream;
-import java.util.Arrays;
 
 import javax.xml.parsers.ParserConfigurationException;
 import javax.xml.parsers.SAXParser;
@@ -109,7 +108,7 @@ public class CoordinateProvider {
         return wayPoints;
     }
 
-    public static String getRoute(InputStream is) {
+    private static String getRoute(InputStream is) {
         CoordinateProviderHandler handler = new CoordinateProviderHandler();
         try {
             SAXParser parser = SAXParserFactory.newInstance().newSAXParser();
@@ -129,7 +128,7 @@ class CoordinateProviderHandler extends DefaultHandler {
     private StringBuffer elementContent;
     String coordinates = "";
 
-    public CoordinateProviderHandler() {
+    CoordinateProviderHandler() {
     }
 
     public void startElement(String uri, String localName, String name, Attributes attributes) throws SAXException {

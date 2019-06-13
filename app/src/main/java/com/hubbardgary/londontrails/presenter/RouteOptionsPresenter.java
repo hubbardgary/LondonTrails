@@ -56,7 +56,7 @@ public class RouteOptionsPresenter {
     }
 
     public void activitySubmit(RouteViewModel vm) {
-        HashMap<String, Integer> intents = new HashMap<String, Integer>();
+        HashMap<String, Integer> intents = new HashMap<>();
         intents.put("startSection", vm.startSection);
         intents.put("endSection", vm.endSection);
         if (vm.isCircular) {
@@ -72,11 +72,11 @@ public class RouteOptionsPresenter {
         view.invokeActivity(intents, ShowMapActivity.class);
     }
 
-    public String[] getDirections() {
+    private String[] getDirections() {
         return res.getStringArray(R.array.directions);
     }
 
-    public double calculateDistanceInKm(int startSection, int endSection, int direction) {
+    private double calculateDistanceInKm(int startSection, int endSection, int direction) {
         if( (route.isCircular() && direction == res.getInteger(R.integer.AntiClockwise))
             || (!route.isCircular() && startSection > endSection) ) {
             // anti-clockwise, so swap Start and End and calculate as clockwise.
@@ -118,7 +118,7 @@ public class RouteOptionsPresenter {
         if (!routeVm.isCircular) {
             // If it's not circular, start and end locations cannot be the same
             String dest = sectionArray[vm.endSection];
-            List<String> destContents = new ArrayList<String>(Arrays.asList(routeVm.sectionsArray));
+            List<String> destContents = new ArrayList<>(Arrays.asList(routeVm.sectionsArray));
             destContents.remove(destContents.indexOf(sectionArray[vm.startSection]));
             if (destContents.indexOf(dest) == -1) {
                 vm.endSection = getSectionId(destContents.get(0));

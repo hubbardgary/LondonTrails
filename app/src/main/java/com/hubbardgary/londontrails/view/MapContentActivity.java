@@ -30,16 +30,15 @@ public class MapContentActivity extends AsyncTask<Void, Void, Integer> implement
 
     private ShowMapActivity activity;
     private ShowMapActivity showMapActivity;
-    PolylineOptions path;
-    MapContentPresenter presenter;
-    MapContentViewModel vm;
-    ShowMapViewModel showMapVm;
+    private PolylineOptions path;
+    private MapContentViewModel vm;
+    private ShowMapViewModel showMapVm;
 
-    public MapContentActivity(ShowMapActivity activity, ShowMapActivity showMapActivity) {
+    MapContentActivity(ShowMapActivity activity, ShowMapActivity showMapActivity) {
         this.activity = activity;
         this.showMapActivity = showMapActivity;
         showMapVm = showMapActivity.getShowMapVm();
-        presenter = new MapContentPresenter(this, showMapVm);
+        MapContentPresenter presenter = new MapContentPresenter(this, showMapVm);
         vm = presenter.getMapContentViewModel();
     }
 
@@ -98,7 +97,7 @@ public class MapContentActivity extends AsyncTask<Void, Void, Integer> implement
     }
 
     private void addWayPointMarkers() {
-        List<Marker> markers = new ArrayList<Marker>();
+        List<Marker> markers = new ArrayList<>();
         for (POI p : vm.poi) {
             markers.add(
                 pushPin(

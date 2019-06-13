@@ -10,7 +10,7 @@ import com.hubbardgary.londontrails.R;
 class InfoWindowAdapter implements GoogleMap.InfoWindowAdapter {
     private ShowMapActivity activity;
 
-    public InfoWindowAdapter(ShowMapActivity activity) {
+    InfoWindowAdapter(ShowMapActivity activity) {
         this.activity = activity;
     }
 

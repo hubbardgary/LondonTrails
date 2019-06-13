@@ -35,7 +35,7 @@ public class POIProvider {
 
     public List<POI> getPOIsForRoute() {
         int currentLocation = startLocation;
-        List<POI> poi = new ArrayList<POI>();
+        List<POI> poi = new ArrayList<>();
         do {
             InputStream is = null;
             try {
@@ -68,7 +68,7 @@ public class POIProvider {
         return poi;
     }
 
-    public static List<POI> getPOIs(InputStream is) {
+    private static List<POI> getPOIs(InputStream is) {
         POIHandler handler = new POIHandler();
         try {
             SAXParser parser = SAXParserFactory.newInstance().newSAXParser();
@@ -94,8 +94,8 @@ class POIHandler extends DefaultHandler {
 
     List<POI> pointsOfInterest;
 
-    public POIHandler() {
-        pointsOfInterest = new ArrayList<POI>();
+    POIHandler() {
+        pointsOfInterest = new ArrayList<>();
     }
 
     public void startElement(String uri, String localName, String name, Attributes attributes) throws SAXException {

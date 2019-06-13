@@ -49,7 +49,7 @@ public class MapContentPresenter {
         return path;
     }
 
-    public List<POI> getPOI() {
+    private List<POI> getPOI() {
         int start = showMapVm.start;
         int end = showMapVm.end;
 

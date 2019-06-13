@@ -32,7 +32,7 @@ public class ShowMapPresenter {
 
     private MenuViewModel initialiseMenu() {
         MenuViewModel menuVm = new MenuViewModel();
-        menuVm.menuItems = new LinkedHashMap<Integer, String>();
+        menuVm.menuItems = new LinkedHashMap<>();
         if(markersVisible) {
             menuVm.menuItems.put(R.id.view_option_hide_markers, globals.getStringFromResource(R.string.hide_markers));
         } else {
@@ -45,7 +45,7 @@ public class ShowMapPresenter {
     private MenuViewModel initialiseMapTypeSubMenu() {
         MenuViewModel mapTypeSubMenu = new MenuViewModel();
         mapTypeSubMenu.nameResource = R.string.change_map_view;
-        mapTypeSubMenu.menuItems = new LinkedHashMap<Integer, String>();
+        mapTypeSubMenu.menuItems = new LinkedHashMap<>();
 
         if(mapType != GoogleMap.MAP_TYPE_HYBRID)
             mapTypeSubMenu.menuItems.put(R.id.view_option_satellite, globals.getStringFromResource(R.string.satellite_view));

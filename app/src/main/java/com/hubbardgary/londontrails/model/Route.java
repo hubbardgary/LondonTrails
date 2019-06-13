@@ -22,11 +22,11 @@ public abstract class Route {
         return sections[i];
     }
 
-    public void setSections(Section[] sections) {
+    void setSections(Section[] sections) {
         this.sections = sections;
     }
 
-    public void setSection(int i, Section section) {
+    void setSection(int i, Section section) {
         this.sections[i] = section;
     }
 
@@ -34,7 +34,7 @@ public abstract class Route {
         return circular;
     }
 
-    public void setCircular(boolean circular) {
+    void setCircular(boolean circular) {
         this.circular = circular;
     }
 
@@ -42,7 +42,7 @@ public abstract class Route {
         return linear;
     }
 
-    public void setLinear(boolean linear) {
+    void setLinear(boolean linear) {
         this.linear = linear;
     }
 
@@ -58,7 +58,7 @@ public abstract class Route {
         return shortName;
     }
 
-    public void setShortName(String shortName) {
+    void setShortName(String shortName) {
         this.shortName = shortName;
     }
 
@@ -66,7 +66,7 @@ public abstract class Route {
         return distanceInKm;
     }
 
-    public void setDistanceInKm(double distanceInKm) {
+    void setDistanceInKm(double distanceInKm) {
         this.distanceInKm = distanceInKm;
     }
 }

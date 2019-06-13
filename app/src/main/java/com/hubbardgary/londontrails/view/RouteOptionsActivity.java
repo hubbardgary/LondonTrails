@@ -3,7 +3,6 @@ package com.hubbardgary.londontrails.view;
 import android.content.Intent;
 import android.os.Bundle;
 import android.app.Activity;
-import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.view.View.OnClickListener;
@@ -15,6 +14,7 @@ import android.widget.TextView;
 
 import java.util.HashMap;
 import java.util.List;
+import java.util.Locale;
 import java.util.Map;
 
 import com.hubbardgary.londontrails.R;
@@ -89,7 +89,7 @@ public class RouteOptionsActivity extends Activity implements IRouteOptionsView,
     private Spinner populateSpinner(int spinnerId, List<String> contents) {
         Spinner spinner = (Spinner) findViewById(spinnerId);
         ArrayAdapter<String> dataAdapter;
-        dataAdapter = new ArrayAdapter<String>(this, android.R.layout.simple_spinner_item, contents);
+        dataAdapter = new ArrayAdapter<>(this, android.R.layout.simple_spinner_item, contents);
         dataAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
         spinner.setAdapter(dataAdapter);
         dataAdapter.notifyDataSetChanged();
@@ -160,6 +160,6 @@ public class RouteOptionsActivity extends Activity implements IRouteOptionsView,
 
     public void refreshDistance(RouteViewModel vm) {
         TextView txtDistance = (TextView) findViewById(R.id.DistanceValue);
-        txtDistance.setText(String.format("%.2f km (%.2f miles)", vm.distanceKm, vm.distanceMiles));
+        txtDistance.setText(String.format(Locale.UK, "%.2f km (%.2f miles)", vm.distanceKm, vm.distanceMiles));
     }
 }

@@ -44,7 +44,7 @@ public class Section {
         return getResource(routeId, sectionId, "placemarks");
     }
 
-    public void setSectionId(String id) {
+    void setSectionId(String id) {
         this.sectionId = id;
     }
 
@@ -52,7 +52,7 @@ public class Section {
         return startLocationName;
     }
 
-    public void setStartLocationName(String startLocationName) {
+    void setStartLocationName(String startLocationName) {
         this.startLocationName = startLocationName;
     }
 
@@ -60,7 +60,7 @@ public class Section {
         return endLocationName;
     }
 
-    public void setEndLocationName(String endLocationName) {
+    void setEndLocationName(String endLocationName) {
         this.endLocationName = endLocationName;
     }
 
@@ -68,7 +68,7 @@ public class Section {
         return distanceInKm;
     }
 
-    public void setDistanceInKm(double distanceInKm) {
+    void setDistanceInKm(double distanceInKm) {
         this.distanceInKm = distanceInKm;
     }
 
@@ -76,7 +76,7 @@ public class Section {
         return startLinkDistanceInKm;
     }
 
-    public void setStartLinkDistanceInKm(double startLinkDistanceInKm) {
+    void setStartLinkDistanceInKm(double startLinkDistanceInKm) {
         this.startLinkDistanceInKm = startLinkDistanceInKm;
     }
 
@@ -84,7 +84,7 @@ public class Section {
         return endLinkDistanceInKm;
     }
 
-    public void setEndLinkDistanceInKm(double endLinkDistanceInKm) {
+    void setEndLinkDistanceInKm(double endLinkDistanceInKm) {
         this.endLinkDistanceInKm = endLinkDistanceInKm;
     }
 
@@ -92,7 +92,7 @@ public class Section {
         return extensionDistanceInKm;
     }
 
-    public void setExtensionDistanceInKm(double extensionDistanceInKm) {
+    void setExtensionDistanceInKm(double extensionDistanceInKm) {
         this.extensionDistanceInKm = extensionDistanceInKm;
     }
 
@@ -100,7 +100,7 @@ public class Section {
         return extensionDescription;
     }
 
-    public void setExtensionDescription(String extensionDescription) {
+    void setExtensionDescription(String extensionDescription) {
         this.extensionDescription = extensionDescription;
     }
 }

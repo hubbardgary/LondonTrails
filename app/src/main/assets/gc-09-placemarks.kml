@@ -3,7 +3,7 @@
 <Document>
   <Placemark>
     <name>Chislehurst Link</name>
-    <description>This optional out-and-back extension will add an extra 1.7 miles (2.8 km) to your walk and will take you to the village of Chislehurst.</description>
+    <description>This optional out-and-back extension will add an extra 2.8 km (1.74 miles) each way to your walk and will take you to the village of Chislehurst.</description>
     <styleUrl>#style1</styleUrl>
     <Point>
       <coordinates>0.0382657,51.4223943,0.000000</coordinates>
@@ -52,7 +52,7 @@
   </Placemark>
   <Placemark>
     <name>End of Section 9</name>
-    <description>Section 9 officially ends here. From here, you can either retrace your steps to end your walk at Ravensbourne Rail Station, or continue onto Section 8.</description>
+    <description>Section 9 ends here. From here, you can either retrace your steps to end your walk at Ravensbourne Rail Station, or continue onto Section 8.</description>
     <styleUrl>#style1</styleUrl>
     <Point>
       <coordinates>-0.0123938,51.4174506,0.000000</coordinates>

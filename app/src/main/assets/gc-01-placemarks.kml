@@ -2,14 +2,6 @@
 <kml xmlns="http://earth.google.com/kml/2.2">
 <Document>
   <Placemark>
-    <name>Thamesmead Estate</name>
-    <description><![CDATA[Thamesmead was conceived as a new town by the Greater London Council in the mid 1960s, intended to house 60,000 people and provide large areas of parkland and lakes. Due to financial constraints, the construction deviated from the original plan, and has been described as bearing "little resemblance to the ideal community" envisaged by the original designers. Development of the area is still ongoing.]]></description>
-    <styleUrl>#style1</styleUrl>
-    <Point>
-      <coordinates>0.1175577,51.5058075,0.000000</coordinates>
-    </Point>
-  </Placemark>
-  <Placemark>
     <name>Southmere Lake</name>
     <description>Southmere Lake was formed in the 1960s as a result of a large drainage operation to allow the building of Thamesmead estate on Erith marshes.</description>
     <styleUrl>#style1</styleUrl>
@@ -35,7 +27,7 @@
   </Placemark>
   <Placemark>
     <name>End of Section 1</name>
-    <description>Section 1 officially ends here. From here, you can continue onto Section 2, or retrace your steps to end your walk at Abbey Wood Rail Station.</description>
+    <description>Section 1 ends here. From here, you can continue onto Section 2, or retrace your steps to end your walk at Abbey Wood Rail Station.</description>
     <styleUrl>#style1</styleUrl>
     <Point>
       <coordinates>0.1288318,51.4873444,0.000000</coordinates>

@@ -44,7 +44,7 @@
   </Placemark>
   <Placemark>
     <name>Oxleas Meadows Link</name>
-    <description>This optional out-and-back extension will add an extra 1.74 miles (2.8 km) each way to your walk.</description>
+    <description>This optional out-and-back extension will add an extra 2.8 km (1.74 miles) each way to your walk.</description>
     <styleUrl>#style1</styleUrl>
     <Point>
       <coordinates>0.081850,51.481780,0.000000</coordinates>
@@ -72,6 +72,14 @@
     <styleUrl>#style1</styleUrl>
     <Point>
       <coordinates>0.093723,51.482439,0.000000</coordinates>
+    </Point>
+  </Placemark>
+  <Placemark>
+    <name>Bostall Woods</name>
+    <description><![CDATA[This ancient woodland was previously called Old Park Wood, and it is said that the highwayman Dick Turpin hid here to avoid capture by the King's soldiers. It was acquired for public use in 1891.]]></description>
+    <styleUrl>#style1</styleUrl>
+    <Point>
+      <coordinates>0.10704,51.4815,0.000000</coordinates>
     </Point>
   </Placemark>
 </Document>

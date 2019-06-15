@@ -27,7 +27,7 @@
   </Placemark>
   <Placemark>
     <name>Chinbrook Link</name>
-    <description>This optional out-and-back extension will add an extra 0.85 miles (1.4 km) each way to your walk.</description>
+    <description>This optional out-and-back extension will add an extra 1.4 km (0.85 miles) each way to your walk.</description>
     <styleUrl>#style1</styleUrl>
     <Point>
       <coordinates>0.0279032,51.4335281,0.000000</coordinates>

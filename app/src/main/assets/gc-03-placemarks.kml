@@ -6,7 +6,23 @@
     <description><![CDATA[This ancient woodland was previously called Old Park Wood, and it is said that the highwayman Dick Turpin hid here to avoid capture by the King's soldiers. It was acquired for public use in 1891.]]></description>
     <styleUrl>#style1</styleUrl>
     <Point>
-      <coordinates>0.1098743,51.4816942,0.000000</coordinates>
+      <coordinates>0.11435,51.48054,0.000000</coordinates>
+    </Point>
+  </Placemark>
+  <Placemark>
+    <name>East Wickham Open Space</name>
+    <description><![CDATA[Post World War II, part of this space was used as a landfill for bomb damage rubble. Since then, it has been levelled and grassed over to form a large recreation area.]]></description>
+    <styleUrl>#style1</styleUrl>
+    <Point>
+      <coordinates>0.10276,51.47292,0.000000</coordinates>
+    </Point>
+  </Placemark>
+  <Placemark>
+    <name>Woodlands Farm Fork</name>
+    <description>The main route takes you away from the road onto a footpath through Woodlands Farm. If you encounter any locked gates on this stretch, you can instead follow the less scenic route along Keats Road.</description>
+    <styleUrl>#style1</styleUrl>
+    <Point>
+      <coordinates>0.0930503,51.4722241,0.000000</coordinates>
     </Point>
   </Placemark>
   <Placemark>
@@ -19,7 +35,7 @@
   </Placemark>
   <Placemark>
     <name>End of Section 3</name>
-    <description>Section 3 officially ends here. From here, you can either continue onto Section 4 or 5, or retrace your steps to the main section end point at Falconwood Rail Station.</description>
+    <description>Section 3 ends here. From here, you can either continue onto Section 4 or 5, or retrace your steps to the main section end point at Falconwood Rail Station.</description>
     <styleUrl>#style1</styleUrl>
     <Point>
       <coordinates>0.0695988,51.4664803,0.000000</coordinates>

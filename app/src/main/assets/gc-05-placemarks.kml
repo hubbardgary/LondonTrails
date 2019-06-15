@@ -3,7 +3,7 @@
 <Document>
   <Placemark>
     <name>Thames Barrier</name>
-    <description>Built as part of the Thames Barrier system in 1981, this barrier, consisting of two 160 tonne steel gates, provides flood protection for the homes and businesses in the Dartford and Crayford area.</description>
+    <description><![CDATA[The Thames Barrier is one of the largest movable flood barriers in the world, and was opened in 1982. It protects central London from high tides moving in from the North Sea.]]></description>
     <styleUrl>#style1</styleUrl>
     <Point>
       <coordinates>0.037163,51.4972313,0.000000</coordinates>

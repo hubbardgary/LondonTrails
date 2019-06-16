@@ -35,7 +35,7 @@
   </Placemark>
   <Placemark>
     <name>Severndroog Castle</name>
-    <description>Nestled on one of the highest points in South London, this intriguing folly was built in 1784 as a memorial for Commodore William James who captured the fort of Suvarnadurg in India in 1755. It was opened to the public in 2014 following renovation.</description>
+    <description><![CDATA[Nestled on one of the highest points in South London, this intriguing folly was built in 1784 as a memorial for Commodore William James who captured the fort of Suvarnadurg in India in 1755. It was opened to the public in 2014 following renovation.]]></description>
     <styleUrl>#style1</styleUrl>
     <Point>
       <coordinates>0.0600537,51.4666124,0.000000</coordinates>

@@ -7,6 +7,7 @@ import com.hubbardgary.londontrails.model.Section;
 
 import java.io.IOException;
 import java.io.InputStream;
+import java.util.Arrays;
 
 import javax.xml.parsers.ParserConfigurationException;
 import javax.xml.parsers.SAXParser;
@@ -65,10 +66,16 @@ public class CoordinateProvider {
     private String AppendCoordinates(String filename) {
         InputStream is = null;
         try {
-            is = assetManager.open(filename);
-            return getRoute(is);
+            String[] assetList = assetManager.list("");
+
+            // Not all routes have a start or end link.
+            // Don't bother trying to open a file that doesn't exist
+            if (assetList != null && Arrays.asList(assetList).contains(filename)) {
+                is = assetManager.open(filename);
+                return getRoute(is);
+            }
         } catch (IOException e) {
-            // Not all routes have a start or end link. Swallow any exception here.
+            // Couldn't open the required asset. Possibly the user's install is corrupted.
         }
         finally {
             try {
@@ -76,6 +83,7 @@ public class CoordinateProvider {
                     is.close();
                 }
             } catch (IOException e) {
+                // Problem closing the file.
             }
         }
         return "";
@@ -131,18 +139,16 @@ class CoordinateProviderHandler extends DefaultHandler {
     CoordinateProviderHandler() {
     }
 
-    public void startElement(String uri, String localName, String name, Attributes attributes) throws SAXException {
+    public void startElement(String uri, String localName, String name, Attributes attributes) {
         elementContent = new StringBuffer();
     }
 
-    public void characters(char[] ch, int start, int length)
-            throws SAXException {
+    public void characters(char[] ch, int start, int length) {
         String chars = new String(ch, start, length).trim();
         elementContent.append(chars);
     }
 
-    public void endElement(String uri, String localName, String name)
-            throws SAXException {
+    public void endElement(String uri, String localName, String name) {
         if (elementContent.length() > 0) {
             if (localName.equalsIgnoreCase("coordinates")) {
                 coordinates = elementContent.toString();

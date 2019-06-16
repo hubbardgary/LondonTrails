@@ -98,7 +98,7 @@ class POIHandler extends DefaultHandler {
         pointsOfInterest = new ArrayList<>();
     }
 
-    public void startElement(String uri, String localName, String name, Attributes attributes) throws SAXException {
+    public void startElement(String uri, String localName, String name, Attributes attributes) {
         if (name.equalsIgnoreCase("placemark")) {
             currentPOI = new POI();
         } else if (name.equalsIgnoreCase("name")) {
@@ -112,9 +112,7 @@ class POIHandler extends DefaultHandler {
         }
     }
 
-    public void characters(char[] ch, int start, int length)
-            throws SAXException {
-
+    public void characters(char[] ch, int start, int length) {
         if (name) {
             currentPOI.setTitle(new String(ch, start, length));
             name = false;
@@ -137,8 +135,7 @@ class POIHandler extends DefaultHandler {
         }
     }
 
-    public void endElement(String uri, String localName, String name)
-            throws SAXException {
+    public void endElement(String uri, String localName, String name) {
         if (name.equalsIgnoreCase("placemark")) {
             pointsOfInterest.add(currentPOI);
         }

@@ -11,6 +11,7 @@ import com.google.android.gms.maps.model.Marker;
 import com.google.android.gms.maps.model.MarkerOptions;
 import com.google.android.gms.maps.model.PolylineOptions;
 import com.hubbardgary.londontrails.R;
+import com.hubbardgary.londontrails.model.LondonTrailsPlacemark;
 import com.hubbardgary.londontrails.model.POI;
 import com.hubbardgary.londontrails.model.Route;
 import com.hubbardgary.londontrails.presenter.MapContentPresenter;
@@ -97,19 +98,19 @@ public class MapContentActivity extends AsyncTask<Void, Void, Integer> implement
     }
 
     private void addWayPointMarkers() {
-        List<Marker> markers = new ArrayList<>();
+        List<LondonTrailsPlacemark> placemarks = new ArrayList<>();
         for (POI p : vm.poi) {
-            markers.add(
-                pushPin(
+            Marker marker = pushPin(
                     p.getLatitude(),
                     p.getLongitude(),
                     p.getTitle(),
                     p.getSnippet(),
                     p.getIsAlternativeEndPoint() ? R.drawable.waypoint_stop : R.drawable.waypoint_pause
-                )
-            );
+                );
+
+            placemarks.add(new LondonTrailsPlacemark(marker, p.getIsAlternativeEndPoint()));
         }
-        showMapActivity.setMarkers(markers);
+        showMapActivity.setPlacemarks(placemarks);
     }
 
     public void getPath(PathViewModel path) {

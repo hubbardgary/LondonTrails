@@ -31,6 +31,7 @@ import java.util.concurrent.TimeUnit;
 
 import com.hubbardgary.londontrails.config.GlobalObjects;
 import com.hubbardgary.londontrails.R;
+import com.hubbardgary.londontrails.model.LondonTrailsPlacemark;
 import com.hubbardgary.londontrails.presenter.ShowMapPresenter;
 import com.hubbardgary.londontrails.view.interfaces.IShowMapView;
 import com.hubbardgary.londontrails.viewmodel.ShowMapViewModel;
@@ -46,7 +47,7 @@ public class ShowMapActivity extends FragmentActivity implements
     private final Context currentContext = this;
     private GoogleMap map;
     private LatLngBounds.Builder defaultBounds;
-    private List<Marker> markers;
+    private List<LondonTrailsPlacemark> placemarks;
     private Polyline mapRoute;  // Provides a means of accessing the polyline from within the map
     private boolean mapLoaded = false;
     private boolean showToast = true;
@@ -67,8 +68,8 @@ public class ShowMapActivity extends FragmentActivity implements
         this.mapRoute = mapRoute;
     }
 
-    public void setMarkers(List<Marker> markers) {
-        this.markers = markers;
+    public void setPlacemarks(List<LondonTrailsPlacemark> placemarks) {
+        this.placemarks = placemarks;
     }
 
     public void setDefaultBounds(LatLngBounds.Builder defaultBounds) {
@@ -87,8 +88,10 @@ public class ShowMapActivity extends FragmentActivity implements
 
     @Override
     public void setMarkerVisibility(boolean visibility) {
-        for (Marker m : markers) {
-            m.setVisible(visibility);
+        for (LondonTrailsPlacemark p : placemarks) {
+            if (!p.isAlwaysShow()) {
+                p.getGoogleMapsMarker().setVisible(visibility);
+            }
         }
     }
 

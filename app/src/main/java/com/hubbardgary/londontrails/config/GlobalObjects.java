@@ -7,6 +7,7 @@ import android.text.Html;
 import com.google.android.gms.maps.GoogleMap;
 import com.hubbardgary.londontrails.R;
 import com.hubbardgary.londontrails.model.CapitalRing;
+import com.hubbardgary.londontrails.model.GreenChainWalk;
 import com.hubbardgary.londontrails.model.LondonLoop;
 import com.hubbardgary.londontrails.model.Route;
 
@@ -28,6 +29,9 @@ public class GlobalObjects extends Application {
                 break;
             case R.id.rte_capital_ring:
                 currentRoute = new CapitalRing();
+                break;
+            case R.id.rte_green_chain_walk:
+                currentRoute = new GreenChainWalk();
                 break;
         }
         return currentRoute;

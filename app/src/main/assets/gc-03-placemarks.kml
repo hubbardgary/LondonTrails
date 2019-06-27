@@ -27,7 +27,7 @@
   </Placemark>
   <Placemark>
     <name>Oxleas Wood</name>
-    <description>Oxleas Wood is one of the few remaining areas of ancient deciduous forest in Eltham, with some parts dating back to the last Ice Age over 8000 years ago. The woods are home to the Oxleas Wood Apiary which is managed by apiarist John Large.</description>
+    <description>Oxleas Wood is one of the few remaining areas of ancient deciduous forest in Eltham, with some parts dating back to the last Ice Age over 8000 years ago.</description>
     <styleUrl>#style1</styleUrl>
     <Point>
       <coordinates>0.069909,51.4674092,0.000000</coordinates>

@@ -36,7 +36,7 @@
   </Placemark>
   <Placemark>
     <name>Royal Artillery Barracks</name>
-    <description>This large structure was originally built in 1776, and was later doubled in size. It was home of the Royal Artillery until 2007. The shooting events of the 2012 Olympics were hosted here. In the early 1980s, it was targeted by the IRA in two bomb attacks, and in May 2013, drummer Lee Rigby was murdered outside the barracks in a terrorist attack.</description>
+    <description>This large structure was originally built in 1776, and was later doubled in size. It was home to the Royal Artillery until 2007. The shooting events of the 2012 Olympics were hosted here. In the early 1980s, it was targeted by the IRA in two bomb attacks, and in May 2013, drummer Lee Rigby was murdered outside the barracks in a terrorist attack.</description>
     <styleUrl>#style1</styleUrl>
     <Point>
       <coordinates>0.0594579,51.486509,0.000000</coordinates>
@@ -52,7 +52,7 @@
   </Placemark>
   <Placemark>
     <name>Oxleas Wood</name>
-    <description>Oxleas Wood is one of the few remaining areas of ancient deciduous forest in Eltham, with some parts dating back to the last Ice Age over 8000 years ago. The woods are home to the Oxleas Wood Apiary which is managed by apiarist John Large.</description>
+    <description>Oxleas Wood is one of the few remaining areas of ancient deciduous forest in Eltham, with some parts dating back to the last Ice Age over 8000 years ago.</description>
     <styleUrl>#style1</styleUrl>
     <Point>
       <coordinates>0.069909,51.4674092,0.000000</coordinates>

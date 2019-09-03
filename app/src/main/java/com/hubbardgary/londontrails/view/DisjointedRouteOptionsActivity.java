@@ -112,7 +112,7 @@ public class DisjointedRouteOptionsActivity extends Activity implements IRouteOp
     }
 
     // IRouteOptions methods. Invoked from presenter.
-    public void invokeActivity(HashMap<String, Integer> intents, Class<?> activity) {
+    public void invokeActivity(Map<String, Integer> intents, Class<?> activity) {
         Intent intent = new Intent(this, activity);
         for (Map.Entry<String, Integer> entry : intents.entrySet()) {
             intent.putExtra(entry.getKey(), entry.getValue());

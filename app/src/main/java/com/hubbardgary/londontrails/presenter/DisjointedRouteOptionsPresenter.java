@@ -53,6 +53,7 @@ public class DisjointedRouteOptionsPresenter {
     public void activitySubmit(RouteViewModel vm) {
         HashMap<String, Integer> intents = new HashMap<>();
         intents.put("startSection", vm.startSection);
+        // TODO: Remove endSection from DisjointedRouteViewModel. Rename all things to LinearRoute and NonLinearRoute instead of Route and DisjointedRoute.
         intents.put("endSection", vm.startSection);
         view.invokeActivity(intents, ShowMapActivity.class);
     }

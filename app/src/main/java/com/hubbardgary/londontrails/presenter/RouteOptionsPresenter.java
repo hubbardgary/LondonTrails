@@ -139,6 +139,9 @@ public class RouteOptionsPresenter {
     }
 
     public RouteViewModel optionsChanged(RouteViewModel vm) {
+        if (!vm.isCircular && vm.startSection == vm.endSection) {
+            throw new IllegalArgumentException("Start section and end section must be different for non-circular routes.");
+        }
         vm = updateDistance(vm);
         view.refreshDistance(vm);
         return vm;

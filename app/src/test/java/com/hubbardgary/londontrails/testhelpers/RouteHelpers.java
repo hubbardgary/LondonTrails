@@ -1,4 +1,4 @@
-package com.hubbardgary.londontrails.presenter;
+package com.hubbardgary.londontrails.testhelpers;
 
 import android.content.res.Resources;
 
@@ -11,9 +11,9 @@ import com.hubbardgary.londontrails.view.interfaces.IRouteOptionsView;
 import static org.mockito.Matchers.anyInt;
 import static org.mockito.Mockito.when;
 
-public class TestHelpers {
+public class RouteHelpers {
 
-    public static Section setupLinearSection(Route route,
+    private static Section setupLinearSection(Route route,
                                              String id,
                                              String startLocation,
                                              String endLocation,
@@ -30,7 +30,7 @@ public class TestHelpers {
         return section;
     }
 
-    public static Section setupNonLinearSection(Route route,
+    private static Section setupNonLinearSection(Route route,
                                                 String id,
                                                 String startLocation,
                                                 String endLocation,
@@ -50,10 +50,10 @@ public class TestHelpers {
         // Start links         (1.2)       (0.3)         (0.0)        (0.5)
         // Section distance  a (7.2)---> b (12.8) ---> c (6.9) ---> a (8.3)
         // End links           (0.3)       (0.0)         (0.5)        (1.2)
-        Section section0 = setupLinearSection(mockRoute, "a", "a", "b", 7.2, 1.2, 0.3);
-        Section section1 = setupLinearSection(mockRoute, "b", "b", "c", 12.8, 0.3, 0.0);
-        Section section2 = setupLinearSection(mockRoute, "c", "c", "d", 6.9, 0.0, 0.5);
-        Section section3 = setupLinearSection(mockRoute, "d", "d", "a", 8.3, 0.5, 1.2);
+        Section section0 = setupLinearSection(mockRoute, "01", "a", "b", 7.2, 1.2, 0.3);
+        Section section1 = setupLinearSection(mockRoute, "02", "b", "c", 12.8, 0.3, 0.0);
+        Section section2 = setupLinearSection(mockRoute, "03", "c", "d", 6.9, 0.0, 0.5);
+        Section section3 = setupLinearSection(mockRoute, "04", "d", "a", 8.3, 0.5, 1.2);
 
         when(mockRoute.getSection(0)).thenReturn(section0);
         when(mockRoute.getSection(1)).thenReturn(section1);
@@ -75,10 +75,10 @@ public class TestHelpers {
         // Start links         (1.2)       (0.3)         (0.0)        (0.5)
         // Section distance  a (7.2)---> b (12.8) ---> c (6.9) ---> d (14.9)
         // End links           (0.3)       (0.0)         (0.5)        (1.3)
-        Section section0 = setupLinearSection(mockRoute, "a", "a", "b", 7.2, 1.2, 0.3);
-        Section section1 = setupLinearSection(mockRoute, "b", "b", "c", 12.8, 0.3, 0.0);
-        Section section2 = setupLinearSection(mockRoute, "c", "c", "d", 6.9, 0.0, 0.5);
-        Section section3 = setupLinearSection(mockRoute, "d", "d", "e", 14.9, 0.5, 1.3);
+        Section section0 = setupLinearSection(mockRoute, "01", "a", "b", 7.2, 1.2, 0.3);
+        Section section1 = setupLinearSection(mockRoute, "02", "b", "c", 12.8, 0.3, 0.0);
+        Section section2 = setupLinearSection(mockRoute, "03", "c", "d", 6.9, 0.0, 0.5);
+        Section section3 = setupLinearSection(mockRoute, "04", "d", "e", 14.9, 0.5, 1.3);
 
         when(mockRoute.getSection(0)).thenReturn(section0);
         when(mockRoute.getSection(1)).thenReturn(section1);
@@ -96,10 +96,10 @@ public class TestHelpers {
     }
 
     public static void setupNonLinearRoute(Route mockRoute, IRouteOptionsView mockView, Resources mockResources, GlobalObjects mockGlobals) {
-        Section section0 = setupNonLinearSection(mockRoute, "a", "a start", "a end", 5.5, 0.1, 0.6, 0.0, "");
-        Section section1 = setupNonLinearSection(mockRoute, "b", "b start", "b end", 7.2, 0.6, 0.2, 0.8, "b extension");
-        Section section2 = setupNonLinearSection(mockRoute, "c", "c start", "c end", 10.3, 0.0, 0.9, 1.5, "c extension");
-        Section section3 = setupNonLinearSection(mockRoute, "d", "d start", "d end", 6.4, 1.2, 0.1, 0.0, "");
+        Section section0 = setupNonLinearSection(mockRoute, "01", "a start", "a end", 5.5, 0.1, 0.6, 0.0, "");
+        Section section1 = setupNonLinearSection(mockRoute, "02", "b start", "b end", 7.2, 0.6, 0.2, 0.8, "b extension");
+        Section section2 = setupNonLinearSection(mockRoute, "03", "c start", "c end", 10.3, 0.0, 0.9, 1.5, "c extension");
+        Section section3 = setupNonLinearSection(mockRoute, "04", "d start", "d end", 6.4, 1.2, 0.1, 0.0, "");
 
         when(mockRoute.getSection(0)).thenReturn(section0);
         when(mockRoute.getSection(1)).thenReturn(section1);

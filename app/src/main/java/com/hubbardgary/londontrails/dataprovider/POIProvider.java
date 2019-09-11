@@ -27,6 +27,20 @@ public class POIProvider {
     private int endLocation;
 
     public POIProvider(Route route, AssetManager assetManager, int startLocation, int endLocation) {
+
+        if (!route.isLinear() && startLocation != endLocation) {
+            throw new IllegalArgumentException("Non-linear routes must have matching startLocation and endLocation.");
+        }
+        if (startLocation < 0 || startLocation > route.getSections().length - 1) {
+            throw new IllegalArgumentException("startLocation must be a valid section start point.");
+        }
+        if (endLocation < 0 || endLocation > route.getSections().length - 1) {
+            throw new IllegalArgumentException("endLocation must be a valid section end point.");
+        }
+        if (route.isLinear() && !route.isCircular() && endLocation <= startLocation) {
+            throw new IllegalArgumentException("endLocation must be greater than startLocation for non-circular routes.");
+        }
+
         this.startLocation = startLocation;
         this.endLocation = endLocation;
         this.route = route;

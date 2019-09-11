@@ -45,7 +45,7 @@ public class MapContentPresenter {
         }
         CoordinateProvider cp = new CoordinateProvider(showMapVm.route, view.getAssetManager(), start, end);
         PathViewModel path = new PathViewModel();
-        path.setWayPoints(cp.GetPathWayPoints());
+        path.setWayPoints(cp.getPathWayPoints());
         return path;
     }
 

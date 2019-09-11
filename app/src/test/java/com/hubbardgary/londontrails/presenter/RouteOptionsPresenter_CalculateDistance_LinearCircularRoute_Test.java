@@ -3,6 +3,7 @@ package com.hubbardgary.londontrails.presenter;
 import android.content.res.Resources;
 
 import com.hubbardgary.londontrails.R;
+import com.hubbardgary.londontrails.testhelpers.RouteHelpers;
 import com.hubbardgary.londontrails.config.GlobalObjects;
 import com.hubbardgary.londontrails.model.Route;
 import com.hubbardgary.londontrails.view.interfaces.IRouteOptionsView;
@@ -101,7 +102,7 @@ public class RouteOptionsPresenter_CalculateDistance_LinearCircularRoute_Test {
     @Test
     public void optionsChanged_LinearCircularRoute_ShouldCalculateCorrectDistance() {
         // Arrange
-        TestHelpers.setupLinearCircularRoute(mockRoute, mockView, mockResources, mockGlobals);
+        RouteHelpers.setupLinearCircularRoute(mockRoute, mockView, mockResources, mockGlobals);
         RouteViewModel vm = new RouteViewModel("Test vm", new String[0], true, new ArrayList<String>());
         vm.startSection = startSection;
         vm.endSection = endSection;

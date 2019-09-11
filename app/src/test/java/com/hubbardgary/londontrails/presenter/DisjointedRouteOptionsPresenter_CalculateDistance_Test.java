@@ -2,6 +2,7 @@ package com.hubbardgary.londontrails.presenter;
 
 import android.content.res.Resources;
 
+import com.hubbardgary.londontrails.testhelpers.RouteHelpers;
 import com.hubbardgary.londontrails.config.GlobalObjects;
 import com.hubbardgary.londontrails.model.Route;
 import com.hubbardgary.londontrails.view.interfaces.IRouteOptionsView;
@@ -26,7 +27,6 @@ public class DisjointedRouteOptionsPresenter_CalculateDistance_Test {
     private Resources mockResources;
     private IRouteOptionsView mockView;
     private Route mockRoute;
-    private DisjointedRouteOptionsPresenter _sut;
 
     @Before
     public void setUp() {
@@ -65,7 +65,7 @@ public class DisjointedRouteOptionsPresenter_CalculateDistance_Test {
     @Test
     public void optionsChanged_LinearNonCircularRoute_ShouldCalculateCorrectDistance() {
         // Arrange
-        TestHelpers.setupNonLinearRoute(mockRoute, mockView, mockResources, mockGlobals);
+        RouteHelpers.setupNonLinearRoute(mockRoute, mockView, mockResources, mockGlobals);
         RouteViewModel vm = new RouteViewModel("Test vm", new String[0], false, new ArrayList<String>());
         vm.startSection = section;
         vm.endSection = section;

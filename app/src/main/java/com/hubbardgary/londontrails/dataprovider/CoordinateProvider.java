@@ -25,17 +25,31 @@ public class CoordinateProvider {
     private int endLocation;
 
     public CoordinateProvider(Route route, AssetManager assetManager, int startLocation, int endLocation) {
+
+        if (!route.isLinear() && startLocation != endLocation) {
+            throw new IllegalArgumentException("Non-linear routes must have matching startLocation and endLocation.");
+        }
+        if (startLocation < 0 || startLocation > route.getSections().length - 1) {
+            throw new IllegalArgumentException("startLocation must be a valid section start point.");
+        }
+        if (endLocation < 0 || endLocation > route.getSections().length - 1) {
+            throw new IllegalArgumentException("endLocation must be a valid section end point.");
+        }
+        if (route.isLinear() && !route.isCircular() && endLocation <= startLocation) {
+            throw new IllegalArgumentException("endLocation must be greater than startLocation for non-circular routes.");
+        }
+
         this.startLocation = startLocation;
         this.endLocation = endLocation;
         this.route = route;
         this.assetManager = assetManager;
     }
 
-    public double[][] GetPathWayPoints() {
-        return ParseCoordinates(GetCoordinatesString());
+    public double[][] getPathWayPoints() {
+        return parseCoordinates(getCoordinatesString());
     }
 
-    private String GetCoordinatesString() {
+    private String getCoordinatesString() {
         int currentLocation = startLocation;
         StringBuilder coordinates = new StringBuilder();
 
@@ -43,19 +57,19 @@ public class CoordinateProvider {
             Section s = route.getSection(currentLocation);
 
             if (currentLocation == startLocation) {
-                coordinates.append(AppendCoordinates(s.getStartLinkResource(s.getRouteShortName())));
+                coordinates.append(appendCoordinates(s.getStartLinkResource(s.getRouteShortName())));
             }
 
-            coordinates.append(AppendCoordinates(s.getSectionResource(s.getRouteShortName())));
+            coordinates.append(appendCoordinates(s.getSectionResource(s.getRouteShortName())));
 
             // If route is not linear, we only display one section at a time,
             // so no need to increment the section.
             if (route.isLinear()) {
-                currentLocation = NextSection(currentLocation);
+                currentLocation = nextSection(currentLocation);
             }
 
             if (currentLocation == endLocation) {
-                coordinates.append(AppendCoordinates(s.getEndLinkResource(s.getRouteShortName())));
+                coordinates.append(appendCoordinates(s.getEndLinkResource(s.getRouteShortName())));
             }
         }
         while(currentLocation != endLocation);
@@ -63,7 +77,7 @@ public class CoordinateProvider {
         return coordinates.toString();
     }
 
-    private String AppendCoordinates(String filename) {
+    private String appendCoordinates(String filename) {
         InputStream is = null;
         try {
             String[] assetList = assetManager.list("");
@@ -89,7 +103,7 @@ public class CoordinateProvider {
         return "";
     }
 
-    private int NextSection(int currentLocation) {
+    private int nextSection(int currentLocation) {
         // If it's a circular route, allow wraparound from last section to first section
         if (route.isCircular() && currentLocation == route.getSections().length - 1) {
             return 0;
@@ -97,7 +111,7 @@ public class CoordinateProvider {
             return currentLocation + 1;
         }
     }
-    private double[][] ParseCoordinates(String coordinates) {
+    private double[][] parseCoordinates(String coordinates) {
         String[] coordinatesParsed;
         coordinatesParsed = coordinates.split(",0.000000"); // SAXParser loses "\n" characters so split on altitude which isn't set
 
@@ -119,7 +133,9 @@ public class CoordinateProvider {
     private static String getRoute(InputStream is) {
         CoordinateProviderHandler handler = new CoordinateProviderHandler();
         try {
-            SAXParser parser = SAXParserFactory.newInstance().newSAXParser();
+            SAXParserFactory saxParserFactory = SAXParserFactory.newInstance();
+            saxParserFactory.setNamespaceAware(true);
+            SAXParser parser = saxParserFactory.newSAXParser();
             parser.parse(is, handler);
         } catch (ParserConfigurationException e) {
             e.printStackTrace();

@@ -56,7 +56,7 @@ public class GlobalObjects extends Application {
         return 0;
     }
 
-    public static CharSequence getButtonText(String title, String subtitle) {
+    public CharSequence getButtonText(String title, String subtitle) {
         return Html.fromHtml("<b><big>" + title + "</big></b>" + "<br />" + "<small>" + subtitle + "</small>");
     }
 

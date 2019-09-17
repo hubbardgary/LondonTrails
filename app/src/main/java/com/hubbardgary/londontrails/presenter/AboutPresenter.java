@@ -1,11 +1,10 @@
 package com.hubbardgary.londontrails.presenter;
 
-import android.text.Html;
 import android.text.Spanned;
 
 import com.hubbardgary.londontrails.BuildConfig;
 import com.hubbardgary.londontrails.R;
-import com.hubbardgary.londontrails.view.AboutActivity;
+import com.hubbardgary.londontrails.proxy.interfaces.IAndroidFrameworkProxy;
 import com.hubbardgary.londontrails.view.GoogleMapsLicenceActivity;
 import com.hubbardgary.londontrails.view.interfaces.IAboutView;
 
@@ -14,9 +13,11 @@ import java.util.HashMap;
 public class AboutPresenter {
 
     private IAboutView view;
+    private IAndroidFrameworkProxy proxy;
 
-    public AboutPresenter(IAboutView view) {
+    public AboutPresenter(IAboutView view, IAndroidFrameworkProxy proxy) {
         this.view = view;
+        this.proxy = proxy;
     }
 
     public void initializeView() {
@@ -50,7 +51,7 @@ public class AboutPresenter {
                 "<br />" +
                 "<br />" +
                 "</body>";
-        return Html.fromHtml(aboutTextHtml);
+        return proxy.fromHtml(aboutTextHtml);
     }
 
     public void buttonClicked(int id) {
@@ -65,7 +66,6 @@ public class AboutPresenter {
         switch (itemId) {
             case android.R.id.home:
                 view.endActivity();
-                return;
         }
     }
 }

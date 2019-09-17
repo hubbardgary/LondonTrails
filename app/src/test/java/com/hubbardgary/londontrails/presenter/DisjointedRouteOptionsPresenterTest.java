@@ -43,7 +43,6 @@ public class DisjointedRouteOptionsPresenterTest {
 
     @Test
     public void getViewModel_ReturnsExpectedViewModel() {
-        // TODO: Does this cover everything? Are there more things to check?
         // Arrange
         when(mockRoute.getName()).thenReturn("Test Route");
         when(mockRoute.isCircular()).thenReturn(false);
@@ -116,7 +115,6 @@ public class DisjointedRouteOptionsPresenterTest {
 
     @Test
     public void optionsChanged_ShouldUpdateDistanceInViewModel() {
-        // TODO: Split into several tests. Can we use NUnit style TestCases?
         // Arrange
         Section mockSection = Mockito.mock(Section.class);
         when(mockSection.getDistanceInKm()).thenReturn(15.0);

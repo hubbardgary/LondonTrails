@@ -18,6 +18,7 @@ import android.widget.Toast;
 import com.google.android.gms.common.ConnectionResult;
 import com.google.android.gms.common.GoogleApiAvailability;
 import com.hubbardgary.londontrails.R;
+import com.hubbardgary.londontrails.config.GlobalObjects;
 import com.hubbardgary.londontrails.view.interfaces.IMainView;
 import com.hubbardgary.londontrails.viewmodel.ButtonViewModel;
 import com.hubbardgary.londontrails.presenter.MainPresenter;
@@ -37,7 +38,7 @@ public class MainActivity extends Activity implements IMainView {
         if(getActionBar() != null) {
             getActionBar().setDisplayHomeAsUpEnabled(true);
         }
-        presenter = new MainPresenter(this);
+        presenter = new MainPresenter(this, new GlobalObjects());
         presenter.initializeView();
     }
 

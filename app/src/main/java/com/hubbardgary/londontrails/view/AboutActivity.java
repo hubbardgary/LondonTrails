@@ -12,6 +12,7 @@ import android.widget.TextView;
 
 import com.hubbardgary.londontrails.R;
 import com.hubbardgary.londontrails.presenter.AboutPresenter;
+import com.hubbardgary.londontrails.proxy.AndroidFrameworkProxy;
 import com.hubbardgary.londontrails.view.interfaces.IAboutView;
 
 import java.util.HashMap;
@@ -29,7 +30,7 @@ public class AboutActivity extends Activity implements IAboutView {
             getActionBar().setDisplayHomeAsUpEnabled(true);
         }
 
-        presenter = new AboutPresenter(this);
+        presenter = new AboutPresenter(this, new AndroidFrameworkProxy());
         presenter.initializeView();
     }
 

@@ -19,9 +19,11 @@ public class MainPresenter {
 
     private IMainView view;
     private List<ButtonViewModel> buttons;
+    private GlobalObjects globals;
 
-    public MainPresenter(IMainView view) {
+    public MainPresenter(IMainView view, GlobalObjects globals) {
         this.view = view;
+        this.globals = globals;
     }
 
     public void initializeView() {
@@ -32,9 +34,9 @@ public class MainPresenter {
     private List<ButtonViewModel> getButtons() {
         if(buttons == null) {
             buttons = new ArrayList<>();
-            buttons.add(new ButtonViewModel(R.id.rte_green_chain_walk, GlobalObjects.getButtonText(GreenChainWalk.getRouteName(), GreenChainWalk.getRouteDistanceText())));
-            buttons.add(new ButtonViewModel(R.id.rte_capital_ring, GlobalObjects.getButtonText(CapitalRing.getRouteName(), CapitalRing.getRouteDistanceText())));
-            buttons.add(new ButtonViewModel(R.id.rte_london_loop, GlobalObjects.getButtonText(LondonLoop.getRouteName(), LondonLoop.getRouteDistanceText())));
+            buttons.add(new ButtonViewModel(R.id.rte_green_chain_walk, globals.getButtonText(GreenChainWalk.getRouteName(), GreenChainWalk.getRouteDistanceText())));
+            buttons.add(new ButtonViewModel(R.id.rte_capital_ring, globals.getButtonText(CapitalRing.getRouteName(), CapitalRing.getRouteDistanceText())));
+            buttons.add(new ButtonViewModel(R.id.rte_london_loop, globals.getButtonText(LondonLoop.getRouteName(), LondonLoop.getRouteDistanceText())));
         }
         return buttons;
     }

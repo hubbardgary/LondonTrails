@@ -8,6 +8,7 @@ import android.widget.TextView;
 
 import com.hubbardgary.londontrails.R;
 import com.hubbardgary.londontrails.presenter.GoogleMapsLicencePresenter;
+import com.hubbardgary.londontrails.proxy.AndroidFrameworkProxy;
 import com.hubbardgary.londontrails.view.interfaces.IGoogleMapsLicenceView;
 
 public class GoogleMapsLicenceActivity extends Activity implements IGoogleMapsLicenceView {
@@ -22,7 +23,7 @@ public class GoogleMapsLicenceActivity extends Activity implements IGoogleMapsLi
             getActionBar().setDisplayHomeAsUpEnabled(true);
         }
 
-        presenter = new GoogleMapsLicencePresenter(this);
+        presenter = new GoogleMapsLicencePresenter(this, new AndroidFrameworkProxy());
         presenter.initializeView();
     }
 

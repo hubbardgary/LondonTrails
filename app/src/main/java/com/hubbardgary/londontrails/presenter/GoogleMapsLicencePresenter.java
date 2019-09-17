@@ -1,14 +1,16 @@
 package com.hubbardgary.londontrails.presenter;
 
-import com.google.android.gms.common.GoogleApiAvailability;
+import com.hubbardgary.londontrails.proxy.interfaces.IAndroidFrameworkProxy;
 import com.hubbardgary.londontrails.view.interfaces.IGoogleMapsLicenceView;
 
 public class GoogleMapsLicencePresenter {
 
     private IGoogleMapsLicenceView view;
+    private IAndroidFrameworkProxy proxy;
 
-    public GoogleMapsLicencePresenter(IGoogleMapsLicenceView view) {
+    public GoogleMapsLicencePresenter(IGoogleMapsLicenceView view, IAndroidFrameworkProxy proxy) {
         this.view = view;
+        this.proxy = proxy;
     }
 
     public void initializeView() {
@@ -17,7 +19,7 @@ public class GoogleMapsLicencePresenter {
     }
 
     private String getGoogleLicenseInfo() {
-        return GoogleApiAvailability.getInstance().getOpenSourceSoftwareLicenseInfo(view.getContext());
+        return proxy.getGoogleLicenseInfo(view);
     }
 
     public void menuItemSelected(int itemId) {

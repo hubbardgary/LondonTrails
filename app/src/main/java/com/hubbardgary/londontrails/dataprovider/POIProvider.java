@@ -19,15 +19,19 @@ import com.hubbardgary.londontrails.model.POI;
 import com.hubbardgary.londontrails.model.Route;
 import com.hubbardgary.londontrails.model.Section;
 
-public class POIProvider {
+public class POIProvider implements com.hubbardgary.londontrails.dataprovider.interfaces.IPOIProvider {
 
     private Route route;
     private AssetManager assetManager;
-    private int startLocation;
-    private int endLocation;
 
-    public POIProvider(Route route, AssetManager assetManager, int startLocation, int endLocation) {
+    @Override
+    public void initialize(Route route, AssetManager assetManager) {
+        this.route = route;
+        this.assetManager = assetManager;
+    }
 
+    @Override
+    public List<POI> getPOIsForRoute(int startLocation, int endLocation) {
         if (!route.isLinear() && startLocation != endLocation) {
             throw new IllegalArgumentException("Non-linear routes must have matching startLocation and endLocation.");
         }
@@ -41,13 +45,6 @@ public class POIProvider {
             throw new IllegalArgumentException("endLocation must be greater than startLocation for non-circular routes.");
         }
 
-        this.startLocation = startLocation;
-        this.endLocation = endLocation;
-        this.route = route;
-        this.assetManager = assetManager;
-    }
-
-    public List<POI> getPOIsForRoute() {
         int currentLocation = startLocation;
         List<POI> poi = new ArrayList<>();
         do {

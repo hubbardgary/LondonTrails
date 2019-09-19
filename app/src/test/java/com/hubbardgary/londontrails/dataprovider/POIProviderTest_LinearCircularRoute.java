@@ -85,6 +85,8 @@ public class POIProviderTest_LinearCircularRoute {
         when(mockRoute.isLinear()).thenReturn(true);
 
         RouteHelpers.setupLinearCircularRoute(mockRoute, mockView, mockResources, mockGlobals);
+        _sut = new POIProvider();
+        _sut.initialize(mockRoute, mockAssetManager);
     }
 
     @Test
@@ -92,10 +94,9 @@ public class POIProviderTest_LinearCircularRoute {
         // Arrange
         List<POI> expectedResult = new ArrayList<>();
         expectedResult.addAll(Arrays.asList(placemarks[0]));
-        _sut = new POIProvider(mockRoute, mockAssetManager, 0, 1);
 
         // Act
-        List<POI> result = _sut.getPOIsForRoute();
+        List<POI> result = _sut.getPOIsForRoute(0, 1);
 
         // Assert
         assertEquals(result, expectedResult);
@@ -106,10 +107,9 @@ public class POIProviderTest_LinearCircularRoute {
         // Arrange
         List<POI> expectedResult = new ArrayList<>();
         expectedResult.addAll(Arrays.asList(placemarks[1]));
-        _sut = new POIProvider(mockRoute, mockAssetManager, 1, 2);
 
         // Act
-        List<POI> result = _sut.getPOIsForRoute();
+        List<POI> result = _sut.getPOIsForRoute(1, 2);
 
         // Assert
         assertEquals(result, expectedResult);
@@ -120,10 +120,9 @@ public class POIProviderTest_LinearCircularRoute {
         // Arrange
         List<POI> expectedResult = new ArrayList<>();
         expectedResult.addAll(Arrays.asList(placemarks[2]));
-        _sut = new POIProvider(mockRoute, mockAssetManager, 2, 3);
 
         // Act
-        List<POI> result = _sut.getPOIsForRoute();
+        List<POI> result = _sut.getPOIsForRoute(2, 3);
 
         // Assert
         assertEquals(result, expectedResult);
@@ -136,10 +135,9 @@ public class POIProviderTest_LinearCircularRoute {
         expectedResult.addAll(Arrays.asList(placemarks[0]));
         expectedResult.addAll(Arrays.asList(placemarks[1]));
         expectedResult.addAll(Arrays.asList(placemarks[2]));
-        _sut = new POIProvider(mockRoute, mockAssetManager, 0, 3);
 
         // Act
-        List<POI> result = _sut.getPOIsForRoute();
+        List<POI> result = _sut.getPOIsForRoute(0, 3);
 
         // Assert
         assertEquals(result, expectedResult);
@@ -150,10 +148,9 @@ public class POIProviderTest_LinearCircularRoute {
         // Arrange
         List<POI> expectedResult = new ArrayList<>();
         expectedResult.addAll(Arrays.asList(placemarks[3]));
-        _sut = new POIProvider(mockRoute, mockAssetManager, 3, 0);
 
         // Act
-        List<POI> result = _sut.getPOIsForRoute();
+        List<POI> result = _sut.getPOIsForRoute(3, 0);
 
         // Assert
         assertEquals(result, expectedResult);
@@ -167,10 +164,9 @@ public class POIProviderTest_LinearCircularRoute {
         expectedResult.addAll(Arrays.asList(placemarks[1]));
         expectedResult.addAll(Arrays.asList(placemarks[2]));
         expectedResult.addAll(Arrays.asList(placemarks[3]));
-        _sut = new POIProvider(mockRoute, mockAssetManager, 0, 0);
 
         // Act
-        List<POI> result = _sut.getPOIsForRoute();
+        List<POI> result = _sut.getPOIsForRoute(0, 0);
 
         // Assert
         assertEquals(result, expectedResult);
@@ -184,10 +180,9 @@ public class POIProviderTest_LinearCircularRoute {
         expectedResult.addAll(Arrays.asList(placemarks[2]));
         expectedResult.addAll(Arrays.asList(placemarks[3]));
         expectedResult.addAll(Arrays.asList(placemarks[0]));
-        _sut = new POIProvider(mockRoute, mockAssetManager, 1, 1);
 
         // Act
-        List<POI> result = _sut.getPOIsForRoute();
+        List<POI> result = _sut.getPOIsForRoute(1, 1);
 
         // Assert
         assertEquals(result, expectedResult);
@@ -201,10 +196,9 @@ public class POIProviderTest_LinearCircularRoute {
         expectedResult.addAll(Arrays.asList(placemarks[3]));
         expectedResult.addAll(Arrays.asList(placemarks[0]));
         expectedResult.addAll(Arrays.asList(placemarks[1]));
-        _sut = new POIProvider(mockRoute, mockAssetManager, 2, 2);
 
         // Act
-        List<POI> result = _sut.getPOIsForRoute();
+        List<POI> result = _sut.getPOIsForRoute(2, 2);
 
         // Assert
         assertEquals(result, expectedResult);
@@ -218,10 +212,9 @@ public class POIProviderTest_LinearCircularRoute {
         expectedResult.addAll(Arrays.asList(placemarks[0]));
         expectedResult.addAll(Arrays.asList(placemarks[1]));
         expectedResult.addAll(Arrays.asList(placemarks[2]));
-        _sut = new POIProvider(mockRoute, mockAssetManager, 3, 3);
 
         // Act
-        List<POI> result = _sut.getPOIsForRoute();
+        List<POI> result = _sut.getPOIsForRoute(3, 3);
 
         // Assert
         assertEquals(result, expectedResult);
@@ -229,19 +222,13 @@ public class POIProviderTest_LinearCircularRoute {
 
     @Test(expected = IllegalArgumentException.class)
     public void routeFromLocation3ToLocation4_ShouldThrowIllegalArgumentException() {
-        // Arrange
-        _sut = new POIProvider(mockRoute, mockAssetManager, 3, 4);
-
         // Act
-        _sut.getPOIsForRoute();
+        _sut.getPOIsForRoute(3, 4);
     }
 
     @Test(expected = IllegalArgumentException.class)
     public void routeFromLocationMinus1ToLocation0_ShouldThrowIllegalArgumentException() {
-        // Arrange
-        _sut = new POIProvider(mockRoute, mockAssetManager, -1, 0);
-
         // Act
-        _sut.getPOIsForRoute();
+        _sut.getPOIsForRoute(-1, 0);
     }
 }

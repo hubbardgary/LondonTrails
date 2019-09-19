@@ -11,6 +11,8 @@ import com.google.android.gms.maps.model.Marker;
 import com.google.android.gms.maps.model.MarkerOptions;
 import com.google.android.gms.maps.model.PolylineOptions;
 import com.hubbardgary.londontrails.R;
+import com.hubbardgary.londontrails.dataprovider.CoordinateProvider;
+import com.hubbardgary.londontrails.dataprovider.POIProvider;
 import com.hubbardgary.londontrails.model.LondonTrailsPlacemark;
 import com.hubbardgary.londontrails.model.POI;
 import com.hubbardgary.londontrails.model.Route;
@@ -39,7 +41,7 @@ public class MapContentActivity extends AsyncTask<Void, Void, Integer> implement
         this.activity = activity;
         this.showMapActivity = showMapActivity;
         showMapVm = showMapActivity.getShowMapVm();
-        MapContentPresenter presenter = new MapContentPresenter(this, showMapVm);
+        MapContentPresenter presenter = new MapContentPresenter(this, showMapVm, new CoordinateProvider(), new POIProvider());
         vm = presenter.getMapContentViewModel();
     }
 

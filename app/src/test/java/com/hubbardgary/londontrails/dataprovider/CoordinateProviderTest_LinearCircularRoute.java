@@ -155,6 +155,8 @@ public class CoordinateProviderTest_LinearCircularRoute {
         when(mockRoute.isLinear()).thenReturn(true);
 
         RouteHelpers.setupLinearCircularRoute(mockRoute, mockView, mockResources, mockGlobals);
+        _sut = new CoordinateProvider();
+        _sut.initialize(mockRoute, mockAssetManager);
     }
 
     @Test
@@ -164,10 +166,9 @@ public class CoordinateProviderTest_LinearCircularRoute {
         expectedResult.addAll(Arrays.asList(startLinkCoordinates[0]));
         expectedResult.addAll(Arrays.asList(sectionCoordinates[0]));
         // Section 0 has no end link
-        _sut = new CoordinateProvider(mockRoute, mockAssetManager, 0, 1);
 
         // Act
-        double[][] result = _sut.getPathWayPoints();
+        double[][] result = _sut.getPathWayPoints(0, 1);
 
         // Assert
         assertTrue(Arrays.deepEquals(result, expectedResult.toArray()));
@@ -180,10 +181,9 @@ public class CoordinateProviderTest_LinearCircularRoute {
         // Section 1 has no start link
         expectedResult.addAll(Arrays.asList(sectionCoordinates[1]));
         expectedResult.addAll(Arrays.asList(endLinkCoordinates[1]));
-        _sut = new CoordinateProvider(mockRoute, mockAssetManager, 1, 2);
 
         // Act
-        double[][] result = _sut.getPathWayPoints();
+        double[][] result = _sut.getPathWayPoints(1, 2);
 
         // Assert
         assertTrue(Arrays.deepEquals(result, expectedResult.toArray()));
@@ -196,10 +196,9 @@ public class CoordinateProviderTest_LinearCircularRoute {
         expectedResult.addAll(Arrays.asList(startLinkCoordinates[2]));
         expectedResult.addAll(Arrays.asList(sectionCoordinates[2]));
         expectedResult.addAll(Arrays.asList(endLinkCoordinates[2]));
-        _sut = new CoordinateProvider(mockRoute, mockAssetManager, 2, 3);
 
         // Act
-        double[][] result = _sut.getPathWayPoints();
+        double[][] result = _sut.getPathWayPoints(2, 3);
 
         // Assert
         assertTrue(Arrays.deepEquals(result, expectedResult.toArray()));
@@ -212,10 +211,9 @@ public class CoordinateProviderTest_LinearCircularRoute {
         expectedResult.addAll(Arrays.asList(startLinkCoordinates[3]));
         expectedResult.addAll(Arrays.asList(sectionCoordinates[3]));
         expectedResult.addAll(Arrays.asList(endLinkCoordinates[3]));
-        _sut = new CoordinateProvider(mockRoute, mockAssetManager, 3, 0);
 
         // Act
-        double[][] result = _sut.getPathWayPoints();
+        double[][] result = _sut.getPathWayPoints(3, 0);
 
         // Assert
         assertTrue(Arrays.deepEquals(result, expectedResult.toArray()));
@@ -231,10 +229,9 @@ public class CoordinateProviderTest_LinearCircularRoute {
         expectedResult.addAll(Arrays.asList(sectionCoordinates[2]));
         expectedResult.addAll(Arrays.asList(sectionCoordinates[3]));
         expectedResult.addAll(Arrays.asList(endLinkCoordinates[3]));
-        _sut = new CoordinateProvider(mockRoute, mockAssetManager, 0, 0);
 
         // Act
-        double[][] result = _sut.getPathWayPoints();
+        double[][] result = _sut.getPathWayPoints(0, 0);
 
         // Assert
         assertTrue(Arrays.deepEquals(result, expectedResult.toArray()));
@@ -250,10 +247,9 @@ public class CoordinateProviderTest_LinearCircularRoute {
         expectedResult.addAll(Arrays.asList(sectionCoordinates[3]));
         expectedResult.addAll(Arrays.asList(sectionCoordinates[0]));
         // Section 0 has no end link
-        _sut = new CoordinateProvider(mockRoute, mockAssetManager, 1, 1);
 
         // Act
-        double[][] result = _sut.getPathWayPoints();
+        double[][] result = _sut.getPathWayPoints(1, 1);
 
         // Assert
         assertTrue(Arrays.deepEquals(result, expectedResult.toArray()));
@@ -269,10 +265,9 @@ public class CoordinateProviderTest_LinearCircularRoute {
         expectedResult.addAll(Arrays.asList(sectionCoordinates[0]));
         expectedResult.addAll(Arrays.asList(sectionCoordinates[1]));
         expectedResult.addAll(Arrays.asList(endLinkCoordinates[1]));
-        _sut = new CoordinateProvider(mockRoute, mockAssetManager, 2, 2);
 
         // Act
-        double[][] result = _sut.getPathWayPoints();
+        double[][] result = _sut.getPathWayPoints(2, 2);
 
         // Assert
         assertTrue(Arrays.deepEquals(result, expectedResult.toArray()));
@@ -288,10 +283,9 @@ public class CoordinateProviderTest_LinearCircularRoute {
         expectedResult.addAll(Arrays.asList(sectionCoordinates[1]));
         expectedResult.addAll(Arrays.asList(sectionCoordinates[2]));
         expectedResult.addAll(Arrays.asList(endLinkCoordinates[2]));
-        _sut = new CoordinateProvider(mockRoute, mockAssetManager, 3, 3);
 
         // Act
-        double[][] result = _sut.getPathWayPoints();
+        double[][] result = _sut.getPathWayPoints(3, 3);
 
         // Assert
         assertTrue(Arrays.deepEquals(result, expectedResult.toArray()));
@@ -305,10 +299,9 @@ public class CoordinateProviderTest_LinearCircularRoute {
         expectedResult.addAll(Arrays.asList(sectionCoordinates[0]));
         expectedResult.addAll(Arrays.asList(sectionCoordinates[1]));
         expectedResult.addAll(Arrays.asList(endLinkCoordinates[1]));
-        _sut = new CoordinateProvider(mockRoute, mockAssetManager, 0, 2);
 
         // Act
-        double[][] result = _sut.getPathWayPoints();
+        double[][] result = _sut.getPathWayPoints(0, 2);
 
         // Assert
         assertTrue(Arrays.deepEquals(result, expectedResult.toArray()));
@@ -322,10 +315,9 @@ public class CoordinateProviderTest_LinearCircularRoute {
         expectedResult.addAll(Arrays.asList(sectionCoordinates[1]));
         expectedResult.addAll(Arrays.asList(sectionCoordinates[2]));
         expectedResult.addAll(Arrays.asList(endLinkCoordinates[2]));
-        _sut = new CoordinateProvider(mockRoute, mockAssetManager, 1, 3);
 
         // Act
-        double[][] result = _sut.getPathWayPoints();
+        double[][] result = _sut.getPathWayPoints(1, 3);
 
         // Assert
         assertTrue(Arrays.deepEquals(result, expectedResult.toArray()));
@@ -339,10 +331,9 @@ public class CoordinateProviderTest_LinearCircularRoute {
         expectedResult.addAll(Arrays.asList(sectionCoordinates[3]));
         expectedResult.addAll(Arrays.asList(sectionCoordinates[0]));
         expectedResult.addAll(Arrays.asList(endLinkCoordinates[0]));
-        _sut = new CoordinateProvider(mockRoute, mockAssetManager, 3, 1);
 
         // Act
-        double[][] result = _sut.getPathWayPoints();
+        double[][] result = _sut.getPathWayPoints(3, 1);
 
         // Assert
         assertTrue(Arrays.deepEquals(result, expectedResult.toArray()));
@@ -350,19 +341,13 @@ public class CoordinateProviderTest_LinearCircularRoute {
 
     @Test(expected = IllegalArgumentException.class)
     public void routeFromLocation3ToLocation4_ShouldThrowIllegalArgumentException() {
-        // Arrange
-        _sut = new CoordinateProvider(mockRoute, mockAssetManager, 3, 4);
-
         // Act
-        _sut.getPathWayPoints();
+        _sut.getPathWayPoints(3, 4);
     }
 
     @Test(expected = IllegalArgumentException.class)
     public void routeFromLocationMinus1ToLocation0_ShouldThrowIllegalArgumentException() {
-        // Arrange
-        _sut = new CoordinateProvider(mockRoute, mockAssetManager, -1, 0);
-
         // Act
-        _sut.getPathWayPoints();
+        _sut.getPathWayPoints(-1, 0);
     }
 }

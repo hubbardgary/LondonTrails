@@ -1,7 +1,7 @@
 package com.hubbardgary.londontrails.presenter;
 
-import com.hubbardgary.londontrails.dataprovider.CoordinateProvider;
-import com.hubbardgary.londontrails.dataprovider.POIProvider;
+import com.hubbardgary.londontrails.dataprovider.interfaces.ICoordinateProvider;
+import com.hubbardgary.londontrails.dataprovider.interfaces.IPOIProvider;
 import com.hubbardgary.londontrails.model.POI;
 import com.hubbardgary.londontrails.view.interfaces.IMapContentView;
 import com.hubbardgary.londontrails.viewmodel.MapContentViewModel;
@@ -13,11 +13,20 @@ import java.util.List;
 public class MapContentPresenter {
 
     private IMapContentView view;
+    private ICoordinateProvider coordinateProvider;
+    private IPOIProvider poiProvider;
     private ShowMapViewModel showMapVm;
 
-    public MapContentPresenter(IMapContentView view, ShowMapViewModel showMapVm) {
+    public MapContentPresenter(IMapContentView view,
+                               ShowMapViewModel showMapVm,
+                               ICoordinateProvider coordinateProvider,
+                               IPOIProvider poiProvider) {
         this.view = view;
         this.showMapVm = showMapVm;
+        this.coordinateProvider = coordinateProvider;
+        this.coordinateProvider.initialize(showMapVm.route, view.getAssetManager());
+        this.poiProvider = poiProvider;
+        this.poiProvider.initialize(showMapVm.route, view.getAssetManager());
     }
 
     public MapContentViewModel getMapContentViewModel() {
@@ -43,9 +52,9 @@ public class MapContentPresenter {
             start = showMapVm.end;
             end = showMapVm.start;
         }
-        CoordinateProvider cp = new CoordinateProvider(showMapVm.route, view.getAssetManager(), start, end);
+
         PathViewModel path = new PathViewModel();
-        path.setWayPoints(cp.getPathWayPoints());
+        path.setWayPoints(coordinateProvider.getPathWayPoints(start, end));
         return path;
     }
 
@@ -58,8 +67,8 @@ public class MapContentPresenter {
             start = showMapVm.end;
             end = showMapVm.start;
         }
-        POIProvider pp = new POIProvider(showMapVm.route, view.getAssetManager(), start, end);
-        return pp.getPOIsForRoute();
+
+        return poiProvider.getPOIsForRoute(start, end);
     }
 
     private MapContentViewModel setStartCoordinates(MapContentViewModel vm) {

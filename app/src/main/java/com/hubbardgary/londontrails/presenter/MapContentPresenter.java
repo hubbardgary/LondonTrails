@@ -35,15 +35,16 @@ public class MapContentPresenter {
         vm.path = getPath();
         vm = setStartCoordinates(vm);
         vm = setEndCoordinates(vm);
-        vm = initialiseMaxMinLatLon(vm);
 
+        vm = initialiseMaxMinLatLon(vm);
+        vm = updateMaxMinLatLngForPath(vm, vm.path.getWayPoints());
         vm.poi = getPOI();
-        vm = updateMaxMinLatLng(vm, vm.poi);
+        vm = updateMaxMinLatLngForPoi(vm, vm.poi);
 
         return vm;
     }
 
-    public PathViewModel getPath() {
+    private PathViewModel getPath() {
         int start = showMapVm.start;
         int end = showMapVm.end;
 
@@ -115,7 +116,14 @@ public class MapContentPresenter {
         return vm;
     }
 
-    private MapContentViewModel updateMaxMinLatLng(MapContentViewModel vm, List<POI> points) {
+    private MapContentViewModel updateMaxMinLatLngForPath(MapContentViewModel vm, double[][] points) {
+        for(double[] point : points) {
+            updateMaxMinLatLng(vm, point[1], point[0]);
+        }
+        return vm;
+    }
+
+    private MapContentViewModel updateMaxMinLatLngForPoi(MapContentViewModel vm, List<POI> points) {
         for (int i = 0; i < points.size(); i++) {
             updateMaxMinLatLng(vm, points.get(i).getLatitude(), points.get(i).getLongitude());
         }

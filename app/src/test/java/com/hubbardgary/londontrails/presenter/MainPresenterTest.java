@@ -1,7 +1,7 @@
 package com.hubbardgary.londontrails.presenter;
 
 import com.hubbardgary.londontrails.R;
-import com.hubbardgary.londontrails.config.GlobalObjects;
+import com.hubbardgary.londontrails.config.interfaces.IGlobalObjects;
 import com.hubbardgary.londontrails.view.AboutActivity;
 import com.hubbardgary.londontrails.view.DisjointedRouteOptionsActivity;
 import com.hubbardgary.londontrails.view.RouteOptionsActivity;
@@ -36,9 +36,9 @@ public class MainPresenterTest {
 
     @Before
     public void setUp() {
-        GlobalObjects mockGlobals;
+        IGlobalObjects mockGlobals;
         mockView = Mockito.mock(IMainView.class);
-        mockGlobals = Mockito.mock(GlobalObjects.class);
+        mockGlobals = Mockito.mock(IGlobalObjects.class);
         when(mockGlobals.getButtonText(anyString(), anyString())).thenAnswer(new Answer<String>() {
             public String answer(InvocationOnMock invocation) {
                 Object[] args = invocation.getArguments();

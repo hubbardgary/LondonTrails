@@ -3,7 +3,7 @@ package com.hubbardgary.londontrails.testhelpers;
 import android.content.res.Resources;
 
 import com.hubbardgary.londontrails.R;
-import com.hubbardgary.londontrails.config.GlobalObjects;
+import com.hubbardgary.londontrails.config.interfaces.IGlobalObjects;
 import com.hubbardgary.londontrails.model.Route;
 import com.hubbardgary.londontrails.model.Section;
 import com.hubbardgary.londontrails.view.interfaces.IRouteOptionsView;
@@ -45,7 +45,7 @@ public class RouteHelpers {
         return section;
     }
 
-    public static void setupLinearCircularRoute(Route mockRoute, IRouteOptionsView mockView, Resources mockResources, GlobalObjects mockGlobals) {
+    public static void setupLinearCircularRoute(Route mockRoute, IRouteOptionsView mockView, Resources mockResources, IGlobalObjects mockGlobals) {
         // Linear Circular
         // Start links         (1.2)       (0.3)         (0.0)        (0.5)
         // Section distance  a (7.2)---> b (12.8) ---> c (6.9) ---> a (8.3)
@@ -70,7 +70,7 @@ public class RouteHelpers {
         when(mockResources.getInteger(R.integer.AntiClockwise)).thenReturn(1);
     }
 
-    public static void setupLinearNonCircularRoute(Route mockRoute, IRouteOptionsView mockView, Resources mockResources, GlobalObjects mockGlobals) {
+    public static void setupLinearNonCircularRoute(Route mockRoute, IRouteOptionsView mockView, Resources mockResources, IGlobalObjects mockGlobals) {
         // Linear Non-Circular
         // Start links         (1.2)       (0.3)         (0.0)        (0.5)
         // Section distance  a (7.2)---> b (12.8) ---> c (6.9) ---> d (14.9)
@@ -95,7 +95,7 @@ public class RouteHelpers {
         when(mockResources.getInteger(R.integer.AntiClockwise)).thenReturn(1);
     }
 
-    public static void setupNonLinearRoute(Route mockRoute, IRouteOptionsView mockView, Resources mockResources, GlobalObjects mockGlobals) {
+    public static void setupNonLinearRoute(Route mockRoute, IRouteOptionsView mockView, Resources mockResources, IGlobalObjects mockGlobals) {
         Section section0 = setupNonLinearSection(mockRoute, "01", "a start", "a end", 5.5, 0.1, 0.6, 0.0, "");
         Section section1 = setupNonLinearSection(mockRoute, "02", "b start", "b end", 7.2, 0.6, 0.2, 0.8, "b extension");
         Section section2 = setupNonLinearSection(mockRoute, "03", "c start", "c end", 10.3, 0.0, 0.9, 1.5, "c extension");

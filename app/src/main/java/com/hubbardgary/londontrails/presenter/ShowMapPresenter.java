@@ -2,7 +2,7 @@ package com.hubbardgary.londontrails.presenter;
 
 import com.google.android.gms.maps.GoogleMap;
 import com.hubbardgary.londontrails.R;
-import com.hubbardgary.londontrails.config.GlobalObjects;
+import com.hubbardgary.londontrails.config.interfaces.IGlobalObjects;
 import com.hubbardgary.londontrails.view.interfaces.IShowMapView;
 import com.hubbardgary.londontrails.viewmodel.MenuViewModel;
 import com.hubbardgary.londontrails.viewmodel.ShowMapViewModel;
@@ -12,12 +12,12 @@ import java.util.LinkedHashMap;
 public class ShowMapPresenter {
 
     private IShowMapView view;
-    private GlobalObjects globals;
+    private IGlobalObjects globals;
     private ShowMapViewModel vm;
     private int mapType;
     private boolean markersVisible = true;
 
-    public ShowMapPresenter(IShowMapView view, GlobalObjects globals) {
+    public ShowMapPresenter(IShowMapView view, IGlobalObjects globals) {
         this.view = view;
         this.globals = globals;
         this.mapType = globals.getMapPreference();
@@ -80,6 +80,7 @@ public class ShowMapPresenter {
                 view.endActivity();
                 return;
         }
+        // TODO Can the below be removed? Don't think it'll ever be hit.
         view.updateViewModel(vm);
     }
 

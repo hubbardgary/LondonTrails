@@ -12,13 +12,12 @@ import android.widget.ArrayAdapter;
 import android.widget.Spinner;
 import android.widget.TextView;
 
-import java.util.HashMap;
 import java.util.List;
 import java.util.Locale;
 import java.util.Map;
 
 import com.hubbardgary.londontrails.R;
-import com.hubbardgary.londontrails.config.GlobalObjects;
+import com.hubbardgary.londontrails.config.interfaces.IGlobalObjects;
 import com.hubbardgary.londontrails.presenter.RouteOptionsPresenter;
 import com.hubbardgary.londontrails.view.interfaces.IRouteOptionsView;
 import com.hubbardgary.londontrails.viewmodel.RouteViewModel;
@@ -39,7 +38,7 @@ public class RouteOptionsActivity extends Activity implements IRouteOptionsView,
             getActionBar().setDisplayHomeAsUpEnabled(true);
         }
 
-        presenter = new RouteOptionsPresenter(this, (GlobalObjects)getApplicationContext(), getApplicationContext().getResources());
+        presenter = new RouteOptionsPresenter(this, (IGlobalObjects)getApplicationContext(), getApplicationContext().getResources());
         vm = presenter.getViewModel();
         setTitle(vm.name);
         initializeSpinners();

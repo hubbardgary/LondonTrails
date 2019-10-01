@@ -2,7 +2,7 @@ package com.hubbardgary.londontrails.presenter;
 
 import com.google.android.gms.maps.GoogleMap;
 import com.hubbardgary.londontrails.R;
-import com.hubbardgary.londontrails.config.GlobalObjects;
+import com.hubbardgary.londontrails.config.interfaces.IGlobalObjects;
 import com.hubbardgary.londontrails.model.CapitalRing;
 import com.hubbardgary.londontrails.model.LondonLoop;
 import com.hubbardgary.londontrails.model.Route;
@@ -24,12 +24,12 @@ public class ShowMapPresenterTest {
 
     private ShowMapPresenter sut;
     private IShowMapView mockView;
-    private GlobalObjects mockGlobals;
+    private IGlobalObjects mockGlobals;
 
     @Before
     public void setUp() {
         mockView = Mockito.mock(IShowMapView.class);
-        mockGlobals = Mockito.mock(GlobalObjects.class);
+        mockGlobals = Mockito.mock(IGlobalObjects.class);
     }
 
     private void setUpWalk(int start, int end, int direction, Route route, int mapPreference) {

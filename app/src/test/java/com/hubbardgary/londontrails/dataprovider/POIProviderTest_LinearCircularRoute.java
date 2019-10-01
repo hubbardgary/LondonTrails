@@ -4,6 +4,7 @@ import android.content.res.AssetManager;
 import android.content.res.Resources;
 
 import com.hubbardgary.londontrails.config.GlobalObjects;
+import com.hubbardgary.londontrails.config.interfaces.IGlobalObjects;
 import com.hubbardgary.londontrails.model.POI;
 import com.hubbardgary.londontrails.model.Route;
 import com.hubbardgary.londontrails.testhelpers.RouteHelpers;
@@ -56,7 +57,7 @@ public class POIProviderTest_LinearCircularRoute {
 
     @Before
     public void setUp() {
-        GlobalObjects mockGlobals;
+        IGlobalObjects mockGlobals;
         Resources mockResources;
         IRouteOptionsView mockView;
 
@@ -77,7 +78,7 @@ public class POIProviderTest_LinearCircularRoute {
         }
 
         mockView = Mockito.mock(IRouteOptionsView.class);
-        mockGlobals = Mockito.mock(GlobalObjects.class);
+        mockGlobals = Mockito.mock(IGlobalObjects.class);
         mockResources = Mockito.mock(Resources.class);
         mockRoute = Mockito.mock(Route.class);
         when(mockRoute.getShortName()).thenReturn("t");

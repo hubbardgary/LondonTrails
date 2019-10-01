@@ -3,8 +3,8 @@ package com.hubbardgary.londontrails.presenter;
 import android.content.res.Resources;
 
 import com.hubbardgary.londontrails.R;
+import com.hubbardgary.londontrails.config.interfaces.IGlobalObjects;
 import com.hubbardgary.londontrails.testhelpers.RouteHelpers;
-import com.hubbardgary.londontrails.config.GlobalObjects;
 import com.hubbardgary.londontrails.model.Route;
 import com.hubbardgary.londontrails.view.interfaces.IRouteOptionsView;
 import com.hubbardgary.londontrails.viewmodel.RouteViewModel;
@@ -24,7 +24,7 @@ import static org.mockito.Mockito.when;
 
 @RunWith(Parameterized.class)
 public class RouteOptionsPresenter_CalculateDistance_LinearNonCircularRoute_Test {
-    private GlobalObjects mockGlobals;
+    private IGlobalObjects mockGlobals;
     private Resources mockResources;
     private IRouteOptionsView mockView;
     private Route mockRoute;
@@ -32,7 +32,7 @@ public class RouteOptionsPresenter_CalculateDistance_LinearNonCircularRoute_Test
     @Before
     public void setUp() {
         mockView = Mockito.mock(IRouteOptionsView.class);
-        mockGlobals = Mockito.mock(GlobalObjects.class);
+        mockGlobals = Mockito.mock(IGlobalObjects.class);
         mockResources = Mockito.mock(Resources.class);
         mockRoute = Mockito.mock(Route.class);
 

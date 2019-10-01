@@ -3,6 +3,7 @@ package com.hubbardgary.londontrails.presenter;
 import android.content.res.Resources;
 
 import com.hubbardgary.londontrails.R;
+import com.hubbardgary.londontrails.config.interfaces.IGlobalObjects;
 import com.hubbardgary.londontrails.model.CapitalRing;
 import com.hubbardgary.londontrails.config.GlobalObjects;
 import com.hubbardgary.londontrails.model.LondonLoop;
@@ -19,14 +20,14 @@ import java.util.List;
 public class RouteOptionsPresenter {
 
     private IRouteOptionsView view;
-    private GlobalObjects globals;
+    private IGlobalObjects globals;
     private final int sectionResource;
     private final String[] sectionArray;
     private Resources res;
     private Route route;
     private RouteViewModel routeVm;
 
-    public RouteOptionsPresenter(IRouteOptionsView view, GlobalObjects globals, Resources res) {
+    public RouteOptionsPresenter(IRouteOptionsView view, IGlobalObjects globals, Resources res) {
 
         this.view = view;
         this.globals = globals;

@@ -1,6 +1,7 @@
 package com.hubbardgary.londontrails.presenter;
 
 import com.hubbardgary.londontrails.R;
+import com.hubbardgary.londontrails.config.interfaces.IGlobalObjects;
 import com.hubbardgary.londontrails.model.GreenChainWalk;
 import com.hubbardgary.londontrails.view.AboutActivity;
 import com.hubbardgary.londontrails.view.DisjointedRouteOptionsActivity;
@@ -19,9 +20,9 @@ public class MainPresenter {
 
     private IMainView view;
     private List<ButtonViewModel> buttons;
-    private GlobalObjects globals;
+    private IGlobalObjects globals;
 
-    public MainPresenter(IMainView view, GlobalObjects globals) {
+    public MainPresenter(IMainView view, IGlobalObjects globals) {
         this.view = view;
         this.globals = globals;
     }

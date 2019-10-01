@@ -3,7 +3,7 @@ package com.hubbardgary.londontrails.presenter;
 import android.content.res.Resources;
 
 import com.hubbardgary.londontrails.R;
-import com.hubbardgary.londontrails.config.GlobalObjects;
+import com.hubbardgary.londontrails.config.interfaces.IGlobalObjects;
 import com.hubbardgary.londontrails.model.Route;
 import com.hubbardgary.londontrails.model.Section;
 import com.hubbardgary.londontrails.view.ShowMapActivity;
@@ -27,7 +27,7 @@ import static org.mockito.Mockito.when;
 
 public class DisjointedRouteOptionsPresenterTest {
 
-    private GlobalObjects mockGlobals;
+    private IGlobalObjects mockGlobals;
     private Resources mockResources;
     private IRouteOptionsView mockView;
     private Route mockRoute;
@@ -36,7 +36,7 @@ public class DisjointedRouteOptionsPresenterTest {
     @Before
     public void setUp() {
         mockView = Mockito.mock(IRouteOptionsView.class);
-        mockGlobals = Mockito.mock(GlobalObjects.class);
+        mockGlobals = Mockito.mock(IGlobalObjects.class);
         mockResources = Mockito.mock(Resources.class);
         mockRoute = Mockito.mock(Route.class);
     }

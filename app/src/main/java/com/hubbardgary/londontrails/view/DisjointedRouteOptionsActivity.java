@@ -11,12 +11,11 @@ import android.widget.Spinner;
 import android.widget.TextView;
 
 import com.hubbardgary.londontrails.R;
-import com.hubbardgary.londontrails.config.GlobalObjects;
+import com.hubbardgary.londontrails.config.interfaces.IGlobalObjects;
 import com.hubbardgary.londontrails.presenter.DisjointedRouteOptionsPresenter;
 import com.hubbardgary.londontrails.view.interfaces.IRouteOptionsView;
 import com.hubbardgary.londontrails.viewmodel.RouteViewModel;
 
-import java.util.HashMap;
 import java.util.List;
 import java.util.Locale;
 import java.util.Map;
@@ -35,7 +34,7 @@ public class DisjointedRouteOptionsActivity extends Activity implements IRouteOp
             getActionBar().setDisplayHomeAsUpEnabled(true);
         }
 
-        presenter = new DisjointedRouteOptionsPresenter(this, (GlobalObjects)getApplicationContext(), getApplicationContext().getResources());
+        presenter = new DisjointedRouteOptionsPresenter(this, (IGlobalObjects)getApplicationContext(), getApplicationContext().getResources());
         vm = presenter.getViewModel();
         setTitle(vm.name);
         initializeSpinners();

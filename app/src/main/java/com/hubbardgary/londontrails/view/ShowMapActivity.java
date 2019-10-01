@@ -19,7 +19,6 @@ import com.google.android.gms.maps.MapFragment;
 import com.google.android.gms.maps.OnMapReadyCallback;
 import com.google.android.gms.maps.SupportMapFragment;
 import com.google.android.gms.maps.model.LatLngBounds;
-import com.google.android.gms.maps.model.Marker;
 import com.google.android.gms.maps.model.Polyline;
 
 import java.util.LinkedHashMap;
@@ -29,8 +28,8 @@ import java.util.concurrent.Executors;
 import java.util.concurrent.ScheduledThreadPoolExecutor;
 import java.util.concurrent.TimeUnit;
 
-import com.hubbardgary.londontrails.config.GlobalObjects;
 import com.hubbardgary.londontrails.R;
+import com.hubbardgary.londontrails.config.interfaces.IGlobalObjects;
 import com.hubbardgary.londontrails.model.LondonTrailsPlacemark;
 import com.hubbardgary.londontrails.presenter.ShowMapPresenter;
 import com.hubbardgary.londontrails.view.interfaces.IShowMapView;
@@ -240,7 +239,7 @@ public class ShowMapActivity extends FragmentActivity implements
     }
 
     private void setUpMap() {
-        presenter = new ShowMapPresenter(this, (GlobalObjects) getApplicationContext());
+        presenter = new ShowMapPresenter(this, (IGlobalObjects) getApplicationContext());
         vm = presenter.getViewModel();
         setTitle(vm.name);
 

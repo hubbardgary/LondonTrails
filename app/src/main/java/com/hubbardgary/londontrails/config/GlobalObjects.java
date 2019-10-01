@@ -11,7 +11,7 @@ import com.hubbardgary.londontrails.model.GreenChainWalk;
 import com.hubbardgary.londontrails.model.LondonLoop;
 import com.hubbardgary.londontrails.model.Route;
 
-public class GlobalObjects extends Application {
+public class GlobalObjects extends Application implements com.hubbardgary.londontrails.config.interfaces.IGlobalObjects {
 
     private Route currentRoute;
     private static final double kmToMilesMultiplier = 0.62137;

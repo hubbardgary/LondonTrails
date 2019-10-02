@@ -5,22 +5,22 @@ public class PathViewModel {
     private String description;
     private int color;
     private int width;
-    private double[][] wayPoints = new double[][]{};
+    private double[][] coordinates = new double[][]{};
 
-    public double[][] getWayPoints() {
-        return wayPoints;
+    public double[][] getCoordinates() {
+        return coordinates;
     }
 
-    public double getWayPointLat(int i) {
-        return wayPoints[i][1];
+    public double getCoordinateLat(int i) {
+        return coordinates[i][1];
     }
 
-    public double getWayPointLng(int i) {
-        return wayPoints[i][0];
+    public double getCoordinateLng(int i) {
+        return coordinates[i][0];
     }
 
-    public void setWayPoints(double[][] wayPoints) {
-        this.wayPoints = wayPoints;
+    public void setCoordinates(double[][] coordinates) {
+        this.coordinates = coordinates;
     }
 
 }

@@ -3,7 +3,6 @@ package com.hubbardgary.londontrails.dataprovider;
 import android.content.res.AssetManager;
 import android.content.res.Resources;
 
-import com.hubbardgary.londontrails.config.GlobalObjects;
 import com.hubbardgary.londontrails.config.interfaces.IGlobalObjects;
 import com.hubbardgary.londontrails.model.Route;
 import com.hubbardgary.londontrails.testhelpers.DataProviderHelpers;
@@ -169,7 +168,7 @@ public class CoordinateProviderTest_NonLinearRoute {
         // Section 0 has no end link
 
         // Act
-        double[][] result = _sut.getPathWayPoints(0, 0);
+        double[][] result = _sut.getRouteCoordinates(0, 0).getCoordinates();
 
         // Assert
         assertTrue(Arrays.deepEquals(result, expectedResult.toArray()));
@@ -184,7 +183,7 @@ public class CoordinateProviderTest_NonLinearRoute {
         expectedResult.addAll(Arrays.asList(endLinkCoordinates[1]));
 
         // Act
-        double[][] result = _sut.getPathWayPoints(1, 1);
+        double[][] result = _sut.getRouteCoordinates(1, 1).getCoordinates();
 
         // Assert
         assertTrue(Arrays.deepEquals(result, expectedResult.toArray()));
@@ -199,7 +198,7 @@ public class CoordinateProviderTest_NonLinearRoute {
         expectedResult.addAll(Arrays.asList(endLinkCoordinates[2]));
 
         // Act
-        double[][] result = _sut.getPathWayPoints(2, 2);
+        double[][] result = _sut.getRouteCoordinates(2, 2).getCoordinates();
 
         // Assert
         assertTrue(Arrays.deepEquals(result, expectedResult.toArray()));
@@ -214,7 +213,7 @@ public class CoordinateProviderTest_NonLinearRoute {
         expectedResult.addAll(Arrays.asList(endLinkCoordinates[3]));
 
         // Act
-        double[][] result = _sut.getPathWayPoints(3, 3);
+        double[][] result = _sut.getRouteCoordinates(3, 3).getCoordinates();
 
         // Assert
         assertTrue(Arrays.deepEquals(result, expectedResult.toArray()));
@@ -223,18 +222,18 @@ public class CoordinateProviderTest_NonLinearRoute {
     @Test(expected = IllegalArgumentException.class)
     public void routeFromLocation3ToLocation0_ShouldThrowIllegalArgumentException() {
         // Act
-        _sut.getPathWayPoints(3, 0);
+        _sut.getRouteCoordinates(3, 0);
     }
 
     @Test(expected = IllegalArgumentException.class)
     public void routeFromLocationMinus1ToLocation0_ShouldThrowIllegalArgumentException() {
         // Act
-        _sut.getPathWayPoints(-1, 0);
+        _sut.getRouteCoordinates(-1, 0);
     }
 
     @Test(expected = IllegalArgumentException.class)
     public void routeFromLocation0ToLocation1_ShouldThrowIllegalArgumentException() {
         // Act
-        _sut.getPathWayPoints(0, 1);
+        _sut.getRouteCoordinates(0, 1);
     }
 }

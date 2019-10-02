@@ -2,13 +2,12 @@ package com.hubbardgary.londontrails.presenter;
 
 import com.hubbardgary.londontrails.dataprovider.interfaces.ICoordinateProvider;
 import com.hubbardgary.londontrails.dataprovider.interfaces.IPOIProvider;
-import com.hubbardgary.londontrails.model.POI;
+import com.hubbardgary.londontrails.model.dto.RoutePoiDto;
+import com.hubbardgary.londontrails.model.dto.RouteCoordinatesDto;
 import com.hubbardgary.londontrails.view.interfaces.IMapContentView;
 import com.hubbardgary.londontrails.viewmodel.MapContentViewModel;
 import com.hubbardgary.londontrails.viewmodel.PathViewModel;
 import com.hubbardgary.londontrails.viewmodel.ShowMapViewModel;
-
-import java.util.List;
 
 public class MapContentPresenter {
 
@@ -32,19 +31,27 @@ public class MapContentPresenter {
     public MapContentViewModel getMapContentViewModel() {
         MapContentViewModel vm = new MapContentViewModel();
 
-        vm.path = getPath();
+        RouteCoordinatesDto routeCoordinatesDto = getPath();
+        RoutePoiDto routePoiDto = getPOI();
+
+        vm.path = new PathViewModel();
+
+        if (routeCoordinatesDto != null) {
+            vm.path.setCoordinates(routeCoordinatesDto.getCoordinates());
+        }
+
+        if (routePoiDto != null) {
+            vm.poi = routePoiDto.getPOIs();
+        }
+
         vm = setStartCoordinates(vm);
         vm = setEndCoordinates(vm);
-
-        vm = initialiseMaxMinLatLon(vm);
-        vm = updateMaxMinLatLngForPath(vm, vm.path.getWayPoints());
-        vm.poi = getPOI();
-        vm = updateMaxMinLatLngForPoi(vm, vm.poi);
+        vm = setMaxMinLatLon(vm, routeCoordinatesDto, routePoiDto);
 
         return vm;
     }
 
-    private PathViewModel getPath() {
+    private RouteCoordinatesDto getPath() {
         int start = showMapVm.start;
         int end = showMapVm.end;
 
@@ -54,12 +61,10 @@ public class MapContentPresenter {
             end = showMapVm.start;
         }
 
-        PathViewModel path = new PathViewModel();
-        path.setWayPoints(coordinateProvider.getPathWayPoints(start, end));
-        return path;
+        return coordinateProvider.getRouteCoordinates(start, end);
     }
 
-    private List<POI> getPOI() {
+    private RoutePoiDto getPOI() {
         int start = showMapVm.start;
         int end = showMapVm.end;
 
@@ -74,58 +79,39 @@ public class MapContentPresenter {
 
     private MapContentViewModel setStartCoordinates(MapContentViewModel vm) {
         if (showMapVm.isClockwise) {
-            vm.startLatitude = vm.path.getWayPointLat(0);
-            vm.startLongitude = vm.path.getWayPointLng(0);
+            vm.startLatitude = vm.path.getCoordinateLat(0);
+            vm.startLongitude = vm.path.getCoordinateLng(0);
         }
         else {
-            vm.startLatitude = vm.path.getWayPointLat(vm.path.getWayPoints().length - 1);
-            vm.startLongitude = vm.path.getWayPointLng(vm.path.getWayPoints().length - 1);
+            vm.startLatitude = vm.path.getCoordinateLat(vm.path.getCoordinates().length - 1);
+            vm.startLongitude = vm.path.getCoordinateLng(vm.path.getCoordinates().length - 1);
         }
         return vm;
     }
 
     private MapContentViewModel setEndCoordinates(MapContentViewModel vm) {
         if (showMapVm.isClockwise) {
-            vm.endLatitude = vm.path.getWayPointLat(vm.path.getWayPoints().length - 1);
-            vm.endLongitude = vm.path.getWayPointLng(vm.path.getWayPoints().length - 1);
+            vm.endLatitude = vm.path.getCoordinateLat(vm.path.getCoordinates().length - 1);
+            vm.endLongitude = vm.path.getCoordinateLng(vm.path.getCoordinates().length - 1);
         }
         else {
-            vm.endLatitude = vm.path.getWayPointLat(0);
-            vm.endLongitude = vm.path.getWayPointLng(0);
+            vm.endLatitude = vm.path.getCoordinateLat(0);
+            vm.endLongitude = vm.path.getCoordinateLng(0);
         }
         return vm;
     }
 
-    private MapContentViewModel initialiseMaxMinLatLon(MapContentViewModel vm) {
-        vm.maximumLatitude = vm.startLatitude > vm.endLatitude ? vm.startLatitude : vm.endLatitude;
-        vm.minimumLatitude = vm.startLatitude < vm.endLatitude ? vm.startLatitude : vm.endLatitude;
-        vm.maximumLongitude = vm.startLongitude > vm.endLongitude ? vm.startLongitude : vm.endLongitude;
-        vm.minimumLongitude = vm.startLongitude < vm.endLongitude ? vm.startLongitude : vm.endLongitude;
-        return vm;
-    }
-
-    private MapContentViewModel updateMaxMinLatLng(MapContentViewModel vm, double latitude, double longitude) {
-        if (latitude > vm.maximumLatitude)
-            vm.maximumLatitude = latitude;
-        if (latitude < vm.minimumLatitude)
-            vm.minimumLatitude = latitude;
-        if (longitude > vm.maximumLongitude)
-            vm.maximumLongitude = longitude;
-        if (longitude < vm.minimumLongitude)
-            vm.minimumLongitude = longitude;
-        return vm;
-    }
-
-    private MapContentViewModel updateMaxMinLatLngForPath(MapContentViewModel vm, double[][] points) {
-        for(double[] point : points) {
-            updateMaxMinLatLng(vm, point[1], point[0]);
-        }
-        return vm;
-    }
-
-    private MapContentViewModel updateMaxMinLatLngForPoi(MapContentViewModel vm, List<POI> points) {
-        for (int i = 0; i < points.size(); i++) {
-            updateMaxMinLatLng(vm, points.get(i).getLatitude(), points.get(i).getLongitude());
+    private MapContentViewModel setMaxMinLatLon(MapContentViewModel vm, RouteCoordinatesDto coordinates, RoutePoiDto poi) {
+        if (poi == null || poi.getPOIs() == null || poi.getPOIs().size() == 0) {
+            vm.minimumLatitude = coordinates.getMinimumLatitude();
+            vm.maximumLatitude = coordinates.getMaximumLatitude();
+            vm.minimumLongitude = coordinates.getMinimumLongitude();
+            vm.maximumLongitude = coordinates.getMaximumLongitude();
+        } else {
+            vm.minimumLatitude = coordinates.getMinimumLatitude() < poi.getMinimumLatitude() ? coordinates.getMinimumLatitude() : poi.getMinimumLatitude();
+            vm.maximumLatitude = coordinates.getMaximumLatitude() > poi.getMaximumLatitude() ? coordinates.getMaximumLatitude() : poi.getMaximumLatitude();
+            vm.minimumLongitude = coordinates.getMinimumLongitude() < poi.getMinimumLongitude() ? coordinates.getMinimumLongitude() : poi.getMinimumLongitude();
+            vm.maximumLongitude = coordinates.getMaximumLongitude() > poi.getMaximumLongitude() ? coordinates.getMaximumLongitude() : poi.getMaximumLongitude();
         }
         return vm;
     }

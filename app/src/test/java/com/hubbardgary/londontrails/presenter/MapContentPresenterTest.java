@@ -7,6 +7,8 @@ import com.hubbardgary.londontrails.dataprovider.interfaces.ICoordinateProvider;
 import com.hubbardgary.londontrails.dataprovider.interfaces.IPOIProvider;
 import com.hubbardgary.londontrails.model.CapitalRing;
 import com.hubbardgary.londontrails.model.POI;
+import com.hubbardgary.londontrails.model.dto.RoutePoiDto;
+import com.hubbardgary.londontrails.model.dto.RouteCoordinatesDto;
 import com.hubbardgary.londontrails.view.interfaces.IMapContentView;
 import com.hubbardgary.londontrails.viewmodel.MapContentViewModel;
 import com.hubbardgary.londontrails.viewmodel.ShowMapViewModel;
@@ -23,29 +25,50 @@ import static org.mockito.Matchers.anyInt;
 import static org.mockito.Mockito.when;
 
 public class MapContentPresenterTest {
-    IMapContentView mockView;
-    ICoordinateProvider mockCoordinateProvider;
-    IPOIProvider mockPoiProvider;
+    private IMapContentView mockView;
+    private ICoordinateProvider mockCoordinateProvider;
+    private IPOIProvider mockPoiProvider;
 
-    private List<POI> poiListWithinWaypointBoundary() {
+    private RoutePoiDto poiListWithinRouteBoundary() {
         List<POI> poiList = new ArrayList<>();
         poiList.add(new POI("title", "snippet", 51.376433, -0.013423, false));
         poiList.add(new POI("title", "snippet", 51.376433, -0.013423, false));
-        return poiList;
+
+        RoutePoiDto poiDto = new RoutePoiDto();
+        poiDto.setPOIs(poiList);
+        poiDto.setMaximumLatitude(51.376433);
+        poiDto.setMinimumLatitude(51.376433);
+        poiDto.setMaximumLongitude(-0.013423);
+        poiDto.setMinimumLongitude(-0.013423);
+        return poiDto;
     }
 
-    private List<POI> poiListOutsideWaypointBoundary() {
+    private RoutePoiDto poiListOutsideRouteBoundary() {
         List<POI> poiList = new ArrayList<>();
         poiList.add(new POI("title", "snippet", 54.376433, -3.013423, false));
         poiList.add(new POI("title", "snippet", 50.376433, 4.013423, false));
-        return poiList;
+
+        RoutePoiDto poiDto = new RoutePoiDto();
+        poiDto.setPOIs(poiList);
+        poiDto.setMaximumLatitude(54.376433);
+        poiDto.setMinimumLatitude(50.376433);
+        poiDto.setMaximumLongitude(4.013423);
+        poiDto.setMinimumLongitude(-3.013423);
+        return poiDto;
     }
 
-    private List<POI> poiListPartlyWithinWaypointBoundary() {
+    private RoutePoiDto poiListPartlyWithinRouteBoundary() {
         List<POI> poiList = new ArrayList<>();
         poiList.add(new POI("title", "snippet", 54.376433, -3.013423, false));
         poiList.add(new POI("title", "snippet", 51.376433, -0.013423, false));
-        return poiList;
+
+        RoutePoiDto poiDto = new RoutePoiDto();
+        poiDto.setPOIs(poiList);
+        poiDto.setMaximumLatitude(54.376433);
+        poiDto.setMinimumLatitude(51.376433);
+        poiDto.setMaximumLongitude(-0.013423);
+        poiDto.setMinimumLongitude(-3.013423);
+        return poiDto;
     }
 
     @Before
@@ -57,14 +80,20 @@ public class MapContentPresenterTest {
         AssetManager mockAssetManager = Mockito.mock(AssetManager.class);
         when(mockView.getAssetManager()).thenReturn(mockAssetManager);
 
-        double[][] testWaypoints = new double[][] {
+        RouteCoordinatesDto coordinatesDto = new RouteCoordinatesDto();
+        coordinatesDto.setCoordinates(new double[][] {
                 new double[] { 0.063600, 51.387386 },
                 new double[] { -0.488226, 51.544458 },
                 new double[] { -0.237016, 51.635921 },
                 new double[] { 0.076773, 51.220917 }
-        };
+        });
 
-        when(mockCoordinateProvider.getPathWayPoints(anyInt(), anyInt())).thenReturn(testWaypoints);
+        coordinatesDto.setMaximumLatitude(51.635921);
+        coordinatesDto.setMinimumLatitude(51.220917);
+        coordinatesDto.setMaximumLongitude(0.076773);
+        coordinatesDto.setMinimumLongitude(-0.488226);
+
+        when(mockCoordinateProvider.getRouteCoordinates(anyInt(), anyInt())).thenReturn(coordinatesDto);
     }
 
     @Test
@@ -100,9 +129,9 @@ public class MapContentPresenterTest {
     }
 
     @Test
-    public void getMapContentViewModel_Clockwise_WaypointAtOuterBoundary_MaxMinLatLonsAreCorrect() {
+    public void getMapContentViewModel_Clockwise_RouteAtOuterBoundary_MaxMinLatLonsAreCorrect() {
         // Arrange
-        when(mockPoiProvider.getPOIsForRoute(0, 1)).thenReturn(poiListWithinWaypointBoundary());
+        when(mockPoiProvider.getPOIsForRoute(0, 1)).thenReturn(poiListWithinRouteBoundary());
         ShowMapViewModel vm = new ShowMapViewModel(0, 1, 0, new CapitalRing(), GoogleMap.MAP_TYPE_NORMAL);
         MapContentPresenter sut = new MapContentPresenter(mockView, vm, mockCoordinateProvider, mockPoiProvider);
 
@@ -119,7 +148,7 @@ public class MapContentPresenterTest {
     @Test
     public void getMapContentViewModel_Clockwise_PoiAtOuterBoundary_MaxMinLatLonsAreCorrect() {
         // Arrange
-        when(mockPoiProvider.getPOIsForRoute(0, 1)).thenReturn(poiListOutsideWaypointBoundary());
+        when(mockPoiProvider.getPOIsForRoute(0, 1)).thenReturn(poiListOutsideRouteBoundary());
         ShowMapViewModel vm = new ShowMapViewModel(0, 1, 0, new CapitalRing(), GoogleMap.MAP_TYPE_NORMAL);
         MapContentPresenter sut = new MapContentPresenter(mockView, vm, mockCoordinateProvider, mockPoiProvider);
 
@@ -136,7 +165,7 @@ public class MapContentPresenterTest {
     @Test
     public void getMapContentViewModel_Clockwise_PoiPartlyAtOuterBoundary_MaxMinLatLonsAreCorrect() {
         // Arrange
-        when(mockPoiProvider.getPOIsForRoute(0, 1)).thenReturn(poiListPartlyWithinWaypointBoundary());
+        when(mockPoiProvider.getPOIsForRoute(0, 1)).thenReturn(poiListPartlyWithinRouteBoundary());
         ShowMapViewModel vm = new ShowMapViewModel(0, 1, 0, new CapitalRing(), GoogleMap.MAP_TYPE_NORMAL);
         MapContentPresenter sut = new MapContentPresenter(mockView, vm, mockCoordinateProvider, mockPoiProvider);
 
@@ -151,9 +180,9 @@ public class MapContentPresenterTest {
     }
 
     @Test
-    public void getMapContentViewModel_AntiClockwise_WaypointAtOuterBoundary_MaxMinLatLonsAreCorrect() {
+    public void getMapContentViewModel_AntiClockwise_RouteAtOuterBoundary_MaxMinLatLonsAreCorrect() {
         // Arrange
-        when(mockPoiProvider.getPOIsForRoute(1, 0)).thenReturn(poiListWithinWaypointBoundary());
+        when(mockPoiProvider.getPOIsForRoute(1, 0)).thenReturn(poiListWithinRouteBoundary());
         ShowMapViewModel vm = new ShowMapViewModel(0, 1, 1, new CapitalRing(), GoogleMap.MAP_TYPE_NORMAL);
         MapContentPresenter sut = new MapContentPresenter(mockView, vm, mockCoordinateProvider, mockPoiProvider);
 
@@ -170,7 +199,7 @@ public class MapContentPresenterTest {
     @Test
     public void getMapContentViewModel_AntiClockwise_PoiAtOuterBoundary_MaxMinLatLonsAreCorrect() {
         // Arrange
-        when(mockPoiProvider.getPOIsForRoute(1, 0)).thenReturn(poiListOutsideWaypointBoundary());
+        when(mockPoiProvider.getPOIsForRoute(1, 0)).thenReturn(poiListOutsideRouteBoundary());
         ShowMapViewModel vm = new ShowMapViewModel(0, 1, 1, new CapitalRing(), GoogleMap.MAP_TYPE_NORMAL);
         MapContentPresenter sut = new MapContentPresenter(mockView, vm, mockCoordinateProvider, mockPoiProvider);
 
@@ -187,7 +216,7 @@ public class MapContentPresenterTest {
     @Test
     public void getMapContentViewModel_AntiClockwise_PoiPartlyAtOuterBoundary_MaxMinLatLonsAreCorrect() {
         // Arrange
-        when(mockPoiProvider.getPOIsForRoute(1, 0)).thenReturn(poiListPartlyWithinWaypointBoundary());
+        when(mockPoiProvider.getPOIsForRoute(1, 0)).thenReturn(poiListPartlyWithinRouteBoundary());
         ShowMapViewModel vm = new ShowMapViewModel(0, 1, 1, new CapitalRing(), GoogleMap.MAP_TYPE_NORMAL);
         MapContentPresenter sut = new MapContentPresenter(mockView, vm, mockCoordinateProvider, mockPoiProvider);
 

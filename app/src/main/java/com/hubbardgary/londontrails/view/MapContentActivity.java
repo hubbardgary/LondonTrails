@@ -116,16 +116,16 @@ public class MapContentActivity extends AsyncTask<Void, Void, Integer> implement
     }
 
     public void getPath(PathViewModel path) {
-        if (path.getWayPoints().length > 1) {    // If length is 1, we only have 1 point so can't draw a line
+        if (path.getCoordinates().length > 1) {    // If length is 1, we only have 1 point so can't draw a line
             this.path = new PolylineOptions();
             this.path.width(5);
             this.path.color(Color.RED);
 
-            LatLng from = new LatLng((path.getWayPointLat(0)), (path.getWayPointLng(0)));
+            LatLng from = new LatLng((path.getCoordinateLat(0)), (path.getCoordinateLng(0)));
             LatLng to;
 
-            for (int i = 1; i < path.getWayPoints().length; i++) {
-                to = new LatLng((path.getWayPointLat(i)), (path.getWayPointLng(i)));
+            for (int i = 1; i < path.getCoordinates().length; i++) {
+                to = new LatLng((path.getCoordinateLat(i)), (path.getCoordinateLng(i)));
                 this.path.add(from, to);
                 from = new LatLng(to.latitude, to.longitude);
             }

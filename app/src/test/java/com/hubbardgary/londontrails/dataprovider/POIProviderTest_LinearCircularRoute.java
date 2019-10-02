@@ -97,7 +97,7 @@ public class POIProviderTest_LinearCircularRoute {
         expectedResult.addAll(Arrays.asList(placemarks[0]));
 
         // Act
-        List<POI> result = _sut.getPOIsForRoute(0, 1);
+        List<POI> result = _sut.getPOIsForRoute(0, 1).getPOIs();
 
         // Assert
         assertEquals(result, expectedResult);
@@ -110,7 +110,7 @@ public class POIProviderTest_LinearCircularRoute {
         expectedResult.addAll(Arrays.asList(placemarks[1]));
 
         // Act
-        List<POI> result = _sut.getPOIsForRoute(1, 2);
+        List<POI> result = _sut.getPOIsForRoute(1, 2).getPOIs();
 
         // Assert
         assertEquals(result, expectedResult);
@@ -123,7 +123,7 @@ public class POIProviderTest_LinearCircularRoute {
         expectedResult.addAll(Arrays.asList(placemarks[2]));
 
         // Act
-        List<POI> result = _sut.getPOIsForRoute(2, 3);
+        List<POI> result = _sut.getPOIsForRoute(2, 3).getPOIs();
 
         // Assert
         assertEquals(result, expectedResult);
@@ -138,7 +138,7 @@ public class POIProviderTest_LinearCircularRoute {
         expectedResult.addAll(Arrays.asList(placemarks[2]));
 
         // Act
-        List<POI> result = _sut.getPOIsForRoute(0, 3);
+        List<POI> result = _sut.getPOIsForRoute(0, 3).getPOIs();
 
         // Assert
         assertEquals(result, expectedResult);
@@ -151,7 +151,7 @@ public class POIProviderTest_LinearCircularRoute {
         expectedResult.addAll(Arrays.asList(placemarks[3]));
 
         // Act
-        List<POI> result = _sut.getPOIsForRoute(3, 0);
+        List<POI> result = _sut.getPOIsForRoute(3, 0).getPOIs();
 
         // Assert
         assertEquals(result, expectedResult);
@@ -167,7 +167,7 @@ public class POIProviderTest_LinearCircularRoute {
         expectedResult.addAll(Arrays.asList(placemarks[3]));
 
         // Act
-        List<POI> result = _sut.getPOIsForRoute(0, 0);
+        List<POI> result = _sut.getPOIsForRoute(0, 0).getPOIs();
 
         // Assert
         assertEquals(result, expectedResult);
@@ -183,7 +183,7 @@ public class POIProviderTest_LinearCircularRoute {
         expectedResult.addAll(Arrays.asList(placemarks[0]));
 
         // Act
-        List<POI> result = _sut.getPOIsForRoute(1, 1);
+        List<POI> result = _sut.getPOIsForRoute(1, 1).getPOIs();
 
         // Assert
         assertEquals(result, expectedResult);
@@ -199,7 +199,7 @@ public class POIProviderTest_LinearCircularRoute {
         expectedResult.addAll(Arrays.asList(placemarks[1]));
 
         // Act
-        List<POI> result = _sut.getPOIsForRoute(2, 2);
+        List<POI> result = _sut.getPOIsForRoute(2, 2).getPOIs();
 
         // Assert
         assertEquals(result, expectedResult);
@@ -215,7 +215,7 @@ public class POIProviderTest_LinearCircularRoute {
         expectedResult.addAll(Arrays.asList(placemarks[2]));
 
         // Act
-        List<POI> result = _sut.getPOIsForRoute(3, 3);
+        List<POI> result = _sut.getPOIsForRoute(3, 3).getPOIs();
 
         // Assert
         assertEquals(result, expectedResult);

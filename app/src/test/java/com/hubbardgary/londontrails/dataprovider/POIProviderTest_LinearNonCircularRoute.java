@@ -33,26 +33,26 @@ public class POIProviderTest_LinearNonCircularRoute {
     private POI[][] placemarks;
 
     private static POI[][] getPOIs() {
+        POI section0poi1 = new POI("Section 0 POI 1", "Section 0 POI 1 description", 0.12345, 0.12345, false);
+        POI section0poi2 = new POI("Section 0 POI 2", "Section 0 POI 2 description", 0.12345, 0.12345, false);
+        POI section0poi3 = new POI("Section 0 POI 3", "Section 0 POI 3 description", 0.12345, 0.12345, false);
+        POI[] section0poi = { section0poi1, section0poi2, section0poi3 };
+
         POI section1poi1 = new POI("Section 1 POI 1", "Section 1 POI 1 description", 0.12345, 0.12345, false);
         POI section1poi2 = new POI("Section 1 POI 2", "Section 1 POI 2 description", 0.12345, 0.12345, false);
-        POI section1poi3 = new POI("Section 1 POI 3", "Section 1 POI 3 description", 0.12345, 0.12345, false);
-        POI[] section1poi = { section1poi1, section1poi2, section1poi3 };
+        POI[] section1poi = { section1poi1, section1poi2 };
 
         POI section2poi1 = new POI("Section 2 POI 1", "Section 2 POI 1 description", 0.12345, 0.12345, false);
         POI section2poi2 = new POI("Section 2 POI 2", "Section 2 POI 2 description", 0.12345, 0.12345, false);
-        POI[] section2poi = { section2poi1, section2poi2 };
+        POI section2poi3 = new POI("Section 2 POI 3", "Section 2 POI 3 description", 0.12345, 0.12345, false);
+        POI section2poi4 = new POI("Section 2 POI 4", "Section 2 POI 4 description", 0.12345, 0.12345, false);
+        POI[] section2poi = { section2poi1, section2poi2, section2poi3, section2poi4 };
 
         POI section3poi1 = new POI("Section 3 POI 1", "Section 3 POI 1 description", 0.12345, 0.12345, false);
         POI section3poi2 = new POI("Section 3 POI 2", "Section 3 POI 2 description", 0.12345, 0.12345, false);
-        POI section3poi3 = new POI("Section 3 POI 3", "Section 3 POI 3 description", 0.12345, 0.12345, false);
-        POI section3poi4 = new POI("Section 3 POI 4", "Section 3 POI 4 description", 0.12345, 0.12345, false);
-        POI[] section3poi = { section3poi1, section3poi2, section3poi3, section3poi4 };
+        POI[] section3poi = { section3poi1, section3poi2 };
 
-        POI section4poi1 = new POI("Section 4 POI 1", "Section 4 POI 1 description", 0.12345, 0.12345, false);
-        POI section4poi2 = new POI("Section 4 POI 2", "Section 4 POI 2 description", 0.12345, 0.12345, false);
-        POI[] section4poi = { section4poi1, section4poi2 };
-
-        return new POI[][] { section1poi, section2poi, section3poi, section4poi};
+        return new POI[][] { section0poi, section1poi, section2poi, section3poi};
     }
 
     @Before
@@ -62,17 +62,17 @@ public class POIProviderTest_LinearNonCircularRoute {
         IRouteOptionsView mockView;
 
         placemarks = getPOIs();
-        String section1poi = buildPoiSectionXml(placemarks[0]);
-        String section2poi = buildPoiSectionXml(placemarks[1]);
-        String section3poi = buildPoiSectionXml(placemarks[2]);
-        String section4poi = buildPoiSectionXml(placemarks[3]);
+        String section0poi = buildPoiSectionXml(placemarks[0]);
+        String section1poi = buildPoiSectionXml(placemarks[1]);
+        String section2poi = buildPoiSectionXml(placemarks[2]);
+        String section3poi = buildPoiSectionXml(placemarks[3]);
 
         mockAssetManager = Mockito.mock(AssetManager.class);
         try {
-            when(mockAssetManager.open("t-01-placemarks.kml")).thenReturn(new ByteArrayInputStream(section1poi.getBytes(StandardCharsets.UTF_8)));
-            when(mockAssetManager.open("t-02-placemarks.kml")).thenReturn(new ByteArrayInputStream(section2poi.getBytes(StandardCharsets.UTF_8)));
-            when(mockAssetManager.open("t-03-placemarks.kml")).thenReturn(new ByteArrayInputStream(section3poi.getBytes(StandardCharsets.UTF_8)));
-            when(mockAssetManager.open("t-04-placemarks.kml")).thenReturn(new ByteArrayInputStream(section4poi.getBytes(StandardCharsets.UTF_8)));
+            when(mockAssetManager.open("t-01-placemarks.kml")).thenReturn(new ByteArrayInputStream(section0poi.getBytes(StandardCharsets.UTF_8)));
+            when(mockAssetManager.open("t-02-placemarks.kml")).thenReturn(new ByteArrayInputStream(section1poi.getBytes(StandardCharsets.UTF_8)));
+            when(mockAssetManager.open("t-03-placemarks.kml")).thenReturn(new ByteArrayInputStream(section2poi.getBytes(StandardCharsets.UTF_8)));
+            when(mockAssetManager.open("t-04-placemarks.kml")).thenReturn(new ByteArrayInputStream(section3poi.getBytes(StandardCharsets.UTF_8)));
         } catch(IOException e) {
             // Swallow any exception.
         }
@@ -97,7 +97,7 @@ public class POIProviderTest_LinearNonCircularRoute {
         expectedResult.addAll(Arrays.asList(placemarks[0]));
 
         // Act
-        List<POI> result = _sut.getPOIsForRoute(0, 1);
+        List<POI> result = _sut.getPOIsForRoute(0, 1).getPOIs();
 
         // Assert
         assertEquals(result, expectedResult);
@@ -110,7 +110,7 @@ public class POIProviderTest_LinearNonCircularRoute {
         expectedResult.addAll(Arrays.asList(placemarks[1]));
 
         // Act
-        List<POI> result = _sut.getPOIsForRoute(1, 2);
+        List<POI> result = _sut.getPOIsForRoute(1, 2).getPOIs();
 
         // Assert
         assertEquals(result, expectedResult);
@@ -123,7 +123,20 @@ public class POIProviderTest_LinearNonCircularRoute {
         expectedResult.addAll(Arrays.asList(placemarks[2]));
 
         // Act
-        List<POI> result = _sut.getPOIsForRoute(2, 3);
+        List<POI> result = _sut.getPOIsForRoute(2, 3).getPOIs();
+
+        // Assert
+        assertEquals(result, expectedResult);
+    }
+
+    @Test
+    public void routeFromLocation3ToLocation4_ShouldIncludePlacemarksForSection3() {
+        // Arrange
+        List<POI> expectedResult = new ArrayList<>();
+        expectedResult.addAll(Arrays.asList(placemarks[3]));
+
+        // Act
+        List<POI> result = _sut.getPOIsForRoute(3, 4).getPOIs();
 
         // Assert
         assertEquals(result, expectedResult);
@@ -138,7 +151,7 @@ public class POIProviderTest_LinearNonCircularRoute {
         expectedResult.addAll(Arrays.asList(placemarks[2]));
 
         // Act
-        List<POI> result = _sut.getPOIsForRoute(0, 3);
+        List<POI> result = _sut.getPOIsForRoute(0, 3).getPOIs();
 
         // Assert
         assertEquals(result, expectedResult);
@@ -175,9 +188,15 @@ public class POIProviderTest_LinearNonCircularRoute {
     }
 
     @Test(expected = IllegalArgumentException.class)
-    public void routeFromLocation3ToLocation4_ShouldThrowIllegalArgumentException() {
+    public void routeFromLocation4ToLocation4_ShouldThrowIllegalArgumentException() {
         // Act
-        _sut.getPOIsForRoute(3, 4);
+        _sut.getPOIsForRoute(4, 4);
+    }
+
+    @Test(expected = IllegalArgumentException.class)
+    public void routeFromLocation4ToLocation5_ShouldThrowIllegalArgumentException() {
+        // Act
+        _sut.getPOIsForRoute(4, 5);
     }
 
     @Test(expected = IllegalArgumentException.class)

@@ -18,6 +18,7 @@ import org.xml.sax.helpers.DefaultHandler;
 import com.hubbardgary.londontrails.model.POI;
 import com.hubbardgary.londontrails.model.Route;
 import com.hubbardgary.londontrails.model.Section;
+import com.hubbardgary.londontrails.model.dto.RoutePoiDto;
 
 public class POIProvider implements com.hubbardgary.londontrails.dataprovider.interfaces.IPOIProvider {
 
@@ -31,28 +32,50 @@ public class POIProvider implements com.hubbardgary.londontrails.dataprovider.in
     }
 
     @Override
-    public List<POI> getPOIsForRoute(int startLocation, int endLocation) {
+    public RoutePoiDto getPOIsForRoute(int startLocation, int endLocation) {
         if (!route.isLinear() && startLocation != endLocation) {
             throw new IllegalArgumentException("Non-linear routes must have matching startLocation and endLocation.");
         }
-        if (startLocation < 0 || startLocation > route.getSections().length - 1) {
+        if ((route.isCircular() && (startLocation < 0 || startLocation > route.getSections().length - 1))
+                || (!route.isCircular() && (startLocation < 0 || startLocation > route.getSections().length))) {
             throw new IllegalArgumentException("startLocation must be a valid section start point.");
         }
-        if (endLocation < 0 || endLocation > route.getSections().length - 1) {
+        if ((route.isCircular() && (endLocation < 0 || endLocation > route.getSections().length - 1))
+                || (!route.isCircular() && (endLocation < 0 || endLocation > route.getSections().length))) {
             throw new IllegalArgumentException("endLocation must be a valid section end point.");
         }
         if (route.isLinear() && !route.isCircular() && endLocation <= startLocation) {
             throw new IllegalArgumentException("endLocation must be greater than startLocation for non-circular routes.");
         }
 
+        RoutePoiDto routePoiDto = new RoutePoiDto();
         int currentLocation = startLocation;
-        List<POI> poi = new ArrayList<>();
+        List<POI> allPOIs = new ArrayList<>();
         do {
             InputStream is = null;
             try {
                 Section s = route.getSection(currentLocation);
                 is = assetManager.open(s.getPoiResource(route.getShortName()));
-                poi.addAll(getPOIs(is));
+
+                List<POI> pois = getPOIs(is);
+
+                for (POI poi : pois) {
+
+                    if (allPOIs.isEmpty() || poi.getLatitude() > routePoiDto.getMaximumLatitude()) {
+                        routePoiDto.setMaximumLatitude(poi.getLatitude());
+                    }
+                    if (allPOIs.isEmpty() || poi.getLongitude() > routePoiDto.getMaximumLongitude()) {
+                        routePoiDto.setMaximumLongitude(poi.getLongitude());
+                    }
+                    if (allPOIs.isEmpty() || poi.getLatitude() < routePoiDto.getMinimumLatitude()) {
+                        routePoiDto.setMinimumLatitude(poi.getLatitude());
+                    }
+                    if (allPOIs.isEmpty() || poi.getLongitude() < routePoiDto.getMinimumLongitude()) {
+                        routePoiDto.setMinimumLongitude(poi.getLongitude());
+                    }
+
+                    allPOIs.add(poi);
+                }
             } catch (IOException e) {
             } finally {
                 try {
@@ -76,7 +99,8 @@ public class POIProvider implements com.hubbardgary.londontrails.dataprovider.in
         }
         while (currentLocation != endLocation);
 
-        return poi;
+        routePoiDto.setPOIs(allPOIs);
+        return routePoiDto;
     }
 
     private static List<POI> getPOIs(InputStream is) {

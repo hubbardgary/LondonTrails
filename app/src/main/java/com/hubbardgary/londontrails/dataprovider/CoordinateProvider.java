@@ -4,6 +4,7 @@ import android.content.res.AssetManager;
 
 import com.hubbardgary.londontrails.model.Route;
 import com.hubbardgary.londontrails.model.Section;
+import com.hubbardgary.londontrails.model.dto.RouteCoordinatesDto;
 
 import java.io.IOException;
 import java.io.InputStream;
@@ -29,14 +30,16 @@ public class CoordinateProvider implements com.hubbardgary.londontrails.dataprov
     }
 
     @Override
-    public double[][] getPathWayPoints(int startLocation, int endLocation) {
+    public RouteCoordinatesDto getRouteCoordinates(int startLocation, int endLocation) {
         if (!route.isLinear() && startLocation != endLocation) {
             throw new IllegalArgumentException("Non-linear routes must have matching startLocation and endLocation.");
         }
-        if (startLocation < 0 || startLocation > route.getSections().length - 1) {
+        if ((route.isCircular() && (startLocation < 0 || startLocation > route.getSections().length - 1))
+                || (!route.isCircular() && (startLocation < 0 || startLocation > route.getSections().length))) {
             throw new IllegalArgumentException("startLocation must be a valid section start point.");
         }
-        if (endLocation < 0 || endLocation > route.getSections().length - 1) {
+        if ((route.isCircular() && (endLocation < 0 || endLocation > route.getSections().length - 1))
+                || (!route.isCircular() && (endLocation < 0 || endLocation > route.getSections().length))) {
             throw new IllegalArgumentException("endLocation must be a valid section end point.");
         }
         if (route.isLinear() && !route.isCircular() && endLocation <= startLocation) {
@@ -108,23 +111,40 @@ public class CoordinateProvider implements com.hubbardgary.londontrails.dataprov
             return currentLocation + 1;
         }
     }
-    private double[][] parseCoordinates(String coordinates) {
-        String[] coordinatesParsed;
-        coordinatesParsed = coordinates.split(",0.000000"); // SAXParser loses "\n" characters so split on altitude which isn't set
 
+    private RouteCoordinatesDto parseCoordinates(String rawCoordinates) {
+        String[] coordinatesParsed;
+        coordinatesParsed = rawCoordinates.split(",0.000000"); // SAXParser loses "\n" characters so split on altitude which isn't set
+
+        RouteCoordinatesDto routeCoordinatesDto = new RouteCoordinatesDto();
         int lenNew = coordinatesParsed.length;
-        double[][] wayPoints = new double[lenNew][2];
+        double[][] coordinates = new double[lenNew][2];
         for (int i = 0; i < lenNew; i++) {
             String[] xyParsed = coordinatesParsed[i].split(",");
             for (int j = 0; j < 2 && j < xyParsed.length; j++) {
                 try {
-                    wayPoints[i][j] = Double.parseDouble(xyParsed[j]);
+                    coordinates[i][j] = Double.parseDouble(xyParsed[j]);
                 } catch (Exception e) {
                     e.printStackTrace();
                 }
             }
+
+            if (i == 0 || coordinates[i][0] > routeCoordinatesDto.getMaximumLatitude()) {
+                routeCoordinatesDto.setMaximumLatitude(coordinates[i][1]);
+            }
+            if (i == 0 || coordinates[i][1] > routeCoordinatesDto.getMaximumLongitude()) {
+                routeCoordinatesDto.setMaximumLongitude(coordinates[i][0]);
+            }
+            if (i == 0 || coordinates[i][1] < routeCoordinatesDto.getMinimumLatitude()) {
+                routeCoordinatesDto.setMinimumLatitude(coordinates[i][1]);
+            }
+            if (i == 0 || coordinates[i][1] < routeCoordinatesDto.getMinimumLongitude()) {
+                routeCoordinatesDto.setMinimumLongitude(coordinates[i][0]);
+            }
         }
-        return wayPoints;
+
+        routeCoordinatesDto.setCoordinates(coordinates);
+        return routeCoordinatesDto;
     }
 
     private static String getRoute(InputStream is) {

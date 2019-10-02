@@ -129,17 +129,18 @@ public class CoordinateProvider implements com.hubbardgary.londontrails.dataprov
                 }
             }
 
-            if (i == 0 || coordinates[i][0] > routeCoordinatesDto.getMaximumLatitude()) {
+
+            if (i == 0 || coordinates[i][0] > routeCoordinatesDto.getMaximumLongitude()) {
+                routeCoordinatesDto.setMaximumLongitude(coordinates[i][0]);
+            }
+            if (i == 0 || coordinates[i][1] > routeCoordinatesDto.getMaximumLatitude()) {
                 routeCoordinatesDto.setMaximumLatitude(coordinates[i][1]);
             }
-            if (i == 0 || coordinates[i][1] > routeCoordinatesDto.getMaximumLongitude()) {
-                routeCoordinatesDto.setMaximumLongitude(coordinates[i][0]);
+            if (i == 0 || coordinates[i][0] < routeCoordinatesDto.getMinimumLongitude()) {
+                routeCoordinatesDto.setMinimumLongitude(coordinates[i][0]);
             }
             if (i == 0 || coordinates[i][1] < routeCoordinatesDto.getMinimumLatitude()) {
                 routeCoordinatesDto.setMinimumLatitude(coordinates[i][1]);
-            }
-            if (i == 0 || coordinates[i][1] < routeCoordinatesDto.getMinimumLongitude()) {
-                routeCoordinatesDto.setMinimumLongitude(coordinates[i][0]);
             }
         }
 

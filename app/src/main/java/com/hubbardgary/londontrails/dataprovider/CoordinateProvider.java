@@ -2,13 +2,16 @@ package com.hubbardgary.londontrails.dataprovider;
 
 import android.content.res.AssetManager;
 
+import com.hubbardgary.londontrails.model.Coordinates;
 import com.hubbardgary.londontrails.model.Route;
 import com.hubbardgary.londontrails.model.Section;
 import com.hubbardgary.londontrails.model.dto.RouteCoordinatesDto;
 
 import java.io.IOException;
 import java.io.InputStream;
+import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.List;
 
 import javax.xml.parsers.ParserConfigurationException;
 import javax.xml.parsers.SAXParser;
@@ -117,30 +120,27 @@ public class CoordinateProvider implements com.hubbardgary.londontrails.dataprov
         coordinatesParsed = rawCoordinates.split(",0.000000"); // SAXParser loses "\n" characters so split on altitude which isn't set
 
         RouteCoordinatesDto routeCoordinatesDto = new RouteCoordinatesDto();
-        int lenNew = coordinatesParsed.length;
-        double[][] coordinates = new double[lenNew][2];
-        for (int i = 0; i < lenNew; i++) {
+        List<Coordinates> coordinates = new ArrayList<>();
+
+        for (int i = 0; i < coordinatesParsed.length; i++) {
             String[] xyParsed = coordinatesParsed[i].split(",");
-            for (int j = 0; j < 2 && j < xyParsed.length; j++) {
-                try {
-                    coordinates[i][j] = Double.parseDouble(xyParsed[j]);
-                } catch (Exception e) {
-                    e.printStackTrace();
-                }
-            }
 
+            // KML files have longitude/latitude ordering
+            double longitude = Double.parseDouble(xyParsed[0]);
+            double latitude = Double.parseDouble(xyParsed[1]);
+            coordinates.add(new Coordinates(latitude, longitude));
 
-            if (i == 0 || coordinates[i][0] > routeCoordinatesDto.getMaximumLongitude()) {
-                routeCoordinatesDto.setMaximumLongitude(coordinates[i][0]);
+            if (i == 0 || longitude > routeCoordinatesDto.getMaximumLongitude()) {
+                routeCoordinatesDto.setMaximumLongitude(longitude);
             }
-            if (i == 0 || coordinates[i][1] > routeCoordinatesDto.getMaximumLatitude()) {
-                routeCoordinatesDto.setMaximumLatitude(coordinates[i][1]);
+            if (i == 0 || latitude > routeCoordinatesDto.getMaximumLatitude()) {
+                routeCoordinatesDto.setMaximumLatitude(latitude);
             }
-            if (i == 0 || coordinates[i][0] < routeCoordinatesDto.getMinimumLongitude()) {
-                routeCoordinatesDto.setMinimumLongitude(coordinates[i][0]);
+            if (i == 0 || longitude < routeCoordinatesDto.getMinimumLongitude()) {
+                routeCoordinatesDto.setMinimumLongitude(longitude);
             }
-            if (i == 0 || coordinates[i][1] < routeCoordinatesDto.getMinimumLatitude()) {
-                routeCoordinatesDto.setMinimumLatitude(coordinates[i][1]);
+            if (i == 0 || latitude < routeCoordinatesDto.getMinimumLatitude()) {
+                routeCoordinatesDto.setMinimumLatitude(latitude);
             }
         }
 

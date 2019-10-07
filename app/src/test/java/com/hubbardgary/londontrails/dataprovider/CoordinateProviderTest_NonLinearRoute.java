@@ -4,7 +4,9 @@ import android.content.res.AssetManager;
 import android.content.res.Resources;
 
 import com.hubbardgary.londontrails.config.interfaces.IGlobalObjects;
+import com.hubbardgary.londontrails.model.Coordinates;
 import com.hubbardgary.londontrails.model.Route;
+import com.hubbardgary.londontrails.model.dto.RouteCoordinatesDto;
 import com.hubbardgary.londontrails.testhelpers.DataProviderHelpers;
 import com.hubbardgary.londontrails.testhelpers.RouteHelpers;
 import com.hubbardgary.londontrails.view.interfaces.IRouteOptionsView;
@@ -20,6 +22,8 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 
+import static junit.framework.TestCase.assertEquals;
+import static junit.framework.TestCase.assertNotNull;
 import static org.junit.Assert.assertTrue;
 import static org.mockito.Mockito.when;
 
@@ -28,81 +32,96 @@ public class CoordinateProviderTest_NonLinearRoute {
     private Route mockRoute;
     private CoordinateProvider _sut;
 
-    private double[][][] sectionCoordinates = getSectionCoordinates();
-    private double[][][] startLinkCoordinates = getStartLinkCoordinates();
-    private double[][][] endLinkCoordinates = getEndLinkCoordinates();
+    private List<List<Coordinates>> sectionCoordinates = getSectionCoordinates();
+    private List<List<Coordinates>> startLinkCoordinates = getStartLinkCoordinates();
+    private List<List<Coordinates>> endLinkCoordinates = getEndLinkCoordinates();
 
-    private static double[][][] getSectionCoordinates() {
-        double[][] section1 = new double[][] {
-                new double[] { 0.021436,51.430962 },
-                new double[] { 0.021385,51.430756 },
-                new double[] { 0.019630,51.430790 },
-                new double[] { 0.019548,51.431526 }
-        };
-        double[][] section2 = new double[][] {
-                new double[] { 0.011130,51.433521 },
-                new double[] { 0.009731,51.433224 },
-                new double[] { 0.007520,51.432571 },
-                new double[] { 0.008080,51.430981 },
-                new double[] { 0.004745,51.430538 },
-                new double[] { 0.004797,51.430374 }
-        };
-        double[][] section3 = new double[][] {
-                new double[] { -0.002370,51.429192 },
-                new double[] { -0.001430,51.428581 },
-                new double[] { -0.000380,51.426331 }
-        };
-        double[][] section4 = new double[][] {
-                new double[] { -0.018545,51.419144 },
-                new double[] { -0.018950,51.419220 },
-                new double[] { -0.019510,51.418781 },
-                new double[] { -0.020390,51.419102 },
-                new double[] { -0.020690,51.419392 },
-                new double[] { -0.021653,51.420532 },
-                new double[] { -0.022280,51.419910 },
-                new double[] { -0.023230,51.418442 }
-        };
-        return new double[][][] { section1, section2, section3, section4 };
+    private static List<List<Coordinates>> getSectionCoordinates() {
+        List<Coordinates> section0 = new ArrayList<>(Arrays.asList(
+                new Coordinates(51.430962, 0.021436),
+                new Coordinates(51.430756, 0.021385),
+                new Coordinates(51.430790, 0.019630),
+                new Coordinates(51.431526, 0.019548)
+        ));
+        List<Coordinates> section1 = new ArrayList<>(Arrays.asList(
+                new Coordinates(51.433521, 0.011130),
+                new Coordinates(51.433224, 0.009731),
+                new Coordinates(51.432571, 0.007520),
+                new Coordinates(51.430981, 0.008080),
+                new Coordinates(51.430538, 0.004745),
+                new Coordinates(51.430374, 0.004797)
+        ));
+        List<Coordinates> section2 = new ArrayList<>(Arrays.asList(
+                new Coordinates(51.429192, -0.002370),
+                new Coordinates(51.428581, -0.001430),
+                new Coordinates(51.426331, -0.000380)
+        ));
+        List<Coordinates> section3 = new ArrayList<>(Arrays.asList(
+                new Coordinates(51.419144, -0.018545),
+                new Coordinates(51.419220, -0.018950),
+                new Coordinates(51.418781, -0.019510),
+                new Coordinates(51.419102, -0.020390),
+                new Coordinates(51.419392, -0.020690),
+                new Coordinates(51.420532, -0.021653),
+                new Coordinates(51.419910, -0.022280),
+                new Coordinates(51.418442, -0.023230)
+        ));
+        List<List<Coordinates>> sectionCoordinates = new ArrayList<>();
+        sectionCoordinates.add(section0);
+        sectionCoordinates.add(section1);
+        sectionCoordinates.add(section2);
+        sectionCoordinates.add(section3);
+        return sectionCoordinates;
     }
 
-    private static double [][][] getStartLinkCoordinates() {
-        double[][] section1 = new double[][] {
-                new double[] { 0.068930,51.490021 },
-                new double[] { 0.068830,51.490082 },
-                new double[] { 0.069440,51.490452 }
-        };
-        double[][] section2 = new double[][] {};
-        double[][] section3 = new double[][] {
-                new double[] { 0.021400,51.430950 },
-                new double[] { 0.021527,51.430920 }
-        };
-        double[][] section4 = new double[][] {
-                new double[] { -0.135785,51.418846 },
-                new double[] { -0.136082,51.419224 },
-                new double[] { -0.136031,51.419315 },
-                new double[] { -0.136935,51.420238 }
-        };
-        return new double[][][] { section1, section2, section3, section4 };
+    private static List<List<Coordinates>> getStartLinkCoordinates() {
+        List<Coordinates> section0 = new ArrayList<>(Arrays.asList(
+                new Coordinates(51.490021, 0.068930),
+                new Coordinates(51.490082, 0.068830),
+                new Coordinates(51.490452, 0.069440)
+        ));
+        List<Coordinates> section1 = new ArrayList<>();
+        List<Coordinates> section2 = new ArrayList<>(Arrays.asList(
+                new Coordinates(51.430950, 0.021400),
+                new Coordinates(51.430920, 0.021527)
+        ));
+        List<Coordinates> section3 = new ArrayList<>(Arrays.asList(
+                new Coordinates(51.418846, -0.135785),
+                new Coordinates(51.419224, -0.136082),
+                new Coordinates(51.419315, -0.136031),
+                new Coordinates(51.420238, -0.136935)
+        ));
+        List<List<Coordinates>> sectionCoordinates = new ArrayList<>();
+        sectionCoordinates.add(section0);
+        sectionCoordinates.add(section1);
+        sectionCoordinates.add(section2);
+        sectionCoordinates.add(section3);
+        return sectionCoordinates;
     }
 
-    private static double [][][] getEndLinkCoordinates() {
-        double[][] section1 = new double[][] {};
-        double[][] section2 = new double[][] {
-                new double[] { 0.021527,51.430920 },
-                new double[] { 0.021400,51.430950 }
-        };
-        double[][] section3 = new double[][] {
-                new double[] { -0.136935,51.420238 },
-                new double[] { -0.136031,51.419315 },
-                new double[] { -0.136082,51.419224 },
-                new double[] { -0.135785,51.418846 }
-        };
-        double[][] section4 = new double[][] {
-                new double[] { 0.069440,51.490452 },
-                new double[] { 0.068830,51.490082 },
-                new double[] { 0.068930,51.490021 }
-        };
-        return new double[][][] { section1, section2, section3, section4 };
+    private static List<List<Coordinates>> getEndLinkCoordinates() {
+        List<Coordinates> section0 = new ArrayList<>();
+        List<Coordinates> section1 = new ArrayList<>(Arrays.asList(
+                new Coordinates(51.430920, 0.021527),
+                new Coordinates(51.430950, 0.021400)
+        ));
+        List<Coordinates> section2 = new ArrayList<>(Arrays.asList(
+                new Coordinates(51.420238, -0.136935),
+                new Coordinates(51.419315, -0.136031),
+                new Coordinates(51.419224, -0.136082),
+                new Coordinates(51.418846, -0.135785)
+        ));
+        List<Coordinates> section3 = new ArrayList<>(Arrays.asList(
+                new Coordinates(51.490452, 0.069440),
+                new Coordinates(51.490082, 0.068830),
+                new Coordinates(51.490021, 0.068930)
+        ));
+        List<List<Coordinates>> sectionCoordinates = new ArrayList<>();
+        sectionCoordinates.add(section0);
+        sectionCoordinates.add(section1);
+        sectionCoordinates.add(section2);
+        sectionCoordinates.add(section3);
+        return sectionCoordinates;
     }
 
     @Before
@@ -111,18 +130,18 @@ public class CoordinateProviderTest_NonLinearRoute {
         Resources mockResources;
         IRouteOptionsView mockView;
 
-        String section1Coordinates = DataProviderHelpers.buildSectionCoordinatesXml(sectionCoordinates[0]);
-        String section2Coordinates = DataProviderHelpers.buildSectionCoordinatesXml(sectionCoordinates[1]);
-        String section3Coordinates = DataProviderHelpers.buildSectionCoordinatesXml(sectionCoordinates[2]);
-        String section4Coordinates = DataProviderHelpers.buildSectionCoordinatesXml(sectionCoordinates[3]);
+        String section1Coordinates = DataProviderHelpers.buildSectionCoordinatesXml(sectionCoordinates.get(0));
+        String section2Coordinates = DataProviderHelpers.buildSectionCoordinatesXml(sectionCoordinates.get(1));
+        String section3Coordinates = DataProviderHelpers.buildSectionCoordinatesXml(sectionCoordinates.get(2));
+        String section4Coordinates = DataProviderHelpers.buildSectionCoordinatesXml(sectionCoordinates.get(3));
 
-        String startLink1Coordinates = DataProviderHelpers.buildSectionCoordinatesXml(startLinkCoordinates[0]);
-        String startLink3Coordinates = DataProviderHelpers.buildSectionCoordinatesXml(startLinkCoordinates[2]);
-        String startLink4Coordinates = DataProviderHelpers.buildSectionCoordinatesXml(startLinkCoordinates[3]);
+        String startLink1Coordinates = DataProviderHelpers.buildSectionCoordinatesXml(startLinkCoordinates.get(0));
+        String startLink3Coordinates = DataProviderHelpers.buildSectionCoordinatesXml(startLinkCoordinates.get(2));
+        String startLink4Coordinates = DataProviderHelpers.buildSectionCoordinatesXml(startLinkCoordinates.get(3));
 
-        String endLink2Coordinates = DataProviderHelpers.buildSectionCoordinatesXml(endLinkCoordinates[1]);
-        String endLink3Coordinates = DataProviderHelpers.buildSectionCoordinatesXml(endLinkCoordinates[2]);
-        String endLink4Coordinates = DataProviderHelpers.buildSectionCoordinatesXml(endLinkCoordinates[3]);
+        String endLink2Coordinates = DataProviderHelpers.buildSectionCoordinatesXml(endLinkCoordinates.get(1));
+        String endLink3Coordinates = DataProviderHelpers.buildSectionCoordinatesXml(endLinkCoordinates.get(2));
+        String endLink4Coordinates = DataProviderHelpers.buildSectionCoordinatesXml(endLinkCoordinates.get(3));
 
         mockAssetManager = Mockito.mock(AssetManager.class);
         try {
@@ -162,61 +181,65 @@ public class CoordinateProviderTest_NonLinearRoute {
     @Test
     public void routeFromLocation0ToLocation0_ShouldIncludeRouteAndLinksForSection0() {
         // Arrange
-        List<double[]> expectedResult = new ArrayList<>();
-        expectedResult.addAll(Arrays.asList(startLinkCoordinates[0]));
-        expectedResult.addAll(Arrays.asList(sectionCoordinates[0]));
+        List<Coordinates> expectedResult = new ArrayList<>();
+        expectedResult.addAll(startLinkCoordinates.get(0));
+        expectedResult.addAll(sectionCoordinates.get(0));
         // Section 0 has no end link
 
         // Act
-        double[][] result = _sut.getRouteCoordinates(0, 0).getCoordinates();
+        RouteCoordinatesDto result = _sut.getRouteCoordinates(0, 0);
 
         // Assert
-        assertTrue(Arrays.deepEquals(result, expectedResult.toArray()));
+        assertNotNull(result);
+        assertEquals(result.getCoordinates(), expectedResult);
     }
 
     @Test
     public void routeFromLocation1ToLocation1_ShouldIncludeRouteAndLinksForSection1() {
         // Arrange
-        List<double[]> expectedResult = new ArrayList<>();
+        List<Coordinates> expectedResult = new ArrayList<>();
         // Section 1 has no start link
-        expectedResult.addAll(Arrays.asList(sectionCoordinates[1]));
-        expectedResult.addAll(Arrays.asList(endLinkCoordinates[1]));
+        expectedResult.addAll(sectionCoordinates.get(1));
+        expectedResult.addAll(endLinkCoordinates.get(1));
 
         // Act
-        double[][] result = _sut.getRouteCoordinates(1, 1).getCoordinates();
+        RouteCoordinatesDto result = _sut.getRouteCoordinates(1, 1);
 
         // Assert
-        assertTrue(Arrays.deepEquals(result, expectedResult.toArray()));
+        assertNotNull(result);
+        assertEquals(result.getCoordinates(), expectedResult);
     }
 
     @Test
     public void routeFromLocation2ToLocation2_ShouldIncludeRouteAndLinksForSection2() {
         // Arrange
-        List<double[]> expectedResult = new ArrayList<>();
-        expectedResult.addAll(Arrays.asList(startLinkCoordinates[2]));
-        expectedResult.addAll(Arrays.asList(sectionCoordinates[2]));
-        expectedResult.addAll(Arrays.asList(endLinkCoordinates[2]));
+        List<Coordinates> expectedResult = new ArrayList<>();
+        expectedResult.addAll(startLinkCoordinates.get(2));
+        expectedResult.addAll(sectionCoordinates.get(2));
+        expectedResult.addAll(endLinkCoordinates.get(2));
 
         // Act
-        double[][] result = _sut.getRouteCoordinates(2, 2).getCoordinates();
+        RouteCoordinatesDto result = _sut.getRouteCoordinates(2, 2);
 
         // Assert
-        assertTrue(Arrays.deepEquals(result, expectedResult.toArray()));
+        assertNotNull(result);
+        assertEquals(result.getCoordinates(), expectedResult);
     }
 
     @Test
     public void routeFromLocation3ToLocation3_ShouldIncludeRouteAndLinksForSection3() {
         // Arrange
-        List<double[]> expectedResult = new ArrayList<>();
-        expectedResult.addAll(Arrays.asList(startLinkCoordinates[3]));
-        expectedResult.addAll(Arrays.asList(sectionCoordinates[3]));
-        expectedResult.addAll(Arrays.asList(endLinkCoordinates[3]));
+        List<Coordinates> expectedResult = new ArrayList<>();
+        expectedResult.addAll(startLinkCoordinates.get(3));
+        expectedResult.addAll(sectionCoordinates.get(3));
+        expectedResult.addAll(endLinkCoordinates.get(3));
 
         // Act
-        double[][] result = _sut.getRouteCoordinates(3, 3).getCoordinates();
+        RouteCoordinatesDto result = _sut.getRouteCoordinates(3, 3);
 
         // Assert
-        assertTrue(Arrays.deepEquals(result, expectedResult.toArray()));
+        assertNotNull(result);
+        assertEquals(result.getCoordinates(), expectedResult);
     }
 
     @Test(expected = IllegalArgumentException.class)

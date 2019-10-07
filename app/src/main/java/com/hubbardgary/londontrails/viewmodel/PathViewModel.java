@@ -1,25 +1,30 @@
 package com.hubbardgary.londontrails.viewmodel;
 
+import com.hubbardgary.londontrails.model.Coordinates;
+
+import java.util.ArrayList;
+import java.util.List;
+
 public class PathViewModel {
     private String name;
     private String description;
     private int color;
     private int width;
-    private double[][] coordinates = new double[][]{};
+    private List<Coordinates> coordinates = new ArrayList<>();
 
-    public double[][] getCoordinates() {
+    public List<Coordinates> getCoordinates() {
         return coordinates;
     }
 
     public double getCoordinateLat(int i) {
-        return coordinates[i][1];
+        return coordinates.get(i).getLatitude();
     }
 
     public double getCoordinateLng(int i) {
-        return coordinates[i][0];
+        return coordinates.get(i).getLongitude();
     }
 
-    public void setCoordinates(double[][] coordinates) {
+    public void setCoordinates(List<Coordinates> coordinates) {
         this.coordinates = coordinates;
     }
 

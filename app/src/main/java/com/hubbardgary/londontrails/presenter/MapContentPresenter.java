@@ -83,16 +83,16 @@ public class MapContentPresenter {
             vm.startLongitude = vm.path.getCoordinateLng(0);
         }
         else {
-            vm.startLatitude = vm.path.getCoordinateLat(vm.path.getCoordinates().length - 1);
-            vm.startLongitude = vm.path.getCoordinateLng(vm.path.getCoordinates().length - 1);
+            vm.startLatitude = vm.path.getCoordinateLat(vm.path.getCoordinates().size() - 1);
+            vm.startLongitude = vm.path.getCoordinateLng(vm.path.getCoordinates().size() - 1);
         }
         return vm;
     }
 
     private MapContentViewModel setEndCoordinates(MapContentViewModel vm) {
         if (showMapVm.isClockwise) {
-            vm.endLatitude = vm.path.getCoordinateLat(vm.path.getCoordinates().length - 1);
-            vm.endLongitude = vm.path.getCoordinateLng(vm.path.getCoordinates().length - 1);
+            vm.endLatitude = vm.path.getCoordinateLat(vm.path.getCoordinates().size() - 1);
+            vm.endLongitude = vm.path.getCoordinateLng(vm.path.getCoordinates().size() - 1);
         }
         else {
             vm.endLatitude = vm.path.getCoordinateLat(0);

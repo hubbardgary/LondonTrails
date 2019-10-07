@@ -1,6 +1,9 @@
 package com.hubbardgary.londontrails.testhelpers;
 
+import com.hubbardgary.londontrails.model.Coordinates;
 import com.hubbardgary.londontrails.model.POI;
+
+import java.util.List;
 
 public class DataProviderHelpers {
     private static String buildPlacemarkXml(POI[] placemarks) {
@@ -34,7 +37,7 @@ public class DataProviderHelpers {
                 "</kml>\n";
     }
 
-    public static String buildSectionCoordinatesXml(double[][] coordinates) {
+    public static String buildSectionCoordinatesXml(List<Coordinates> coordinates) {
         String xml = "<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n" +
                 "<kml xmlns=\"http://earth.google.com/kml/2.2\">\n" +
                 "<Document>\n" +
@@ -62,13 +65,12 @@ public class DataProviderHelpers {
         return xml;
     }
 
-    private static String getCoordinates(double[][] coordinates) {
+    private static String getCoordinates(List<Coordinates> coordinates) {
         String s = "";
-        for (double[] pair : coordinates) {
+        for (Coordinates c : coordinates) {
             s = s + "        ";
-            for (double c : pair) {
-                s = s + c + ",";
-            }
+            s = s + c.getLongitude() + ",";
+            s = s + c.getLatitude() + ",";
             s = s + "0.000000\n";
         }
         return s;

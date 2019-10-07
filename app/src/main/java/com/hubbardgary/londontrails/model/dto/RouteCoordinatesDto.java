@@ -1,17 +1,22 @@
 package com.hubbardgary.londontrails.model.dto;
 
+import com.hubbardgary.londontrails.model.Coordinates;
+
+import java.util.List;
+
 public class RouteCoordinatesDto {
-    private double[][] coordinates;
+    //private double[][] coordinates;
+    private List<Coordinates> coordinates;
     private double minimumLatitude;
     private double maximumLatitude;
     private double minimumLongitude;
     private double maximumLongitude;
 
-    public double[][] getCoordinates() {
+    public List<Coordinates> getCoordinates() {
         return coordinates;
     }
 
-    public void setCoordinates(double[][] coordinates) {
+    public void setCoordinates(List<Coordinates> coordinates) {
         this.coordinates = coordinates;
     }
 

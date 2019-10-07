@@ -6,6 +6,7 @@ import com.google.android.gms.maps.GoogleMap;
 import com.hubbardgary.londontrails.dataprovider.interfaces.ICoordinateProvider;
 import com.hubbardgary.londontrails.dataprovider.interfaces.IPOIProvider;
 import com.hubbardgary.londontrails.model.CapitalRing;
+import com.hubbardgary.londontrails.model.Coordinates;
 import com.hubbardgary.londontrails.model.POI;
 import com.hubbardgary.londontrails.model.dto.RoutePoiDto;
 import com.hubbardgary.londontrails.model.dto.RouteCoordinatesDto;
@@ -18,6 +19,7 @@ import org.junit.Test;
 import org.mockito.Mockito;
 
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
 
 import static org.junit.Assert.assertEquals;
@@ -81,12 +83,12 @@ public class MapContentPresenterTest {
         when(mockView.getAssetManager()).thenReturn(mockAssetManager);
 
         RouteCoordinatesDto coordinatesDto = new RouteCoordinatesDto();
-        coordinatesDto.setCoordinates(new double[][] {
-                new double[] { 0.063600, 51.387386 },
-                new double[] { -0.488226, 51.544458 },
-                new double[] { -0.237016, 51.635921 },
-                new double[] { 0.076773, 51.220917 }
-        });
+        coordinatesDto.setCoordinates(new ArrayList<Coordinates>(Arrays.asList(
+                new Coordinates(51.387386, 0.063600),
+                new Coordinates(51.544458, -0.488226),
+                new Coordinates(51.635921, -0.237016),
+                new Coordinates(51.220917, 0.076773)
+        )));
 
         coordinatesDto.setMaximumLatitude(51.635921);
         coordinatesDto.setMinimumLatitude(51.220917);

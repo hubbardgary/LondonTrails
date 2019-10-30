@@ -5,7 +5,7 @@ import com.hubbardgary.londontrails.R;
 import com.hubbardgary.londontrails.config.interfaces.IGlobalObjects;
 import com.hubbardgary.londontrails.model.CapitalRing;
 import com.hubbardgary.londontrails.model.LondonLoop;
-import com.hubbardgary.londontrails.model.Route;
+import com.hubbardgary.londontrails.model.interfaces.IRoute;
 import com.hubbardgary.londontrails.view.interfaces.IShowMapView;
 import com.hubbardgary.londontrails.viewmodel.ShowMapViewModel;
 
@@ -32,7 +32,7 @@ public class ShowMapPresenterTest {
         mockGlobals = Mockito.mock(IGlobalObjects.class);
     }
 
-    private void setUpWalk(int start, int end, int direction, Route route, int mapPreference) {
+    private void setUpWalk(int start, int end, int direction, IRoute route, int mapPreference) {
         when(mockView.getIntFromIntent("startSection")).thenReturn(start);
         when(mockView.getIntFromIntent("endSection")).thenReturn(end);
         when(mockView.getIntFromIntent("direction")).thenReturn(direction);

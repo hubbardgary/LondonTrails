@@ -3,9 +3,9 @@ package com.hubbardgary.londontrails.dataprovider;
 import android.content.res.AssetManager;
 
 import com.hubbardgary.londontrails.model.Coordinates;
-import com.hubbardgary.londontrails.model.Route;
-import com.hubbardgary.londontrails.model.Section;
 import com.hubbardgary.londontrails.model.dto.RouteCoordinatesDto;
+import com.hubbardgary.londontrails.model.interfaces.IRoute;
+import com.hubbardgary.londontrails.model.interfaces.ISection;
 
 import java.io.IOException;
 import java.io.InputStream;
@@ -23,11 +23,11 @@ import org.xml.sax.helpers.DefaultHandler;
 
 public class CoordinateProvider implements com.hubbardgary.londontrails.dataprovider.interfaces.ICoordinateProvider {
 
-    private Route route;
+    private IRoute route;
     private AssetManager assetManager;
 
     @Override
-    public void initialize(Route route, AssetManager assetManager) {
+    public void initialize(IRoute route, AssetManager assetManager) {
         this.route = route;
         this.assetManager = assetManager;
     }
@@ -57,7 +57,7 @@ public class CoordinateProvider implements com.hubbardgary.londontrails.dataprov
         StringBuilder coordinates = new StringBuilder();
 
         do {
-            Section s = route.getSection(currentLocation);
+            ISection s = route.getSection(currentLocation);
 
             if (currentLocation == startLocation) {
                 coordinates.append(appendCoordinates(s.getStartLinkResource(s.getRouteShortName())));

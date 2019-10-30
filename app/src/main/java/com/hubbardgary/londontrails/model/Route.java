@@ -1,8 +1,10 @@
 package com.hubbardgary.londontrails.model;
 
-public abstract class Route {
+import com.hubbardgary.londontrails.model.interfaces.ISection;
 
-    private Section[] sections;
+public abstract class Route implements com.hubbardgary.londontrails.model.interfaces.IRoute {
+
+    private ISection[] sections;
     private boolean circular;
     private boolean linear;  // Indicates whether route is contiguous (i.e. multiple sections can be chained into a single walk)
     private String name;
@@ -12,24 +14,25 @@ public abstract class Route {
     public Route() {
     }
 
-    public abstract int getRouteId();
-
-    public Section[] getSections() {
+    @Override
+    public ISection[] getSections() {
         return sections;
     }
 
-    public Section getSection(int i) {
+    @Override
+    public ISection getSection(int i) {
         return sections[i];
     }
 
-    void setSections(Section[] sections) {
+    void setSections(ISection[] sections) {
         this.sections = sections;
     }
 
-    void setSection(int i, Section section) {
+    void setSection(int i, ISection section) {
         this.sections[i] = section;
     }
 
+    @Override
     public boolean isCircular() {
         return circular;
     }
@@ -38,6 +41,7 @@ public abstract class Route {
         this.circular = circular;
     }
 
+    @Override
     public boolean isLinear() {
         return linear;
     }
@@ -46,14 +50,17 @@ public abstract class Route {
         this.linear = linear;
     }
 
+    @Override
     public String getName() {
         return name;
     }
 
+    @Override
     public void setName(String name) {
         this.name = name;
     }
 
+    @Override
     public String getShortName() {
         return shortName;
     }
@@ -62,6 +69,7 @@ public abstract class Route {
         this.shortName = shortName;
     }
 
+    @Override
     public double getDistanceInKm() {
         return distanceInKm;
     }

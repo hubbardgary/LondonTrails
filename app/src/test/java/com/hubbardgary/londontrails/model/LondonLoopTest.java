@@ -1,6 +1,7 @@
 package com.hubbardgary.londontrails.model;
 
 import com.hubbardgary.londontrails.R;
+import com.hubbardgary.londontrails.model.interfaces.ISection;
 
 import org.junit.Before;
 import org.junit.Test;
@@ -54,7 +55,7 @@ public class LondonLoopTest {
 
     @Test
     public void getSections_shouldReturnCorrectSections() {
-        Section[] result = _sut.getSections();
+        ISection[] result = _sut.getSections();
         assertNotNull(result);
         assertEquals(15, result.length);
     }

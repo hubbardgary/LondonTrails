@@ -2,12 +2,12 @@ package com.hubbardgary.londontrails.config.interfaces;
 
 import android.content.ComponentCallbacks2;
 
-import com.hubbardgary.londontrails.model.Route;
+import com.hubbardgary.londontrails.model.interfaces.IRoute;
 
 public interface IGlobalObjects extends ComponentCallbacks2 {
-    Route getCurrentRoute();
+    IRoute getCurrentRoute();
 
-    void setCurrentRoute(Route r);
+    void setCurrentRoute(IRoute r);
 
     CharSequence getButtonText(String title, String subtitle);
 

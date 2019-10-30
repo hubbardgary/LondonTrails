@@ -2,6 +2,7 @@ package com.hubbardgary.londontrails.model;
 
 import com.hubbardgary.londontrails.R;
 import com.hubbardgary.londontrails.config.GlobalObjects;
+import com.hubbardgary.londontrails.model.interfaces.ISection;
 
 import java.util.Locale;
 
@@ -20,15 +21,15 @@ public class GreenChainWalk extends Route {
         setDistanceInKm(distanceInKM);
         setCircular(false);
         setLinear(false);
-        setSections(new Section[13]);
+        setSections(new ISection[13]);
 
         for (int i = 0; i < getSections().length; i++) {
             setSection(i, populateSections(i));
         }
     }
 
-    private Section populateSections(int section) {
-        Section s = new Section(this);
+    private ISection populateSections(int section) {
+        ISection s = new Section(this);
 
         switch (section) {
             case 0:

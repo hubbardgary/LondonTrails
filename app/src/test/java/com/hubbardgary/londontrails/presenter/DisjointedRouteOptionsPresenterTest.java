@@ -4,8 +4,8 @@ import android.content.res.Resources;
 
 import com.hubbardgary.londontrails.R;
 import com.hubbardgary.londontrails.config.interfaces.IGlobalObjects;
-import com.hubbardgary.londontrails.model.Route;
-import com.hubbardgary.londontrails.model.Section;
+import com.hubbardgary.londontrails.model.interfaces.IRoute;
+import com.hubbardgary.londontrails.model.interfaces.ISection;
 import com.hubbardgary.londontrails.view.ShowMapActivity;
 import com.hubbardgary.londontrails.view.interfaces.IRouteOptionsView;
 import com.hubbardgary.londontrails.viewmodel.RouteViewModel;
@@ -30,7 +30,7 @@ public class DisjointedRouteOptionsPresenterTest {
     private IGlobalObjects mockGlobals;
     private Resources mockResources;
     private IRouteOptionsView mockView;
-    private Route mockRoute;
+    private IRoute mockRoute;
     private DisjointedRouteOptionsPresenter _sut;
 
     @Before
@@ -38,7 +38,7 @@ public class DisjointedRouteOptionsPresenterTest {
         mockView = Mockito.mock(IRouteOptionsView.class);
         mockGlobals = Mockito.mock(IGlobalObjects.class);
         mockResources = Mockito.mock(Resources.class);
-        mockRoute = Mockito.mock(Route.class);
+        mockRoute = Mockito.mock(IRoute.class);
     }
 
     @Test
@@ -116,7 +116,7 @@ public class DisjointedRouteOptionsPresenterTest {
     @Test
     public void optionsChanged_ShouldUpdateDistanceInViewModel() {
         // Arrange
-        Section mockSection = Mockito.mock(Section.class);
+        ISection mockSection = Mockito.mock(ISection.class);
         when(mockSection.getDistanceInKm()).thenReturn(15.0);
         when(mockSection.getStartLinkDistanceInKm()).thenReturn(1.5);
         when(mockSection.getEndLinkDistanceInKm()).thenReturn(0.5);

@@ -7,7 +7,7 @@ import com.hubbardgary.londontrails.config.interfaces.IGlobalObjects;
 import com.hubbardgary.londontrails.model.CapitalRing;
 import com.hubbardgary.londontrails.config.GlobalObjects;
 import com.hubbardgary.londontrails.model.LondonLoop;
-import com.hubbardgary.londontrails.model.Route;
+import com.hubbardgary.londontrails.model.interfaces.IRoute;
 import com.hubbardgary.londontrails.view.interfaces.IRouteOptionsView;
 import com.hubbardgary.londontrails.view.ShowMapActivity;
 import com.hubbardgary.londontrails.viewmodel.RouteViewModel;
@@ -24,7 +24,7 @@ public class RouteOptionsPresenter {
     private final int sectionResource;
     private final String[] sectionArray;
     private Resources res;
-    private Route route;
+    private IRoute route;
     private RouteViewModel routeVm;
 
     public RouteOptionsPresenter(IRouteOptionsView view, IGlobalObjects globals, Resources res) {

@@ -6,8 +6,8 @@ import com.hubbardgary.londontrails.R;
 import com.hubbardgary.londontrails.config.GlobalObjects;
 import com.hubbardgary.londontrails.config.interfaces.IGlobalObjects;
 import com.hubbardgary.londontrails.model.GreenChainWalk;
-import com.hubbardgary.londontrails.model.Route;
-import com.hubbardgary.londontrails.model.Section;
+import com.hubbardgary.londontrails.model.interfaces.IRoute;
+import com.hubbardgary.londontrails.model.interfaces.ISection;
 import com.hubbardgary.londontrails.view.ShowMapActivity;
 import com.hubbardgary.londontrails.view.interfaces.IRouteOptionsView;
 import com.hubbardgary.londontrails.viewmodel.RouteViewModel;
@@ -22,7 +22,7 @@ public class DisjointedRouteOptionsPresenter {
     private final int sectionResource;
     private final String[] sectionArray;
     private Resources res;
-    private Route route;
+    private IRoute route;
     private RouteViewModel routeVm;
 
     public DisjointedRouteOptionsPresenter(IRouteOptionsView view, IGlobalObjects globals, Resources res) {
@@ -64,7 +64,7 @@ public class DisjointedRouteOptionsPresenter {
     }
 
     private double calculateDistanceInKm(int startSection) {
-        Section s = route.getSection(startSection);
+        ISection s = route.getSection(startSection);
         return s.getDistanceInKm() +
                 s.getStartLinkDistanceInKm() +
                 s.getEndLinkDistanceInKm();

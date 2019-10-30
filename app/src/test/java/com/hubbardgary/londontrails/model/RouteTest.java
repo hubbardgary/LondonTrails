@@ -1,5 +1,7 @@
 package com.hubbardgary.londontrails.model;
 
+import com.hubbardgary.londontrails.model.interfaces.ISection;
+
 import org.junit.Before;
 import org.junit.Test;
 
@@ -16,23 +18,23 @@ public class RouteTest {
 
     @Test
     public void setSections_correctlySetsSections() {
-        Section[] sections = new Section[2];
-        Section section0 = new Section(_sut);
-        Section section1 = new Section(_sut);
+        ISection[] sections = new ISection[2];
+        ISection section0 = new Section(_sut);
+        ISection section1 = new Section(_sut);
         sections[0] = section0;
         sections[1] = section1;
         _sut.setSections(sections);
-        Section[] result = _sut.getSections();
+        ISection[] result = _sut.getSections();
         assertSame(sections, result);
     }
 
     @Test
     public void setSection_correctlySetsSection() {
-        Section[] sections = new Section[2];
+        ISection[] sections = new ISection[2];
         _sut.setSections(sections);
 
-        Section section0 = new Section(_sut);
-        Section section1 = new Section(_sut);
+        ISection section0 = new Section(_sut);
+        ISection section1 = new Section(_sut);
         _sut.setSection(0, section0);
         _sut.setSection(1, section1);
 

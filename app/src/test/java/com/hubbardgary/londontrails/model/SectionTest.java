@@ -1,5 +1,8 @@
 package com.hubbardgary.londontrails.model;
 
+import com.hubbardgary.londontrails.model.interfaces.IRoute;
+import com.hubbardgary.londontrails.model.interfaces.ISection;
+
 import org.junit.Before;
 import org.junit.Test;
 import org.mockito.Mockito;
@@ -9,21 +12,21 @@ import static org.mockito.Mockito.when;
 
 public class SectionTest {
 
-    private Section _sut;
+    private ISection _sut;
     private String _routeId = "tr";
     private String _sectionId = "03";
-    Route routeMock;
+    IRoute routeMock;
 
     @Before
     public void setUp() {
-        routeMock = Mockito.mock(Route.class);
+        routeMock = Mockito.mock(IRoute.class);
         _sut = new Section(routeMock);
         _sut.setSectionId(_sectionId);
     }
 
     @Test
     public void getRoute_returnsCorrectRoute() {
-        Route result = _sut.getRoute();
+        IRoute result = _sut.getRoute();
         assertSame(routeMock, result);
     }
 

@@ -9,14 +9,14 @@ import com.hubbardgary.londontrails.R;
 import com.hubbardgary.londontrails.model.CapitalRing;
 import com.hubbardgary.londontrails.model.GreenChainWalk;
 import com.hubbardgary.londontrails.model.LondonLoop;
-import com.hubbardgary.londontrails.model.Route;
+import com.hubbardgary.londontrails.model.interfaces.IRoute;
 
 public class GlobalObjects extends Application implements com.hubbardgary.londontrails.config.interfaces.IGlobalObjects {
 
-    private Route currentRoute;
+    private IRoute currentRoute;
     private static final double kmToMilesMultiplier = 0.62137;
 
-    public Route getCurrentRoute() {
+    public IRoute getCurrentRoute() {
         if (currentRoute != null)
             return currentRoute;
 
@@ -37,7 +37,7 @@ public class GlobalObjects extends Application implements com.hubbardgary.london
         return currentRoute;
     }
 
-    public void setCurrentRoute(Route r) {
+    public void setCurrentRoute(IRoute r) {
         currentRoute = r;
         SharedPreferences.Editor editor = getSharedPreferences(getString(R.string.shared_preferences_name), MODE_PRIVATE).edit();
         editor.putInt(getString(R.string.shared_prefs_current_route_id), r.getRouteId());

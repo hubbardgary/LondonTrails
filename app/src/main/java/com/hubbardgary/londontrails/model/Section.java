@@ -1,8 +1,10 @@
 package com.hubbardgary.londontrails.model;
 
-public class Section {
+import com.hubbardgary.londontrails.model.interfaces.IRoute;
 
-    private Route route;
+public class Section implements com.hubbardgary.londontrails.model.interfaces.ISection {
+
+    private IRoute route;
     private String sectionId;
     private String startLocationName;
     private String endLocationName;
@@ -12,7 +14,7 @@ public class Section {
     private double extensionDistanceInKm = 0;
     private String extensionDescription;
 
-    public Section(Route route) {
+    public Section(IRoute route) {
         this.route = route;
     }
 
@@ -20,86 +22,107 @@ public class Section {
         return String.format("%s-%s-%s.kml", routeId, sectionId, resourceName);
     }
 
-    public Route getRoute() {
+    @Override
+    public IRoute getRoute() {
         return this.route;
     }
 
+    @Override
     public String getRouteShortName() {
         return this.route.getShortName();
     }
 
+    @Override
     public String getSectionResource(String routeId) {
         return getResource(routeId, sectionId, "route");
     }
 
+    @Override
     public String getStartLinkResource(String routeId) {
         return getResource(routeId, sectionId, "start_link");
     }
 
+    @Override
     public String getEndLinkResource(String routeId) {
         return getResource(routeId, sectionId, "end_link");
     }
 
+    @Override
     public String getPoiResource(String routeId) {
         return getResource(routeId, sectionId, "placemarks");
     }
 
+    @Override
     public void setSectionId(String id) {
         this.sectionId = id;
     }
 
+    @Override
     public String getStartLocationName() {
         return startLocationName;
     }
 
+    @Override
     public void setStartLocationName(String startLocationName) {
         this.startLocationName = startLocationName;
     }
 
+    @Override
     public String getEndLocationName() {
         return endLocationName;
     }
 
+    @Override
     public void setEndLocationName(String endLocationName) {
         this.endLocationName = endLocationName;
     }
 
+    @Override
     public double getDistanceInKm() {
         return distanceInKm;
     }
 
+    @Override
     public void setDistanceInKm(double distanceInKm) {
         this.distanceInKm = distanceInKm;
     }
 
+    @Override
     public double getStartLinkDistanceInKm() {
         return startLinkDistanceInKm;
     }
 
+    @Override
     public void setStartLinkDistanceInKm(double startLinkDistanceInKm) {
         this.startLinkDistanceInKm = startLinkDistanceInKm;
     }
 
+    @Override
     public double getEndLinkDistanceInKm() {
         return endLinkDistanceInKm;
     }
 
+    @Override
     public void setEndLinkDistanceInKm(double endLinkDistanceInKm) {
         this.endLinkDistanceInKm = endLinkDistanceInKm;
     }
 
+    @Override
     public double getExtensionDistanceInKm() {
         return extensionDistanceInKm;
     }
 
+    @Override
     public void setExtensionDistanceInKm(double extensionDistanceInKm) {
         this.extensionDistanceInKm = extensionDistanceInKm;
     }
 
+    @Override
     public String getExtensionDescription() {
         return extensionDescription;
     }
 
+    @Override
     public void setExtensionDescription(String extensionDescription) {
         this.extensionDescription = extensionDescription;
     }

@@ -15,7 +15,7 @@ import com.hubbardgary.londontrails.dataprovider.CoordinateProvider;
 import com.hubbardgary.londontrails.dataprovider.POIProvider;
 import com.hubbardgary.londontrails.model.LondonTrailsPlacemark;
 import com.hubbardgary.londontrails.model.POI;
-import com.hubbardgary.londontrails.model.Route;
+import com.hubbardgary.londontrails.model.interfaces.IRoute;
 import com.hubbardgary.londontrails.presenter.MapContentPresenter;
 import com.hubbardgary.londontrails.view.interfaces.IMapContentView;
 import com.hubbardgary.londontrails.viewmodel.MapContentViewModel;
@@ -64,7 +64,7 @@ public class MapContentActivity extends AsyncTask<Void, Void, Integer> implement
         addWayPointMarkers();
     }
 
-    private void addStartAndEndMarkers(int start, int end, Route route) {
+    private void addStartAndEndMarkers(int start, int end, IRoute route) {
         if (showMapVm.route.isLinear() && start == end) {
             // Linear, and we're walking the full circuit
             pushPin(vm.startLatitude, vm.startLongitude, route.getSection(start).getStartLocationName(), "Your walk starts and ends here.", R.drawable.waypoint_startstop);

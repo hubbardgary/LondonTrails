@@ -5,8 +5,8 @@ import android.content.res.Resources;
 
 import com.hubbardgary.londontrails.config.interfaces.IGlobalObjects;
 import com.hubbardgary.londontrails.model.Coordinates;
-import com.hubbardgary.londontrails.model.Route;
 import com.hubbardgary.londontrails.model.dto.RouteCoordinatesDto;
+import com.hubbardgary.londontrails.model.interfaces.IRoute;
 import com.hubbardgary.londontrails.testhelpers.DataProviderHelpers;
 import com.hubbardgary.londontrails.testhelpers.RouteHelpers;
 import com.hubbardgary.londontrails.view.interfaces.IRouteOptionsView;
@@ -24,12 +24,11 @@ import java.util.List;
 
 import static junit.framework.TestCase.assertEquals;
 import static junit.framework.TestCase.assertNotNull;
-import static org.junit.Assert.assertTrue;
 import static org.mockito.Mockito.when;
 
 public class CoordinateProviderTest_LinearNonCircularRoute {
     private AssetManager mockAssetManager;
-    private Route mockRoute;
+    private IRoute mockRoute;
     private CoordinateProvider _sut;
 
     private List<List<Coordinates>> sectionCoordinates = getSectionCoordinates();
@@ -168,7 +167,7 @@ public class CoordinateProviderTest_LinearNonCircularRoute {
         mockView = Mockito.mock(IRouteOptionsView.class);
         mockGlobals = Mockito.mock(IGlobalObjects.class);
         mockResources = Mockito.mock(Resources.class);
-        mockRoute = Mockito.mock(Route.class);
+        mockRoute = Mockito.mock(IRoute.class);
         when(mockRoute.getShortName()).thenReturn("t");
         when(mockRoute.isCircular()).thenReturn(false);
         when(mockRoute.isLinear()).thenReturn(true);

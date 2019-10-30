@@ -16,17 +16,17 @@ import org.xml.sax.SAXException;
 import org.xml.sax.helpers.DefaultHandler;
 
 import com.hubbardgary.londontrails.model.POI;
-import com.hubbardgary.londontrails.model.Route;
-import com.hubbardgary.londontrails.model.Section;
 import com.hubbardgary.londontrails.model.dto.RoutePoiDto;
+import com.hubbardgary.londontrails.model.interfaces.IRoute;
+import com.hubbardgary.londontrails.model.interfaces.ISection;
 
 public class POIProvider implements com.hubbardgary.londontrails.dataprovider.interfaces.IPOIProvider {
 
-    private Route route;
+    private IRoute route;
     private AssetManager assetManager;
 
     @Override
-    public void initialize(Route route, AssetManager assetManager) {
+    public void initialize(IRoute route, AssetManager assetManager) {
         this.route = route;
         this.assetManager = assetManager;
     }
@@ -54,7 +54,7 @@ public class POIProvider implements com.hubbardgary.londontrails.dataprovider.in
         do {
             InputStream is = null;
             try {
-                Section s = route.getSection(currentLocation);
+                ISection s = route.getSection(currentLocation);
                 is = assetManager.open(s.getPoiResource(route.getShortName()));
 
                 List<POI> pois = getPOIs(is);
@@ -77,12 +77,14 @@ public class POIProvider implements com.hubbardgary.londontrails.dataprovider.in
                     allPOIs.add(poi);
                 }
             } catch (IOException e) {
+                // Couldn't open the required asset. Possibly the user's install is corrupted.
             } finally {
                 try {
                     if (is != null) {
                         is.close();
                     }
                 } catch (IOException e) {
+                    // Problem closing the file.
                 }
             }
 

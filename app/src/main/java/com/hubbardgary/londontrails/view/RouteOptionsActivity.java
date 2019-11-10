@@ -17,7 +17,9 @@ import java.util.Locale;
 import java.util.Map;
 
 import com.hubbardgary.londontrails.R;
-import com.hubbardgary.londontrails.config.interfaces.IGlobalObjects;
+import com.hubbardgary.londontrails.app.interfaces.ILondonTrailsApp;
+import com.hubbardgary.londontrails.config.UserSettings;
+import com.hubbardgary.londontrails.config.interfaces.IUserSettings;
 import com.hubbardgary.londontrails.presenter.RouteOptionsPresenter;
 import com.hubbardgary.londontrails.view.interfaces.IRouteOptionsView;
 import com.hubbardgary.londontrails.viewmodel.RouteViewModel;
@@ -38,7 +40,7 @@ public class RouteOptionsActivity extends Activity implements IRouteOptionsView,
             getActionBar().setDisplayHomeAsUpEnabled(true);
         }
 
-        presenter = new RouteOptionsPresenter(this, (IGlobalObjects)getApplicationContext(), getApplicationContext().getResources());
+        presenter = new RouteOptionsPresenter(this, new UserSettings((ILondonTrailsApp)getApplicationContext()));
         vm = presenter.getViewModel();
         setTitle(vm.name);
         initializeSpinners();
@@ -150,6 +152,14 @@ public class RouteOptionsActivity extends Activity implements IRouteOptionsView,
 
     public int getRouteSectionsFromIntent() {
         return getIntent().getExtras().getInt("routeSections");
+    }
+
+    public String[] getStringArrayFromResources(int resourceId) {
+        return getResources().getStringArray(resourceId);
+    }
+
+    public int getIntegerFromResources(int resourceId) {
+        return getResources().getInteger(resourceId);
     }
 
     public void refreshDestinationSpinner(RouteViewModel vm) {

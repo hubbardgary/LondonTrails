@@ -1,9 +1,8 @@
 package com.hubbardgary.londontrails.dataprovider;
 
 import android.content.res.AssetManager;
-import android.content.res.Resources;
 
-import com.hubbardgary.londontrails.config.interfaces.IGlobalObjects;
+import com.hubbardgary.londontrails.config.interfaces.IUserSettings;
 import com.hubbardgary.londontrails.model.Coordinates;
 import com.hubbardgary.londontrails.model.dto.RouteCoordinatesDto;
 import com.hubbardgary.londontrails.model.interfaces.IRoute;
@@ -125,8 +124,7 @@ public class CoordinateProviderTest_NonLinearRoute {
 
     @Before
     public void setUp() {
-        IGlobalObjects mockGlobals;
-        Resources mockResources;
+        IUserSettings mockUserSettings;
         IRouteOptionsView mockView;
 
         String section1Coordinates = DataProviderHelpers.buildSectionCoordinatesXml(sectionCoordinates.get(0));
@@ -165,14 +163,13 @@ public class CoordinateProviderTest_NonLinearRoute {
         }
 
         mockView = Mockito.mock(IRouteOptionsView.class);
-        mockGlobals = Mockito.mock(IGlobalObjects.class);
-        mockResources = Mockito.mock(Resources.class);
+        mockUserSettings = Mockito.mock(IUserSettings.class);
         mockRoute = Mockito.mock(IRoute.class);
         when(mockRoute.getShortName()).thenReturn("t");
         when(mockRoute.isCircular()).thenReturn(false);
         when(mockRoute.isLinear()).thenReturn(false);
 
-        RouteHelpers.setupNonLinearRoute(mockRoute, mockView, mockResources, mockGlobals);
+        RouteHelpers.setupNonLinearRoute(mockRoute, mockView, mockUserSettings);
         _sut = new CoordinateProvider();
         _sut.initialize(mockRoute, mockAssetManager);
     }

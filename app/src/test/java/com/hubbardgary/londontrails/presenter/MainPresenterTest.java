@@ -1,7 +1,7 @@
 package com.hubbardgary.londontrails.presenter;
 
 import com.hubbardgary.londontrails.R;
-import com.hubbardgary.londontrails.config.interfaces.IGlobalObjects;
+import com.hubbardgary.londontrails.proxy.interfaces.IAndroidFrameworkProxy;
 import com.hubbardgary.londontrails.view.AboutActivity;
 import com.hubbardgary.londontrails.view.DisjointedRouteOptionsActivity;
 import com.hubbardgary.londontrails.view.RouteOptionsActivity;
@@ -36,17 +36,16 @@ public class MainPresenterTest {
 
     @Before
     public void setUp() {
-        IGlobalObjects mockGlobals;
         mockView = Mockito.mock(IMainView.class);
-        mockGlobals = Mockito.mock(IGlobalObjects.class);
-        when(mockGlobals.getButtonText(anyString(), anyString())).thenAnswer(new Answer<String>() {
-            public String answer(InvocationOnMock invocation) {
+        IAndroidFrameworkProxy mockProxy = Mockito.mock(IAndroidFrameworkProxy.class);
+        when(mockProxy.fromHtml(anyString())).thenAnswer(new Answer<CharSequence>() {
+            public CharSequence answer(InvocationOnMock invocation) {
                 Object[] args = invocation.getArguments();
-                return args[0] + "|" + args[1];
+                return (CharSequence)(args[0]);
             }
         });
 
-        sut = new MainPresenter(mockView, mockGlobals);
+        sut = new MainPresenter(mockView, mockProxy);
     }
 
     @Captor
@@ -62,9 +61,9 @@ public class MainPresenterTest {
         List capturedButtonVMs = captor.getValue();
         assertNotNull(capturedButtonVMs);
         assertEquals(3, capturedButtonVMs.size());
-        assertTrue(((ButtonViewModel)capturedButtonVMs.get(0)).label.toString().startsWith("Green Chain Walk"));
-        assertTrue(((ButtonViewModel)capturedButtonVMs.get(1)).label.toString().startsWith("Capital Ring"));
-        assertTrue(((ButtonViewModel)capturedButtonVMs.get(2)).label.toString().startsWith("London Loop"));
+        assertTrue(((ButtonViewModel)capturedButtonVMs.get(0)).label.toString().contains("Green Chain Walk"));
+        assertTrue(((ButtonViewModel)capturedButtonVMs.get(1)).label.toString().contains("Capital Ring"));
+        assertTrue(((ButtonViewModel)capturedButtonVMs.get(2)).label.toString().contains("London Loop"));
     }
 
     @Test

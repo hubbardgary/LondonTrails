@@ -1,13 +1,11 @@
 package com.hubbardgary.londontrails.presenter;
 
-import android.content.res.Resources;
-
 import com.hubbardgary.londontrails.R;
-import com.hubbardgary.londontrails.config.GlobalObjects;
-import com.hubbardgary.londontrails.config.interfaces.IGlobalObjects;
+import com.hubbardgary.londontrails.config.interfaces.IUserSettings;
 import com.hubbardgary.londontrails.model.GreenChainWalk;
 import com.hubbardgary.londontrails.model.interfaces.IRoute;
 import com.hubbardgary.londontrails.model.interfaces.ISection;
+import com.hubbardgary.londontrails.util.Helpers;
 import com.hubbardgary.londontrails.view.ShowMapActivity;
 import com.hubbardgary.londontrails.view.interfaces.IRouteOptionsView;
 import com.hubbardgary.londontrails.viewmodel.RouteViewModel;
@@ -18,33 +16,31 @@ import java.util.HashMap;
 public class DisjointedRouteOptionsPresenter {
 
     private IRouteOptionsView view;
-    private IGlobalObjects globals;
+    private IUserSettings settings;
     private final int sectionResource;
     private final String[] sectionArray;
-    private Resources res;
     private IRoute route;
     private RouteViewModel routeVm;
 
-    public DisjointedRouteOptionsPresenter(IRouteOptionsView view, IGlobalObjects globals, Resources res) {
+    public DisjointedRouteOptionsPresenter(IRouteOptionsView view, IUserSettings settings) {
 
         this.view = view;
-        this.globals = globals;
-        this.res = res;
-        this.sectionResource = view.getRouteSectionsFromIntent();
-        this.sectionArray = res.getStringArray(sectionResource);
+        this.settings = settings;
+        sectionResource = view.getRouteSectionsFromIntent();
+        sectionArray = view.getStringArrayFromResources(sectionResource);
         initializePresenter();
-        routeVm = new RouteViewModel(route.getName(), res.getStringArray(sectionResource), route.isCircular(), Arrays.asList(getDirections()));
+        routeVm = new RouteViewModel(route.getName(), sectionArray, route.isCircular(), Arrays.asList(getDirections()));
     }
 
     private void initializePresenter() {
-        route = globals.getCurrentRoute();
+        route = settings.getCurrentRoute();
 
         switch (sectionResource) {
             case R.array.green_chain_walk_sections:
                 route = new GreenChainWalk();
                 break;
         }
-        globals.setCurrentRoute(route);
+        settings.setCurrentRoute(route);
     }
 
     public RouteViewModel getViewModel() {
@@ -60,7 +56,7 @@ public class DisjointedRouteOptionsPresenter {
     }
 
     private String[] getDirections() {
-        return res.getStringArray(R.array.directions);
+        return view.getStringArrayFromResources(R.array.directions);
     }
 
     private double calculateDistanceInKm(int startSection) {
@@ -80,9 +76,9 @@ public class DisjointedRouteOptionsPresenter {
 
     private RouteViewModel updateDistance(RouteViewModel vm) {
         vm.distanceKm = calculateDistanceInKm(vm.startSection);
-        vm.distanceMiles = GlobalObjects.convertKmToMiles(vm.distanceKm);
+        vm.distanceMiles = Helpers.convertKmToMiles(vm.distanceKm);
         vm.extensionDistanceKm = route.getSection(vm.startSection).getExtensionDistanceInKm();
-        vm.extensionDistanceMiles = GlobalObjects.convertKmToMiles(vm.extensionDistanceKm);
+        vm.extensionDistanceMiles = Helpers.convertKmToMiles(vm.extensionDistanceKm);
         vm.extensionDescription = route.getSection(vm.startSection).getExtensionDescription();
         return vm;
     }

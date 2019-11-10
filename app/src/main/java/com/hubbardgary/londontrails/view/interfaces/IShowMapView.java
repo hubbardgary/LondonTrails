@@ -9,4 +9,5 @@ public interface IShowMapView {
     void setMarkerVisibility(boolean visible);
     void resetCameraPosition();
     void setMapType(int mapType);
+    String getStringFromResources(int resourceId);
 }

@@ -1,7 +1,6 @@
 package com.hubbardgary.londontrails.presenter;
 
 import android.text.Spanned;
-import android.text.SpannedString;
 
 import com.hubbardgary.londontrails.R;
 import com.hubbardgary.londontrails.proxy.interfaces.IAndroidFrameworkProxy;
@@ -15,9 +14,7 @@ import org.mockito.Mockito;
 import java.util.HashMap;
 
 import static org.mockito.Matchers.anyObject;
-import static org.mockito.Matchers.anyString;
 import static org.mockito.Mockito.verify;
-import static org.mockito.Mockito.when;
 
 public class AboutPresenterTest {
     private IAboutView mockView;
@@ -27,7 +24,6 @@ public class AboutPresenterTest {
     public void setUp() {
         IAndroidFrameworkProxy mockProxy = Mockito.mock(IAndroidFrameworkProxy.class);
         mockView = Mockito.mock(IAboutView.class);
-        when(mockProxy.fromHtml(anyString())).thenReturn(new SpannedString(""));
         sut = new AboutPresenter(mockView, mockProxy);
     }
 

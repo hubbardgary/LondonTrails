@@ -29,7 +29,9 @@ import java.util.concurrent.ScheduledThreadPoolExecutor;
 import java.util.concurrent.TimeUnit;
 
 import com.hubbardgary.londontrails.R;
-import com.hubbardgary.londontrails.config.interfaces.IGlobalObjects;
+import com.hubbardgary.londontrails.app.interfaces.ILondonTrailsApp;
+import com.hubbardgary.londontrails.config.UserSettings;
+import com.hubbardgary.londontrails.config.interfaces.IUserSettings;
 import com.hubbardgary.londontrails.model.LondonTrailsPlacemark;
 import com.hubbardgary.londontrails.presenter.ShowMapPresenter;
 import com.hubbardgary.londontrails.view.interfaces.IShowMapView;
@@ -78,6 +80,11 @@ public class ShowMapActivity extends FragmentActivity implements
     @Override
     public int getIntFromIntent(String item) {
         return getIntent().getExtras().getInt(item);
+    }
+
+    @Override
+    public String getStringFromResources(int resourceId) {
+        return getResources().getString(resourceId);
     }
 
     @Override
@@ -239,7 +246,7 @@ public class ShowMapActivity extends FragmentActivity implements
     }
 
     private void setUpMap() {
-        presenter = new ShowMapPresenter(this, (IGlobalObjects) getApplicationContext());
+        presenter = new ShowMapPresenter(this, new UserSettings((ILondonTrailsApp)getApplicationContext()));
         vm = presenter.getViewModel();
         setTitle(vm.name);
 

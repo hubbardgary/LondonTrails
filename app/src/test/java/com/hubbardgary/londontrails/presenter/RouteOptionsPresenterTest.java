@@ -1,9 +1,7 @@
 package com.hubbardgary.londontrails.presenter;
 
-import android.content.res.Resources;
-
 import com.hubbardgary.londontrails.R;
-import com.hubbardgary.londontrails.config.interfaces.IGlobalObjects;
+import com.hubbardgary.londontrails.config.interfaces.IUserSettings;
 import com.hubbardgary.londontrails.model.interfaces.IRoute;
 import com.hubbardgary.londontrails.testhelpers.RouteHelpers;
 import com.hubbardgary.londontrails.view.ShowMapActivity;
@@ -28,8 +26,7 @@ import static org.mockito.Mockito.when;
 
 public class RouteOptionsPresenterTest {
 
-    private IGlobalObjects mockGlobals;
-    private Resources mockResources;
+    private IUserSettings mockUserSettings;
     private IRouteOptionsView mockView;
     private IRoute mockRoute;
     private RouteOptionsPresenter _sut;
@@ -37,19 +34,18 @@ public class RouteOptionsPresenterTest {
     @Before
     public void setUp() {
         mockView = Mockito.mock(IRouteOptionsView.class);
-        mockGlobals = Mockito.mock(IGlobalObjects.class);
-        mockResources = Mockito.mock(Resources.class);
+        mockUserSettings = Mockito.mock(IUserSettings.class);
         mockRoute = Mockito.mock(IRoute.class);
 
-        when(mockResources.getInteger(R.integer.Clockwise)).thenReturn(0);
-        when(mockResources.getInteger(R.integer.AntiClockwise)).thenReturn(1);
+        when(mockView.getIntegerFromResources(R.integer.Clockwise)).thenReturn(0);
+        when(mockView.getIntegerFromResources(R.integer.AntiClockwise)).thenReturn(1);
 
         when(mockRoute.getName()).thenReturn("Test Route");
         when(mockRoute.isCircular()).thenReturn(false);
         when(mockView.getRouteSectionsFromIntent()).thenReturn(1234);
-        when(mockGlobals.getCurrentRoute()).thenReturn(mockRoute);
-        when(mockResources.getStringArray(anyInt())).thenReturn(new String[0]);
-        _sut = new RouteOptionsPresenter(mockView, mockGlobals, mockResources);
+        when(mockView.getStringArrayFromResources(anyInt())).thenReturn(new String[0]);
+        when(mockUserSettings.getCurrentRoute()).thenReturn(mockRoute);
+        _sut = new RouteOptionsPresenter(mockView, mockUserSettings);
     }
 
     @Test
@@ -66,7 +62,7 @@ public class RouteOptionsPresenterTest {
     public void getViewModel_CurrentRouteIsCapitalRing_RouteShouldBeCapitalRing() {
         // Arrange
         when(mockView.getRouteSectionsFromIntent()).thenReturn(R.array.capital_ring_sections);
-        _sut = new RouteOptionsPresenter(mockView, mockGlobals, mockResources);
+        _sut = new RouteOptionsPresenter(mockView, mockUserSettings);
 
         // Act
         RouteViewModel result = _sut.getViewModel();
@@ -79,7 +75,7 @@ public class RouteOptionsPresenterTest {
     public void getViewModel_CurrentRouteIsLondonLoop_RouteShouldBeLondonLoop() {
         // Arrange
         when(mockView.getRouteSectionsFromIntent()).thenReturn(R.array.london_loop_sections);
-        _sut = new RouteOptionsPresenter(mockView, mockGlobals, mockResources);
+        _sut = new RouteOptionsPresenter(mockView, mockUserSettings);
 
         // Act
         RouteViewModel result = _sut.getViewModel();
@@ -153,8 +149,8 @@ public class RouteOptionsPresenterTest {
         final int sectionId = 1;
         final String[] sectionArray = new String[]{"0", "1", "2"};
         when(mockView.getRouteSectionsFromIntent()).thenReturn(sectionId);
-        when(mockResources.getStringArray(sectionId)).thenReturn(sectionArray);
-        _sut = new RouteOptionsPresenter(mockView, mockGlobals, mockResources);
+        when(mockView.getStringArrayFromResources(sectionId)).thenReturn(sectionArray);
+        _sut = new RouteOptionsPresenter(mockView, mockUserSettings);
 
         // Act
         int result = _sut.getSectionId("1");
@@ -177,7 +173,7 @@ public class RouteOptionsPresenterTest {
         vm.endOptions.add("Section 1");
         vm.endOptions.add("Section 2");
 
-        _sut = new RouteOptionsPresenter(mockView, mockGlobals, mockResources);
+        _sut = new RouteOptionsPresenter(mockView, mockUserSettings);
 
         // Act
         RouteViewModel result = _sut.startSectionChanged(vm);
@@ -194,16 +190,16 @@ public class RouteOptionsPresenterTest {
     public void startSectionChanged_RouteIsNotCircularAndStartSectionIsDifferentToEndSection_StartSectionRemovedFromEndOptions() {
         // Arrange
         when(mockRoute.isCircular()).thenReturn(false);
-        when(mockResources.getStringArray(anyInt())).thenReturn(new String[]{"Section 0", "Section 1", "Section 2", "Section 3"});
+        when(mockView.getStringArrayFromResources(anyInt())).thenReturn(new String[]{"Section 0", "Section 1", "Section 2", "Section 3"});
 
         RouteViewModel vm = new RouteViewModel("Test vm", new String[0], true, new ArrayList<String>());
         vm.startSection = 1;
         vm.startSelectedIndex = 1;
         vm.endSection = 3;
         vm.endSelectedIndex = 3;
-        vm.endOptions = new ArrayList<>(Arrays.asList(mockResources.getStringArray(1)));
+        vm.endOptions = new ArrayList<>(Arrays.asList(mockView.getStringArrayFromResources(1)));
 
-        _sut = new RouteOptionsPresenter(mockView, mockGlobals, mockResources);
+        _sut = new RouteOptionsPresenter(mockView, mockUserSettings);
 
         // Act
         RouteViewModel result = _sut.startSectionChanged(vm);
@@ -219,16 +215,16 @@ public class RouteOptionsPresenterTest {
     @Test
     public void startSectionChanged_RouteIsNotCircularAndStartSectionIsSameAsEndSection_EndSectionIsResetToFirstSection() {
         // Arrange
-        when(mockResources.getStringArray(anyInt())).thenReturn(new String[]{"Section 0", "Section 1", "Section 2", "Section 3"});
+        when(mockView.getStringArrayFromResources(anyInt())).thenReturn(new String[]{"Section 0", "Section 1", "Section 2", "Section 3"});
 
         RouteViewModel vm = new RouteViewModel("Test vm", new String[0], true, new ArrayList<String>());
         vm.startSection = 1;
         vm.startSelectedIndex = 1;
         vm.endSection = 1;
         vm.endSelectedIndex = 1;
-        vm.endOptions = new ArrayList<>(Arrays.asList(mockResources.getStringArray(1)));
+        vm.endOptions = new ArrayList<>(Arrays.asList(mockView.getStringArrayFromResources(1)));
 
-        _sut = new RouteOptionsPresenter(mockView, mockGlobals, mockResources);
+        _sut = new RouteOptionsPresenter(mockView, mockUserSettings);
 
         // Act
         RouteViewModel result = _sut.startSectionChanged(vm);
@@ -244,11 +240,11 @@ public class RouteOptionsPresenterTest {
     @Test(expected = IllegalArgumentException.class)
     public void optionsChanged_LinearNonCircularRoute_StartSectionEqualsEndSection_ShouldThrowIllegalArgumentException() {
         // Arrange
-        RouteHelpers.setupLinearNonCircularRoute(mockRoute, mockView, mockResources, mockGlobals);
+        RouteHelpers.setupLinearNonCircularRoute(mockRoute, mockView, mockUserSettings);
         RouteViewModel vm = new RouteViewModel("Test vm", new String[0], false, new ArrayList<String>());
         vm.startSection = 0;
         vm.endSection = 0;
-        RouteOptionsPresenter _sut = new RouteOptionsPresenter(mockView, mockGlobals, mockResources);
+        RouteOptionsPresenter _sut = new RouteOptionsPresenter(mockView, mockUserSettings);
 
         // Act
         _sut.optionsChanged(vm);
@@ -257,7 +253,7 @@ public class RouteOptionsPresenterTest {
     @Test
     public void optionsChanged_RefreshDistanceIsInvoked() {
         // Arrange
-        RouteHelpers.setupLinearCircularRoute(mockRoute, mockView, mockResources, mockGlobals);
+        RouteHelpers.setupLinearCircularRoute(mockRoute, mockView, mockUserSettings);
         RouteViewModel vm = new RouteViewModel("Test vm", new String[0], true, new ArrayList<String>());
         vm.startSection = 1;
         vm.endSection = 2;

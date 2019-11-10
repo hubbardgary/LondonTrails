@@ -1,9 +1,7 @@
 package com.hubbardgary.londontrails.presenter;
 
-import android.content.res.Resources;
-
 import com.hubbardgary.londontrails.R;
-import com.hubbardgary.londontrails.config.interfaces.IGlobalObjects;
+import com.hubbardgary.londontrails.config.interfaces.IUserSettings;
 import com.hubbardgary.londontrails.model.interfaces.IRoute;
 import com.hubbardgary.londontrails.model.interfaces.ISection;
 import com.hubbardgary.londontrails.view.ShowMapActivity;
@@ -27,8 +25,7 @@ import static org.mockito.Mockito.when;
 
 public class DisjointedRouteOptionsPresenterTest {
 
-    private IGlobalObjects mockGlobals;
-    private Resources mockResources;
+    private IUserSettings mockUserSettings;
     private IRouteOptionsView mockView;
     private IRoute mockRoute;
     private DisjointedRouteOptionsPresenter _sut;
@@ -36,8 +33,7 @@ public class DisjointedRouteOptionsPresenterTest {
     @Before
     public void setUp() {
         mockView = Mockito.mock(IRouteOptionsView.class);
-        mockGlobals = Mockito.mock(IGlobalObjects.class);
-        mockResources = Mockito.mock(Resources.class);
+        mockUserSettings = Mockito.mock(IUserSettings.class);
         mockRoute = Mockito.mock(IRoute.class);
     }
 
@@ -47,24 +43,24 @@ public class DisjointedRouteOptionsPresenterTest {
         when(mockRoute.getName()).thenReturn("Test Route");
         when(mockRoute.isCircular()).thenReturn(false);
         when(mockView.getRouteSectionsFromIntent()).thenReturn(1234);
-        when(mockGlobals.getCurrentRoute()).thenReturn(mockRoute);
-        when(mockResources.getStringArray(anyInt())).thenReturn(new String[0]);
-        _sut = new DisjointedRouteOptionsPresenter(mockView, mockGlobals, mockResources);
+        when(mockView.getStringArrayFromResources(anyInt())).thenReturn(new String[0]);
+        when(mockUserSettings.getCurrentRoute()).thenReturn(mockRoute);
+        _sut = new DisjointedRouteOptionsPresenter(mockView, mockUserSettings);
 
         // Act
         RouteViewModel result = _sut.getViewModel();
 
         // Assert
         assertEquals("Test Route", result.name);
-        assertEquals(false, result.isCircular);
+        assertFalse(result.isCircular);
     }
 
     @Test
     public void getViewModel_CurrentRouteIsGreenChain_ShouldSetRouteToGreenChain() {
         // Arrange
         when(mockView.getRouteSectionsFromIntent()).thenReturn(R.array.green_chain_walk_sections);
-        when(mockResources.getStringArray(anyInt())).thenReturn(new String[0]);
-        _sut = new DisjointedRouteOptionsPresenter(mockView, mockGlobals, mockResources);
+        when(mockView.getStringArrayFromResources(anyInt())).thenReturn(new String[0]);
+        _sut = new DisjointedRouteOptionsPresenter(mockView, mockUserSettings);
 
         // Act
         RouteViewModel result = _sut.getViewModel();
@@ -76,9 +72,9 @@ public class DisjointedRouteOptionsPresenterTest {
     @Test
     public void activitySubmit_ShouldInvokeShowMapActivity() {
         // Arrange
-        when(mockGlobals.getCurrentRoute()).thenReturn(mockRoute);
-        when(mockResources.getStringArray(anyInt())).thenReturn(new String[0]);
-        _sut = new DisjointedRouteOptionsPresenter(mockView, mockGlobals, mockResources);
+        when(mockUserSettings.getCurrentRoute()).thenReturn(mockRoute);
+        when(mockView.getStringArrayFromResources(anyInt())).thenReturn(new String[0]);
+        _sut = new DisjointedRouteOptionsPresenter(mockView, mockUserSettings);
 
         RouteViewModel vm = new RouteViewModel("Test vm", new String[0], false, new ArrayList<String>());
         vm.startSection = 1;
@@ -101,10 +97,10 @@ public class DisjointedRouteOptionsPresenterTest {
         final int sectionId = 1;
         final String[] sectionArray = new String[] { "0", "1", "2" };
         when(mockView.getRouteSectionsFromIntent()).thenReturn(sectionId);
-        when(mockGlobals.getCurrentRoute()).thenReturn(mockRoute);
-        when(mockResources.getStringArray(R.array.directions)).thenReturn(new String[] {"0", "1"});
-        when(mockResources.getStringArray(sectionId)).thenReturn(sectionArray);
-        _sut = new DisjointedRouteOptionsPresenter(mockView, mockGlobals, mockResources);
+        when(mockView.getStringArrayFromResources(R.array.directions)).thenReturn(new String[] {"0", "1"});
+        when(mockView.getStringArrayFromResources(sectionId)).thenReturn(sectionArray);
+        when(mockUserSettings.getCurrentRoute()).thenReturn(mockRoute);
+        _sut = new DisjointedRouteOptionsPresenter(mockView, mockUserSettings);
 
         // Act
         int result = _sut.getSectionId("1");
@@ -123,10 +119,10 @@ public class DisjointedRouteOptionsPresenterTest {
         when(mockSection.getExtensionDistanceInKm()).thenReturn(5.0);
         when(mockSection.getExtensionDescription()).thenReturn("Mock Extension Description");
 
-        when(mockGlobals.getCurrentRoute()).thenReturn(mockRoute);
-        when(mockResources.getStringArray(anyInt())).thenReturn(new String[0]);
+        when(mockUserSettings.getCurrentRoute()).thenReturn(mockRoute);
+        when(mockView.getStringArrayFromResources(anyInt())).thenReturn(new String[0]);
         when(mockRoute.getSection(1)).thenReturn(mockSection);
-        _sut = new DisjointedRouteOptionsPresenter(mockView, mockGlobals, mockResources);
+        _sut = new DisjointedRouteOptionsPresenter(mockView, mockUserSettings);
 
         RouteViewModel vm = new RouteViewModel("Test vm", new String[0], false, new ArrayList<String>());
         vm.startSection = 1;
@@ -144,9 +140,9 @@ public class DisjointedRouteOptionsPresenterTest {
     @Test
     public void menuItemSelected_HomeButtonPressed_EndsActivity() {
         // Arrange
-        when(mockGlobals.getCurrentRoute()).thenReturn(mockRoute);
-        when(mockResources.getStringArray(anyInt())).thenReturn(new String[0]);
-        _sut = new DisjointedRouteOptionsPresenter(mockView, mockGlobals, mockResources);
+        when(mockUserSettings.getCurrentRoute()).thenReturn(mockRoute);
+        when(mockView.getStringArrayFromResources(anyInt())).thenReturn(new String[0]);
+        _sut = new DisjointedRouteOptionsPresenter(mockView, mockUserSettings);
 
         // Act
         _sut.menuItemSelected(android.R.id.home);
@@ -158,9 +154,9 @@ public class DisjointedRouteOptionsPresenterTest {
     @Test
     public void menuItemSelected_AnyIdExceptHome_DoesNotEndActivity() {
         // Arrange
-        when(mockGlobals.getCurrentRoute()).thenReturn(mockRoute);
-        when(mockResources.getStringArray(anyInt())).thenReturn(new String[0]);
-        _sut = new DisjointedRouteOptionsPresenter(mockView, mockGlobals, mockResources);
+        when(mockUserSettings.getCurrentRoute()).thenReturn(mockRoute);
+        when(mockView.getStringArrayFromResources(anyInt())).thenReturn(new String[0]);
+        _sut = new DisjointedRouteOptionsPresenter(mockView, mockUserSettings);
 
         // Act
         _sut.menuItemSelected(1);

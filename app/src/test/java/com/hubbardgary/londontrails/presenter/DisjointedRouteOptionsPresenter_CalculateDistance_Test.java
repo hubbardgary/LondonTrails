@@ -1,8 +1,6 @@
 package com.hubbardgary.londontrails.presenter;
 
-import android.content.res.Resources;
-
-import com.hubbardgary.londontrails.config.interfaces.IGlobalObjects;
+import com.hubbardgary.londontrails.config.interfaces.IUserSettings;
 import com.hubbardgary.londontrails.model.interfaces.IRoute;
 import com.hubbardgary.londontrails.testhelpers.RouteHelpers;
 import com.hubbardgary.londontrails.view.interfaces.IRouteOptionsView;
@@ -23,16 +21,14 @@ import static org.junit.Assert.assertEquals;
 @RunWith(Parameterized.class)
 public class DisjointedRouteOptionsPresenter_CalculateDistance_Test {
 
-    private IGlobalObjects mockGlobals;
-    private Resources mockResources;
+    private IUserSettings mockUserSettings;
     private IRouteOptionsView mockView;
     private IRoute mockRoute;
 
     @Before
     public void setUp() {
         mockView = Mockito.mock(IRouteOptionsView.class);
-        mockGlobals = Mockito.mock(IGlobalObjects.class);
-        mockResources = Mockito.mock(Resources.class);
+        mockUserSettings = Mockito.mock(IUserSettings.class);
         mockRoute = Mockito.mock(IRoute.class);
     }
 
@@ -65,11 +61,11 @@ public class DisjointedRouteOptionsPresenter_CalculateDistance_Test {
     @Test
     public void optionsChanged_LinearNonCircularRoute_ShouldCalculateCorrectDistance() {
         // Arrange
-        RouteHelpers.setupNonLinearRoute(mockRoute, mockView, mockResources, mockGlobals);
+        RouteHelpers.setupNonLinearRoute(mockRoute, mockView, mockUserSettings);
         RouteViewModel vm = new RouteViewModel("Test vm", new String[0], false, new ArrayList<String>());
         vm.startSection = section;
         vm.endSection = section;
-        DisjointedRouteOptionsPresenter _sut = new DisjointedRouteOptionsPresenter(mockView, mockGlobals, mockResources);
+        DisjointedRouteOptionsPresenter _sut = new DisjointedRouteOptionsPresenter(mockView, mockUserSettings);
 
         // Act
         vm = _sut.optionsChanged(vm);

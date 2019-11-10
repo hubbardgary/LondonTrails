@@ -1,9 +1,8 @@
 package com.hubbardgary.londontrails.dataprovider;
 
 import android.content.res.AssetManager;
-import android.content.res.Resources;
 
-import com.hubbardgary.londontrails.config.interfaces.IGlobalObjects;
+import com.hubbardgary.londontrails.config.interfaces.IUserSettings;
 import com.hubbardgary.londontrails.model.POI;
 import com.hubbardgary.londontrails.model.interfaces.IRoute;
 import com.hubbardgary.londontrails.testhelpers.RouteHelpers;
@@ -56,8 +55,7 @@ public class POIProviderTest_LinearNonCircularRoute {
 
     @Before
     public void setUp() {
-        IGlobalObjects mockGlobals;
-        Resources mockResources;
+        IUserSettings mockUserSettings;
         IRouteOptionsView mockView;
 
         placemarks = getPOIs();
@@ -77,14 +75,13 @@ public class POIProviderTest_LinearNonCircularRoute {
         }
 
         mockView = Mockito.mock(IRouteOptionsView.class);
-        mockGlobals = Mockito.mock(IGlobalObjects.class);
-        mockResources = Mockito.mock(Resources.class);
+        mockUserSettings = Mockito.mock(IUserSettings.class);
         mockRoute = Mockito.mock(IRoute.class);
         when(mockRoute.getShortName()).thenReturn("t");
         when(mockRoute.isCircular()).thenReturn(false);
         when(mockRoute.isLinear()).thenReturn(true);
 
-        RouteHelpers.setupLinearNonCircularRoute(mockRoute, mockView, mockResources, mockGlobals);
+        RouteHelpers.setupLinearNonCircularRoute(mockRoute, mockView, mockUserSettings);
         _sut = new POIProvider();
         _sut.initialize(mockRoute, mockAssetManager);
     }

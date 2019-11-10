@@ -11,7 +11,8 @@ import android.widget.Spinner;
 import android.widget.TextView;
 
 import com.hubbardgary.londontrails.R;
-import com.hubbardgary.londontrails.config.interfaces.IGlobalObjects;
+import com.hubbardgary.londontrails.app.interfaces.ILondonTrailsApp;
+import com.hubbardgary.londontrails.config.UserSettings;
 import com.hubbardgary.londontrails.presenter.DisjointedRouteOptionsPresenter;
 import com.hubbardgary.londontrails.view.interfaces.IRouteOptionsView;
 import com.hubbardgary.londontrails.viewmodel.RouteViewModel;
@@ -34,7 +35,7 @@ public class DisjointedRouteOptionsActivity extends Activity implements IRouteOp
             getActionBar().setDisplayHomeAsUpEnabled(true);
         }
 
-        presenter = new DisjointedRouteOptionsPresenter(this, (IGlobalObjects)getApplicationContext(), getApplicationContext().getResources());
+        presenter = new DisjointedRouteOptionsPresenter(this, new UserSettings((ILondonTrailsApp)getApplicationContext()));
         vm = presenter.getViewModel();
         setTitle(vm.name);
         initializeSpinners();
@@ -125,6 +126,14 @@ public class DisjointedRouteOptionsActivity extends Activity implements IRouteOp
 
     public int getRouteSectionsFromIntent() {
         return getIntent().getExtras().getInt("routeSections");
+    }
+
+    public String[] getStringArrayFromResources(int resourceId) {
+        return getResources().getStringArray(resourceId);
+    }
+
+    public int getIntegerFromResources(int resourceId) {
+        return getResources().getInteger(resourceId);
     }
 
     @Override

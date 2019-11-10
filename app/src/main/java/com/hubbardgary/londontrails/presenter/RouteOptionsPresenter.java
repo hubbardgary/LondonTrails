@@ -1,13 +1,11 @@
 package com.hubbardgary.londontrails.presenter;
 
-import android.content.res.Resources;
-
 import com.hubbardgary.londontrails.R;
-import com.hubbardgary.londontrails.config.interfaces.IGlobalObjects;
+import com.hubbardgary.londontrails.config.interfaces.IUserSettings;
 import com.hubbardgary.londontrails.model.CapitalRing;
-import com.hubbardgary.londontrails.config.GlobalObjects;
 import com.hubbardgary.londontrails.model.LondonLoop;
 import com.hubbardgary.londontrails.model.interfaces.IRoute;
+import com.hubbardgary.londontrails.util.Helpers;
 import com.hubbardgary.londontrails.view.interfaces.IRouteOptionsView;
 import com.hubbardgary.londontrails.view.ShowMapActivity;
 import com.hubbardgary.londontrails.viewmodel.RouteViewModel;
@@ -20,26 +18,24 @@ import java.util.List;
 public class RouteOptionsPresenter {
 
     private IRouteOptionsView view;
-    private IGlobalObjects globals;
+    private IUserSettings settings;
     private final int sectionResource;
     private final String[] sectionArray;
-    private Resources res;
     private IRoute route;
     private RouteViewModel routeVm;
 
-    public RouteOptionsPresenter(IRouteOptionsView view, IGlobalObjects globals, Resources res) {
+    public RouteOptionsPresenter(IRouteOptionsView view, IUserSettings settings) {
 
         this.view = view;
-        this.globals = globals;
-        this.res = res;
-        this.sectionResource = view.getRouteSectionsFromIntent();
-        this.sectionArray = res.getStringArray(sectionResource);
+        this.settings = settings;
+        sectionResource = view.getRouteSectionsFromIntent();
+        sectionArray = view.getStringArrayFromResources(sectionResource);
         initializePresenter();
-        routeVm = new RouteViewModel(route.getName(), res.getStringArray(sectionResource), route.isCircular(), Arrays.asList(getDirections()));
+        routeVm = new RouteViewModel(route.getName(), sectionArray, route.isCircular(), Arrays.asList(getDirections()));
     }
 
     private void initializePresenter() {
-        route = globals.getCurrentRoute();
+        route = settings.getCurrentRoute();
 
         switch (sectionResource) {
             case R.array.capital_ring_sections:
@@ -49,7 +45,7 @@ public class RouteOptionsPresenter {
                 route = new LondonLoop();
                 break;
         }
-        globals.setCurrentRoute(route);
+        settings.setCurrentRoute(route);
     }
 
     public RouteViewModel getViewModel() {
@@ -65,20 +61,20 @@ public class RouteOptionsPresenter {
         } else {
             if (vm.startSection < vm.endSection)
                 // Route will be walked forwards, so clockwise
-                intents.put("direction", res.getInteger(R.integer.Clockwise));
+                intents.put("direction", view.getIntegerFromResources(R.integer.Clockwise));
             else
                 // Route will be walked backwards, so anticlockwise
-                intents.put("direction", res.getInteger(R.integer.AntiClockwise));
+                intents.put("direction", view.getIntegerFromResources(R.integer.AntiClockwise));
         }
         view.invokeActivity(intents, ShowMapActivity.class);
     }
 
     private String[] getDirections() {
-        return res.getStringArray(R.array.directions);
+        return view.getStringArrayFromResources(R.array.directions);
     }
 
     private double calculateDistanceInKm(int startSection, int endSection, int direction) {
-        if( (route.isCircular() && direction == res.getInteger(R.integer.AntiClockwise))
+        if( (route.isCircular() && direction == view.getIntegerFromResources(R.integer.AntiClockwise))
             || (!route.isCircular() && startSection > endSection) ) {
             // anti-clockwise, so swap Start and End and calculate as clockwise.
             int temp = endSection;
@@ -135,7 +131,7 @@ public class RouteOptionsPresenter {
 
     private RouteViewModel updateDistance(RouteViewModel vm) {
         vm.distanceKm = calculateDistanceInKm(vm.startSection, vm.endSection, vm.direction);
-        vm.distanceMiles = GlobalObjects.convertKmToMiles(vm.distanceKm);
+        vm.distanceMiles = Helpers.convertKmToMiles(vm.distanceKm);
         return vm;
     }
 

@@ -2,7 +2,7 @@ package com.hubbardgary.londontrails.presenter;
 
 import com.google.android.gms.maps.GoogleMap;
 import com.hubbardgary.londontrails.R;
-import com.hubbardgary.londontrails.config.interfaces.IGlobalObjects;
+import com.hubbardgary.londontrails.config.interfaces.IUserSettings;
 import com.hubbardgary.londontrails.view.interfaces.IShowMapView;
 import com.hubbardgary.londontrails.viewmodel.MenuViewModel;
 import com.hubbardgary.londontrails.viewmodel.ShowMapViewModel;
@@ -12,16 +12,16 @@ import java.util.LinkedHashMap;
 public class ShowMapPresenter {
 
     private IShowMapView view;
-    private IGlobalObjects globals;
+    private IUserSettings settings;
     private ShowMapViewModel vm;
     private int mapType;
     private boolean markersVisible = true;
 
-    public ShowMapPresenter(IShowMapView view, IGlobalObjects globals) {
+    public ShowMapPresenter(IShowMapView view, IUserSettings settings) {
         this.view = view;
-        this.globals = globals;
-        this.mapType = globals.getMapPreference();
-        vm = new ShowMapViewModel(view.getIntFromIntent("startSection"), view.getIntFromIntent("endSection"), view.getIntFromIntent("direction"), globals.getCurrentRoute(), mapType);
+        this.settings = settings;
+        this.mapType = settings.getMapPreference();
+        vm = new ShowMapViewModel(view.getIntFromIntent("startSection"), view.getIntFromIntent("endSection"), view.getIntFromIntent("direction"), settings.getCurrentRoute(), mapType);
         vm.optionsMenu = initialiseMenu();
         vm.mapTypeSubMenu = initialiseMapTypeSubMenu();
     }
@@ -34,11 +34,11 @@ public class ShowMapPresenter {
         MenuViewModel menuVm = new MenuViewModel();
         menuVm.menuItems = new LinkedHashMap<>();
         if(markersVisible) {
-            menuVm.menuItems.put(R.id.view_option_hide_markers, globals.getStringFromResource(R.string.hide_markers));
+            menuVm.menuItems.put(R.id.view_option_hide_markers, view.getStringFromResources(R.string.hide_markers));
         } else {
-            menuVm.menuItems.put(R.id.view_option_show_markers, globals.getStringFromResource(R.string.show_markers));
+            menuVm.menuItems.put(R.id.view_option_show_markers, view.getStringFromResources(R.string.show_markers));
         }
-        menuVm.menuItems.put(R.id.view_option_reset_focus, globals.getStringFromResource(R.string.reset_focus));
+        menuVm.menuItems.put(R.id.view_option_reset_focus, view.getStringFromResources(R.string.reset_focus));
         return menuVm;
     }
 
@@ -48,11 +48,11 @@ public class ShowMapPresenter {
         mapTypeSubMenu.menuItems = new LinkedHashMap<>();
 
         if(mapType != GoogleMap.MAP_TYPE_HYBRID)
-            mapTypeSubMenu.menuItems.put(R.id.view_option_satellite, globals.getStringFromResource(R.string.satellite_view));
+            mapTypeSubMenu.menuItems.put(R.id.view_option_satellite, view.getStringFromResources(R.string.satellite_view));
         if(mapType != GoogleMap.MAP_TYPE_NORMAL)
-            mapTypeSubMenu.menuItems.put(R.id.view_option_streetmap, globals.getStringFromResource(R.string.streetmap_view));
+            mapTypeSubMenu.menuItems.put(R.id.view_option_streetmap, view.getStringFromResources(R.string.streetmap_view));
         if(mapType != GoogleMap.MAP_TYPE_TERRAIN)
-            mapTypeSubMenu.menuItems.put(R.id.view_option_terrain, globals.getStringFromResource(R.string.terrain_view));
+            mapTypeSubMenu.menuItems.put(R.id.view_option_terrain, view.getStringFromResources(R.string.terrain_view));
         return mapTypeSubMenu;
     }
 
@@ -86,7 +86,7 @@ public class ShowMapPresenter {
 
     private void updateMapType(int mapType) {
         this.mapType = mapType;
-        globals.setMapPreference(mapType);
+        settings.setMapPreference(mapType);
         view.setMapType(mapType);
         vm.mapType = mapType;
 

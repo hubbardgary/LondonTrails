@@ -51,7 +51,7 @@ public class AboutPresenter {
                 "<br />" +
                 "<br />" +
                 "</body>";
-        return proxy.fromHtml(aboutTextHtml);
+        return (Spanned)proxy.fromHtml(aboutTextHtml);
     }
 
     public void buttonClicked(int id) {

@@ -10,4 +10,6 @@ public interface IRouteOptionsView {
     int getRouteSectionsFromIntent();
     void refreshDestinationSpinner(RouteViewModel vm);
     void refreshDistance(RouteViewModel vm);
+    String[] getStringArrayFromResources(int resourceId);
+    int getIntegerFromResources(int resourceId);
 }

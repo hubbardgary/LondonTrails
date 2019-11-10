@@ -1,9 +1,7 @@
 package com.hubbardgary.londontrails.testhelpers;
 
-import android.content.res.Resources;
-
 import com.hubbardgary.londontrails.R;
-import com.hubbardgary.londontrails.config.interfaces.IGlobalObjects;
+import com.hubbardgary.londontrails.config.interfaces.IUserSettings;
 import com.hubbardgary.londontrails.model.Section;
 import com.hubbardgary.londontrails.model.interfaces.IRoute;
 import com.hubbardgary.londontrails.model.interfaces.ISection;
@@ -46,7 +44,7 @@ public class RouteHelpers {
         return section;
     }
 
-    public static void setupLinearCircularRoute(IRoute mockRoute, IRouteOptionsView mockView, Resources mockResources, IGlobalObjects mockGlobals) {
+    public static void setupLinearCircularRoute(IRoute mockRoute, IRouteOptionsView mockView, IUserSettings mockUserSettings) {
         // Linear Circular
         // Start links         (1.2)       (0.3)         (0.0)        (0.5)
         // Section distance  a (7.2)---> b (12.8) ---> c (6.9) ---> a (8.3)
@@ -65,13 +63,13 @@ public class RouteHelpers {
         when(mockRoute.isCircular()).thenReturn(true);
         when(mockRoute.getSections()).thenReturn(new ISection[]{section0, section1, section2, section3});
         when(mockView.getRouteSectionsFromIntent()).thenReturn(1234);
-        when(mockGlobals.getCurrentRoute()).thenReturn(mockRoute);
-        when(mockResources.getStringArray(anyInt())).thenReturn(new String[]{"a", "b", "c", "d"});
-        when(mockResources.getInteger(R.integer.Clockwise)).thenReturn(0);
-        when(mockResources.getInteger(R.integer.AntiClockwise)).thenReturn(1);
+        when(mockView.getStringArrayFromResources(anyInt())).thenReturn(new String[]{"a", "b", "c", "d"});
+        when(mockView.getIntegerFromResources(R.integer.Clockwise)).thenReturn(0);
+        when(mockView.getIntegerFromResources(R.integer.AntiClockwise)).thenReturn(1);
+        when(mockUserSettings.getCurrentRoute()).thenReturn(mockRoute);
     }
 
-    public static void setupLinearNonCircularRoute(IRoute mockRoute, IRouteOptionsView mockView, Resources mockResources, IGlobalObjects mockGlobals) {
+    public static void setupLinearNonCircularRoute(IRoute mockRoute, IRouteOptionsView mockView, IUserSettings mockUserSettings) {
         // Linear Non-Circular
         // Start links         (1.2)       (0.3)         (0.0)        (0.5)
         // Section distance  a (7.2)---> b (12.8) ---> c (6.9) ---> d (14.9)
@@ -90,13 +88,13 @@ public class RouteHelpers {
         when(mockRoute.isCircular()).thenReturn(false);
         when(mockRoute.getSections()).thenReturn(new ISection[]{section0, section1, section2, section3});
         when(mockView.getRouteSectionsFromIntent()).thenReturn(1234);
-        when(mockGlobals.getCurrentRoute()).thenReturn(mockRoute);
-        when(mockResources.getStringArray(anyInt())).thenReturn(new String[]{"a", "b", "c", "d"});
-        when(mockResources.getInteger(R.integer.Clockwise)).thenReturn(0);
-        when(mockResources.getInteger(R.integer.AntiClockwise)).thenReturn(1);
+        when(mockView.getStringArrayFromResources(anyInt())).thenReturn(new String[]{"a", "b", "c", "d"});
+        when(mockView.getIntegerFromResources(R.integer.Clockwise)).thenReturn(0);
+        when(mockView.getIntegerFromResources(R.integer.AntiClockwise)).thenReturn(1);
+        when(mockUserSettings.getCurrentRoute()).thenReturn(mockRoute);
     }
 
-    public static void setupNonLinearRoute(IRoute mockRoute, IRouteOptionsView mockView, Resources mockResources, IGlobalObjects mockGlobals) {
+    public static void setupNonLinearRoute(IRoute mockRoute, IRouteOptionsView mockView, IUserSettings mockUserSettings) {
         ISection section0 = setupNonLinearSection(mockRoute, "01", "a start", "a end", 5.5, 0.1, 0.6, 0.0, "");
         ISection section1 = setupNonLinearSection(mockRoute, "02", "b start", "b end", 7.2, 0.6, 0.2, 0.8, "b extension");
         ISection section2 = setupNonLinearSection(mockRoute, "03", "c start", "c end", 10.3, 0.0, 0.9, 1.5, "c extension");
@@ -111,7 +109,7 @@ public class RouteHelpers {
         when(mockRoute.isCircular()).thenReturn(false);
         when(mockRoute.getSections()).thenReturn(new ISection[]{section0, section1, section2, section3});
         when(mockView.getRouteSectionsFromIntent()).thenReturn(1234);
-        when(mockGlobals.getCurrentRoute()).thenReturn(mockRoute);
-        when(mockResources.getStringArray(anyInt())).thenReturn(new String[]{"a", "b", "c", "d"});
+        when(mockView.getStringArrayFromResources(anyInt())).thenReturn(new String[]{"a", "b", "c", "d"});
+        when(mockUserSettings.getCurrentRoute()).thenReturn(mockRoute);
     }
 }

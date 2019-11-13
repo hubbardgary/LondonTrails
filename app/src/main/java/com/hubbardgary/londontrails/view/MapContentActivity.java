@@ -18,6 +18,7 @@ import com.hubbardgary.londontrails.model.POI;
 import com.hubbardgary.londontrails.model.interfaces.IRoute;
 import com.hubbardgary.londontrails.presenter.MapContentPresenter;
 import com.hubbardgary.londontrails.view.interfaces.IMapContentView;
+import com.hubbardgary.londontrails.view.interfaces.IShowMapView;
 import com.hubbardgary.londontrails.viewmodel.MapContentViewModel;
 import com.hubbardgary.londontrails.viewmodel.PathViewModel;
 import com.hubbardgary.londontrails.viewmodel.ShowMapViewModel;
@@ -31,16 +32,14 @@ import java.util.List;
  */
 public class MapContentActivity extends AsyncTask<Void, Void, Integer> implements IMapContentView {
 
-    private ShowMapActivity activity;
-    private ShowMapActivity showMapActivity;
+    private IShowMapView showMapView;
     private PolylineOptions path;
     private MapContentViewModel vm;
     private ShowMapViewModel showMapVm;
 
-    MapContentActivity(ShowMapActivity activity, ShowMapActivity showMapActivity) {
-        this.activity = activity;
-        this.showMapActivity = showMapActivity;
-        showMapVm = showMapActivity.getShowMapVm();
+    MapContentActivity(IShowMapView showMapView) {
+        this.showMapView = showMapView;
+        showMapVm = showMapView.getShowMapVm();
         MapContentPresenter presenter = new MapContentPresenter(this, showMapVm, new CoordinateProvider(), new POIProvider());
         vm = presenter.getMapContentViewModel();
     }
@@ -57,7 +56,7 @@ public class MapContentActivity extends AsyncTask<Void, Void, Integer> implement
     @Override
     protected void onPostExecute(Integer i) {
         // Route and markers have now been retrieved, so display them on the map.
-        showMapActivity.setMapRoute(showMapActivity.getMap().addPolyline(path));
+        showMapView.setMapRoute(showMapView.getMap().addPolyline(path));
         addStartAndEndMarkers(showMapVm.start, showMapVm.end, showMapVm.route);
         addWayPointMarkers();
     }
@@ -85,12 +84,12 @@ public class MapContentActivity extends AsyncTask<Void, Void, Integer> implement
         LatLngBounds.Builder bounds = new LatLngBounds.Builder();
         bounds.include(new LatLng(minLatitude, minLongitude));
         bounds.include(new LatLng(maxLatitude, maxLongitude));
-        showMapActivity.setDefaultBounds(bounds);
+        showMapView.setDefaultBounds(bounds);
     }
 
     @Override
     public AssetManager getAssetManager() {
-        return activity.getApplicationContext().getAssets();
+        return showMapView.getApplicationContext().getAssets();
     }
 
      private void addStartAndEndMarkers(int start, int end, IRoute route) {
@@ -141,11 +140,11 @@ public class MapContentActivity extends AsyncTask<Void, Void, Integer> implement
 
              placemarks.add(new LondonTrailsPlacemark(marker, p.getIsAlternativeEndPoint()));
          }
-         showMapActivity.setPlacemarks(placemarks);
+         showMapView.setPlacemarks(placemarks);
      }
 
      private Marker pushPin(double latitude, double longitude, String title, String snippet, int icon) {
-         return showMapActivity.getMap().addMarker(new MarkerOptions()
+         return showMapView.getMap().addMarker(new MarkerOptions()
                  .position(new LatLng(latitude, longitude))
                  .title(title)
                  .snippet(snippet)

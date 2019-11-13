@@ -96,22 +96,32 @@ public class ShowMapActivity extends FragmentActivity implements
         map.setMapType(mapType);
     }
 
+    @Override
+    public Context getApplicationContext() {
+        return getApplicationContext();
+    }
+
+    @Override
     public GoogleMap getMap() {
         return map;
     }
 
+    @Override
     public ShowMapViewModel getShowMapVm() {
         return vm;
     }
 
+    @Override
     public void setMapRoute(Polyline mapRoute) {
         this.mapRoute = mapRoute;
     }
 
+    @Override
     public void setPlacemarks(List<LondonTrailsPlacemark> placemarks) {
         this.placemarks = placemarks;
     }
 
+    @Override
     public void setDefaultBounds(LatLngBounds.Builder defaultBounds) {
         this.defaultBounds = defaultBounds;
     }
@@ -253,7 +263,7 @@ public class ShowMapActivity extends FragmentActivity implements
         ((MapFragment) getFragmentManager().findFragmentById(R.id.map)).getMapAsync(this);
 
         // Perform route calculation on a background thread
-        new MapContentActivity(this, this).execute();
+        new MapContentActivity(this).execute();
     }
 
     private void zoomToCurrentRoute() {

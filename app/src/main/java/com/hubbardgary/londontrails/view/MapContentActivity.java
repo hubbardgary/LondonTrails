@@ -54,67 +54,15 @@ public class MapContentActivity extends AsyncTask<Void, Void, Integer> implement
         return 1;
     }
 
-    /*
-     * Route and markers have now been retrieved, so display them on the map.
-     */
     @Override
     protected void onPostExecute(Integer i) {
+        // Route and markers have now been retrieved, so display them on the map.
         showMapActivity.setMapRoute(showMapActivity.getMap().addPolyline(path));
         addStartAndEndMarkers(showMapVm.start, showMapVm.end, showMapVm.route);
         addWayPointMarkers();
     }
 
-    private void addStartAndEndMarkers(int start, int end, IRoute route) {
-        if (showMapVm.route.isLinear() && start == end) {
-            // Linear, and we're walking the full circuit
-            pushPin(vm.startLatitude, vm.startLongitude, route.getSection(start).getStartLocationName(), "Your walk starts and ends here.", R.drawable.waypoint_startstop);
-            return;
-        }
-
-        String startLabel, endLabel;
-        if (route.isLinear()) {
-            if (route.isCircular()) {
-                if (showMapVm.isClockwise) {
-                    startLabel = route.getSection(start).getStartLocationName();
-                    endLabel = route.getSection(end).getStartLocationName();
-                } else {
-                    startLabel = route.getSection(start).getStartLocationName();
-                    endLabel = route.getSection(end).getStartLocationName();
-                }
-            } else {
-                if (showMapVm.isClockwise) {
-                    startLabel = route.getSection(start).getStartLocationName();
-                    endLabel = route.getSection(end - 1).getEndLocationName();
-                } else {
-                    startLabel = route.getSection(start - 1).getEndLocationName();
-                    endLabel = route.getSection(end).getStartLocationName();
-                }
-            }
-        } else {
-            startLabel = route.getSection(start).getStartLocationName();
-            endLabel = route.getSection(end).getEndLocationName();
-        }
-
-        pushPin(vm.startLatitude, vm.startLongitude, startLabel, "Your walk starts here.", R.drawable.waypoint_start);
-        pushPin(vm.endLatitude, vm.endLongitude, endLabel, "Your walk ends here.", R.drawable.waypoint_stop);
-    }
-
-    private void addWayPointMarkers() {
-        List<LondonTrailsPlacemark> placemarks = new ArrayList<>();
-        for (POI p : vm.poi) {
-            Marker marker = pushPin(
-                    p.getLatitude(),
-                    p.getLongitude(),
-                    p.getTitle(),
-                    p.getSnippet(),
-                    p.getIsAlternativeEndPoint() ? R.drawable.waypoint_stop : R.drawable.waypoint_pause
-                );
-
-            placemarks.add(new LondonTrailsPlacemark(marker, p.getIsAlternativeEndPoint()));
-        }
-        showMapActivity.setPlacemarks(placemarks);
-    }
-
+    @Override
     public void getPath(PathViewModel path) {
         if (path.getCoordinates().size() > 1) {    // If length is 1, we only have 1 point so can't draw a line
             this.path = new PolylineOptions();
@@ -132,14 +80,6 @@ public class MapContentActivity extends AsyncTask<Void, Void, Integer> implement
         }
     }
 
-    private Marker pushPin(double latitude, double longitude, String title, String snippet, int icon) {
-        return showMapActivity.getMap().addMarker(new MarkerOptions()
-                .position(new LatLng(latitude, longitude))
-                .title(title)
-                .snippet(snippet)
-                .icon(BitmapDescriptorFactory.fromResource(icon)));
-    }
-
     @Override
     public void initializeDefaultBounds(double minLatitude, double minLongitude, double maxLatitude, double maxLongitude) {
         LatLngBounds.Builder bounds = new LatLngBounds.Builder();
@@ -152,4 +92,63 @@ public class MapContentActivity extends AsyncTask<Void, Void, Integer> implement
     public AssetManager getAssetManager() {
         return activity.getApplicationContext().getAssets();
     }
+
+     private void addStartAndEndMarkers(int start, int end, IRoute route) {
+         if (showMapVm.route.isLinear() && start == end) {
+             // Linear, and we're walking the full circuit
+             pushPin(vm.startLatitude, vm.startLongitude, route.getSection(start).getStartLocationName(), "Your walk starts and ends here.", R.drawable.waypoint_startstop);
+             return;
+         }
+
+         String startLabel, endLabel;
+         if (route.isLinear()) {
+             if (route.isCircular()) {
+                 if (showMapVm.isClockwise) {
+                     startLabel = route.getSection(start).getStartLocationName();
+                     endLabel = route.getSection(end).getStartLocationName();
+                 } else {
+                     startLabel = route.getSection(start).getStartLocationName();
+                     endLabel = route.getSection(end).getStartLocationName();
+                 }
+             } else {
+                 if (showMapVm.isClockwise) {
+                     startLabel = route.getSection(start).getStartLocationName();
+                     endLabel = route.getSection(end - 1).getEndLocationName();
+                 } else {
+                     startLabel = route.getSection(start - 1).getEndLocationName();
+                     endLabel = route.getSection(end).getStartLocationName();
+                 }
+             }
+         } else {
+             startLabel = route.getSection(start).getStartLocationName();
+             endLabel = route.getSection(end).getEndLocationName();
+         }
+
+         pushPin(vm.startLatitude, vm.startLongitude, startLabel, "Your walk starts here.", R.drawable.waypoint_start);
+         pushPin(vm.endLatitude, vm.endLongitude, endLabel, "Your walk ends here.", R.drawable.waypoint_stop);
+     }
+
+     private void addWayPointMarkers() {
+         List<LondonTrailsPlacemark> placemarks = new ArrayList<>();
+         for (POI p : vm.poi) {
+             Marker marker = pushPin(
+                     p.getLatitude(),
+                     p.getLongitude(),
+                     p.getTitle(),
+                     p.getSnippet(),
+                     p.getIsAlternativeEndPoint() ? R.drawable.waypoint_stop : R.drawable.waypoint_pause
+             );
+
+             placemarks.add(new LondonTrailsPlacemark(marker, p.getIsAlternativeEndPoint()));
+         }
+         showMapActivity.setPlacemarks(placemarks);
+     }
+
+     private Marker pushPin(double latitude, double longitude, String title, String snippet, int icon) {
+         return showMapActivity.getMap().addMarker(new MarkerOptions()
+                 .position(new LatLng(latitude, longitude))
+                 .title(title)
+                 .snippet(snippet)
+                 .icon(BitmapDescriptorFactory.fromResource(icon)));
+     }
 }

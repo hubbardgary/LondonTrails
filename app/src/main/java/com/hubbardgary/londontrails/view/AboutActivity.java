@@ -45,6 +45,32 @@ public class AboutActivity extends Activity implements IAboutView {
         }
     }
 
+    @Override
+    public void endActivity() {
+        finish();
+    }
+
+    @Override
+    public void setupButtons() {
+        addOnClickListener((Button)findViewById(R.id.btn_legal));
+    }
+
+    @Override
+    public void setDisplayText(Spanned text) {
+        TextView htmlTextView = (TextView)findViewById(R.id.aboutTextView);
+        htmlTextView.setText(text);
+        htmlTextView.setMovementMethod(LinkMovementMethod.getInstance());
+    }
+
+    @Override
+    public void invokeActivity(HashMap<String, Integer> intents, Class<?> activity) {
+        Intent intent = new Intent(this, activity);
+        for (Map.Entry<String, Integer> entry : intents.entrySet()) {
+            intent.putExtra(entry.getKey(), entry.getValue());
+        }
+        this.startActivity(intent);
+    }
+
     private void addOnClickListener(final Button button) {
         button.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -52,27 +78,5 @@ public class AboutActivity extends Activity implements IAboutView {
                 presenter.buttonClicked(v.getId());
             }
         });
-    }
-
-    public void endActivity() {
-        finish();
-    }
-
-    public void setupButtons() {
-        addOnClickListener((Button)findViewById(R.id.btn_legal));
-    }
-
-    public void setDisplayText(Spanned text) {
-        TextView htmlTextView = (TextView)findViewById(R.id.aboutTextView);
-        htmlTextView.setText(text);
-        htmlTextView.setMovementMethod(LinkMovementMethod.getInstance());
-    }
-
-    public void invokeActivity(HashMap<String, Integer> intents, Class<?> activity) {
-        Intent intent = new Intent(this, activity);
-        for (Map.Entry<String, Integer> entry : intents.entrySet()) {
-            intent.putExtra(entry.getKey(), entry.getValue());
-        }
-        this.startActivity(intent);
     }
 }

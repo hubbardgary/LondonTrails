@@ -138,6 +138,7 @@ public class RouteOptionsActivity extends Activity implements IRouteOptionsView,
     }
 
     // IRouteOptions methods. Invoked from presenter.
+    @Override
     public void invokeActivity(Map<String, Integer> intents, Class<?> activity) {
         Intent intent = new Intent(this, activity);
         for (Map.Entry<String, Integer> entry : intents.entrySet()) {
@@ -146,29 +147,35 @@ public class RouteOptionsActivity extends Activity implements IRouteOptionsView,
         this.startActivity(intent);
     }
 
+    @Override
     public void endActivity() {
         finish();
     }
 
+    @Override
     public int getRouteSectionsFromIntent() {
         return getIntent().getExtras().getInt("routeSections");
     }
 
-    public String[] getStringArrayFromResources(int resourceId) {
-        return getResources().getStringArray(resourceId);
-    }
-
-    public int getIntegerFromResources(int resourceId) {
-        return getResources().getInteger(resourceId);
-    }
-
+    @Override
     public void refreshDestinationSpinner(RouteViewModel vm) {
         populateSpinner(endSpinner.getId(), vm.endOptions);
         endSpinner.setSelection(vm.endSelectedIndex);
     }
 
+    @Override
     public void refreshDistance(RouteViewModel vm) {
         TextView txtDistance = (TextView) findViewById(R.id.DistanceValue);
         txtDistance.setText(String.format(Locale.UK, "%.2f km (%.2f miles)", vm.distanceKm, vm.distanceMiles));
+    }
+
+    @Override
+    public String[] getStringArrayFromResources(int resourceId) {
+        return getResources().getStringArray(resourceId);
+    }
+
+    @Override
+    public int getIntegerFromResources(int resourceId) {
+        return getResources().getInteger(resourceId);
     }
 }

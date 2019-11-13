@@ -31,7 +31,6 @@ import java.util.concurrent.TimeUnit;
 import com.hubbardgary.londontrails.R;
 import com.hubbardgary.londontrails.app.interfaces.ILondonTrailsApp;
 import com.hubbardgary.londontrails.config.UserSettings;
-import com.hubbardgary.londontrails.config.interfaces.IUserSettings;
 import com.hubbardgary.londontrails.model.LondonTrailsPlacemark;
 import com.hubbardgary.londontrails.presenter.ShowMapPresenter;
 import com.hubbardgary.londontrails.view.interfaces.IShowMapView;
@@ -57,24 +56,9 @@ public class ShowMapActivity extends FragmentActivity implements
     private ShowMapPresenter presenter;
     private ShowMapViewModel vm;
 
-    public GoogleMap getMap() {
-        return map;
-    }
-
-    public ShowMapViewModel getShowMapVm() {
-        return vm;
-    }
-
-    public void setMapRoute(Polyline mapRoute) {
-        this.mapRoute = mapRoute;
-    }
-
-    public void setPlacemarks(List<LondonTrailsPlacemark> placemarks) {
-        this.placemarks = placemarks;
-    }
-
-    public void setDefaultBounds(LatLngBounds.Builder defaultBounds) {
-        this.defaultBounds = defaultBounds;
+    @Override
+    public void endActivity() {
+        finish();
     }
 
     @Override
@@ -112,6 +96,26 @@ public class ShowMapActivity extends FragmentActivity implements
         map.setMapType(mapType);
     }
 
+    public GoogleMap getMap() {
+        return map;
+    }
+
+    public ShowMapViewModel getShowMapVm() {
+        return vm;
+    }
+
+    public void setMapRoute(Polyline mapRoute) {
+        this.mapRoute = mapRoute;
+    }
+
+    public void setPlacemarks(List<LondonTrailsPlacemark> placemarks) {
+        this.placemarks = placemarks;
+    }
+
+    public void setDefaultBounds(LatLngBounds.Builder defaultBounds) {
+        this.defaultBounds = defaultBounds;
+    }
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -120,10 +124,6 @@ public class ShowMapActivity extends FragmentActivity implements
             getActionBar().setDisplayHomeAsUpEnabled(true);
         }
         setUpMapIfNeeded();
-    }
-
-    public void endActivity() {
-        finish();
     }
 
     private void initializeLocationServices() {

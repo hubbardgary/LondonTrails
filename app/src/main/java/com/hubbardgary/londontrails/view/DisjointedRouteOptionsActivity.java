@@ -112,6 +112,7 @@ public class DisjointedRouteOptionsActivity extends Activity implements IRouteOp
     }
 
     // IRouteOptions methods. Invoked from presenter.
+    @Override
     public void invokeActivity(Map<String, Integer> intents, Class<?> activity) {
         Intent intent = new Intent(this, activity);
         for (Map.Entry<String, Integer> entry : intents.entrySet()) {
@@ -120,26 +121,21 @@ public class DisjointedRouteOptionsActivity extends Activity implements IRouteOp
         this.startActivity(intent);
     }
 
+    @Override
     public void endActivity() {
         finish();
     }
 
+    @Override
     public int getRouteSectionsFromIntent() {
         return getIntent().getExtras().getInt("routeSections");
-    }
-
-    public String[] getStringArrayFromResources(int resourceId) {
-        return getResources().getStringArray(resourceId);
-    }
-
-    public int getIntegerFromResources(int resourceId) {
-        return getResources().getInteger(resourceId);
     }
 
     @Override
     public void refreshDestinationSpinner(RouteViewModel vm) {
     }
 
+    @Override
     public void refreshDistance(RouteViewModel vm) {
         TextView txtDistance = (TextView) findViewById(R.id.DistanceValue);
         txtDistance.setText(String.format(Locale.UK,
@@ -158,5 +154,15 @@ public class DisjointedRouteOptionsActivity extends Activity implements IRouteOp
         } else {
             txtExtension.setText("");
         }
+    }
+
+    @Override
+    public String[] getStringArrayFromResources(int resourceId) {
+        return getResources().getStringArray(resourceId);
+    }
+
+    @Override
+    public int getIntegerFromResources(int resourceId) {
+        return getResources().getInteger(resourceId);
     }
 }

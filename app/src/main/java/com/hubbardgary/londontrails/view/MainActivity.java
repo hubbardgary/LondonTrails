@@ -65,13 +65,6 @@ public class MainActivity extends Activity implements IMainView {
         return button;
     }
 
-    public void displayButtons(List<ButtonViewModel> buttons) {
-        for(ButtonViewModel buttonVm : buttons) {
-            Button button = addButton(buttonVm);
-            addOnClickListener(button);
-        }
-    }
-
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         getMenuInflater().inflate(R.menu.main, menu);
@@ -89,6 +82,15 @@ public class MainActivity extends Activity implements IMainView {
         }
     }
 
+    @Override
+    public void displayButtons(List<ButtonViewModel> buttons) {
+        for(ButtonViewModel buttonVm : buttons) {
+            Button button = addButton(buttonVm);
+            addOnClickListener(button);
+        }
+    }
+
+    @Override
     public void checkGooglePlayAvailability() {
         final int PLAY_SERVICES_RESOLUTION_REQUEST = 9000;
         GoogleApiAvailability googleAPI = GoogleApiAvailability.getInstance();
@@ -105,6 +107,7 @@ public class MainActivity extends Activity implements IMainView {
         }
     }
 
+    @Override
     public void invokeActivity(HashMap<String, Integer> intents, Class<?> activity) {
         Intent intent = new Intent(this, activity);
         for (Map.Entry<String, Integer> entry : intents.entrySet()) {
@@ -113,6 +116,7 @@ public class MainActivity extends Activity implements IMainView {
         this.startActivity(intent);
     }
 
+    @Override
     public void endActivity() {
         finish();
     }

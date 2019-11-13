@@ -27,15 +27,6 @@ public class GoogleMapsLicenceActivity extends Activity implements IGoogleMapsLi
         presenter.initializeView();
     }
 
-    public void setText(String text) {
-        TextView textView = (TextView)findViewById(R.id.licenceTextView);
-        textView.setText(text);
-    }
-
-    public Context getContext() {
-        return getApplicationContext();
-    }
-
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
         try {
@@ -47,6 +38,18 @@ public class GoogleMapsLicenceActivity extends Activity implements IGoogleMapsLi
         }
     }
 
+    @Override
+    public void setText(String text) {
+        TextView textView = (TextView)findViewById(R.id.licenceTextView);
+        textView.setText(text);
+    }
+
+    @Override
+    public Context getContext() {
+        return getApplicationContext();
+    }
+
+    @Override
     public void endActivity() {
         finish();
     }

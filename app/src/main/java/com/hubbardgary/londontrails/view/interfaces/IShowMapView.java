@@ -20,7 +20,7 @@ public interface IShowMapView {
     void setMapType(int mapType);
 
     // Methods used in MapContentActivity
-    Context getApplicationContext();
+    Context getApplicationContextFromView();
     GoogleMap getMap();
     ShowMapViewModel getShowMapVm();
     void setMapRoute(Polyline mapRoute);

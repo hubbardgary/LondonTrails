@@ -89,7 +89,7 @@ public class MapContentActivity extends AsyncTask<Void, Void, Integer> implement
 
     @Override
     public AssetManager getAssetManager() {
-        return showMapView.getApplicationContext().getAssets();
+        return showMapView.getApplicationContextFromView().getAssets();
     }
 
      private void addStartAndEndMarkers(int start, int end, IRoute route) {

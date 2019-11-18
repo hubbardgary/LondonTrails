@@ -97,7 +97,7 @@ public class ShowMapActivity extends FragmentActivity implements
     }
 
     @Override
-    public Context getApplicationContext() {
+    public Context getApplicationContextFromView() {
         return getApplicationContext();
     }
 
@@ -256,7 +256,7 @@ public class ShowMapActivity extends FragmentActivity implements
     }
 
     private void setUpMap() {
-        presenter = new ShowMapPresenter(this, new UserSettings((ILondonTrailsApp)getApplicationContext()));
+        presenter = new ShowMapPresenter(this, new UserSettings((ILondonTrailsApp)getApplicationContextFromView()));
         vm = presenter.getViewModel();
         setTitle(vm.name);
 

@@ -154,13 +154,11 @@ public class ShowMapActivity extends FragmentActivity implements
     }
 
     @Override
-    public void onRequestPermissionsResult(int requestCode, @NonNull String permissions[], @NonNull int[] grantResults) {
-        switch (requestCode) {
-            case MY_PERMISSION_ACCESS_FINE_LOCATION:
-                // If request is cancelled, the result arrays are empty.
-                if (grantResults.length > 0 && grantResults[0] == PackageManager.PERMISSION_GRANTED) {
-                    enableMyLocationIfAllowed();
-                }
+    public void onRequestPermissionsResult(int requestCode, @NonNull String[] permissions, @NonNull int[] grantResults) {
+        if (requestCode == MY_PERMISSION_ACCESS_FINE_LOCATION) {
+            if (grantResults.length > 0 && grantResults[0] == PackageManager.PERMISSION_GRANTED) {
+                enableMyLocationIfAllowed();
+            }
         }
     }
 
@@ -299,5 +297,4 @@ public class ShowMapActivity extends FragmentActivity implements
         };
         scheduler.schedule(checkInternetTask, delayInSeconds, TimeUnit.SECONDS);
     }
-
 }

@@ -24,8 +24,6 @@ import static junit.framework.TestCase.assertEquals;
 import static org.mockito.Mockito.when;
 
 public class POIProviderTest_LinearCircularRoute {
-    private AssetManager mockAssetManager;
-    private IRoute mockRoute;
     private POIProvider _sut;
 
     private POI[][] placemarks;
@@ -57,14 +55,14 @@ public class POIProviderTest_LinearCircularRoute {
     public void setUp() {
         IUserSettings mockUserSettings;
         IRouteOptionsView mockView;
+        AssetManager mockAssetManager = Mockito.mock(AssetManager.class);
 
         placemarks = getPOIs();
         String section1poi = buildPoiSectionXml(placemarks[0]);
         String section2poi = buildPoiSectionXml(placemarks[1]);
         String section3poi = buildPoiSectionXml(placemarks[2]);
         String section4poi = buildPoiSectionXml(placemarks[3]);
-        
-        mockAssetManager = Mockito.mock(AssetManager.class);
+
         try {
             when(mockAssetManager.open("t-01-placemarks.kml")).thenReturn(new ByteArrayInputStream(section1poi.getBytes(StandardCharsets.UTF_8)));
             when(mockAssetManager.open("t-02-placemarks.kml")).thenReturn(new ByteArrayInputStream(section2poi.getBytes(StandardCharsets.UTF_8)));
@@ -76,7 +74,7 @@ public class POIProviderTest_LinearCircularRoute {
 
         mockView = Mockito.mock(IRouteOptionsView.class);
         mockUserSettings = Mockito.mock(IUserSettings.class);
-        mockRoute = Mockito.mock(IRoute.class);
+        IRoute mockRoute = Mockito.mock(IRoute.class);
         when(mockRoute.getShortName()).thenReturn("t");
         when(mockRoute.isCircular()).thenReturn(true);
         when(mockRoute.isLinear()).thenReturn(true);
@@ -89,8 +87,7 @@ public class POIProviderTest_LinearCircularRoute {
     @Test
     public void routeFromLocation0ToLocation1_ShouldIncludePlacemarksForSection0() {
         // Arrange
-        List<POI> expectedResult = new ArrayList<>();
-        expectedResult.addAll(Arrays.asList(placemarks[0]));
+        List<POI> expectedResult = new ArrayList<>(Arrays.asList(placemarks[0]));
 
         // Act
         List<POI> result = _sut.getPOIsForRoute(0, 1).getPOIs();
@@ -102,8 +99,7 @@ public class POIProviderTest_LinearCircularRoute {
     @Test
     public void routeFromLocation1ToLocation2_ShouldIncludePlacemarksForSection1() {
         // Arrange
-        List<POI> expectedResult = new ArrayList<>();
-        expectedResult.addAll(Arrays.asList(placemarks[1]));
+        List<POI> expectedResult = new ArrayList<>(Arrays.asList(placemarks[1]));
 
         // Act
         List<POI> result = _sut.getPOIsForRoute(1, 2).getPOIs();
@@ -115,8 +111,7 @@ public class POIProviderTest_LinearCircularRoute {
     @Test
     public void routeFromLocation2ToLocation3_ShouldIncludePlacemarksForSection2() {
         // Arrange
-        List<POI> expectedResult = new ArrayList<>();
-        expectedResult.addAll(Arrays.asList(placemarks[2]));
+        List<POI> expectedResult = new ArrayList<>(Arrays.asList(placemarks[2]));
 
         // Act
         List<POI> result = _sut.getPOIsForRoute(2, 3).getPOIs();
@@ -143,8 +138,7 @@ public class POIProviderTest_LinearCircularRoute {
     @Test
     public void routeFromLocation3ToLocation0_ShouldIncludePlacemarksForSection3() {
         // Arrange
-        List<POI> expectedResult = new ArrayList<>();
-        expectedResult.addAll(Arrays.asList(placemarks[3]));
+        List<POI> expectedResult = new ArrayList<>(Arrays.asList(placemarks[3]));
 
         // Act
         List<POI> result = _sut.getPOIsForRoute(3, 0).getPOIs();

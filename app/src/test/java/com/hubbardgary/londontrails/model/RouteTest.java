@@ -12,7 +12,7 @@ public class RouteTest {
     private Route _sut;
 
     @Before
-    public void setUp() throws Exception {
+    public void setUp() {
         _sut = new LondonLoop();
     }
 
@@ -44,34 +44,30 @@ public class RouteTest {
 
     @Test
     public void setCircularToTrue_correctlySetsCircular() {
-        boolean circular = true;
-        _sut.setCircular(circular);
+        _sut.setCircular(true);
         boolean result = _sut.isCircular();
-        assertEquals(circular, result);
+        assertTrue(result);
     }
 
     @Test
     public void setCircularToFalse_correctlySetsCircular() {
-        boolean circular = false;
-        _sut.setCircular(circular);
+        _sut.setCircular(false);
         boolean result = _sut.isCircular();
-        assertEquals(circular, result);
+        assertFalse(result);
     }
 
     @Test
     public void setLinearToTrue_correctlySetsLinear() {
-        boolean linear = true;
-        _sut.setLinear(linear);
+        _sut.setLinear(true);
         boolean result = _sut.isLinear();
-        assertEquals(linear, result);
+        assertTrue(result);
     }
 
     @Test
     public void setLinearToFalse_correctlySetsLinear() {
-        boolean linear = false;
-        _sut.setLinear(linear);
+        _sut.setLinear(false);
         boolean result = _sut.isLinear();
-        assertEquals(linear, result);
+        assertFalse(result);
     }
 
     @Test

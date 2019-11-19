@@ -10,7 +10,7 @@ public class POITest {
     private POI _sut;
 
     @Before
-    public void setUp() throws Exception {
+    public void setUp() {
         _sut = new POI();
     }
 
@@ -50,14 +50,14 @@ public class POITest {
     public void setAlternativeEndPointToTrue_correctlySetsAlternativeEndPoint() {
         _sut.setIsAlternativeEndPoint(true);
         boolean result = _sut.getIsAlternativeEndPoint();
-        assertEquals(true, result);
+        assertTrue(result);
     }
 
     @Test
     public void setAlternativeEndPointToFalse_correctlySetsAlternativeEndPoint() {
         _sut.setIsAlternativeEndPoint(false);
         boolean result = _sut.getIsAlternativeEndPoint();
-        assertEquals(false, result);
+        assertFalse(result);
     }
 
 }

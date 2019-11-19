@@ -35,11 +35,10 @@ public class DisjointedRouteOptionsPresenter {
     private void initializePresenter() {
         route = settings.getCurrentRoute();
 
-        switch (sectionResource) {
-            case R.array.green_chain_walk_sections:
-                route = new GreenChainWalk();
-                break;
+        if (sectionResource == R.array.green_chain_walk_sections) {
+            route = new GreenChainWalk();
         }
+
         settings.setCurrentRoute(route);
     }
 
@@ -74,26 +73,23 @@ public class DisjointedRouteOptionsPresenter {
         return -1;
     }
 
-    private RouteViewModel updateDistance(RouteViewModel vm) {
+    private void updateDistance(RouteViewModel vm) {
         vm.distanceKm = calculateDistanceInKm(vm.startSection);
         vm.distanceMiles = Helpers.convertKmToMiles(vm.distanceKm);
         vm.extensionDistanceKm = route.getSection(vm.startSection).getExtensionDistanceInKm();
         vm.extensionDistanceMiles = Helpers.convertKmToMiles(vm.extensionDistanceKm);
         vm.extensionDescription = route.getSection(vm.startSection).getExtensionDescription();
-        return vm;
     }
 
     public RouteViewModel optionsChanged(RouteViewModel vm) {
-        vm = updateDistance(vm);
+        updateDistance(vm);
         view.refreshDistance(vm);
         return vm;
     }
 
     public void menuItemSelected(int itemId) {
-        switch (itemId) {
-            case android.R.id.home:
-                view.endActivity();
-                return;
+        if (itemId == android.R.id.home) {
+            view.endActivity();
         }
     }
 }

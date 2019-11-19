@@ -60,7 +60,7 @@ public class MainActivity extends Activity implements IMainView {
         button.setTextColor(Color.WHITE);
         LinearLayout.LayoutParams params = new LinearLayout.LayoutParams(LinearLayout.LayoutParams.MATCH_PARENT, LinearLayout.LayoutParams.WRAP_CONTENT);
         params.topMargin = 25;
-        LinearLayout layout = (LinearLayout)findViewById(R.id.MainLayout);
+        LinearLayout layout = findViewById(R.id.MainLayout);
         layout.addView(button, params);
         return button;
     }

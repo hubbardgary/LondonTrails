@@ -57,7 +57,7 @@ public class AboutActivity extends Activity implements IAboutView {
 
     @Override
     public void setDisplayText(Spanned text) {
-        TextView htmlTextView = (TextView)findViewById(R.id.aboutTextView);
+        TextView htmlTextView = findViewById(R.id.aboutTextView);
         htmlTextView.setText(text);
         htmlTextView.setMovementMethod(LinkMovementMethod.getInstance());
     }

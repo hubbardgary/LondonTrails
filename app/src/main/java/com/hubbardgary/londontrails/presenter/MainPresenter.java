@@ -53,13 +53,11 @@ public class MainPresenter {
     }
 
     public void menuItemSelected(int itemId) {
-        switch (itemId) {
-            case R.id.view_option_about:
-                view.invokeActivity(new HashMap<String, Integer>(), AboutActivity.class);
-                return;
-            case android.R.id.home:
-                view.endActivity();
-                return;
+        if (itemId == R.id.view_option_about) {
+            view.invokeActivity(new HashMap<String, Integer>(), AboutActivity.class);
+        }
+        else if (itemId == android.R.id.home) {
+            view.endActivity();
         }
     }
 

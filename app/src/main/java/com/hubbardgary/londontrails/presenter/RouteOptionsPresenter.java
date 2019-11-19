@@ -116,7 +116,7 @@ public class RouteOptionsPresenter {
             // If it's not circular, start and end locations cannot be the same
             String dest = sectionArray[vm.endSection];
             List<String> destContents = new ArrayList<>(Arrays.asList(routeVm.sectionsArray));
-            destContents.remove(destContents.indexOf(sectionArray[vm.startSection]));
+            destContents.remove(sectionArray[vm.startSection]);
             if (destContents.indexOf(dest) == -1) {
                 vm.endSection = getSectionId(destContents.get(0));
                 vm.endSelectedIndex = 0;
@@ -129,26 +129,23 @@ public class RouteOptionsPresenter {
         return vm;
     }
 
-    private RouteViewModel updateDistance(RouteViewModel vm) {
+    private void updateDistance(RouteViewModel vm) {
         vm.distanceKm = calculateDistanceInKm(vm.startSection, vm.endSection, vm.direction);
         vm.distanceMiles = Helpers.convertKmToMiles(vm.distanceKm);
-        return vm;
     }
 
     public RouteViewModel optionsChanged(RouteViewModel vm) {
         if (!vm.isCircular && vm.startSection == vm.endSection) {
             throw new IllegalArgumentException("Start section and end section must be different for non-circular routes.");
         }
-        vm = updateDistance(vm);
+        updateDistance(vm);
         view.refreshDistance(vm);
         return vm;
     }
 
     public void menuItemSelected(int itemId) {
-        switch (itemId) {
-            case android.R.id.home:
-                view.endActivity();
-                return;
+        if (itemId == android.R.id.home) {
+            view.endActivity();
         }
     }
 }

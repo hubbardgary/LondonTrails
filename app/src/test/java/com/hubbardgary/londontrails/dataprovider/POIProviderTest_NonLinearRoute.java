@@ -26,8 +26,6 @@ import static org.junit.Assert.assertTrue;
 import static org.mockito.Mockito.when;
 
 public class POIProviderTest_NonLinearRoute {
-    private AssetManager mockAssetManager;
-    private IRoute mockRoute;
     private POIProvider _sut;
     private POI[][] placemarks;
 
@@ -58,6 +56,7 @@ public class POIProviderTest_NonLinearRoute {
     public void setUp() {
         IUserSettings mockUserSettings;
         IRouteOptionsView mockView;
+        AssetManager mockAssetManager = Mockito.mock(AssetManager.class);
 
         placemarks = getPOIs();
         String section1poi = buildPoiSectionXml(placemarks[0]);
@@ -65,7 +64,6 @@ public class POIProviderTest_NonLinearRoute {
         String section3poi = buildPoiSectionXml(placemarks[2]);
         String section4poi = buildPoiSectionXml(placemarks[3]);
 
-        mockAssetManager = Mockito.mock(AssetManager.class);
         try {
             when(mockAssetManager.open("t-01-placemarks.kml")).thenReturn(new ByteArrayInputStream(section1poi.getBytes(StandardCharsets.UTF_8)));
             when(mockAssetManager.open("t-02-placemarks.kml")).thenReturn(new ByteArrayInputStream(section2poi.getBytes(StandardCharsets.UTF_8)));
@@ -77,7 +75,7 @@ public class POIProviderTest_NonLinearRoute {
 
         mockView = Mockito.mock(IRouteOptionsView.class);
         mockUserSettings = Mockito.mock(IUserSettings.class);
-        mockRoute = Mockito.mock(IRoute.class);
+        IRoute mockRoute = Mockito.mock(IRoute.class);
         when(mockRoute.getShortName()).thenReturn("t");
         when(mockRoute.isCircular()).thenReturn(false);
         when(mockRoute.isLinear()).thenReturn(false);
@@ -90,8 +88,7 @@ public class POIProviderTest_NonLinearRoute {
     @Test
     public void routeFromLocation0ToLocation0_ShouldIncludePlacemarksForSection0() {
         // Arrange
-        List<POI> expectedResult = new ArrayList<>();
-        expectedResult.addAll(Arrays.asList(placemarks[0]));
+        List<POI> expectedResult = new ArrayList<>(Arrays.asList(placemarks[0]));
 
         // Act
         List<POI> result = _sut.getPOIsForRoute(0, 0).getPOIs();
@@ -103,8 +100,7 @@ public class POIProviderTest_NonLinearRoute {
     @Test
     public void routeFromLocation1ToLocation1_ShouldIncludePlacemarksForSection1() {
         // Arrange
-        List<POI> expectedResult = new ArrayList<>();
-        expectedResult.addAll(Arrays.asList(placemarks[1]));
+        List<POI> expectedResult = new ArrayList<>(Arrays.asList(placemarks[1]));
 
         // Act
         List<POI> result = _sut.getPOIsForRoute(1, 1).getPOIs();
@@ -116,8 +112,7 @@ public class POIProviderTest_NonLinearRoute {
     @Test
     public void routeFromLocation2ToLocation2_ShouldIncludePlacemarksForSection2() {
         // Arrange
-        List<POI> expectedResult = new ArrayList<>();
-        expectedResult.addAll(Arrays.asList(placemarks[2]));
+        List<POI> expectedResult = new ArrayList<>(Arrays.asList(placemarks[2]));
 
         // Act
         List<POI> result = _sut.getPOIsForRoute(2, 2).getPOIs();
@@ -129,8 +124,7 @@ public class POIProviderTest_NonLinearRoute {
     @Test
     public void routeFromLocation3ToLocation3_ShouldIncludePlacemarksForSection3() {
         // Arrange
-        List<POI> expectedResult = new ArrayList<>();
-        expectedResult.addAll(Arrays.asList(placemarks[3]));
+        List<POI> expectedResult = new ArrayList<>(Arrays.asList(placemarks[3]));
 
         // Act
         List<POI> result = _sut.getPOIsForRoute(3, 3).getPOIs();
@@ -142,8 +136,7 @@ public class POIProviderTest_NonLinearRoute {
     @Test
     public void routeWithAlternativeEndPointPlacemark_ShouldIncludeAlternativeEndPointPlacemark() {
         // Arrange
-        List<POI> expectedResult = new ArrayList<>();
-        expectedResult.addAll(Arrays.asList(placemarks[2]));
+        List<POI> expectedResult = new ArrayList<>(Arrays.asList(placemarks[2]));
 
         // Act
         List<POI> result = _sut.getPOIsForRoute(2, 2).getPOIs();

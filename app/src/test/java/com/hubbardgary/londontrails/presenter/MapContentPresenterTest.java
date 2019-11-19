@@ -83,7 +83,7 @@ public class MapContentPresenterTest {
         when(mockView.getAssetManager()).thenReturn(mockAssetManager);
 
         RouteCoordinatesDto coordinatesDto = new RouteCoordinatesDto();
-        coordinatesDto.setCoordinates(new ArrayList<Coordinates>(Arrays.asList(
+        coordinatesDto.setCoordinates(new ArrayList<>(Arrays.asList(
                 new Coordinates(51.387386, 0.063600),
                 new Coordinates(51.544458, -0.488226),
                 new Coordinates(51.635921, -0.237016),

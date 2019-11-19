@@ -19,7 +19,6 @@ import java.util.Map;
 import com.hubbardgary.londontrails.R;
 import com.hubbardgary.londontrails.app.interfaces.ILondonTrailsApp;
 import com.hubbardgary.londontrails.config.UserSettings;
-import com.hubbardgary.londontrails.config.interfaces.IUserSettings;
 import com.hubbardgary.londontrails.presenter.RouteOptionsPresenter;
 import com.hubbardgary.londontrails.view.interfaces.IRouteOptionsView;
 import com.hubbardgary.londontrails.viewmodel.RouteViewModel;
@@ -88,7 +87,7 @@ public class RouteOptionsActivity extends Activity implements IRouteOptionsView,
     }
 
     private Spinner populateSpinner(int spinnerId, List<String> contents) {
-        Spinner spinner = (Spinner) findViewById(spinnerId);
+        Spinner spinner = findViewById(spinnerId);
         ArrayAdapter<String> dataAdapter;
         dataAdapter = new ArrayAdapter<>(this, android.R.layout.simple_spinner_item, contents);
         dataAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
@@ -165,7 +164,7 @@ public class RouteOptionsActivity extends Activity implements IRouteOptionsView,
 
     @Override
     public void refreshDistance(RouteViewModel vm) {
-        TextView txtDistance = (TextView) findViewById(R.id.DistanceValue);
+        TextView txtDistance = findViewById(R.id.DistanceValue);
         txtDistance.setText(String.format(Locale.UK, "%.2f km (%.2f miles)", vm.distanceKm, vm.distanceMiles));
     }
 

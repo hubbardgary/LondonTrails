@@ -26,8 +26,6 @@ import static junit.framework.TestCase.assertNotNull;
 import static org.mockito.Mockito.when;
 
 public class CoordinateProviderTest_LinearCircularRoute {
-    private AssetManager mockAssetManager;
-    private IRoute mockRoute;
     private CoordinateProvider _sut;
 
     private List<List<Coordinates>> sectionCoordinates = getSectionCoordinates();
@@ -126,6 +124,7 @@ public class CoordinateProviderTest_LinearCircularRoute {
     public void setUp() {
         IUserSettings mockUserSettings;
         IRouteOptionsView mockView;
+        AssetManager mockAssetManager = Mockito.mock(AssetManager.class);
 
         String section1Coordinates = DataProviderHelpers.buildSectionCoordinatesXml(sectionCoordinates.get(0));
         String section2Coordinates = DataProviderHelpers.buildSectionCoordinatesXml(sectionCoordinates.get(1));
@@ -139,8 +138,6 @@ public class CoordinateProviderTest_LinearCircularRoute {
         String endLink2Coordinates = DataProviderHelpers.buildSectionCoordinatesXml(endLinkCoordinates.get(1));
         String endLink3Coordinates = DataProviderHelpers.buildSectionCoordinatesXml(endLinkCoordinates.get(2));
         String endLink4Coordinates = DataProviderHelpers.buildSectionCoordinatesXml(endLinkCoordinates.get(3));
-
-        mockAssetManager = Mockito.mock(AssetManager.class);
         try {
             when(mockAssetManager.open("t-01-route.kml")).thenReturn(new ByteArrayInputStream(section1Coordinates.getBytes(StandardCharsets.UTF_8)));
             when(mockAssetManager.open("t-02-route.kml")).thenReturn(new ByteArrayInputStream(section2Coordinates.getBytes(StandardCharsets.UTF_8)));
@@ -164,7 +161,7 @@ public class CoordinateProviderTest_LinearCircularRoute {
 
         mockView = Mockito.mock(IRouteOptionsView.class);
         mockUserSettings = Mockito.mock(IUserSettings.class);
-        mockRoute = Mockito.mock(IRoute.class);
+        IRoute mockRoute = Mockito.mock(IRoute.class);
         when(mockRoute.getShortName()).thenReturn("t");
         when(mockRoute.isCircular()).thenReturn(true);
         when(mockRoute.isLinear()).thenReturn(true);

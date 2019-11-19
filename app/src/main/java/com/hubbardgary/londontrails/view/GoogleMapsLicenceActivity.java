@@ -40,7 +40,7 @@ public class GoogleMapsLicenceActivity extends Activity implements IGoogleMapsLi
 
     @Override
     public void setText(String text) {
-        TextView textView = (TextView)findViewById(R.id.licenceTextView);
+        TextView textView = findViewById(R.id.licenceTextView);
         textView.setText(text);
     }
 

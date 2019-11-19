@@ -11,7 +11,6 @@ import com.hubbardgary.londontrails.viewmodel.ShowMapViewModel;
 
 public class MapContentPresenter {
 
-    private IMapContentView view;
     private ICoordinateProvider coordinateProvider;
     private IPOIProvider poiProvider;
     private ShowMapViewModel showMapVm;
@@ -20,7 +19,6 @@ public class MapContentPresenter {
                                ShowMapViewModel showMapVm,
                                ICoordinateProvider coordinateProvider,
                                IPOIProvider poiProvider) {
-        this.view = view;
         this.showMapVm = showMapVm;
         this.coordinateProvider = coordinateProvider;
         this.coordinateProvider.initialize(showMapVm.route, view.getAssetManager());
@@ -44,9 +42,9 @@ public class MapContentPresenter {
             vm.poi = routePoiDto.getPOIs();
         }
 
-        vm = setStartCoordinates(vm);
-        vm = setEndCoordinates(vm);
-        vm = setMaxMinLatLon(vm, routeCoordinatesDto, routePoiDto);
+        setStartCoordinates(vm);
+        setEndCoordinates(vm);
+        setMaxMinLatLon(vm, routeCoordinatesDto, routePoiDto);
 
         return vm;
     }
@@ -77,7 +75,7 @@ public class MapContentPresenter {
         return poiProvider.getPOIsForRoute(start, end);
     }
 
-    private MapContentViewModel setStartCoordinates(MapContentViewModel vm) {
+    private void setStartCoordinates(MapContentViewModel vm) {
         if (showMapVm.isClockwise) {
             vm.startLatitude = vm.path.getCoordinateLat(0);
             vm.startLongitude = vm.path.getCoordinateLng(0);
@@ -86,10 +84,9 @@ public class MapContentPresenter {
             vm.startLatitude = vm.path.getCoordinateLat(vm.path.getCoordinates().size() - 1);
             vm.startLongitude = vm.path.getCoordinateLng(vm.path.getCoordinates().size() - 1);
         }
-        return vm;
     }
 
-    private MapContentViewModel setEndCoordinates(MapContentViewModel vm) {
+    private void setEndCoordinates(MapContentViewModel vm) {
         if (showMapVm.isClockwise) {
             vm.endLatitude = vm.path.getCoordinateLat(vm.path.getCoordinates().size() - 1);
             vm.endLongitude = vm.path.getCoordinateLng(vm.path.getCoordinates().size() - 1);
@@ -98,10 +95,9 @@ public class MapContentPresenter {
             vm.endLatitude = vm.path.getCoordinateLat(0);
             vm.endLongitude = vm.path.getCoordinateLng(0);
         }
-        return vm;
     }
 
-    private MapContentViewModel setMaxMinLatLon(MapContentViewModel vm, RouteCoordinatesDto coordinates, RoutePoiDto poi) {
+    private void setMaxMinLatLon(MapContentViewModel vm, RouteCoordinatesDto coordinates, RoutePoiDto poi) {
         if (poi == null || poi.getPOIs() == null || poi.getPOIs().size() == 0) {
             vm.minimumLatitude = coordinates.getMinimumLatitude();
             vm.maximumLatitude = coordinates.getMaximumLatitude();
@@ -113,6 +109,5 @@ public class MapContentPresenter {
             vm.minimumLongitude = coordinates.getMinimumLongitude() < poi.getMinimumLongitude() ? coordinates.getMinimumLongitude() : poi.getMinimumLongitude();
             vm.maximumLongitude = coordinates.getMaximumLongitude() > poi.getMaximumLongitude() ? coordinates.getMaximumLongitude() : poi.getMaximumLongitude();
         }
-        return vm;
     }
 }

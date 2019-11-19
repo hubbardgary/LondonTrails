@@ -14,13 +14,13 @@ public class SectionTest {
 
     private ISection _sut;
     private String _routeId = "tr";
-    private String _sectionId = "03";
-    IRoute routeMock;
+    private IRoute routeMock;
 
     @Before
     public void setUp() {
         routeMock = Mockito.mock(IRoute.class);
         _sut = new Section(routeMock);
+        String _sectionId = "03";
         _sut.setSectionId(_sectionId);
     }
 

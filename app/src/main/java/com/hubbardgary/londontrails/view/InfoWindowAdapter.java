@@ -24,8 +24,8 @@ class InfoWindowAdapter implements GoogleMap.InfoWindowAdapter {
             return null;
         } else {
             View v = activity.getLayoutInflater().inflate(R.layout.popup, null);
-            TextView title = (TextView) v.findViewById(R.id.title);
-            TextView info = (TextView) v.findViewById(R.id.snippet);
+            TextView title = v.findViewById(R.id.title);
+            TextView info = v.findViewById(R.id.snippet);
             title.setText(marker.getTitle());
             info.setText(marker.getSnippet());
             return v;

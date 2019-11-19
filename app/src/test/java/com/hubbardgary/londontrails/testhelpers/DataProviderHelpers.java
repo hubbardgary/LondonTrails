@@ -38,7 +38,7 @@ public class DataProviderHelpers {
     }
 
     public static String buildSectionCoordinatesXml(List<Coordinates> coordinates) {
-        String xml = "<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n" +
+        return "<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n" +
                 "<kml xmlns=\"http://earth.google.com/kml/2.2\">\n" +
                 "<Document>\n" +
                 "  <name>Test Route</name>\n" +
@@ -62,7 +62,6 @@ public class DataProviderHelpers {
                 "  </Placemark>\n" +
                 "</Document>\n" +
                 "</kml>";
-        return xml;
     }
 
     private static String getCoordinates(List<Coordinates> coordinates) {

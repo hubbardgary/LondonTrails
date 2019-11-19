@@ -55,17 +55,14 @@ public class AboutPresenter {
     }
 
     public void buttonClicked(int id) {
-        switch (id) {
-            case R.id.btn_legal:
-                view.invokeActivity(new HashMap<String, Integer>(), GoogleMapsLicenceActivity.class);
-                break;
+        if (id == R.id.btn_legal) {
+            view.invokeActivity(new HashMap<String, Integer>(), GoogleMapsLicenceActivity.class);
         }
     }
 
     public void menuItemSelected(int itemId) {
-        switch (itemId) {
-            case android.R.id.home:
-                view.endActivity();
+        if (itemId == android.R.id.home) {
+            view.endActivity();
         }
     }
 }

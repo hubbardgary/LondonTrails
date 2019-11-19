@@ -23,10 +23,8 @@ public class GoogleMapsLicencePresenter {
     }
 
     public void menuItemSelected(int itemId) {
-        switch (itemId) {
-            case android.R.id.home:
-                view.endActivity();
-                return;
+        if (itemId == android.R.id.home) {
+            view.endActivity();
         }
     }
 }

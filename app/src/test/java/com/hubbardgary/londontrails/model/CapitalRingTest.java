@@ -62,7 +62,7 @@ public class CapitalRingTest {
 
     @Test
     public void getRouteDistanceText_shouldReturnCorrectText() {
-        String result = _sut.getRouteDistanceText();
+        String result = CapitalRing.getRouteDistanceText();
         assertEquals("approx 122.0 km (75.8 miles)", result);
     }
 }

@@ -58,14 +58,14 @@ public class GreenChainWalkTest {
         ISection[] result = _sut.getSections();
         assertNotNull(result);
         assertEquals(13, result.length);
-        for(int i = 0; i < result.length; i++) {
-            assertNotNull(result[i]);
+        for (ISection iSection : result) {
+            assertNotNull(iSection);
         }
     }
 
     @Test
     public void getRouteDistanceText_shouldReturnCorrectText() {
-        String result = _sut.getRouteDistanceText();
+        String result = GreenChainWalk.getRouteDistanceText();
         assertEquals("approx 85.3 km (53.0 miles)", result);
     }
 

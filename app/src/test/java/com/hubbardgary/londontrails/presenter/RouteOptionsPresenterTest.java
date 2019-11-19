@@ -55,7 +55,7 @@ public class RouteOptionsPresenterTest {
 
         // Assert
         assertEquals("Test Route", result.name);
-        assertEquals(false, result.isCircular);
+        assertFalse(result.isCircular);
     }
 
     @Test

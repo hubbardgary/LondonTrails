@@ -6,10 +6,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class PathViewModel {
-    private String name;
-    private String description;
-    private int color;
-    private int width;
+
     private List<Coordinates> coordinates = new ArrayList<>();
 
     public List<Coordinates> getCoordinates() {

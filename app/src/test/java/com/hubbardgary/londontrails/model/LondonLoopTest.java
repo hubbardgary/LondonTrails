@@ -62,7 +62,7 @@ public class LondonLoopTest {
 
     @Test
     public void getRouteDistanceText_shouldReturnCorrectText() {
-        String result = _sut.getRouteDistanceText();
+        String result = LondonLoop.getRouteDistanceText();
         assertEquals("approx 240.0 km (149.1 miles)", result);
     }
 }

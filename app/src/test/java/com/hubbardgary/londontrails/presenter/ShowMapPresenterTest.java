@@ -52,7 +52,7 @@ public class ShowMapPresenterTest {
         // Assert
         assertEquals(result.start, 1);
         assertEquals(result.end, 2);
-        assertEquals(result.isClockwise, true);
+        assertTrue(result.isClockwise);
         assertEquals(result.name, "Capital Ring: Section 2 - 3");
     }
 
@@ -68,7 +68,7 @@ public class ShowMapPresenterTest {
         // Assert
         assertEquals(result.start, 5);
         assertEquals(result.end, 1);
-        assertEquals(result.isClockwise, false);
+        assertFalse(result.isClockwise);
         assertEquals(result.name, "London Loop: Section 6 - 2");
     }
 

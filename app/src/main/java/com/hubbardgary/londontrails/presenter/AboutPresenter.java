@@ -3,12 +3,8 @@ package com.hubbardgary.londontrails.presenter;
 import android.text.Spanned;
 
 import com.hubbardgary.londontrails.BuildConfig;
-import com.hubbardgary.londontrails.R;
 import com.hubbardgary.londontrails.proxy.interfaces.IAndroidFrameworkProxy;
-import com.hubbardgary.londontrails.view.GoogleMapsLicenceActivity;
 import com.hubbardgary.londontrails.view.interfaces.IAboutView;
-
-import java.util.HashMap;
 
 public class AboutPresenter {
 
@@ -21,7 +17,6 @@ public class AboutPresenter {
     }
 
     public void initializeView() {
-        view.setupButtons();
         view.setDisplayText(getAboutText());
     }
 
@@ -52,12 +47,6 @@ public class AboutPresenter {
                 "<br />" +
                 "</body>";
         return (Spanned)proxy.fromHtml(aboutTextHtml);
-    }
-
-    public void buttonClicked(int id) {
-        if (id == R.id.btn_legal) {
-            view.invokeActivity(new HashMap<String, Integer>(), GoogleMapsLicenceActivity.class);
-        }
     }
 
     public void menuItemSelected(int itemId) {

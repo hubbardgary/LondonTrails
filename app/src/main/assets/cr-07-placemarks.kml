@@ -2,14 +2,6 @@
 <kml xmlns="http://earth.google.com/kml/2.2">
 <Document>
   <Placemark>
-    <name>Alternative Route - Twickenham Bridge</name>
-    <description><![CDATA[From mid to late 2019, the official route via Richmond Lock is impassable due to restoration work. During this time, cross Twickenham Bridge to continue your walk.]]></description>
-    <styleUrl>#style1</styleUrl>
-    <Point>
-      <coordinates>-0.314330,51.460500,0.000000</coordinates>
-    </Point>
-  </Placemark>
-  <Placemark>
     <name>Richmond Lock and Footbridge</name>
     <description><![CDATA[The demolition of the old London Bridge in 1832 caused tides in the Thames to rise and fall far more rapidly than previously, making the river here unnavigable in low tide. This lock and bridge were built between 1891 and 1894 to rectify the problem.]]></description>
     <styleUrl>#style1</styleUrl>

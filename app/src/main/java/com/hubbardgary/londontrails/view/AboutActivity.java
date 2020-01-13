@@ -49,5 +49,6 @@ public class AboutActivity extends Activity implements IAboutView {
         TextView htmlTextView = findViewById(R.id.aboutTextView);
         htmlTextView.setText(text);
         htmlTextView.setMovementMethod(LinkMovementMethod.getInstance());
+        htmlTextView.setLinksClickable(true);
     }
 }

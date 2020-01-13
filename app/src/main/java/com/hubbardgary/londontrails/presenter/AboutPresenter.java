@@ -28,8 +28,10 @@ public class AboutPresenter {
                 "Version " + BuildConfig.VERSION_NAME +
                 "</p>" +
                 "<p>" +
-                "For support and queries, please contact london.trails.app@gmail.com</a>." +
+                "For support and queries, please contact <a href=\"mailto:london.trails.app@gmail.com?Subject=London Trails feedback\">london.trails.app@gmail.com</a>." +
                 "</p>" +
+                "<p>" +
+                "If you have enjoyed using London Trails, please share your experience with others by leaving a <a href=\"https://play.google.com/store/apps/details?id=com.hubbardgary.londontrails\">review</a>." +
                 "<h2>Disclaimer</h2>" +
                 "<p>" +
                 "The information and routes contained in London Trails are provided in good faith. To " +

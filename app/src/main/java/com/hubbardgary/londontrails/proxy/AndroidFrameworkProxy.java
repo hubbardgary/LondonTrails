@@ -11,9 +11,4 @@ public class AndroidFrameworkProxy implements IAndroidFrameworkProxy {
     public CharSequence fromHtml(String text) {
         return Html.fromHtml(text);
     }
-
-    @Override
-    public String getGoogleLicenseInfo(IGoogleMapsLicenceView view) {
-        return GoogleApiAvailability.getInstance().getOpenSourceSoftwareLicenseInfo(view.getContext());
-    }
 }

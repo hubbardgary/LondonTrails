@@ -5,7 +5,7 @@ import android.graphics.Color;
 import android.os.Bundle;
 import android.app.Activity;
 import android.app.Dialog;
-import android.support.v4.content.ContextCompat;
+import androidx.core.content.ContextCompat;
 import android.util.TypedValue;
 import android.view.Menu;
 import android.view.MenuItem;

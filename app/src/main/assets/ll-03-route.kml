@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <kml xmlns="http://earth.google.com/kml/2.2">
 <Document>
-  <name>03 Jubilee Park to West Wickham Common</name>
+  <name>03 Petts Wood to West Wickham Common</name>
   <description><![CDATA[]]></description>
   <Style id="style1">
     <LineStyle>
@@ -10,7 +10,7 @@
     </LineStyle>
   </Style>
   <Placemark>
-    <name>03 Jubilee Park to West Wickham Common</name>
+    <name>03 Petts Wood to West Wickham Common</name>
     <description><![CDATA[]]></description>
     <styleUrl>#style1</styleUrl>
     <LineString>

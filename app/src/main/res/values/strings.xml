@@ -51,13 +51,13 @@
     <string-array name="london_loop_sections">
         <item>1: Erith Riverside</item>
         <item>2: Old Bexley</item>
-        <item>3: Jubilee Park</item>
+        <item>3: Petts Wood</item>
         <item>4: West Wickham Common</item>
         <item>5: Hamsey Green</item>
         <item>6: Banstead Downs</item>
         <item>7: Kingston Bridge</item>
-        <item>8: Donkey Wood</item>
-        <item>9: Uxbridge Lock</item>
+        <item>8: Hatton Cross</item>
+        <item>9: Uxbridge</item>
         <item>10: Moor Park</item>
         <item>11: Elstree</item>
         <item>12: Cockfosters</item>

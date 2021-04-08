@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <kml xmlns="http://earth.google.com/kml/2.2">
 <Document>
-  <name>09 Uxbridge Lock to Moor Park</name>
+  <name>09 Uxbridge to Moor Park</name>
   <description><![CDATA[]]></description>
   <Style id="style1">
     <LineStyle>
@@ -10,7 +10,7 @@
     </LineStyle>
   </Style>
   <Placemark>
-    <name>09 Uxbridge Lock to Moor Park</name>
+    <name>09 Uxbridge to Moor Park</name>
     <description><![CDATA[]]></description>
     <styleUrl>#style1</styleUrl>
     <LineString>

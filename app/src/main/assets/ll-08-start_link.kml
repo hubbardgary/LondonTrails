@@ -10,15 +10,22 @@
     </LineStyle>
   </Style>
   <Placemark>
-    <name>Hatton Cross Start Link</name>
+    <name>Ewell West Start Link</name>
     <description><![CDATA[]]></description>
     <styleUrl>#style1</styleUrl>
     <LineString>
       <tessellate>1</tessellate>
       <coordinates>
-        -0.422767,51.466724,0.000000
-        -0.422691,51.466719,0.000000
-        -0.420667,51.467311,0.000000
+		-0.256830,51.350120,0.000000
+		-0.256210,51.350020,0.000000
+		-0.255370,51.350320,0.000000
+		-0.253000,51.350920,0.000000
+		-0.252880,51.350830,0.000000
+		-0.252160,51.351090,0.000000
+		-0.252010,51.351080,0.000000
+		-0.251810,51.350900,0.000000
+		-0.251460,51.351030,0.000000
+	    -0.251270,51.351000,0.000000
       </coordinates>
     </LineString>
   </Placemark>

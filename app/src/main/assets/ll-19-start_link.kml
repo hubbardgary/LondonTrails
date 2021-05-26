@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<kml xmlns="http://earth.google.com/kml/2.2">
+<Document>
+  <name>19 Start Link</name>
+  <description><![CDATA[]]></description>
+  <Style id="style1">
+    <LineStyle>
+      <color>99FF0000</color>
+      <width>5</width>
+    </LineStyle>
+  </Style>
+  <Placemark>
+    <name>Chingford Start Link</name>
+    <description><![CDATA[]]></description>
+    <styleUrl>#style1</styleUrl>
+    <LineString>
+      <tessellate>1</tessellate>
+      <coordinates>
+        0.009862,51.633186,0.000000
+        0.009876,51.633338,0.000000
+        0.009495,51.633388,0.000000
+        0.011088,51.634057,0.000000
+        0.011748,51.634179,0.000000
+        0.012335,51.634609,0.000000
+      </coordinates>
+    </LineString>
+  </Placemark>
+</Document>
+</kml>

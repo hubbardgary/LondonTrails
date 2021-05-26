@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<kml xmlns="http://earth.google.com/kml/2.2">
+<Document>
+  <Placemark>
+    <name>Concrete barges</name>
+    <description><![CDATA[These abandoned barges formed part of the Mulberry harbour - a portable temporary harbour - that was used during the D-Day landings during World War II. They were later used in 1953 as an attempt to build flood defences along the Thames.]]></description>
+    <styleUrl>#style7</styleUrl>
+    <Point>
+      <coordinates>0.182047,51.498832,0.000000</coordinates>
+    </Point>
+  </Placemark>
+  <Placemark>
+    <name>The Diver</name>
+    <description><![CDATA[The only sculpture in the River Thames, The Diver was unveiled in August 2000 by John Kaufman as a monument to his father who was a diver in the London docks. It is partly submerged every high tide and totally submerged by spring and neap tides.]]></description>
+    <styleUrl>#style8</styleUrl>
+    <Point>
+      <coordinates>0.182388,51.497431,0.000000</coordinates>
+    </Point>
+  </Placemark>
+  <Placemark>
+    <name>Rainham Marshes</name>
+    <description><![CDATA[This RSPB nature reserve was previously a Ministry of Defence firing range. A visitor centre and cafe is located in the south-east corner of the marshes.]]></description>
+    <styleUrl>#style9</styleUrl>
+    <Point>
+      <coordinates>0.223932,51.488278,0.000000</coordinates>
+    </Point>
+  </Placemark>
+  <Placemark>
+    <name>Purfleet Magazine</name>
+    <description><![CDATA[Built between 1761 and 1773, only one of the five original magazines survives today. They stored vast amounts of gunpowder for supply to the British military and were protected by a garrison. There was a constant threat of explosion as a result of lightning strikes.]]></description>
+    <styleUrl>#style10</styleUrl>
+    <Point>
+      <coordinates>0.229147,51.484463,0.000000</coordinates>
+    </Point>
+  </Placemark>
+</Document>
+</kml>

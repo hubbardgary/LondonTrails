@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<kml xmlns="http://earth.google.com/kml/2.2">
+<kml xmlns="http://www.opengis.net/kml/2.2">
 <Document>
   <name>12 End Link</name>
   <description><![CDATA[]]></description>
@@ -10,16 +10,16 @@
     </LineStyle>
   </Style>
   <Placemark>
-    <name>Enfield Lock End Link</name>
+    <name>Harefield West End Link</name>
     <description><![CDATA[]]></description>
     <styleUrl>#style1</styleUrl>
     <LineString>
       <tessellate>1</tessellate>
       <coordinates>
-        -0.028517,51.667929,0.000000
-        -0.028070,51.671089,0.000000
-        -0.028390,51.671101,0.000000
-        -0.028399,51.671014,0.000000
+        -0.497266,51.609482,0.000000
+        -0.496766,51.608037,0.000000
+        -0.496283,51.607251,0.000000
+        -0.496122,51.607484,0.000000
       </coordinates>
     </LineString>
   </Placemark>

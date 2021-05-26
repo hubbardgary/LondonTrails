@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <kml xmlns="http://earth.google.com/kml/2.2">
 <Document>
-  <name>10 Start Link</name>
+  <name>08 Start Link</name>
   <description><![CDATA[]]></description>
   <Style id="style1">
     <LineStyle>
@@ -10,15 +10,15 @@
     </LineStyle>
   </Style>
   <Placemark>
-    <name>Moor Park Start Link</name>
+    <name>Hatton Cross Start Link</name>
     <description><![CDATA[]]></description>
     <styleUrl>#style1</styleUrl>
     <LineString>
       <tessellate>1</tessellate>
       <coordinates>
-        -0.432447,51.629794,0.000000
-        -0.432047,51.629848,0.000000
-        -0.427952,51.623976,0.000000
+        -0.422767,51.466724,0.000000
+        -0.422691,51.466719,0.000000
+        -0.420667,51.467311,0.000000
       </coordinates>
     </LineString>
   </Placemark>

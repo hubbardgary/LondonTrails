@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<kml xmlns="http://earth.google.com/kml/2.2">
+<Document>
+  <Placemark>
+    <name>Ye Olde King's Head</name>
+    <description><![CDATA[What's the connection between Charles Dickens, Dick Turpin, Alan Sugar and Turkish cuisine? This pub apparently. Built in 1547, this is believed to be the pub that appeared as The Maypole Inn in Charles Dickens's 'Barnaby Rudge', and was apparently regularly frequented by highwayman Dick Turpin. In 2010, the building was purchased by Sir Alan Sugar and is now home to an expensive Turkish restaurant serving Chigwell's affluent residents.]]></description>
+    <styleUrl>#style1</styleUrl>
+    <Point>
+      <coordinates>0.080777,51.624305,0.000000</coordinates>
+    </Point>
+  </Placemark>
+  <Placemark>
+    <name>Hainault Forest Country Park</name>
+    <description><![CDATA[Believed to have been designated the Royal Forest of Essex In 1130 by Henry I, son of William the Conquerer, this park spans 336 acres.]]></description>
+    <styleUrl>#style2</styleUrl>
+    <Point>
+      <coordinates>0.125163,51.617910,0.000000</coordinates>
+    </Point>
+  </Placemark>
+  <Placemark>
+    <name>Havering Country Park</name>
+    <description><![CDATA[Formerly part of the Havering Palace estate, the route the LOOP takes passes several giant redwood trees (Wellingtonia) - one of the tallest, widest, and longest-living organisms on Earth. This is one of only two plantations in the country. ]]></description>
+    <styleUrl>#style3</styleUrl>
+    <Point>
+      <coordinates>0.171576,51.614259,0.000000</coordinates>
+    </Point>
+  </Placemark>
+  <Placemark>
+    <name>Havering-atte-Bower</name>
+    <description><![CDATA[The 'atte-Bower' suffix means 'at the royal residence', and refers to Havering Palace, which once stood here.]]></description>
+    <styleUrl>#style4</styleUrl>
+    <Point>
+      <coordinates>0.183034,51.616684,0.000000</coordinates>
+    </Point>
+  </Placemark>
+</Document>
+</kml>

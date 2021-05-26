@@ -2,61 +2,59 @@
 <kml xmlns="http://earth.google.com/kml/2.2">
 <Document>
   <Placemark>
-    <name>Bushy Park</name>
-    <description><![CDATA[Previously one of Henry VIII's many hunting grounds, Bushy Park is the second largest of the Royal Parks, after Richmond Park which is a highlight of one of the best sections of the Capital Ring. Today it is home to herds of red and fallow deer.]]></description>
+    <name>Nonsuch Park</name>
+    <description><![CDATA[This green space is the last surviving part of the Little Park of Nonsuch, a deer hunting park created by Henry VIII.]]></description>
     <styleUrl>#style1</styleUrl>
     <Point>
-      <coordinates>-0.330362,51.411788,0.000000</coordinates>
+      <coordinates>-0.232687,51.356373,0.000000</coordinates>
     </Point>
   </Placemark>
   <Placemark>
-    <name>Hampton Court Palace</name>
-    <description><![CDATA[Originally built around 1514 for Cardinal Thomas Wolsey during the reign of Henry VIII. It was seized by Henry VIII after Wolsey fell from favour, and it was occupied by the royal family until the 1700s. It was initially opened to visitors by Queen Victoria in 1838.]]></description>
+    <name>Former Site of Nonsuch Palace</name>
+    <description><![CDATA[Built in 1538, this was thought to be one of Henry VIII's grandest palaces. It was demolished in 1682 by Charles II's mistress. She sold the materials to pay off gambling debts.]]></description>
     <styleUrl>#style2</styleUrl>
     <Point>
-      <coordinates>-0.338388,51.403516,0.000000</coordinates>
+      <coordinates>-0.238845,51.354692,0.000000</coordinates>
     </Point>
   </Placemark>
   <Placemark>
-    <name>Diana Fountain</name>
-    <description><![CDATA[This seventeenth century statue and water feature honours the Roman Goddess Diana. It was originally created for Somerset House and was moved to Bushy Park in 1713 where it is now the centrepiece of a large traffic island.]]></description>
+    <name>Ewell Castle school</name>
+    <description><![CDATA[Built in 1814 for Thomas Calverley on part of the Nonsuch Palace Estate, this mansion, with its distinctive castellations, became a school in 1926.]]></description>
     <styleUrl>#style3</styleUrl>
     <Point>
-      <coordinates>-0.336231,51.409954,0.000000</coordinates>
+      <coordinates>-0.247176,51.350621,0.000000</coordinates>
     </Point>
   </Placemark>
   <Placemark>
-    <name>Waterhouse Woodland Gardens</name>
-    <description><![CDATA[These impressive gardens and water features have been developed over the years since the 16th Century. The Upper Lodge Water Gardens were restored in 2006.]]></description>
+    <name>The Watch House</name>
+    <description><![CDATA[Probably built around 1770, this small building accommodated the local hand-operated fire engine and has a section with barred windows that acted as the local jail.]]></description>
     <styleUrl>#style4</styleUrl>
     <Point>
-      <coordinates>-0.349406,51.412196,0.000000</coordinates>
+      <coordinates>-0.249125,51.349604,0.000000</coordinates>
     </Point>
   </Placemark>
   <Placemark>
-    <name>Shot Tower</name>
-    <description><![CDATA[Crane Park was the site of Hounslow Gunpowder Mills which were in use from the 16th century until 1927. This well preserved shot tower is now all that remains. This area used to be home to many such mills. Unfortunately they were very prone to accident meaning many were destroyed in presumably very loud and spectacular explosions.]]></description>
+    <name>Bourne Hall Gate</name>
+    <description><![CDATA[This gateway, surrounding wall, and water wheel are all the remains of the 1770s mansion that used to occupy the Bourne Hall grounds.]]></description>
     <styleUrl>#style5</styleUrl>
     <Point>
-      <coordinates>-0.377060,51.443342,0.000000</coordinates>
+      <coordinates>-0.250272,51.350326,0.000000</coordinates>
     </Point>
   </Placemark>
   <Placemark>
-    <name>Hounslow Heath</name>
-    <description><![CDATA[This 200 acre nature reserve is all that is left of the historic Hounslow Heath that was over 4000 acres in size.]]></description>
+    <name>Bourne Hall</name>
+    <description><![CDATA[This 1970s flying saucer shaped building, surrounded by landscaped gardens, is a wedding, conference and events venue. It is also home to Ewell Library and a museum.]]></description>
     <styleUrl>#style6</styleUrl>
-    <ExtendedData>
-    </ExtendedData>
     <Point>
-      <coordinates>-0.391989,51.455705,0.000000</coordinates>
+      <coordinates>-0.252259,51.350469,0.000000</coordinates>
     </Point>
   </Placemark>
   <Placemark>
-    <name>Hatton Cross magic roundabout</name>
-    <description><![CDATA[This is a small example of the few of these slightly baffling traffic intersections found around the UK.]]></description>
+    <name>River Hogsmill Source</name>
+    <description><![CDATA[The Hogsmill rises here and flows to the Thames at Kingston. Historically it was used to drive flour and gunpowder mills.]]></description>
     <styleUrl>#style7</styleUrl>
     <Point>
-      <coordinates>-0.423349,51.467857,0.000000</coordinates>
+      <coordinates>-0.251224,51.351434,0.000000</coordinates>
     </Point>
   </Placemark>
 </Document>

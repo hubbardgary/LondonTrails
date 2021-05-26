@@ -12,7 +12,7 @@
     <string name="shared_preferences_name">SharedPreferences</string>
     <string name="shared_prefs_map_type">mapType</string>
     <string name="shared_prefs_current_route_id">currentRoute</string>
-    <string name="route_options_confirm_text">Go!</string>
+    <string name="route_options_confirm_text">Plot route</string>
     <string name="change_map_view">Change Map View</string>
     <string name="check_internet_connection">This is taking longer than it should.\nCheck your Internet connection.</string>
 
@@ -54,17 +54,26 @@
         <item>3: Petts Wood</item>
         <item>4: West Wickham Common</item>
         <item>5: Hamsey Green</item>
-        <item>6: Banstead Downs</item>
-        <item>7: Kingston Bridge</item>
-        <item>8: Hatton Cross</item>
-        <item>9: Uxbridge</item>
-        <item>10: Moor Park</item>
-        <item>11: Elstree</item>
-        <item>12: Cockfosters</item>
-        <item>13: Enfield Lock</item>
-        <item>14: Chigwell</item>
-        <item>15: Harold Wood</item>
-        <item>16: Purfleet</item>
+        <item>6: Coulsdon South</item>
+        <item>7: Banstead Downs</item>
+        <item>8: Ewell</item>
+        <item>9: Kingston Bridge</item>
+        <item>10: Hatton Cross</item>
+        <item>11: Hayes and Harlington</item>
+        <item>12: Uxbridge</item>
+        <item>13: Harefield West</item>
+        <item>14: Moor Park</item>
+        <item>15: Hatch End</item>
+        <item>16: Elstree</item>
+        <item>17: Cockfosters</item>
+        <item>18: Enfield Lock</item>
+        <item>19: Chingford</item>
+        <item>20: Chigwell</item>
+        <item>21: Havering-atte-Bower</item>
+        <item>22: Harold Wood</item>
+        <item>23: Upminster Bridge</item>
+        <item>24: Rainham</item>
+        <item>25: Purfleet</item>
     </string-array>
 
     <string-array name="directions">
@@ -73,5 +82,4 @@
     </string-array>
 
     <string name="about">About</string>
-    <string name="legal">Google Maps Legal Notices</string>
 </resources>

@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<kml xmlns="http://earth.google.com/kml/2.2">
+<Document>
+  <Placemark>
+    <name>Harold Wood</name>
+    <description><![CDATA[This area is probably named after King Harold Godwinson (Harold II) who was famously defeated by William the Conquerer at the Battle of Hastings in 1066.]]></description>
+    <styleUrl>#style1</styleUrl>
+    <Point>
+      <coordinates>0.236335,51.588803,0.000000</coordinates>
+    </Point>
+  </Placemark>
+  <Placemark>
+    <name>Pages Wood</name>
+    <description><![CDATA[100,000 trees have been planted here since the 74 hectare woodland opened in 2002. It is also home to several quirky wooden sculptures, including a duck shaped bench and a squirrel picnic table - all are the work of sculptor Andy Frost.]]></description>
+    <styleUrl>#style2</styleUrl>
+    <Point>
+      <coordinates>0.244585,51.586563,0.000000</coordinates>
+    </Point>
+  </Placemark>
+</Document>
+</kml>

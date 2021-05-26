@@ -10,14 +10,22 @@
     </LineStyle>
   </Style>
   <Placemark>
-    <name>Harold Wood End Link</name>
+    <name>Hatch End End Link</name>
     <description><![CDATA[]]></description>
     <styleUrl>#style1</styleUrl>
     <LineString>
       <tessellate>1</tessellate>
       <coordinates>
-        0.232711,51.592759,0.000000
-        0.232802,51.592790,0.000000
+        -0.381069,51.610086,0.000000
+        -0.380933,51.609854,0.000000
+        -0.380466,51.609706,0.000000
+        -0.379364,51.609814,0.000000
+        -0.376713,51.609378,0.000000
+        -0.374428,51.608758,0.000000
+        -0.373601,51.607972,0.000000
+        -0.370737,51.608825,0.000000
+        -0.368460,51.609104,0.000000
+        -0.368816,51.609358,0.000000
       </coordinates>
     </LineString>
   </Placemark>

@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<kml xmlns="http://earth.google.com/kml/2.2">
+<Document>
+  <name>13 Start Link</name>
+  <description><![CDATA[]]></description>
+  <Style id="style1">
+    <LineStyle>
+      <color>99FF0000</color>
+      <width>5</width>
+    </LineStyle>
+  </Style>
+  <Placemark>
+    <name>Enfield Lock Start Link</name>
+    <description><![CDATA[]]></description>
+    <styleUrl>#style1</styleUrl>
+    <LineString>
+      <tessellate>1</tessellate>
+      <coordinates>
+        -0.028399,51.671014,0.000000
+        -0.028390,51.671101,0.000000
+        -0.028070,51.671089,0.000000
+        -0.028478,51.668061,0.000000
+      </coordinates>
+    </LineString>
+  </Placemark>
+</Document>
+</kml>

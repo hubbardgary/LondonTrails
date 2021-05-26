@@ -57,7 +57,7 @@ public class LondonLoopTest {
     public void getSections_shouldReturnCorrectSections() {
         ISection[] result = _sut.getSections();
         assertNotNull(result);
-        assertEquals(15, result.length);
+        assertEquals(24, result.length);
     }
 
     @Test

@@ -2,83 +2,43 @@
 <kml xmlns="http://earth.google.com/kml/2.2">
 <Document>
   <Placemark>
-    <name>Harold Wood</name>
-    <description><![CDATA[This area is probably named after King Harold Godwinson (Harold II) who was famously defeated by William the Conquerer at the Battle of Hastings in 1066.]]></description>
-    <styleUrl>#style1</styleUrl>
-    <Point>
-      <coordinates>0.236335,51.588803,0.000000</coordinates>
-    </Point>
-  </Placemark>
-  <Placemark>
-    <name>Pages Wood</name>
-    <description><![CDATA[100,000 trees have been planted here since the 74 hectare woodland opened in 2002. It is also home to several quirky wooden sculptures, including a duck shaped bench and a squirrel picnic table - all are the work of sculptor Andy Frost.]]></description>
+    <name>Grim's Dyke Hotel</name>
+    <description><![CDATA[Built for Sir William Gilbert by the architect Norman Shaw in 1872, this Grade II listed building is now a hotel.]]></description>
     <styleUrl>#style2</styleUrl>
     <Point>
-      <coordinates>0.244585,51.586563,0.000000</coordinates>
+      <coordinates>-0.352045,51.623186,0.000000</coordinates>
     </Point>
   </Placemark>
   <Placemark>
-    <name>Upminster Windmill</name>
-    <description><![CDATA[Slightly off the LOOP's main route, this well preserved Grade II listed windmill was built in 1803 and was used commercially until 1934, mainly for producing flour. It is a smock mill - a type of windmill with sloping sides and a roof that rotates to ensure the sails catch the wind from the most effective angle. It is open to the public on select days throughout the year.]]></description>
+    <name>Grimsdyke Lake</name>
+    <description><![CDATA[This was once part of the ornamental gardens owned by William Gilbert of Gilbert and Sullivan fame. William Gilbert died here in 1911 while attempting to save a drowning girl, after which his wife had the lake drained.]]></description>
     <styleUrl>#style3</styleUrl>
     <Point>
-      <coordinates>0.245106,51.557903,0.000000</coordinates>
+      <coordinates>-0.354899,51.622773,0.000000</coordinates>
     </Point>
   </Placemark>
   <Placemark>
-    <name>River Ingrebourne</name>
-    <description><![CDATA[Rising near Brentwood and flowing 27 miles to the Thames, the LOOP follows this river for much of this section.]]></description>
+    <name>Bentley Priory</name>
+    <description><![CDATA[The mansion beyond the fence to the north was the headquarters of Fighter Command during World War II and as such the Battle of Britain was orchestrated from here. The site is no longer an RAF base with the priory now home to the Battle of Britain museum and residential flats.]]></description>
     <styleUrl>#style4</styleUrl>
     <Point>
-      <coordinates>0.236324,51.552540,0.000000</coordinates>
+      <coordinates>-0.335491,51.624072,0.000000</coordinates>
     </Point>
   </Placemark>
   <Placemark>
-    <name>Hornchurch Country Park</name>
-    <description><![CDATA[This park sits on the former RAF Hornchurch air base which was in use throughout both World Wars. The pillboxes scattered throughout act as a reminder of its links to the Second World War. The park as it stands today was opened in 1980 following its use as a landfill site in the interim.]]></description>
+    <name>M1 Motorway</name>
+    <description><![CDATA[One of the main escape routes for road traffic from the capital, the M1 was the first road to be built to motorway standard in the UK. It originally opened in 1959, and has since been extended further south into London and north into Leeds - 193 miles in total.]]></description>
     <styleUrl>#style5</styleUrl>
     <Point>
-      <coordinates>0.207066,51.532522,0.000000</coordinates>
+      <coordinates>-0.322702,51.642484,0.000000</coordinates>
     </Point>
   </Placemark>
   <Placemark>
-    <name>Rainham Hall</name>
-    <description><![CDATA[This manor house was built in 1729 by John Harle using the profit he made from ownership of the wharves that used to stand along Rainham Creek.]]></description>
+    <name>Aldenham Reservoir</name>
+    <description><![CDATA[This reservoir was built by French prisoners of war in 1795 to allay the concerns of mill owners that the Grand Junction Canal would affect river levels, thereby reducing their trade.]]></description>
     <styleUrl>#style6</styleUrl>
     <Point>
-      <coordinates>0.190700,51.517937,0.000000</coordinates>
-    </Point>
-  </Placemark>
-  <Placemark>
-    <name>Concrete barges</name>
-    <description><![CDATA[These abandoned barges formed part of the Mulberry harbour - a portable temporary harbour - that was used during the D-Day landings during World War II. They were later used in 1953 as an attempt to build flood defences along the Thames.]]></description>
-    <styleUrl>#style7</styleUrl>
-    <Point>
-      <coordinates>0.182047,51.498832,0.000000</coordinates>
-    </Point>
-  </Placemark>
-  <Placemark>
-    <name>The Diver</name>
-    <description><![CDATA[The only sculpture in the River Thames, The Diver was unveiled in August 2000 by John Kaufman as a monument to his father who was a diver in the London docks. It is partly submerged every high tide and totally submerged by spring and neap tides.]]></description>
-    <styleUrl>#style8</styleUrl>
-    <Point>
-      <coordinates>0.182388,51.497431,0.000000</coordinates>
-    </Point>
-  </Placemark>
-  <Placemark>
-    <name>Rainham Marshes</name>
-    <description><![CDATA[This RSPB nature reserve was previously a Ministry of Defence firing range. A visitor centre and cafe is located in the south-east corner of the marshes.]]></description>
-    <styleUrl>#style9</styleUrl>
-    <Point>
-      <coordinates>0.223932,51.488278,0.000000</coordinates>
-    </Point>
-  </Placemark>
-  <Placemark>
-    <name>Purfleet Magazine</name>
-    <description><![CDATA[Built between 1761 and 1773, only one of the five original magazines survives today. They stored vast amounts of gunpowder for supply to the British military and were protected by a garrison. There was a constant threat of explosion as a result of lightning strikes.]]></description>
-    <styleUrl>#style10</styleUrl>
-    <Point>
-      <coordinates>0.229147,51.484463,0.000000</coordinates>
+      <coordinates>-0.311480,51.646239,0.000000</coordinates>
     </Point>
   </Placemark>
 </Document>

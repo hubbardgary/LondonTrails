@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<kml xmlns="http://earth.google.com/kml/2.2">
+<Document>
+  <Placemark>
+    <name>Epping Forest</name>
+    <description><![CDATA[The LOOP just skirts a tiny edge of this large ancient woodland, which spans over 6000 acres. Scenes from Monty Python and the Holy Grail were filmed in the forest.]]></description>
+    <styleUrl>#style4</styleUrl>
+    <Point>
+      <coordinates>0.013475,51.640301,0.000000</coordinates>
+    </Point>
+  </Placemark>
+  <Placemark>
+    <name>Roding Valley Meadows Nature Reserve</name>
+    <description><![CDATA[The largest remaining water meadows in Essex, four of the fields within this reserve are designated sites of special scientific interest.]]></description>
+    <styleUrl>#style5</styleUrl>
+    <Point>
+      <coordinates>0.063000,51.632696,0.000000</coordinates>
+    </Point>
+  </Placemark>
+  <Placemark>
+    <name>Queen Elizabeth's Hunting Lodge</name>
+    <description><![CDATA[Built for Henry VIII in 1543, this is a 'standing' - a timber framed hunting lodge in which occupants would view the hunt in the forest below. It is open to the public.]]></description>
+    <styleUrl>#style6</styleUrl>
+    <Point>
+      <coordinates>0.017507,51.634454,0.000000</coordinates>
+    </Point>
+  </Placemark>
+</Document>
+</kml>

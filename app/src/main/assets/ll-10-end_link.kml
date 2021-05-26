@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <kml xmlns="http://earth.google.com/kml/2.2">
 <Document>
-  <name>10 End Link</name>
+  <name>Hayes and Harlington End link</name>
   <description><![CDATA[]]></description>
   <Style id="style1">
     <LineStyle>
@@ -10,18 +10,19 @@
     </LineStyle>
   </Style>
   <Placemark>
-    <name>Elstree End Link</name>
+    <name>Hayes and Harlington End link</name>
     <description><![CDATA[]]></description>
     <styleUrl>#style1</styleUrl>
     <LineString>
       <tessellate>1</tessellate>
       <coordinates>
-        -0.281923,51.652789,0.000000
-        -0.281679,51.652963,0.000000
-        -0.279785,51.653510,0.000000
-        -0.279697,51.653459,0.000000
-        -0.279828,51.653258,0.000000
-      </coordinates>
+        -0.419318,51.504609,0.000000
+        -0.419207,51.504593,0.000000
+        -0.419326,51.504682,0.000000
+        -0.419461,51.504726,0.000000
+        -0.419919,51.504021,0.000000
+        -0.420784,51.503109,0.000000
+	  </coordinates>
     </LineString>
   </Placemark>
 </Document>

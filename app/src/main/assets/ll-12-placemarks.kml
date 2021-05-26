@@ -2,51 +2,35 @@
 <kml xmlns="http://earth.google.com/kml/2.2">
 <Document>
   <Placemark>
-    <name>Trent Country Park</name>
-    <description><![CDATA[Dating back to the fourteenth century, Trent Park was once part of Enfield Chase, a large royal hunting ground. It was opened as a country park in 1973 and covers 320 hectares. The manor house within the park is now part of Middlesex University.]]></description>
+    <name>Crown and Treaty pub</name>
+    <description><![CDATA[In 1644. during the Civil War, an attempt at a peace treaty was negotiated in Place House, which is now this aptly named pub.]]></description>
     <styleUrl>#style1</styleUrl>
     <Point>
-      <coordinates>-0.142136,51.657542,0.000000</coordinates>
+      <coordinates>-0.484042,51.549960,0.000000</coordinates>
     </Point>
   </Placemark>
   <Placemark>
-    <name>Camlet Moat</name>
-    <description><![CDATA[Some say that the name of this small moated island and Scheduled Ancient Monument has been abbreviated over the years from 'Camelot'. Excavations in the 1920s revealed stone foundations of a large building and oak beams thought to be from a drawbridge, suggesting this is the site of an historic stronghold.]]></description>
+    <name>Former William King Flour Mill</name>
+    <description><![CDATA[This site was used for producing flour for many years. It was bought by local farmer William King in the late 19th Century and the Kingsmill brand of bread is named after him. The site is now a residential development.]]></description>
     <styleUrl>#style2</styleUrl>
     <Point>
-      <coordinates>-0.137951,51.667977,0.000000</coordinates>
+      <coordinates>-0.484139,51.552426,0.000000</coordinates>
     </Point>
   </Placemark>
   <Placemark>
-    <name>Trent Park obelisk</name>
-    <description><![CDATA[This tall obelisk was constructed in 1702 and appeared in a 1984 episode of Doctor Who.]]></description>
+    <name>Denham Deep Lock</name>
+    <description><![CDATA[This lock's 3.5 metre drop makes it the deepest on the Grand Union Canal.]]></description>
     <styleUrl>#style3</styleUrl>
     <Point>
-      <coordinates>-0.142554,51.666540,0.000000</coordinates>
+      <coordinates>-0.482245,51.565393,0.000000</coordinates>
     </Point>
   </Placemark>
   <Placemark>
-    <name>Turkey Brook </name>
-    <description><![CDATA[This stream rises near Potters Bar and follows much of the route of the London Loop between here and the River Lea.]]></description>
+    <name>Copper Mill Lane</name>
+    <description><![CDATA[The mills that used to stand here started producing copper in the early 19th century. There is a rumour that the copper orb on the roof of St Paul's Cathedral came from here.]]></description>
     <styleUrl>#style4</styleUrl>
     <Point>
-      <coordinates>-0.105996,51.672136,0.000000</coordinates>
-    </Point>
-  </Placemark>
-  <Placemark>
-    <name>Hilly Fields Park</name>
-    <description><![CDATA[Enfield Urban District Council opened this park in 1911 having bought the land from a local farmer. The bandstand was built in 1921 but fell into disrepair until it was restored in 2001]]></description>
-    <styleUrl>#style5</styleUrl>
-    <Point>
-      <coordinates>-0.088277,51.668955,0.000000</coordinates>
-    </Point>
-  </Placemark>
-  <Placemark>
-    <name>Forty Hall</name>
-    <description><![CDATA[This Grade 1 listed Jacobean Manor House was originally built in the 1630s. It now houses a museum charting the history of the house and the area.]]></description>
-    <styleUrl>#style6</styleUrl>
-    <Point>
-      <coordinates>-0.068836,51.670193,0.000000</coordinates>
+      <coordinates>-0.499138,51.609855,0.000000</coordinates>
     </Point>
   </Placemark>
 </Document>

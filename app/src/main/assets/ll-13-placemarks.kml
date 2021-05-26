@@ -2,51 +2,27 @@
 <kml xmlns="http://earth.google.com/kml/2.2">
 <Document>
   <Placemark>
-    <name>Royal Small Arms Factory</name>
-    <description><![CDATA[This building, slightly off the main route, was part of the government-owned rifle factory. It is known for producing the Lee Enfield rifle, named after the location of production, by the River Lee. The rifle was used by British forces in the Boer War and both World Wars. Half the site was closed in 1963 and, after privatisation, finally closed in 1988.]]></description>
-    <styleUrl>#style1</styleUrl>
-    <Point>
-      <coordinates>-0.016517,51.668227,0.000000</coordinates>
-    </Point>
-  </Placemark>
-  <Placemark>
-    <name>King George V Reservoir</name>
-    <description><![CDATA[This reservoir and its neighbouring William Girling Reservoir are part of the Lee Valley Reservoir Chain that supply a large portion of London's drinking water. The King George V Reservoir was opened in 1913.]]></description>
-    <styleUrl>#style2</styleUrl>
-    <Point>
-      <coordinates>-0.015278,51.657462,0.000000</coordinates>
-    </Point>
-  </Placemark>
-  <Placemark>
-    <name>Gilwell Park</name>
-    <description><![CDATA[Purchased in 1919 for the Boy Scout Association, this estate is the home of Scouting in the UK. The site, which offers both indoor and outdoor accommodation, is littered with scouting themed monuments.]]></description>
-    <styleUrl>#style3</styleUrl>
-    <Point>
-      <coordinates>0.002178,51.649814,0.000000</coordinates>
-    </Point>
-  </Placemark>
-  <Placemark>
-    <name>Epping Forest</name>
-    <description><![CDATA[The LOOP just skirts a tiny edge of this large ancient woodland, which spans over 6000 acres. Scenes from Monty Python and the Holy Grail were filmed in the forest.]]></description>
+    <name>Copper Mill Lane</name>
+    <description><![CDATA[The mills that used to stand here started producing copper in the early 19th century. There is a rumour that the copper orb on the roof of St Paul's Cathedral came from here.]]></description>
     <styleUrl>#style4</styleUrl>
     <Point>
-      <coordinates>0.013475,51.640301,0.000000</coordinates>
+      <coordinates>-0.499138,51.609855,0.000000</coordinates>
     </Point>
   </Placemark>
   <Placemark>
-    <name>Roding Valley Meadows Nature Reserve</name>
-    <description><![CDATA[The largest remaining water meadows in Essex, four of the fields within this reserve are designated sites of special scientific interest.]]></description>
+    <name>Ye Olde Greene Manne</name>
+    <description><![CDATA[This pub dates back to 1728 and was supposedly visited by Dick Turpin. He left the inn through the rear window to escape from the Bow Street Runners.]]></description>
     <styleUrl>#style5</styleUrl>
     <Point>
-      <coordinates>0.063000,51.632696,0.000000</coordinates>
+      <coordinates>-0.445477,51.621187,0.000000</coordinates>
     </Point>
   </Placemark>
   <Placemark>
-    <name>Queen Elizabeth's Hunting Lodge</name>
-    <description><![CDATA[Built for Henry VIII in 1543, this is a 'standing' - a timber framed hunting lodge in which occupants would view the hunt in the forest below. It is open to the public.]]></description>
+    <name>Coal Post</name>
+    <description><![CDATA[This white iron post, possibly hiding in the undergrowth, marks the boundary at which you had to pay tax on coal being carried into London.]]></description>
     <styleUrl>#style6</styleUrl>
     <Point>
-      <coordinates>0.017507,51.634454,0.000000</coordinates>
+      <coordinates>-0.443696,51.619512,0.000000</coordinates>
     </Point>
   </Placemark>
 </Document>

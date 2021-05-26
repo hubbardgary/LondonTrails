@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<kml xmlns="http://earth.google.com/kml/2.2">
+<Document>
+  <Placemark>
+    <name>Upminster Windmill</name>
+    <description><![CDATA[Slightly off the LOOP's main route, this well preserved Grade II listed windmill was built in 1803 and was used commercially until 1934, mainly for producing flour. It is a smock mill - a type of windmill with sloping sides and a roof that rotates to ensure the sails catch the wind from the most effective angle. It is open to the public on select days throughout the year.]]></description>
+    <styleUrl>#style3</styleUrl>
+    <Point>
+      <coordinates>0.245106,51.557903,0.000000</coordinates>
+    </Point>
+  </Placemark>
+  <Placemark>
+    <name>River Ingrebourne</name>
+    <description><![CDATA[Rising near Brentwood and flowing 27 miles to the Thames, the LOOP follows this river for much of this section.]]></description>
+    <styleUrl>#style4</styleUrl>
+    <Point>
+      <coordinates>0.236324,51.552540,0.000000</coordinates>
+    </Point>
+  </Placemark>
+  <Placemark>
+    <name>Hornchurch Country Park</name>
+    <description><![CDATA[This park sits on the former RAF Hornchurch air base which was in use throughout both World Wars. The pillboxes scattered throughout act as a reminder of its links to the Second World War. The park as it stands today was opened in 1980 following its use as a landfill site in the interim.]]></description>
+    <styleUrl>#style5</styleUrl>
+    <Point>
+      <coordinates>0.207066,51.532522,0.000000</coordinates>
+    </Point>
+  </Placemark>
+  <Placemark>
+    <name>Rainham Hall</name>
+    <description><![CDATA[This manor house was built in 1729 by John Harle using the profit he made from ownership of the wharves that used to stand along Rainham Creek.]]></description>
+    <styleUrl>#style6</styleUrl>
+    <Point>
+      <coordinates>0.190700,51.517937,0.000000</coordinates>
+    </Point>
+  </Placemark>
+</Document>
+</kml>

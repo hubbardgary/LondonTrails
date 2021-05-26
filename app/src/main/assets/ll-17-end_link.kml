@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <kml xmlns="http://earth.google.com/kml/2.2">
 <Document>
-  <name>05 End Link</name>
+  <name>12 End Link</name>
   <description><![CDATA[]]></description>
   <Style id="style1">
     <LineStyle>
@@ -10,18 +10,16 @@
     </LineStyle>
   </Style>
   <Placemark>
-    <name>Banstead Downs End Link</name>
+    <name>Enfield Lock End Link</name>
     <description><![CDATA[]]></description>
     <styleUrl>#style1</styleUrl>
     <LineString>
       <tessellate>1</tessellate>
       <coordinates>
-        -0.209287,51.331493,0.000000
-        -0.211203,51.331207,0.000000
-        -0.213112,51.330246,0.000000
-        -0.213814,51.329983,0.000000
-        -0.213016,51.329491,0.000000
-        -0.213047,51.329330,0.000000
+        -0.028517,51.667929,0.000000
+        -0.028070,51.671089,0.000000
+        -0.028390,51.671101,0.000000
+        -0.028399,51.671014,0.000000
       </coordinates>
     </LineString>
   </Placemark>

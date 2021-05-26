@@ -5,6 +5,7 @@ import com.hubbardgary.londontrails.config.interfaces.IUserSettings;
 import com.hubbardgary.londontrails.model.CapitalRing;
 import com.hubbardgary.londontrails.model.LondonLoop;
 import com.hubbardgary.londontrails.model.interfaces.IRoute;
+import com.hubbardgary.londontrails.model.interfaces.ISection;
 import com.hubbardgary.londontrails.util.Helpers;
 import com.hubbardgary.londontrails.view.interfaces.IRouteOptionsView;
 import com.hubbardgary.londontrails.view.ShowMapActivity;
@@ -134,12 +135,32 @@ public class RouteOptionsPresenter {
         vm.distanceMiles = Helpers.convertKmToMiles(vm.distanceKm);
     }
 
+    private void updateTravelWarnings(RouteViewModel vm) {
+        ISection startLocation = route.getSection(vm.startSection);
+
+        if (startLocation == null) {
+            vm.startTravelWarning = "";
+        } else {
+            vm.startTravelWarning = startLocation.getTravelWarning();
+        }
+
+        ISection endLocation = route.getSection(vm.endSection);
+
+        if (endLocation == null) {
+            vm.endTravelWarning = "";
+        } else {
+            vm.endTravelWarning = endLocation.getTravelWarning();
+        }
+    }
+
     public RouteViewModel optionsChanged(RouteViewModel vm) {
         if (!vm.isCircular && vm.startSection == vm.endSection) {
             throw new IllegalArgumentException("Start section and end section must be different for non-circular routes.");
         }
         updateDistance(vm);
         view.refreshDistance(vm);
+        updateTravelWarnings(vm);
+        view.refreshTravelWarnings(vm);
         return vm;
     }
 

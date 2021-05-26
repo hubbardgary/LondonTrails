@@ -13,6 +13,7 @@ public class Section implements com.hubbardgary.londontrails.model.interfaces.IS
     private double endLinkDistanceInKm;
     private double extensionDistanceInKm = 0;
     private String extensionDescription;
+    private String travelWarning;
 
     public Section(IRoute route) {
         this.route = route;
@@ -125,5 +126,18 @@ public class Section implements com.hubbardgary.londontrails.model.interfaces.IS
     @Override
     public void setExtensionDescription(String extensionDescription) {
         this.extensionDescription = extensionDescription;
+    }
+
+    @Override
+    public String getTravelWarning() {
+        if (travelWarning == null) {
+            return "";
+        }
+        return travelWarning;
+    }
+
+    @Override
+    public void setTravelWarning(String travelWarning) {
+        this.travelWarning = travelWarning;
     }
 }

@@ -9,6 +9,7 @@ import android.view.View.OnClickListener;
 import android.widget.AdapterView;
 import android.widget.AdapterView.OnItemSelectedListener;
 import android.widget.ArrayAdapter;
+import android.widget.LinearLayout;
 import android.widget.Spinner;
 import android.widget.TextView;
 
@@ -166,6 +167,28 @@ public class RouteOptionsActivity extends Activity implements IRouteOptionsView,
     public void refreshDistance(RouteViewModel vm) {
         TextView txtDistance = findViewById(R.id.DistanceValue);
         txtDistance.setText(String.format(Locale.UK, "%.2f km (%.2f miles)", vm.distanceKm, vm.distanceMiles));
+    }
+
+    @Override
+    public void refreshTravelWarnings(RouteViewModel vm) {
+        TextView txtStartWarning = findViewById(R.id.StartWarningText);
+        txtStartWarning.setText(vm.startTravelWarning);
+        TextView txtEndWarning = findViewById(R.id.EndWarningText);
+        txtEndWarning.setText(vm.endTravelWarning);
+
+        LinearLayout startWarning = findViewById(R.id.StartWarning);
+        if (vm.startTravelWarning.equals("")) {
+            startWarning.setVisibility(View.GONE);
+        } else {
+            startWarning.setVisibility(View.VISIBLE);
+        }
+
+        LinearLayout endWarning = findViewById(R.id.EndWarning);
+        if (vm.endTravelWarning.equals("") || vm.endTravelWarning.equals(vm.startTravelWarning)) {
+            endWarning.setVisibility(View.GONE);
+        } else {
+            endWarning.setVisibility(View.VISIBLE);
+        }
     }
 
     @Override

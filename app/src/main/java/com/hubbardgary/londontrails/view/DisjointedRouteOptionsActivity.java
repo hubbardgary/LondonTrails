@@ -157,6 +157,11 @@ public class DisjointedRouteOptionsActivity extends Activity implements IRouteOp
     }
 
     @Override
+    public void refreshTravelWarnings(RouteViewModel vm) {
+
+    }
+
+    @Override
     public String[] getStringArrayFromResources(int resourceId) {
         return getResources().getStringArray(resourceId);
     }

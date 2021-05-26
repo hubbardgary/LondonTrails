@@ -21,6 +21,9 @@ public abstract class Route implements com.hubbardgary.londontrails.model.interf
 
     @Override
     public ISection getSection(int i) {
+        if (i >= sections.length) {
+            return null;
+        }
         return sections[i];
     }
 

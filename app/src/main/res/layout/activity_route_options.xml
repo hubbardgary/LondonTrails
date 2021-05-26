@@ -1,73 +1,137 @@
-<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
-    android:id="@+id/ScrollView01"
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="fill_parent"
-    android:layout_height="fill_parent"
-    android:background="@drawable/activity_background" >
+    android:layout_height="fill_parent">
+    <ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        android:id="@+id/ScrollView01"
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:background="@drawable/activity_background" >
 
+        <RelativeLayout
+            android:orientation="vertical" android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:paddingBottom="@dimen/activity_vertical_margin"
+            android:paddingLeft="@dimen/activity_horizontal_margin"
+            android:paddingRight="@dimen/activity_horizontal_margin"
+            android:paddingTop="@dimen/activity_vertical_margin">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Start Location:"
+                android:id="@+id/StartLocationLbl"
+                android:layout_alignParentTop="true"
+                android:layout_alignLeft="@+id/StartLocationSpinner"
+                android:textStyle="bold" />
+
+            <Spinner
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/StartLocationSpinner"
+                android:spinnerMode="dropdown"
+                android:layout_below="@+id/StartLocationLbl"
+                android:layout_centerInParent="true" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Destination:"
+                android:id="@+id/DestinationLbl"
+                android:layout_below="@+id/StartLocationSpinner"
+                android:layout_centerHorizontal="true"
+                android:layout_alignLeft="@+id/StartLocationSpinner"
+                android:layout_marginTop="20dp"
+                android:textStyle="bold" />
+
+            <Spinner
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/DestinationSpinner"
+                android:spinnerMode="dropdown"
+                android:layout_below="@+id/DestinationLbl"
+                android:layout_alignParentLeft="false"
+                android:layout_alignLeft="@+id/StartLocationSpinner" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Direction:"
+                android:id="@+id/DirectionLbl"
+                android:layout_below="@+id/DestinationSpinner"
+                android:layout_alignLeft="@+id/StartLocationSpinner"
+                android:layout_marginTop="20dp"
+                android:textStyle="bold" />
+
+            <Spinner
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/DirectionSpinner"
+                android:spinnerMode="dropdown"
+                android:layout_below="@+id/DirectionLbl"
+                android:layout_alignParentLeft="false"
+                android:layout_alignLeft="@+id/StartLocationSpinner" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Approximate distance:"
+                android:id="@+id/DistanceLbl"
+                android:layout_below="@+id/DirectionSpinner"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="20dp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/DistanceValue"
+                android:layout_below="@+id/DistanceLbl"
+                android:layout_centerHorizontal="true"
+                android:layout_marginBottom="20dp" />
+
+            <LinearLayout
+                android:layout_marginTop="20dp"
+                android:layout_width="fill_parent"
+                android:layout_height="fill_parent"
+                android:id="@+id/StartWarning"
+                android:layout_below="@+id/DistanceValue"
+                android:background="@drawable/warning_background"
+                android:padding="10dp" >
+                <TextView
+                    android:id="@+id/StartWarningText"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:drawableLeft="@drawable/baseline_bus_alert_black_24"
+                    android:drawablePadding="5dp"
+                    android:textStyle="bold" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_marginTop="20dp"
+                android:layout_width="fill_parent"
+                android:layout_height="fill_parent"
+                android:id="@+id/EndWarning"
+                android:layout_below="@+id/StartWarning"
+                android:background="@drawable/warning_background"
+                android:padding="10dp" >
+                <TextView
+                    android:id="@+id/EndWarningText"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:drawableLeft="@drawable/baseline_bus_alert_black_24"
+                    android:drawablePadding="5dp"
+                    android:textStyle="bold" />
+            </LinearLayout>
+
+        </RelativeLayout>
+    </ScrollView>
     <RelativeLayout
-        android:orientation="vertical" android:layout_width="match_parent"
+        android:id="@+id/StickyBottom"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:paddingBottom="@dimen/activity_vertical_margin"
-        android:paddingLeft="@dimen/activity_horizontal_margin"
-        android:paddingRight="@dimen/activity_horizontal_margin"
-        android:paddingTop="@dimen/activity_vertical_margin">
-
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Start Location:"
-            android:id="@+id/StartLocationLbl"
-            android:layout_alignParentTop="true"
-            android:layout_alignLeft="@+id/StartLocationSpinner"
-            android:textStyle="bold" />
-
-        <Spinner
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:id="@+id/StartLocationSpinner"
-            android:spinnerMode="dropdown"
-            android:layout_below="@+id/StartLocationLbl"
-            android:layout_centerInParent="true" />
-
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Destination:"
-            android:id="@+id/DestinationLbl"
-            android:layout_below="@+id/StartLocationSpinner"
-            android:layout_centerHorizontal="true"
-            android:layout_alignLeft="@+id/StartLocationSpinner"
-            android:layout_marginTop="20dp"
-            android:textStyle="bold" />
-
-        <Spinner
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:id="@+id/DestinationSpinner"
-            android:spinnerMode="dropdown"
-            android:layout_below="@+id/DestinationLbl"
-            android:layout_alignParentLeft="false"
-            android:layout_alignLeft="@+id/StartLocationSpinner" />
-
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Direction:"
-            android:id="@+id/DirectionLbl"
-            android:layout_below="@+id/DestinationSpinner"
-            android:layout_alignLeft="@+id/StartLocationSpinner"
-            android:layout_marginTop="20dp"
-            android:textStyle="bold" />
-
-        <Spinner
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:id="@+id/DirectionSpinner"
-            android:spinnerMode="dropdown"
-            android:layout_below="@+id/DirectionLbl"
-            android:layout_alignParentLeft="false"
-            android:layout_alignLeft="@+id/StartLocationSpinner" />
-
+        android:layout_alignParentBottom="true" >
         <Button
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -75,28 +139,9 @@
             android:id="@+id/GoBtn"
             android:background="@drawable/button_background"
             android:textColor="#ffffff"
-            android:layout_below="@+id/DistanceValue"
+            android:layout_margin="20dp"
             android:layout_centerHorizontal="true"
             android:layout_alignParentRight="true"
             android:layout_alignParentLeft="true" />
-
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Approximate distance:"
-            android:id="@+id/DistanceLbl"
-            android:layout_below="@+id/DirectionSpinner"
-            android:layout_centerHorizontal="true"
-            android:layout_marginTop="20dp"
-            android:textStyle="bold" />
-
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:id="@+id/DistanceValue"
-            android:layout_below="@+id/DistanceLbl"
-            android:layout_centerHorizontal="true"
-            android:layout_marginBottom="20dp" />
-
     </RelativeLayout>
-</ScrollView>
+</RelativeLayout>

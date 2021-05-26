@@ -42,4 +42,10 @@ public interface ISection {
     String getExtensionDescription();
 
     void setExtensionDescription(String extensionDescription);
+
+    String getTravelWarning();
+
+    void setTravelWarning(String travelWarning);
+
+
 }

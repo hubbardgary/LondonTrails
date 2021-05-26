@@ -24,6 +24,8 @@ public class RouteViewModel {
     public int endSection;
     public int startSelectedIndex;
     public int endSelectedIndex;
+    public String startTravelWarning;
+    public String endTravelWarning;
 
     public RouteViewModel(String name, String[] sectionsArray, boolean isCircular, List<String> directions) {
         this.name = name;

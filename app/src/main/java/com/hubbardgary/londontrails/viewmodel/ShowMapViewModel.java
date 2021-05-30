@@ -1,6 +1,7 @@
 package com.hubbardgary.londontrails.viewmodel;
 
 import com.hubbardgary.londontrails.model.interfaces.IRoute;
+import com.hubbardgary.londontrails.model.interfaces.ISection;
 
 public class ShowMapViewModel {
     public String name;
@@ -25,8 +26,16 @@ public class ShowMapViewModel {
 
     private String getRouteName(int start, int end, IRoute route) {
         if (route.isLinear()) {
-            return String.format("%s: Section %s - %s", route.getName(), String.valueOf(start + 1), String.valueOf(end + 1));
+            return String.format("%s to %s", getStartOrEndName(route, start), getStartOrEndName(route, end));
         }
-        return String.format("%s: Section %s", route.getName(), String.valueOf(start + 1));
+
+        ISection s = route.getSections()[start];
+        return String.format("%s to %s", s.getStartSectionName(), s.getEndSectionName());
+    }
+
+    private String getStartOrEndName(IRoute route, int location) {
+        int adjustedLocation = location >= route.getSections().length ? location - 1 : location;
+        ISection section = route.getSections()[adjustedLocation];
+        return adjustedLocation == location ? section.getStartSectionName() : section.getEndSectionName();
     }
 }

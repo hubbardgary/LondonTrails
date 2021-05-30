@@ -34,6 +34,8 @@ public class CapitalRing extends Route {
         switch (section) {
             case 0:
                 s.setSectionId("01");
+                s.setStartSectionName("Woolwich");
+                s.setEndSectionName("Falconwood");
                 s.setStartLocationName("Woolwich Arsenal Rail Station");
                 s.setEndLocationName("Falconwood Rail Station");
                 s.setDistanceInKm(9.02);
@@ -42,6 +44,8 @@ public class CapitalRing extends Route {
                 break;
             case 1:
                 s.setSectionId("02");
+                s.setStartSectionName("Falconwood");
+                s.setEndSectionName("Grove Park");
                 s.setStartLocationName("Falconwood Rail Station");
                 s.setEndLocationName("Grove Park Rail Station");
                 s.setDistanceInKm(6.27);
@@ -50,6 +54,8 @@ public class CapitalRing extends Route {
                 break;
             case 2:
                 s.setSectionId("03");
+                s.setStartSectionName("Grove Park");
+                s.setEndSectionName("Crystal Palace");
                 s.setStartLocationName("Grove Park Rail Station");
                 s.setEndLocationName("Crystal Palace Rail Station");
                 s.setDistanceInKm(12.4);
@@ -58,6 +64,8 @@ public class CapitalRing extends Route {
                 break;
             case 3:
                 s.setSectionId("04");
+                s.setStartSectionName("Crystal Palace");
+                s.setEndSectionName("Streatham");
                 s.setStartLocationName("Crystal Palace Rail Station");
                 s.setEndLocationName("Streatham Common Rail Station");
                 s.setDistanceInKm(6.57);
@@ -66,6 +74,8 @@ public class CapitalRing extends Route {
                 break;
             case 4:
                 s.setSectionId("05");
+                s.setStartSectionName("Streatham");
+                s.setEndSectionName("Wimbledon Park");
                 s.setStartLocationName("Streatham Common Rail Station");
                 s.setEndLocationName("Wimbledon Park Underground Station");
                 s.setDistanceInKm(8.84);
@@ -74,6 +84,8 @@ public class CapitalRing extends Route {
                 break;
             case 5:
                 s.setSectionId("06");
+                s.setStartSectionName("Wimbledon Park");
+                s.setEndSectionName("Richmond Bridge");
                 s.setStartLocationName("Wimbledon Park Underground Station");
                 s.setEndLocationName("Richmond Rail Station");
                 s.setDistanceInKm(11);
@@ -82,6 +94,8 @@ public class CapitalRing extends Route {
                 break;
             case 6:
                 s.setSectionId("07");
+                s.setStartSectionName("Richmond Bridge");
+                s.setEndSectionName("Osterley Lock");
                 s.setStartLocationName("Richmond Rail Station");
                 s.setEndLocationName("Boston Manor Underground Station");
                 s.setDistanceInKm(6.23);
@@ -90,6 +104,8 @@ public class CapitalRing extends Route {
                 break;
             case 7:
                 s.setSectionId("08");
+                s.setStartSectionName("Osterley Lock");
+                s.setEndSectionName("Greenford");
                 s.setStartLocationName("Boston Manor Underground Station");
                 s.setEndLocationName("Greenford Station (Rail and Underground)");
                 s.setDistanceInKm(7.82);
@@ -98,6 +114,8 @@ public class CapitalRing extends Route {
                 break;
             case 8:
                 s.setSectionId("09");
+                s.setStartSectionName("Greenford");
+                s.setEndSectionName("South Kenton");
                 s.setStartLocationName("Greenford Station (Rail and Underground)");
                 s.setEndLocationName("South Kenton Station (Overground and Underground)");
                 s.setDistanceInKm(8.74);
@@ -106,6 +124,8 @@ public class CapitalRing extends Route {
                 break;
             case 9:
                 s.setSectionId("10");
+                s.setStartSectionName("South Kenton");
+                s.setEndSectionName("Hendon");
                 s.setStartLocationName("South Kenton Station (Overground and Underground)");
                 s.setEndLocationName("Hendon Central Underground Station");
                 s.setDistanceInKm(9.78);
@@ -114,6 +134,8 @@ public class CapitalRing extends Route {
                 break;
             case 10:
                 s.setSectionId("11");
+                s.setStartSectionName("Hendon");
+                s.setEndSectionName("Highgate");
                 s.setStartLocationName("Hendon Central Underground Station");
                 s.setEndLocationName("Highgate Underground Station");
                 s.setDistanceInKm(8.21);
@@ -122,6 +144,8 @@ public class CapitalRing extends Route {
                 break;
             case 11:
                 s.setSectionId("12");
+                s.setStartSectionName("Highgate");
+                s.setEndSectionName("Stoke Newington");
                 s.setStartLocationName("Highgate Underground Station");
                 s.setEndLocationName("Stoke Newington Rail Station");
                 s.setDistanceInKm(8.38);
@@ -130,6 +154,8 @@ public class CapitalRing extends Route {
                 break;
             case 12:
                 s.setSectionId("13");
+                s.setStartSectionName("Stoke Newington");
+                s.setEndSectionName("Hackney Wick");
                 s.setStartLocationName("Stoke Newington Rail Station");
                 s.setEndLocationName("Hackney Wick Rail Station");
                 s.setDistanceInKm(6.03);
@@ -138,6 +164,8 @@ public class CapitalRing extends Route {
                 break;
             case 13:
                 s.setSectionId("14");
+                s.setStartSectionName("Hackney Wick");
+                s.setEndSectionName("Beckton District Park");
                 s.setStartLocationName("Hackney Wick Rail Station");
                 s.setEndLocationName("Royal Albert DLR Station");
                 s.setDistanceInKm(7.47);
@@ -146,6 +174,8 @@ public class CapitalRing extends Route {
                 break;
             case 14:
                 s.setSectionId("15");
+                s.setStartSectionName("Beckton District Park");
+                s.setEndSectionName("Woolwich");
                 s.setStartLocationName("Royal Albert DLR Station");
                 s.setEndLocationName("Woolwich Arsenal Rail Station");
                 s.setDistanceInKm(4.49);

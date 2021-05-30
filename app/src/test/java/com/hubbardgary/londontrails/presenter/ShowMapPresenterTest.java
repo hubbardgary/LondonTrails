@@ -50,10 +50,10 @@ public class ShowMapPresenterTest {
         ShowMapViewModel result = sut.getViewModel();
 
         // Assert
-        assertEquals(result.start, 1);
-        assertEquals(result.end, 2);
+        assertEquals(1, result.start);
+        assertEquals(2, result.end);
         assertTrue(result.isClockwise);
-        assertEquals(result.name, "Capital Ring: Section 2 - 3");
+        assertEquals("Falconwood to Grove Park", result.name);
     }
 
     @Test
@@ -66,10 +66,42 @@ public class ShowMapPresenterTest {
         ShowMapViewModel result = sut.getViewModel();
 
         // Assert
-        assertEquals(result.start, 5);
-        assertEquals(result.end, 1);
+        assertEquals(5, result.start);
+        assertEquals(1, result.end);
         assertFalse(result.isClockwise);
-        assertEquals(result.name, "London Loop: Section 6 - 2");
+        assertEquals("Coulsdon South to Old Bexley", result.name);
+    }
+
+    @Test
+    public void initializePresenter_CircularWalk_ViewModelIsSetUpCorrectly() {
+        // Arrange
+        setUpWalk(0, 0, 1, new CapitalRing(), GoogleMap.MAP_TYPE_NORMAL);
+
+        // Act
+        sut = new ShowMapPresenter(mockView, mockUserSettings);
+        ShowMapViewModel result = sut.getViewModel();
+
+        // Assert
+        assertEquals(0, result.start);
+        assertEquals(0, result.end);
+        assertFalse(result.isClockwise);
+        assertEquals("Woolwich to Woolwich", result.name);
+    }
+
+    @Test
+    public void initializePresenter_NonCircularWalk_ViewModelIsSetUpCorrectly() {
+        // Arrange
+        setUpWalk(0, 24, 1, new LondonLoop(), GoogleMap.MAP_TYPE_NORMAL);
+
+        // Act
+        sut = new ShowMapPresenter(mockView, mockUserSettings);
+        ShowMapViewModel result = sut.getViewModel();
+
+        // Assert
+        assertEquals(0, result.start);
+        assertEquals(24, result.end);
+        assertFalse(result.isClockwise);
+        assertEquals("Erith to Purfleet", result.name);
     }
 
     @Test

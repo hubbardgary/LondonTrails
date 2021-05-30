@@ -34,6 +34,8 @@ public class LondonLoop extends Route {
         switch (section) {
             case 0:
                 s.setSectionId("01");
+                s.setStartSectionName("Erith");
+                s.setEndSectionName("Old Bexley");
                 s.setStartLocationName("Erith Rail Station");
                 s.setEndLocationName("Bexley Rail Station");
                 s.setDistanceInKm(13.1);
@@ -42,6 +44,8 @@ public class LondonLoop extends Route {
                 break;
             case 1:
                 s.setSectionId("02");
+                s.setStartSectionName("Old Bexley");
+                s.setEndSectionName("Petts Wood");
                 s.setStartLocationName("Bexley Rail Station");
                 s.setEndLocationName("Petts Wood Rail Station");
                 s.setDistanceInKm(11.4);
@@ -50,6 +54,8 @@ public class LondonLoop extends Route {
                 break;
             case 2:
                 s.setSectionId("03");
+                s.setStartSectionName("Petts Wood");
+                s.setEndSectionName("West Wickham Common");
                 s.setStartLocationName("Petts Wood Rail Station");
                 s.setEndLocationName("Hayes Rail Station");
                 s.setDistanceInKm(13.6);
@@ -58,6 +64,8 @@ public class LondonLoop extends Route {
                 break;
             case 3:
                 s.setSectionId("04");
+                s.setStartSectionName("West Wickham Common");
+                s.setEndSectionName("Hamsey Green");
                 s.setStartLocationName("Hayes Rail Station");
                 s.setEndLocationName("Hamsey Green Bus Stop");
                 s.setDistanceInKm(13.6);
@@ -66,6 +74,8 @@ public class LondonLoop extends Route {
                 break;
             case 4:
                 s.setSectionId("05");
+                s.setStartSectionName("Hamsey Green");
+                s.setEndSectionName("Coulsdon South");
                 s.setStartLocationName("Hamsey Green Bus Stop");
                 s.setEndLocationName("Coulsdon South Rail Station");
                 s.setDistanceInKm(10.0);
@@ -74,6 +84,8 @@ public class LondonLoop extends Route {
                 break;
             case 5:
                 s.setSectionId("06");
+                s.setStartSectionName("Coulsdon South");
+                s.setEndSectionName("Banstead Downs");
                 s.setStartLocationName("Coulsdon South Rail Station");
                 s.setEndLocationName("Banstead Rail Station");
                 s.setDistanceInKm(7.4);
@@ -82,6 +94,8 @@ public class LondonLoop extends Route {
                 break;
             case 6:
                 s.setSectionId("07");
+                s.setStartSectionName("Banstead Downs");
+                s.setEndSectionName("Ewell");
                 s.setStartLocationName("Banstead Rail Station");
                 s.setEndLocationName("Ewell West Rail Station");
                 s.setDistanceInKm(5.6);
@@ -90,6 +104,8 @@ public class LondonLoop extends Route {
                 break;
             case 7:
                 s.setSectionId("08");
+                s.setStartSectionName("Ewell");
+                s.setEndSectionName("Kingston Bridge");
                 s.setStartLocationName("Ewell West Rail Station");
                 s.setEndLocationName("Kingston Rail Station");
                 s.setDistanceInKm(12.0);
@@ -98,6 +114,8 @@ public class LondonLoop extends Route {
                 break;
             case 8:
                 s.setSectionId("09");
+                s.setStartSectionName("Kingston Bridge");
+                s.setEndSectionName("Hatton Cross");
                 s.setStartLocationName("Kingston Rail Station");
                 s.setEndLocationName("Hatton Cross Underground Station");
                 s.setDistanceInKm(15.4);
@@ -106,6 +124,8 @@ public class LondonLoop extends Route {
                 break;
             case 9:
                 s.setSectionId("10");
+                s.setStartSectionName("Hatton Cross");
+                s.setEndSectionName("Hayes & Harlington");
                 s.setStartLocationName("Hatton Cross Underground Station");
                 s.setEndLocationName("Hayes & Harlington Rail Station");
                 s.setDistanceInKm(6.2);
@@ -114,6 +134,8 @@ public class LondonLoop extends Route {
                 break;
             case 10:
                 s.setSectionId("11");
+                s.setStartSectionName("Hayes & Harlington");
+                s.setEndSectionName("Uxbridge");
                 s.setStartLocationName("Hayes & Harlington Rail Station");
                 s.setEndLocationName("Uxbridge Underground Station");
                 s.setDistanceInKm(11.4);
@@ -122,6 +144,8 @@ public class LondonLoop extends Route {
                 break;
             case 11:
                 s.setSectionId("12");
+                s.setStartSectionName("Uxbridge");
+                s.setEndSectionName("Harefield West");
                 s.setStartLocationName("Uxbridge Underground Station");
                 s.setEndLocationName("Harefield West Bus Stop");
                 s.setDistanceInKm(7.8);
@@ -130,6 +154,8 @@ public class LondonLoop extends Route {
                 break;
             case 12:
                 s.setSectionId("13");
+                s.setStartSectionName("Harefield West");
+                s.setEndSectionName("Moor Park");
                 s.setStartLocationName("Harefield West Bus Stop");
                 s.setEndLocationName("Moor Park Underground Station");
                 s.setTravelWarning("Buses to and from Harefield West run Monday to Saturday only. Check transport options before you travel.");
@@ -139,6 +165,8 @@ public class LondonLoop extends Route {
                 break;
             case 13:
                 s.setSectionId("14");
+                s.setStartSectionName("Moor Park");
+                s.setEndSectionName("Hatch End");
                 s.setStartLocationName("Moor Park Underground Station");
                 s.setEndLocationName("Hatch End Rail Station");
                 s.setDistanceInKm(6.0);
@@ -147,6 +175,8 @@ public class LondonLoop extends Route {
                 break;
             case 14:
                 s.setSectionId("15");
+                s.setStartSectionName("Hatch End");
+                s.setEndSectionName("Elstree");
                 s.setStartLocationName("Hatch End Rail Station");
                 s.setEndLocationName("Elstree & Borehamwood Rail Station");
                 s.setDistanceInKm(13.6);
@@ -155,6 +185,8 @@ public class LondonLoop extends Route {
                 break;
             case 15:
                 s.setSectionId("16");
+                s.setStartSectionName("Elstree");
+                s.setEndSectionName("Cockfosters");
                 s.setStartLocationName("Elstree & Borehamwood Rail Station");
                 s.setEndLocationName("Cockfosters Underground Station");
                 s.setDistanceInKm(17.6);
@@ -163,6 +195,8 @@ public class LondonLoop extends Route {
                 break;
             case 16:
                 s.setSectionId("17");
+                s.setStartSectionName("Cockfosters");
+                s.setEndSectionName("Enfield Lock");
                 s.setStartLocationName("Cockfosters Underground Station");
                 s.setEndLocationName("Enfield Lock Rail Station");
                 s.setDistanceInKm(13.8);
@@ -171,6 +205,8 @@ public class LondonLoop extends Route {
                 break;
             case 17:
                 s.setSectionId("18");
+                s.setStartSectionName("Enfield Lock");
+                s.setEndSectionName("Chingford");
                 s.setStartLocationName("Enfield Lock Rail Station");
                 s.setEndLocationName("Chingford Rail Station");
                 s.setDistanceInKm(7.3);
@@ -179,6 +215,8 @@ public class LondonLoop extends Route {
                 break;
             case 18:
                 s.setSectionId("19");
+                s.setStartSectionName("Chingford");
+                s.setEndSectionName("Chigwell");
                 s.setStartLocationName("Chingford Rail Station");
                 s.setEndLocationName("Chigwell Underground Station");
                 s.setDistanceInKm(6.3);
@@ -187,6 +225,8 @@ public class LondonLoop extends Route {
                 break;
             case 19:
                 s.setSectionId("20");
+                s.setStartSectionName("Chigwell");
+                s.setEndSectionName("Havering-atte Bower");
                 s.setStartLocationName("Chigwell Underground Station");
                 s.setEndLocationName("Havering-atte-Bower Bus Stop");
                 s.setDistanceInKm(10.1);
@@ -195,6 +235,8 @@ public class LondonLoop extends Route {
                 break;
             case 20:
                 s.setSectionId("21");
+                s.setStartSectionName("Havering-atte Bower");
+                s.setEndSectionName("Harold Wood");
                 s.setStartLocationName("Havering-atte-Bower Bus Stop");
                 s.setEndLocationName("Harold Wood Rail Station");
                 s.setTravelWarning("Buses to and from Havering-atte-Bower run infrequently, and do not run on Sundays. Check transport options before you travel.");
@@ -204,6 +246,8 @@ public class LondonLoop extends Route {
                 break;
             case 21:
                 s.setSectionId("22");
+                s.setStartSectionName("Harold Wood");
+                s.setEndSectionName("Upminster Bridge");
                 s.setStartLocationName("Harold Wood Rail Station");
                 s.setEndLocationName("Upminster Bridge Underground Station");
                 s.setDistanceInKm(7.0);
@@ -212,6 +256,8 @@ public class LondonLoop extends Route {
                 break;
             case 22:
                 s.setSectionId("23");
+                s.setStartSectionName("Upminster Bridge");
+                s.setEndSectionName("Rainham");
                 s.setStartLocationName("Upminster Bridge Underground Station");
                 s.setEndLocationName("Rainham Rail Station");
                 s.setDistanceInKm(7.4);
@@ -220,6 +266,8 @@ public class LondonLoop extends Route {
                 break;
             case 23:
                 s.setSectionId("24");
+                s.setStartSectionName("Rainham");
+                s.setEndSectionName("Purfleet");
                 s.setStartLocationName("Rainham Rail Station");
                 s.setEndLocationName("Purfleet Rail Station");
                 s.setDistanceInKm(8.1);

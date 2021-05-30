@@ -8,6 +8,8 @@ public class Section implements com.hubbardgary.londontrails.model.interfaces.IS
     private String sectionId;
     private String startLocationName;
     private String endLocationName;
+    private String startSectionName;
+    private String endSectionName;
     private double distanceInKm;
     private double startLinkDistanceInKm;
     private double endLinkDistanceInKm;
@@ -76,6 +78,26 @@ public class Section implements com.hubbardgary.londontrails.model.interfaces.IS
     @Override
     public void setEndLocationName(String endLocationName) {
         this.endLocationName = endLocationName;
+    }
+
+    @Override
+    public String getStartSectionName() {
+        return startSectionName;
+    }
+
+    @Override
+    public void setStartSectionName(String startSectionName) {
+        this.startSectionName = startSectionName;
+    }
+
+    @Override
+    public String getEndSectionName() {
+        return endSectionName;
+    }
+
+    @Override
+    public void setEndSectionName(String endSectionName) {
+        this.endSectionName = endSectionName;
     }
 
     @Override

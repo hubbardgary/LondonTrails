@@ -23,6 +23,14 @@ public interface ISection {
 
     void setEndLocationName(String endLocationName);
 
+    String getStartSectionName();
+
+    void setStartSectionName(String startSectionName);
+
+    String getEndSectionName();
+
+    void setEndSectionName(String endSectionName);
+
     double getDistanceInKm();
 
     void setDistanceInKm(double distanceInKm);

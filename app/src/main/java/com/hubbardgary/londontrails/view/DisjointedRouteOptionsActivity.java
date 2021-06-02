@@ -3,6 +3,8 @@ package com.hubbardgary.londontrails.view;
 import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
+import android.text.Spannable;
+import android.text.SpannableStringBuilder;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.AdapterView;
@@ -145,12 +147,18 @@ public class DisjointedRouteOptionsActivity extends Activity implements IRouteOp
 
         TextView txtExtension = (TextView) findViewById(R.id.ExtensionDistanceValue);
         if (vm.extensionDistanceKm > 0) {
-            txtExtension.setText(
-                    String.format(Locale.UK,
-                            "plus %.2f km (%.2f miles) %s",
-                            vm.extensionDistanceKm,
-                            vm.extensionDistanceMiles,
-                            vm.extensionDescription));
+            String extensionText = String.format(Locale.UK,
+                    "plus %.2f km (%.2f miles) %s",
+                    vm.extensionDistanceKm,
+                    vm.extensionDistanceMiles,
+                    vm.extensionDescription);
+
+            SpannableStringBuilder str = new SpannableStringBuilder(extensionText);
+            str.setSpan(new android.text.style.StyleSpan(android.graphics.Typeface.BOLD),
+                    5,
+                    extensionText.indexOf(')') + 1,
+                    Spannable.SPAN_EXCLUSIVE_EXCLUSIVE);
+            txtExtension.setText(str);
         } else {
             txtExtension.setText("");
         }

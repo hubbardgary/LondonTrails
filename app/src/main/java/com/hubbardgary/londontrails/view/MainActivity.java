@@ -60,9 +60,22 @@ public class MainActivity extends Activity implements IMainView {
         button.setTextColor(Color.WHITE);
         LinearLayout.LayoutParams params = new LinearLayout.LayoutParams(LinearLayout.LayoutParams.MATCH_PARENT, LinearLayout.LayoutParams.WRAP_CONTENT);
         params.topMargin = 25;
+        params.bottomMargin = 25;
+        params.leftMargin = 50;
+        params.rightMargin = 50;
         LinearLayout layout = findViewById(R.id.MainLayout);
         layout.addView(button, params);
         return button;
+    }
+
+    private void addSeparator() {
+        View separator = new View(this);
+        LinearLayout.LayoutParams params = new LinearLayout.LayoutParams(LinearLayout.LayoutParams.MATCH_PARENT, 1);
+        params.height = 2;
+        separator.setBackgroundColor(0xFFC0C0C0);
+
+        LinearLayout layout = findViewById(R.id.MainLayout);
+        layout.addView(separator, params);
     }
 
     @Override
@@ -84,9 +97,13 @@ public class MainActivity extends Activity implements IMainView {
 
     @Override
     public void displayButtons(List<ButtonViewModel> buttons) {
-        for(ButtonViewModel buttonVm : buttons) {
-            Button button = addButton(buttonVm);
+        for(int i = 0; i < buttons.size(); i++) {
+            Button button = addButton(buttons.get(i));
             addOnClickListener(button);
+
+            if (i < buttons.size() - 1) {
+                addSeparator();
+            }
         }
     }
 

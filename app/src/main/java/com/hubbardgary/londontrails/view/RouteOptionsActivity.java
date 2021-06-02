@@ -100,6 +100,7 @@ public class RouteOptionsActivity extends Activity implements IRouteOptionsView,
     private void hideDirection() {
         directionSpinner.setVisibility(View.GONE);
         findViewById(R.id.DirectionLbl).setVisibility(View.GONE);
+        findViewById(R.id.DirectionSeparator).setVisibility(View.GONE);
     }
 
     private int GetSelectedItemId(Spinner s) {

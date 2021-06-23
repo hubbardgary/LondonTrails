@@ -163,16 +163,28 @@
         android:layout_marginTop="-88dp"
         android:layout_width="match_parent"
         android:layout_height="wrap_content" >
-        <Button
+        <FrameLayout
+            style="?android:attr/buttonStyle"
             android:id="@+id/GoBtn"
-            android:text="@string/route_options_confirm_text"
-            android:background="@drawable/button_background"
-            android:textColor="#ffffff"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_margin="20dp"
-            android:layout_centerHorizontal="true"
-            android:layout_alignParentRight="true"
-            android:layout_alignParentLeft="true" />
+            android:background="@drawable/button_background">
+            <TextView
+                style="?android:attr/buttonStyle"
+                android:textColor="#ffffff"
+                android:textAppearance="?android:attr/textAppearanceMedium"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:background="@null"
+                android:clickable="false"
+                android:drawableLeft="@drawable/outline_directions_walk_white_24"
+                android:focusable="false"
+                android:gravity="center"
+                android:minHeight="0dp"
+                android:minWidth="0dp"
+                android:text="@string/route_options_confirm_text" />
+        </FrameLayout>
     </LinearLayout>
 </LinearLayout>

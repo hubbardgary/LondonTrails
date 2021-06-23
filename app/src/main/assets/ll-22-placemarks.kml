@@ -17,5 +17,13 @@
       <coordinates>0.244585,51.586563,0.000000</coordinates>
     </Point>
   </Placemark>
+  <Placemark>
+    <name>Upminster Windmill</name>
+    <description><![CDATA[Slightly off the LOOP's main route, this well preserved Grade II listed windmill was built in 1803 and was used commercially until 1934, mainly for producing flour. It is a smock mill - a type of windmill with sloping sides and a roof that rotates to ensure the sails catch the wind from the most effective angle. It is open to the public on select days throughout the year.]]></description>
+    <styleUrl>#style3</styleUrl>
+    <Point>
+      <coordinates>0.245106,51.557903,0.000000</coordinates>
+    </Point>
+  </Placemark>
 </Document>
 </kml>

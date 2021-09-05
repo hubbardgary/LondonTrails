@@ -19,7 +19,7 @@
   </Placemark>
   <Placemark>
     <name>New St. Andrew's Church</name>
-    <description><![CDATA[This church was originally built in 1847 near Oxford Circus. Incredibly, after falling into disuse, it was literally moved here in 1931 to replace the small and aging old church, which can still be seen around the corner (on Old Church Lane, obviously).]]></description>
+    <description><![CDATA[This church was originally built in 1847 near Oxford Circus. Incredibly, after falling into disuse, it was literally moved here in 1931 to replace the small and aging old church, which can still be seen around the corner.]]></description>
     <styleUrl>#style4</styleUrl>
     <Point>
       <coordinates>-0.2619231,51.5679524,0.0</coordinates>

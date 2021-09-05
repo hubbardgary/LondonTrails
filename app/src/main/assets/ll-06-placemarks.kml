@@ -2,14 +2,6 @@
 <kml xmlns="http://earth.google.com/kml/2.2">
 <Document>
   <Placemark>
-    <name>Cane Hill Water Tower</name>
-    <description><![CDATA[The tall building in the distance is the water tower of the former Cane Hill Psychiatric Hospital. Most of the other hospital buildings have been demolished and the site may soon be redeveloped into a housing estate in a similar way to nearby Netherne Psychiatric Hospital.]]></description>
-    <styleUrl>#style5</styleUrl>
-    <Point>
-      <coordinates>-0.148476,51.313829,0.000000</coordinates>
-    </Point>
-  </Placemark>
-  <Placemark>
     <name>Mayfield Lavender Fields</name>
     <description><![CDATA[This 25 acre field is a stunning site in summer months when the lavender is in bloom. In the 19th Century, Surrey was renowned for its lavender and was a significant supplier to the global perfume industry.]]></description>
     <styleUrl>#style6</styleUrl>

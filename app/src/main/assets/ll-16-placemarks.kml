@@ -18,19 +18,11 @@
     </Point>
   </Placemark>
   <Placemark>
-    <name>Underhill Stadium</name>
-    <description><![CDATA[Home of Barnet FC from 1907-2013, when the club (nicknamed 'The Bees') moved to their new Hive stadium in Canons Park. Underhill, with its capacity of 6,023, was also used by Arsenal reserves until 2012. Current tenants are the London Broncos rugby league team.]]></description>
+    <name>Former Site of Underhill Stadium</name>
+    <description><![CDATA[This site was the home of Barnet FC from 1907 until 2013, when the club (nicknamed 'The Bees') moved to their new Hive stadium in Canons Park. Underhill, with its capacity of 6,023, was also used by Arsenal reserves until 2012. It was then home to London Broncos rugby league team from 2014, before being demolished in 2018 to make way for a new secondary school.]]></description>
     <styleUrl>#style3</styleUrl>
     <Point>
       <coordinates>-0.191735,51.646219,0.000000</coordinates>
-    </Point>
-  </Placemark>
-  <Placemark>
-    <name>Old Red Lion</name>
-    <description><![CDATA[This pub lies on the route of the old Great North Road. Barnet Hill used to be very steep and the Red Lion sometimes provided travellers with two extra horses - a Hercules pair - to help heave their coaches up the hill. Barnet Hill was rebuilt in the 1820s and the gradient reduced.]]></description>
-    <styleUrl>#style4</styleUrl>
-    <Point>
-      <coordinates>-0.190670,51.647526,0.000000</coordinates>
     </Point>
   </Placemark>
   <Placemark>

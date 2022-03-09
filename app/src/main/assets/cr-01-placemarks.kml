@@ -10,6 +10,14 @@
     </Point>
   </Placemark>
   <Placemark>
+    <name>Temporary diversion</name>
+    <description><![CDATA[The official route follows the path by the river, however a temporary diversion is currently in place while some apartments are under construction.]]></description>
+    <styleUrl>#style6</styleUrl>
+    <Point>
+      <coordinates>0.059459,51.494063,0.000000</coordinates>
+    </Point>
+  </Placemark>
+  <Placemark>
     <name>Thames Barrier</name>
     <description><![CDATA[The Thames Barrier is one of the largest movable flood barriers in the world, and was opened in 1982. It protects central London from high tides moving in from the North Sea.]]></description>
     <styleUrl>#style1</styleUrl>

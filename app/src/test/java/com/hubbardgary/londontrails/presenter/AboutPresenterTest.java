@@ -9,7 +9,7 @@ import org.junit.Before;
 import org.junit.Test;
 import org.mockito.Mockito;
 
-import static org.mockito.Matchers.anyObject;
+import static org.mockito.ArgumentMatchers.any;
 import static org.mockito.Mockito.verify;
 
 public class AboutPresenterTest {
@@ -29,7 +29,7 @@ public class AboutPresenterTest {
         sut.initializeView();
 
         // Assert
-        verify(mockView).setDisplayText((Spanned) anyObject());
+        verify(mockView).setDisplayText((Spanned) any());
     }
 
     @Test

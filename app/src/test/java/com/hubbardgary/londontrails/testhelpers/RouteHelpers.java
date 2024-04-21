@@ -7,7 +7,7 @@ import com.hubbardgary.londontrails.model.interfaces.IRoute;
 import com.hubbardgary.londontrails.model.interfaces.ISection;
 import com.hubbardgary.londontrails.view.interfaces.IRouteOptionsView;
 
-import static org.mockito.Matchers.anyInt;
+import static org.mockito.ArgumentMatchers.anyInt;
 import static org.mockito.Mockito.when;
 
 public class RouteHelpers {

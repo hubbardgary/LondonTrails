@@ -24,16 +24,13 @@ public class UserSettings implements IUserSettings {
             return currentRoute;
 
         int routeId = app.getIntFromSharedPreferences(R.string.shared_prefs_current_route_id, R.id.rte_capital_ring);
-        switch (routeId) {
-            case R.id.rte_london_loop:
-                currentRoute = new LondonLoop();
-                break;
-            case R.id.rte_capital_ring:
-                currentRoute = new CapitalRing();
-                break;
-            case R.id.rte_green_chain_walk:
-                currentRoute = new GreenChainWalk();
-                break;
+        
+        if (routeId == R.id.rte_london_loop) {
+            currentRoute = new LondonLoop();
+        } else if (routeId == R.id.rte_capital_ring) {
+            currentRoute = new CapitalRing();
+        } else if (routeId == R.id.rte_green_chain_walk) {
+            currentRoute = new GreenChainWalk();
         }
         return currentRoute;
     }

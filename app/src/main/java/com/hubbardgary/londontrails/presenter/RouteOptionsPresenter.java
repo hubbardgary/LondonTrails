@@ -38,13 +38,10 @@ public class RouteOptionsPresenter {
     private void initializePresenter() {
         route = settings.getCurrentRoute();
 
-        switch (sectionResource) {
-            case R.array.capital_ring_sections:
-                route = new CapitalRing();
-                break;
-            case R.array.london_loop_sections:
-                route = new LondonLoop();
-                break;
+        if (sectionResource == R.array.capital_ring_sections) {
+            route = new CapitalRing();
+        } else if (sectionResource == R.array.london_loop_sections) {
+            route = new LondonLoop();
         }
         settings.setCurrentRoute(route);
     }

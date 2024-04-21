@@ -62,13 +62,13 @@ public class MainPresenter {
     }
 
     private int getSectionsFromRouteId(int routeId) {
-        switch (routeId) {
-            case R.id.rte_capital_ring:
-                return R.array.capital_ring_sections;
-            case R.id.rte_london_loop:
-                return R.array.london_loop_sections;
-            case R.id.rte_green_chain_walk:
-                return R.array.green_chain_walk_sections;
+
+        if (routeId == R.id.rte_capital_ring) {
+            return R.array.capital_ring_sections;
+        } else if (routeId == R.id.rte_london_loop) {
+            return R.array.london_loop_sections;
+        } else if (routeId == R.id.rte_green_chain_walk) {
+            return R.array.green_chain_walk_sections;
         }
         return 0;
     }

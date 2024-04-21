@@ -109,18 +109,16 @@ public class RouteOptionsActivity extends Activity implements IRouteOptionsView,
 
     @Override
     public void onItemSelected(AdapterView parent, View view, int pos, long id) {
-        switch(parent.getId()) {
-            case R.id.DirectionSpinner :
-                vm.direction = directionSpinner.getSelectedItemPosition();
-                break;
-            case R.id.StartLocationSpinner :
-                vm.startSection = GetSelectedItemId(startSpinner);
-                presenter.startSectionChanged(vm);
-                break;
-            case R.id.DestinationSpinner :
-                vm.endSection = GetSelectedItemId(endSpinner);
-                vm.endSelectedIndex = endSpinner.getSelectedItemPosition();
-                break;
+
+        int parentId = parent.getId();
+        if (parentId == R.id.DirectionSpinner) {
+            vm.direction = directionSpinner.getSelectedItemPosition();
+        } else if (parentId == R.id.StartLocationSpinner) {
+            vm.startSection = GetSelectedItemId(startSpinner);
+            presenter.startSectionChanged(vm);
+        } else if (parentId == R.id.DestinationSpinner) {
+            vm.endSection = GetSelectedItemId(endSpinner);
+            vm.endSelectedIndex = endSpinner.getSelectedItemPosition();
         }
         presenter.optionsChanged(vm);
     }

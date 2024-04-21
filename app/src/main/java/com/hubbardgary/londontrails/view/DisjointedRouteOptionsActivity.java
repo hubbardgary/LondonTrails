@@ -91,11 +91,9 @@ public class DisjointedRouteOptionsActivity extends Activity implements IRouteOp
 
     @Override
     public void onItemSelected(AdapterView parent, View view, int pos, long id) {
-        switch(parent.getId()) {
-            case R.id.StartLocationSpinner :
-                vm.startSection = GetSelectedItemId(sectionSpinner);
-                vm.endSection = vm.startSection;
-                break;
+        if (parent.getId() == R.id.StartLocationSpinner) {
+            vm.startSection = GetSelectedItemId(sectionSpinner);
+            vm.endSection = vm.startSection;
         }
         presenter.optionsChanged(vm);
     }

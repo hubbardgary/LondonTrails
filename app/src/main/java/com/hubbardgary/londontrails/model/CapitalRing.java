@@ -8,8 +8,8 @@ import java.util.Locale;
 
 public class CapitalRing extends Route {
 
-    private static double distanceInKM = 122;
-    private static String name = "Capital Ring";
+    private static final double distanceInKM = 122;
+    private static final String name = "Capital Ring";
 
     public int getRouteId() {
         return R.id.rte_capital_ring;

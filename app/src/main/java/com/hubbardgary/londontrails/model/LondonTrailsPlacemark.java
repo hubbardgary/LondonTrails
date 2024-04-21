@@ -3,8 +3,8 @@ package com.hubbardgary.londontrails.model;
 import com.google.android.gms.maps.model.Marker;
 
 public class LondonTrailsPlacemark {
-    private Marker googleMapsMarker;
-    private boolean alwaysShow;
+    private final Marker googleMapsMarker;
+    private final boolean alwaysShow;
 
     public LondonTrailsPlacemark(Marker googleMapsMarker, boolean alwaysShow) {
         this.googleMapsMarker = googleMapsMarker;

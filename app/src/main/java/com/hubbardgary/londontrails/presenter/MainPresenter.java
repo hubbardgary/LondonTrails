@@ -17,9 +17,9 @@ import java.util.List;
 
 public class MainPresenter {
 
-    private IMainView view;
+    private final IMainView view;
     private List<ButtonViewModel> buttons;
-    private IAndroidFrameworkProxy proxy;
+    private final IAndroidFrameworkProxy proxy;
 
     public MainPresenter(IMainView view, IAndroidFrameworkProxy proxy) {
         this.view = view;

@@ -32,10 +32,10 @@ import java.util.List;
  */
 public class MapContentActivity extends AsyncTaskExecutorService<Void, Void, Void> implements IMapContentView {
 
-    private IShowMapView showMapView;
+    private final IShowMapView showMapView;
+    private final MapContentViewModel vm;
+    private final ShowMapViewModel showMapVm;
     private PolylineOptions path;
-    private MapContentViewModel vm;
-    private ShowMapViewModel showMapVm;
 
     MapContentActivity(IShowMapView showMapView) {
         this.showMapView = showMapView;

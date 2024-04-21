@@ -11,9 +11,9 @@ import com.hubbardgary.londontrails.viewmodel.ShowMapViewModel;
 
 public class MapContentPresenter {
 
-    private ICoordinateProvider coordinateProvider;
-    private IPOIProvider poiProvider;
-    private ShowMapViewModel showMapVm;
+    private final ICoordinateProvider coordinateProvider;
+    private final IPOIProvider poiProvider;
+    private final ShowMapViewModel showMapVm;
 
     public MapContentPresenter(IMapContentView view,
                                ShowMapViewModel showMapVm,

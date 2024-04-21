@@ -11,9 +11,9 @@ import java.util.LinkedHashMap;
 
 public class ShowMapPresenter {
 
-    private IShowMapView view;
-    private IUserSettings settings;
-    private ShowMapViewModel vm;
+    private final IShowMapView view;
+    private final IUserSettings settings;
+    private final ShowMapViewModel vm;
     private int mapType;
     private boolean markersVisible = true;
 

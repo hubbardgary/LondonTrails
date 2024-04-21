@@ -8,8 +8,8 @@ import java.util.Locale;
 
 public class GreenChainWalk extends Route {
 
-    private static double distanceInKM = 85.3; // Includes all main sections and extensions (out-and-back) but not transport links.
-    private static String name = "Green Chain Walk";
+    private static final double distanceInKM = 85.3; // Includes all main sections and extensions (out-and-back) but not transport links.
+    private static final String name = "Green Chain Walk";
 
     public int getRouteId() {
         return R.id.rte_green_chain_walk;

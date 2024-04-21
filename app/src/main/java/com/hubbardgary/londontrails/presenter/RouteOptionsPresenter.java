@@ -18,12 +18,12 @@ import java.util.List;
 
 public class RouteOptionsPresenter {
 
-    private IRouteOptionsView view;
-    private IUserSettings settings;
+    private final IRouteOptionsView view;
+    private final IUserSettings settings;
     private final int sectionResource;
     private final String[] sectionArray;
     private IRoute route;
-    private RouteViewModel routeVm;
+    private final RouteViewModel routeVm;
 
     public RouteOptionsPresenter(IRouteOptionsView view, IUserSettings settings) {
 

@@ -1,8 +1,8 @@
 package com.hubbardgary.londontrails.model;
 
 public class Coordinates {
-    private double latitude;
-    private double longitude;
+    private final double latitude;
+    private final double longitude;
 
     public double getLatitude() {
         return latitude;

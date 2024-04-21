@@ -4,7 +4,7 @@ import com.hubbardgary.londontrails.model.interfaces.IRoute;
 
 public class Section implements com.hubbardgary.londontrails.model.interfaces.ISection {
 
-    private IRoute route;
+    private final IRoute route;
     private String sectionId;
     private String startLocationName;
     private String endLocationName;

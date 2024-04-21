@@ -8,8 +8,8 @@ import com.hubbardgary.londontrails.view.interfaces.IAboutView;
 
 public class AboutPresenter {
 
-    private IAboutView view;
-    private IAndroidFrameworkProxy proxy;
+    private final IAboutView view;
+    private final IAndroidFrameworkProxy proxy;
 
     public AboutPresenter(IAboutView view, IAndroidFrameworkProxy proxy) {
         this.view = view;

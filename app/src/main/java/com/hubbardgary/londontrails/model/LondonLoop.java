@@ -8,8 +8,8 @@ import java.util.Locale;
 
 public class LondonLoop extends Route {
 
-    private static double distanceInKM = 240;
-    private static String name = "London Loop";
+    private static final double distanceInKM = 240;
+    private static final String name = "London Loop";
 
     public int getRouteId() {
         return R.id.rte_london_loop;

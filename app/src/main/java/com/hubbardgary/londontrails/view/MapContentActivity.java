@@ -2,7 +2,6 @@ package com.hubbardgary.londontrails.view;
 
 import android.content.res.AssetManager;
 import android.graphics.Color;
-import android.os.AsyncTask;
 
 import com.google.android.gms.maps.model.BitmapDescriptorFactory;
 import com.google.android.gms.maps.model.LatLng;
@@ -17,6 +16,7 @@ import com.hubbardgary.londontrails.model.LondonTrailsPlacemark;
 import com.hubbardgary.londontrails.model.POI;
 import com.hubbardgary.londontrails.model.interfaces.IRoute;
 import com.hubbardgary.londontrails.presenter.MapContentPresenter;
+import com.hubbardgary.londontrails.services.AsyncTaskExecutorService;
 import com.hubbardgary.londontrails.view.interfaces.IMapContentView;
 import com.hubbardgary.londontrails.view.interfaces.IShowMapView;
 import com.hubbardgary.londontrails.viewmodel.MapContentViewModel;
@@ -26,11 +26,11 @@ import com.hubbardgary.londontrails.viewmodel.ShowMapViewModel;
 import java.util.ArrayList;
 import java.util.List;
 
- /*
+/*
  * Called when map has been displayed to perform potentially expensive
  * route calculation without blocking the UI thread.
  */
-public class MapContentActivity extends AsyncTask<Void, Void, Integer> implements IMapContentView {
+public class MapContentActivity extends AsyncTaskExecutorService<Void, Void, Void> implements IMapContentView {
 
     private IShowMapView showMapView;
     private PolylineOptions path;
@@ -45,16 +45,15 @@ public class MapContentActivity extends AsyncTask<Void, Void, Integer> implement
     }
 
     @Override
-    protected Integer doInBackground(Void... params) {
+    protected Void doInBackground(Void params) {
         getPath(vm.path);
 
         // Set default zoom bounds based on the route and points of interest we're plotting
         initializeDefaultBounds(vm.minimumLatitude, vm.minimumLongitude, vm.maximumLatitude, vm.maximumLongitude);
-        return 1;
+        return params;
     }
 
-    @Override
-    protected void onPostExecute(Integer i) {
+    protected void onPostExecute(Void result) {
         // Route and markers have now been retrieved, so display them on the map.
         showMapView.setMapRoute(showMapView.getMap().addPolyline(path));
         addStartAndEndMarkers(showMapVm.start, showMapVm.end, showMapVm.route);

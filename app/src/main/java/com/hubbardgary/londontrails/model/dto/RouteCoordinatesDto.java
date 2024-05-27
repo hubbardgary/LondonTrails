@@ -5,7 +5,6 @@ import com.hubbardgary.londontrails.model.Coordinates;
 import java.util.List;
 
 public class RouteCoordinatesDto {
-    //private double[][] coordinates;
     private List<Coordinates> coordinates;
     private double minimumLatitude;
     private double maximumLatitude;

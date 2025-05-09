@@ -22,13 +22,16 @@ public class AboutPresenter {
 
     private Spanned getAboutText() {
         final String aboutTextHtml = "<body>" +
+                "<br />" +
                 "<h1>Discover a hidden side of London!</h1>" +
                 "<h2>Support</h2>" +
                 "<p>" +
                 "Version " + BuildConfig.VERSION_NAME +
                 "</p>" +
                 "<p>" +
-                "For support and queries, please contact <a href=\"mailto:london.trails.app@gmail.com?Subject=London Trails feedback\">london.trails.app@gmail.com</a>." +
+                "For support and queries, please contact:" +
+                "<br />" +
+                "<a href=\"mailto:london.trails.app@gmail.com?Subject=London Trails feedback\">london.trails.app@gmail.com</a>." +
                 "</p>" +
                 "<p>" +
                 "If you have enjoyed using London Trails, please share your experience with others by leaving a <a href=\"https://play.google.com/store/apps/details?id=com.hubbardgary.londontrails\">review</a>." +
